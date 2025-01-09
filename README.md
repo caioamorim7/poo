@@ -19,6 +19,34 @@ java -version
 ## Instalar sdkman (opcional)
 https://sdkman.io/install
 
+> curl -s "https://get.sdkman.io" | bash
+
+> sdk update
+
+> sdk list java
+
+> sdk current java
+
+> sdk install java 21.0.2-open
+
+Downloading: java 21.0.2-open
+
+In progress...
+
+################################################################################################################################################ 100.0%
+
+Repackaging Java 21.0.2-open...
+
+Done repackaging...
+
+Installing: java 21.0.2-open
+Done installing!
+
+Do you want java 21.0.2-open to be set as default? (Y/n): Y
+
+Setting java 21.0.2-open as default.
+
+
 ## Executar JShell 
 
 https://docs.oracle.com/en/java/javase/21/jshell/introduction-jshell.html
