@@ -21,13 +21,13 @@ jobs:
         java-version: '21'
 
     - name: Create lib directory
-      run: mkdir -p lib
+      run: mkdir -p hello/lib
 
     - name: Download JUnit Platform Console Standalone
-      run: curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+      run: curl -L -o hello/lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
 
     - name: Compile Java code
-      run: javac -cp "lib/*" -d bin src/*.java test/*.java
+      run: javac -cp "hello/lib/*" -d bin hello/src/*.java hello/test/*.java
 
     - name: Run tests
-      run: java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path target --scan-class-path
+      run: java -jar hello/lib/junit-platform-console-standalone-1.11.4.jar --class-path hello/bin --scan-class-path
