@@ -46,7 +46,6 @@ Do you want java 21.0.2-open to be set as default? (Y/n): Y
 
 Setting java 21.0.2-open as default.
 
-
 ## Executar JShell 
 
 https://docs.oracle.com/en/java/javase/21/jshell/introduction-jshell.html
@@ -71,7 +70,7 @@ JShell = Read-Eval-Print-Loop (REPL)
 
 https://docs.oracle.com/javase/specs/jls/se21/html/index.html
 
-### Compreender com variables, keywords, data type, declaration statement e expression
+### Compreender com variables, keywords, data type, declaration statement, expression e tipos primitivos
 
 > jshell> int a = 1;
 > jshell> int b = 1;
@@ -99,8 +98,6 @@ https://docs.oracle.com/javase/specs/jls/se21/html/index.html
 
 > jshell> /exit
 
-
-
 ## Criar primeiro programa Java
 
 > jshell
@@ -123,8 +120,18 @@ https://docs.oracle.com/javase/specs/jls/se21/html/index.html
 
 > jshell> h.main(null);
 
-## Executar programa java na linha de comando
+## Compilar, empacotar, decompilar e executar programa java na linha de comando
 
-java
+javac -cp "lib/*" -d bin src/*.java test/*.java
 
+java -cp bin/ HelloWorld
 
+java -cp bin/ HelloStudent
+
+java -jar lib/junit-platform-console-standalone-1.11.4.jar execute --class-path target --scan-class-path
+
+jar --create --file bin/HelloWorld.jar --main-class HelloWorld -C bin/ HelloWorld.class
+
+java -jar bin/HelloWorld.jar
+
+javap -cp bin/ -c HelloWorld
