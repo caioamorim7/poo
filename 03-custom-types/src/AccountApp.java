@@ -33,7 +33,6 @@ public class AccountApp {
 
             System.out.println(">>>");
 
-
             System.out.print("Enter the account holder's name: ");
             String name2 = scanner.nextLine();
     
@@ -47,6 +46,20 @@ public class AccountApp {
             System.out.printf("%s's account balance is $%.2f.\n",
                     account2.getName(),
                     account2.getBalance());
+            
+            System.out.println(">>>");
+
+            System.out.println(">>> Depositing to the First Account!");
+
+            System.out.println(">>>");
+
+            System.out.print("Enter the deposit amount: ");
+            double depositAmount = scanner.nextDouble();
+            account.deposit(depositAmount);
+            
+            System.out.printf("%s's account balance is $%.2f.\n",
+                    account.getName(),
+                    account.getBalance());
         }
     }
 }
