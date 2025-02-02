@@ -63,5 +63,5 @@ jobs:
         ls -R
         mkdir -p lib
         curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
-        javac -cp "lib/*" -d bin src/*.java ../test/*.java
+        javac -cp "lib/*" -d bin src/*.java ../../test/*.java
         java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
