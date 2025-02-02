@@ -20,20 +20,29 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Detect task
       id: detect-task
       run: |
-        MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
+          git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
+        else
+          BASE_REF="${{ github.event.before }}"
+        fi
+
+        MODIFIED_FILES=$(git diff --name-only $BASE_REF ${{ github.sha }})
 
         MODIFIED_TASK=$(echo "$MODIFIED_FILES" | grep 'assignments/' | cut -d '/' -f2 | sort -u | head -n 1)
 
         MODIFIED_STUDENT=$(echo "$MODIFIED_FILES" | grep 'submissions/' | cut -d '/' -f4 | sort -u | head -n 1)
 
         if [ -z "$MODIFIED_TASK" ] || [ -z "$MODIFIED_STUDENT" ]; then
-            echo "❌ Erro: Nenhuma alteração detectada no diretório correto (assignments/**/submissions/**)"
-            exit 1
+          echo "❌ Erro: Nenhuma alteração detectada no diretório correto (assignments/**/submissions/**)"
+          exit 1
         fi
 
         echo "Tarefa detectada: $MODIFIED_TASK"
