@@ -47,7 +47,7 @@ Em síntese, para aproveitar todo o conteúdo e praticar muito você precisa de 
 * Instalar uma das distrições do Java Development Kit (JDK), recomenda-se o OpenJDK 21
 * Instalar uma IDE, recomenda-se o VS Code com os plugins para Java e Git
 
-Finalizada as devidas introduções, vamos seguir para a instalação das ferramentas. Siga os passos abaixo:
+Finalizada as devidas introduções, vamos seguir para a instalação das ferramentas com os passos abaixo:
 
 * [Instalação do OpenJDK 21 no Linux via apt](#-instalação-do-openjdk-21-no-linux-via-apt)
     * (opcional) [Instalação manual do OpenJDK 21 no Linux](#-instalação-manual-do-openjdk-21-no-linux)
