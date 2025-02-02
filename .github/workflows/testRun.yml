@@ -4,9 +4,11 @@ on:
   pull_request:
     branches:
       - 2025.1
+    paths:
+      - 'assingments/**/submission/**'
 
 jobs:
-  build:
+  test-assingments-submission:
 
     runs-on: ubuntu-latest
 
@@ -14,20 +16,37 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Detect task
+      id: detect-task
+      run: |
+        MODIFIED_TASK=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'assignments/' | cut -d '/' -f2 | sort -u)
+
+        MODIFIED_STUDENT=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'submissions/' | cut -d '/' -f4 | sort -u)
+
+        echo "Tarefa detectada: $MODIFIED_TASK"
+        echo "task_dir=$MODIFIED_TASK" >> $GITHUB_ENV
+
+        echo "Aluno detectado: $MODIFIED_STUDENT"
+        echo "student_dir=$MODIFIED_STUDENT" >> $GITHUB_ENV
+
     - name: Set up JDK 21
       uses: actions/setup-java@v2
       with:
         distribution: 'zulu'
         java-version: '21'
 
+    - name: Set up submission directory
+      run: |
+        cd assignments/${{ env.task_dir }}/submissions/${{ env.student_dir }}/
+
     - name: Create lib directory
-      run: mkdir -p hello/lib
+      run: mkdir -p lib
 
     - name: Download JUnit Platform Console Standalone
-      run: curl -L -o hello/lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+      run: curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
 
     - name: Compile Java code
-      run: javac -cp "hello/lib/*" -d hello/bin hello/src/*.java hello/test/*.java
+      run: javac -cp "lib/*" -d bin src/*.java ../test/*.java
 
     - name: Run tests
-      run: java -jar hello/lib/junit-platform-console-standalone-1.11.4.jar --class-path hello/bin --scan-class-path
+      run: java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
