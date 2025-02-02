@@ -67,6 +67,9 @@ jobs:
     - name: Download JUnit Platform Console Standalone
       run: curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
 
+    - name: Print dir structure
+      run: ls -R
+
     - name: Compile Java code
       run: javac -cp "lib/*" -d bin src/*.java ../test/*.java
 
