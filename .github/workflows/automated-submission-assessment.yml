@@ -57,21 +57,11 @@ jobs:
         distribution: 'zulu'
         java-version: '21'
 
-    - name: Set up submission directory
+    - name: Set up submission directory, compile code and run tests
       run: |
         cd assignments/${{ env.task_dir }}/submissions/${{ env.student_dir }}/
-
-    - name: Create lib directory
-      run: mkdir -p lib
-
-    - name: Download JUnit Platform Console Standalone
-      run: curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
-
-    - name: Print dir structure
-      run: ls -R
-
-    - name: Compile Java code
-      run: javac -cp "lib/*" -d bin src/*.java ../test/*.java
-
-    - name: Run tests
-      run: java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
+        ls -R
+        mkdir -p lib
+        run: curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+        javac -cp "lib/*" -d bin src/*.java ../test/*.java
+        java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
