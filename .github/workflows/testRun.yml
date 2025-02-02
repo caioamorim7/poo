@@ -5,15 +5,15 @@ on:
     branches:
       - 2025.1
     paths:
-      - 'assingments/**/submission/**'
+      - 'assignments/**/submissions/**'
   pull_request:
     branches:
       - 2025.1
     paths:
-      - 'assingments/**/submission/**'
+      - 'assignments/**/submissions/**'
 
 jobs:
-  test-assingments-submission:
+  test-assignments-submissions:
 
     runs-on: ubuntu-latest
 
