@@ -1,6 +1,11 @@
 name: Test Run
 
 on:
+  push:
+    branches:
+      - 2025.1
+    paths:
+      - 'assingments/**/submission/**'
   pull_request:
     branches:
       - 2025.1
