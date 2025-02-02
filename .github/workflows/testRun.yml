@@ -11,6 +11,7 @@ on:
       - 2025.1
     paths:
       - 'assignments/**/submissions/**'
+  workflow_dispatch: 
 
 jobs:
   test-assignments-submissions:
