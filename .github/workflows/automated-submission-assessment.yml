@@ -25,9 +25,16 @@ jobs:
     - name: Detect task
       id: detect-task
       run: |
-        MODIFIED_TASK=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'assignments/' | cut -d '/' -f2 | sort -u)
+        MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
 
-        MODIFIED_STUDENT=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'submissions/' | cut -d '/' -f4 | sort -u)
+        MODIFIED_TASK=$(echo "$MODIFIED_FILES" | grep 'assignments/' | cut -d '/' -f2 | sort -u | head -n 1)
+
+        MODIFIED_STUDENT=$(echo "$MODIFIED_FILES" | grep 'submissions/' | cut -d '/' -f4 | sort -u | head -n 1)
+
+        if [ -z "$MODIFIED_TASK" ] || [ -z "$MODIFIED_STUDENT" ]; then
+            echo "❌ Erro: Nenhuma alteração detectada no diretório correto (assignments/**/submissions/**)"
+            exit 1
+        fi
 
         echo "Tarefa detectada: $MODIFIED_TASK"
         echo "task_dir=$MODIFIED_TASK" >> $GITHUB_ENV
