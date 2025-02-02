@@ -1,4 +1,4 @@
-name: Test Run
+name: Automated Submission Assessment
 
 on:
   push:
