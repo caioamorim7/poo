@@ -4,8 +4,6 @@ Seja bem-vindo(a)! 🤗
 
 Este repositório reúne materiais, tarefas, projetos, leituras e referências bibliográficas da disciplina **Programação Orientada a Objetos**, oferecida no **[Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa](http://idp.edu.br)** e ministrada pelo professor **[Fabricio Santana](https://github.com/fabriciosantana/)** no **1º semestre de 2025**. 👨🏾‍🏫
 
-Aqui, você encontrará conteúdos essenciais para seu aprendizado, incluindo slides, exemplos de código, tutoriais, referências e exercícios práticos, que ajudarão a aprofundar sua compreensão de programação orientada a objetos em Java. 📚
-
 Durante o curso, serão abordados tópicos fundamentais, como introdução à programação, classes, objetos, herança, polimorfismo, encapsulamento e persistência, além de outros conceitos essenciais para a construção de aplicações robustas e escaláveis. 💻
 
 Utilize este material como um recurso adicional para fortalecer seus conhecimentos e aprimorar suas habilidades na linguagem Java. 🌟
