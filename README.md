@@ -46,12 +46,17 @@ Em síntese, para aproveitar todo o conteúdo e praticar muito você precisa de 
 * Instalar uma IDE, recomenda-se o VS Code com os plugins para Java e Git
 
 Finalizada as devidas introduções, vamos seguir para a instalação das ferramentas com os passos abaixo:
-
 * [Instalação do OpenJDK 21 no Linux via apt](#-instalação-do-openjdk-21-no-linux-via-apt)
     * (opcional) [Instalação manual do OpenJDK 21 no Linux](#-instalação-manual-do-openjdk-21-no-linux)
     * (opcional) [Instalação do OpenJDK 21 no Linux via SDKMAN!](#-instalação-do-openjdk-21-via-sdkman)
 * [Instalação do VS Code no Linux via apt](#️-instalar-o-vs-code-via-apt)
     * (opcional) [Instalação manual do VS Code no Linux](#️-instalação-manual-do-vs-code-no-linux)
+
+Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base de conhecimento com os seguintes recursos:
+* [Introduction to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/)
+* [Getting started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
+* [Intro to GitHub](https://education.github.com/experiences/intro_to_github)
+* [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
 
 ---
 
