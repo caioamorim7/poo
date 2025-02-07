@@ -61,7 +61,7 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 ### 🛠️ Configuração do ambiente
 
 <details>
-<summary><h4>🛠️ Instalação do OpenJDK 21 no Linux via apt</h4></summary>
+<summary><h4>🐧 Instalação do OpenJDK 21 no Linux via apt</h4></summary>
 
 Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
