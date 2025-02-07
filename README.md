@@ -20,7 +20,7 @@ Vamos começar! 🎉
 
 
 <details>
-<summary><h3><b>🏁 Antes de começar</b></h3></summary>
+<summary><h3>🏁 Antes de começar</h3></summary>
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
@@ -66,7 +66,7 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 ---
 
 <details>
-<summary><h3><b>🛠️ Instalação do OpenJDK 21 no Linux via apt</b></h3></summary>
+<summary><h3>🛠️ Instalação do OpenJDK 21 no Linux via apt</h3></summary>
 
 Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
