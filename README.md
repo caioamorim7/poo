@@ -20,7 +20,7 @@ Vamos começar! 🎉
 
 
 <details>
-<summary><h3>🏁 Antes de começar</h3></summary>
+<summary><h4>🏁 Antes de começar</h4></summary>
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
@@ -66,7 +66,7 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 ---
 
 <details>
-<summary><h3>🛠️ Instalação do OpenJDK 21 no Linux via apt</h3></summary>
+<summary><h4>🛠️ Instalação do OpenJDK 21 no Linux via apt</h4></summary>
 
 Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
@@ -112,7 +112,7 @@ sudo update-alternatives --config javac
 ---
 
 <details>
-<summary><h3>🐧 Instalação manual do OpenJDK 21 no Linux</h3></summary>
+<summary><h4>🐧 Instalação manual do OpenJDK 21 no Linux</h4></summary>
 
 Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
@@ -171,7 +171,7 @@ sudo update-alternatives --config javac
 ---
 
 <details>
-<summary><h3>🐧 Instalação do OpenJDK 21 via SDKMAN</h3></summary>
+<summary><h4>🐧 Instalação do OpenJDK 21 via SDKMAN</h4></summary>
 
 O [SDKMAN!](https://sdkman.io/) é uma ferramenta que facilita a instalação e o gerenciamento de múltiplas versões do JDK no Linux e macOS. Com ele, você pode instalar, atualizar e alternar entre diferentes versões do Java facilmente.
 
