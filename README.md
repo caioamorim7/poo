@@ -65,7 +65,8 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 
 ---
 
-### 🐧 Instalação do OpenJDK 21 no Linux via apt
+<details>
+<summary><h3><b>🛠️ Instalação do OpenJDK 21 no Linux via apt</b></h3></summary>
 
 Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
@@ -106,9 +107,14 @@ sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
 
+</details>
+
 ---
 
-### 🐧 Instalação manual do OpenJDK 21 no Linux
+<details>
+<summary><h3>🐧 Instalação manual do OpenJDK 21 no Linux</h3></summary>
+
+Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
 
 1. **Baixar o OpenJDK**
 
@@ -159,9 +165,13 @@ sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
 
+</details>
+
+
 ---
 
-### 🐧 Instalação do OpenJDK 21 via SDKMAN
+<details>
+<summary><h3>🐧 Instalação do OpenJDK 21 via SDKMAN</h3></summary>
 
 O [SDKMAN!](https://sdkman.io/) é uma ferramenta que facilita a instalação e o gerenciamento de múltiplas versões do JDK no Linux e macOS. Com ele, você pode instalar, atualizar e alternar entre diferentes versões do Java facilmente.
 
@@ -218,6 +228,9 @@ sdk list java
 
 sdk current java
 ```
+
+</details>
+
 
 ---
 
