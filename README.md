@@ -18,6 +18,21 @@ Vamos começar! 🎉
 - [Projetos]()
 - [Referências]()
 
+
+<details>
+    <summary>Test</summary>
+
+    # Teste
+        * testando 
+    ## Teste 2
+        mais um teste
+    ```bash
+        sudo apt install
+    ```
+
+
+</details>
+
 ## 📌 Antes de começar
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
