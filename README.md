@@ -1,4 +1,4 @@
-# ☕ Programação Orientada a Objetos em Java
+## ☕ Programação Orientada a Objetos em Java
 
 Seja bem-vindo(a)! 🤗
 
@@ -10,7 +10,7 @@ Utilize este material como um recurso adicional para fortalecer seus conheciment
 
 Vamos começar! 🎉
 
-## 📚 Referências importantes
+### 📚 Referências importantes
 - [Plano de ensino](http://www.google.com) (oficial)
 - [Aulas]()
 - [Leituras]()
@@ -18,9 +18,7 @@ Vamos começar! 🎉
 - [Projetos]()
 - [Referências]()
 
-
-<details>
-<summary><h4>🏁 Antes de começar</h4></summary>
+### 🏁 Antes de começar
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
@@ -59,7 +57,8 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 * [Getting started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
 * [Intro to GitHub](https://education.github.com/experiences/intro_to_github)
 * [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
-</details>
+
+### Configuração do ambiente
 
 <details>
 <summary><h4>🛠️ Instalação do OpenJDK 21 no Linux via apt</h4></summary>
