@@ -58,7 +58,7 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 * [Intro to GitHub](https://education.github.com/experiences/intro_to_github)
 * [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
 
-### Configuração do ambiente
+### 🛠️ Configuração do ambiente
 
 <details>
 <summary><h4>🛠️ Instalação do OpenJDK 21 no Linux via apt</h4></summary>
