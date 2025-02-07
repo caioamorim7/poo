@@ -20,7 +20,7 @@ Vamos começar! 🎉
 
 
 <details>
-<summary><h1><b>🏁 Antes de começar</b></h1></summary>
+<summary><h3><b>🏁 Antes de começar</b></h3></summary>
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
