@@ -61,10 +61,6 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 * [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
 </details>
 
-
-
----
-
 <details>
 <summary><h4>🛠️ Instalação do OpenJDK 21 no Linux via apt</h4></summary>
 
@@ -108,8 +104,6 @@ sudo update-alternatives --config javac
 ```
 
 </details>
-
----
 
 <details>
 <summary><h4>🐧 Instalação manual do OpenJDK 21 no Linux</h4></summary>
@@ -167,8 +161,6 @@ sudo update-alternatives --config javac
 
 </details>
 
-
----
 
 <details>
 <summary><h4>🐧 Instalação do OpenJDK 21 via SDKMAN</h4></summary>
@@ -232,9 +224,9 @@ sdk current java
 </details>
 
 
----
+<details>
 
-### 🖥️ Instalar o VS Code via apt
+<summary><h4>📦 Instalar o VS Code via apt</h4></summary>
 
 1. **Atualizar pacotes**
 
@@ -275,9 +267,10 @@ cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
 x64
 ```
 
----
+</details>
 
-### 🖥️ Instalação manual do VS Code no Linux
+<details>
+<summary><h4>🖥️ Instalação manual do VS Code no Linux</h4></summary>
 
 1. **Baixar o pacote .deb**
 
@@ -302,6 +295,11 @@ code --version
 cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
 x64
 ```
+
+</details>
+
+
+
 
 > 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
 
