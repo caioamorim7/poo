@@ -20,20 +20,7 @@ Vamos começar! 🎉
 
 
 <details>
-    <summary>### Test</summary>
-
-    # Teste
-        * testando 
-    ## Teste 2
-        mais um teste
-    ```bash
-        sudo apt install
-    ```
-
-
-</details>
-
-## 📌 Antes de começar
+<summary><h1><b>🏁 Antes de começar</b></h1></summary>
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
@@ -72,6 +59,9 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 * [Getting started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
 * [Intro to GitHub](https://education.github.com/experiences/intro_to_github)
 * [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
+</details>
+
+
 
 ---
 
