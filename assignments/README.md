@@ -2,7 +2,7 @@
 
 ### Instruções gerais para entrega das atividades
 * Realizar fork do repositório da disciplina
-* Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome de último diretório por seu nome e sobrenome):
+* Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome de último diretório deve ser seu nome e sobrenome):
 ```
 mkdir poo/assignments/00-hello/fabricio-santana  
 ```
