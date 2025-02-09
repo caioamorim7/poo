@@ -9,7 +9,7 @@ mkdir poo/assignments/00-hello/fabricio-santana
 * Desenvolver programa Java dentro do seu diretório
 * Atender os resuitivos da especificação e os requisitos de implementação
 * Enviar um pull request
-* Observar se os testes do pull request foi bem sucedido nos testes
+* Observar se os testes do pull request rodaram com sucesso
 * Submeter link do pull request no [ambiente virtual](https://ambientevirtual.idp.edu.br/)
 * Cumprir prazo de entrega
 
