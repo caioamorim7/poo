@@ -4,7 +4,7 @@
 * Realizar fork do repositório da disciplina
 * Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome do último diretório deve ser seu nome e sobrenome):
 ```bash
-mkdir poo/assignments/submissions/00-hello/fabricio-santana/src  
+mkdir poo/assignments/00-hello/submissions/fabricio-santana/src  
 ```
 * Desenvolver programa Java dentro do seu diretório
 * Atender os resuitivos da especificação e os requisitos de implementação
