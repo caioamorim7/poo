@@ -16,6 +16,10 @@ jobs:
   comment-pr:
     runs-on: ubuntu-latest
     steps:
+        - name: Debug Available Secrets
+          run: |
+            echo "Listando variáveis de ambiente disponíveis:"
+            env | sort
         - name: Debug Secrets
           env:
             TOKEN: ${{ secrets.PAT_TOKEN }}
