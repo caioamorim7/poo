@@ -24,6 +24,23 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Comment on Pull Request
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+            const issue_number = context.payload.pull_request.number;
+            const repo = context.repo;
+            const author = context.payload.pull_request.user.login;
+
+            github.rest.issues.createComment({
+              owner: repo.owner,
+              repo: repo.repo,
+              issue_number: issue_number,
+              body: `Olá @${author}, obrigado por enviar seu Pull Request (PR)! 🚀\n\n\
+              Seu PR será analisado para atribuição da nota e merge no repositório principal. \n\n\`
+            });
+
     - name: Detect task
       id: detect-task
       run: |
