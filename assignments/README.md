@@ -26,7 +26,6 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
  java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
  ```
 
-
 ### Lista de atividades
 
 <details>
