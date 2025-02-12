@@ -16,6 +16,9 @@ jobs:
   comment-pr:
     runs-on: ubuntu-latest
     steps:
+        - name: Debug Secrets
+          run: echo "GitHub Token length: ${#secrets.PAT_TOKEN}"
+          
         - name: Comment on Pull Request
           uses: actions/github-script@v6
           with:
