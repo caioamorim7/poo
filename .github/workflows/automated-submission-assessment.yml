@@ -24,37 +24,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Comment on Pull Request
-      uses: actions/github-script@v6
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-            const isPR = context.payload.pull_request !== undefined;
-            const repo = context.repo;
-            let issue_number, author, message;
-
-            if (isPR) {
-                const pr = context.payload.pull_request;
-                issue_number = pr.number;
-                author = pr.user.login;
-                message = `Olá @${author}, obrigado por enviar seu Pull Request! 🚀\n\n
-                Seu PR será analisado antes do merge no repositório principal.\n\n
-                Se precisar de alguma correção, iremos notificá-lo nos comentários do PR. 😊`;
-            } else {
-                const commitSha = context.payload.after;
-                author = context.payload.pusher.name;
-                message = `Olá @${author}, obrigado pelo commit! ✅\n\n
-                O commit **${commitSha}** foi enviado para o repositório.\n\n
-                Se precisar de alguma revisão, favor abrir um Pull Request. 🚀`;
-            }
-
-            github.rest.issues.createComment({
-              owner: repo.owner,
-              repo: repo.repo,
-              issue_number: issue_number || context.payload.repository.id, 
-              body: message
-            });
-
     - name: Detect task
       id: detect-task
       run: |

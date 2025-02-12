@@ -1,0 +1,29 @@
+name: PR Comment
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - 2025.1
+    paths:
+      - 'assignments/**/submissions/**'
+
+jobs:
+  comment-pr:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Comment on Pull Request
+            uses: actions/github-script@v6
+            with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                    const issue_number = context.payload.pull_request.number;
+                    const repo = context.repo;
+                    const author = context.payload.pull_request.user.login;
+
+                    github.rest.issues.createComment({
+                        owner: repo.owner,
+                        repo: repo.repo,
+                        issue_number: issue_number,
+                        body: `Olá @${author}, sua tarefa será avaliada. Aguarde!`
+                    });
