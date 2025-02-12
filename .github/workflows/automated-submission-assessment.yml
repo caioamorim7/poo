@@ -37,8 +37,7 @@ jobs:
               owner: repo.owner,
               repo: repo.repo,
               issue_number: issue_number,
-              body: 'Olá @${author}, obrigado por enviar seu Pull Request (PR)! 🚀\n\n\
-              Seu PR será analisado para atribuição da nota e merge no repositório principal. \n\n\'
+              body: `Olá @${author}, sua tarefa será avaliada. Aguarde!`
             });
 
     - name: Detect task
