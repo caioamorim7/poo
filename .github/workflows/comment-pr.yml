@@ -19,7 +19,7 @@ jobs:
         - name: Comment on Pull Request
           uses: actions/github-script@v6
           with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
+            github-token: ${{ secrets.PAT_TOKEN }}
             script: |
                     const issue_number = context.payload.pull_request.number;
                     const repo = context.repo;
