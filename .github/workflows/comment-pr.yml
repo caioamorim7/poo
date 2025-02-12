@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Comment on Pull Request
-            uses: actions/github-script@v6
-            with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                script: |
+          uses: actions/github-script@v6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
                     const issue_number = context.payload.pull_request.number;
                     const repo = context.repo;
                     const author = context.payload.pull_request.user.login;
