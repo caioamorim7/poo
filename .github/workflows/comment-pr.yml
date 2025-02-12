@@ -17,7 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Debug Secrets
-          run: echo "GitHub Token length: ${#secrets.PAT_TOKEN}"
+          env:
+            TOKEN: ${{ secrets.PAT_TOKEN }}
+          run: |
+            if [[ -z "$TOKEN" ]]; then
+              echo "❌ O PAT_TOKEN não está sendo passado corretamente!"
+              exit 1
+            else
+              echo "✅ O PAT_TOKEN está disponível! Tamanho: ${#TOKEN}"
+            fi
           
         - name: Comment on Pull Request
           uses: actions/github-script@v6
