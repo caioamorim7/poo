@@ -50,6 +50,8 @@ Hello, World!
 <details>
 <summary><h4>Calculadora de índice de massa corporal (IMC)</h4></summary>
 
+Referência: **DEITEL, P.; DEITEL, H.** *Java: How to Program, Early Objects*. 11th ed. Pearson, 2017. ISBN 978-0-13-474335-6.
+
 #### Especificação
 
 1. O programa deve solicitar ao usuário peso (kg) e altura (m).
@@ -82,4 +84,76 @@ Classificação: Eutrófico
 5. O método *classificarIMC* deve receber um parâmetro, valor do *imc*, do tipo double e deve retornar um valor do tipo _String_ com a classificação do IMC
 6. Utilizar a classe [java.util.Scanner](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/Scanner.html) para ler entrada do console
 7. Utilizar a classe [System.out](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/System.html#out) para imprimir informações no console
+</details>
+
+
+<details>
+<summary>Cálculo da Área de um Polígono Regular</summary>
+
+Referência: [Tarefa aplicada no curso Object-Oriented Programming and Data Structures (CS 2110) da CornellUniversity](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
+
+##### Especificação
+
+1. O programa deve calcular a área de um polígono regular
+2. O programa deve solicitar ao usuário o número de lados (**n**) e o comprimento do lado (**s**) de um polígono regular, de acordo com o exemplo:
+
+```bash
+Digite o número de lados do polígono: 6
+Digite o comprimento do lado em metros: 5.0
+```
+3. A área (**A**) de um polígono regular é calculada utilizando a seguinte fórmula:
+\[
+A = \frac{1}{4} \times s^2 \times n \times \frac{1}{\tan(\pi / n)}
+\]
+onde:
+- **n** → número de lados do polígono;
+- **s** → comprimento de um lado;
+- **π** → constante matemática (π ≈ 3.14159), disponível na API do Java [java.lang.Math.PI](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#PI);
+- **tan(x)** → função tangente, disponível API do Java [java.lang.Math.tan(double a)](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#tan-double-).
+4. A unidade da área resultante será compatível com a unidade da entrada do comprimento do lado (**exemplo: se s for dado em metros, A será em metros quadrados**).
+5. O programa deve imprimir no console o resultado do cálculo da área do polígono, conforme exemplo:
+```bash
+A área do polígono é: 64.95 metros quadrados
+```
+#### Requisitos de Implementação
+1. O programa deve conter uma **classe chamada `CalculadoraPoligono`**.
+2. A classe deve possuir **três métodos públicos (public) e estáticos (static)**: `main`, `calcularArea` e `formatarSaida`.
+3. O **método `main`** deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`).
+4. O **método `calcularArea`** deve receber dois parâmetros, `n` e `s`, ambos do tipo `double`, e deve retornar um valor `double` representando a área do polígono.
+5. O **método `formatarSaida`** deve receber um valor `double` representando a área e retornar uma `String` formatada para exibição.
+6. Deve-se utilizar a **classe `java.util.Scanner`** para ler entradas do usuário.
+7. Deve-se utilizar a **classe `Math`** para cálculos matemáticos, incluindo a constante `Math.PI` e a função `Math.tan()`.
+
+</details>
+
+<details>
+<summary>Mediana de Três</summary>
+
+Referência: [Tarefa aplicada no curso Object-Oriented Programming and Data Structures (CS 2110) da Cornell University](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
+
+##### Especificação
+
+1. O programa deve determinar a **mediana** de três números inteiros informados pelo usuário.
+2. A mediana de um conjunto de números é o valor que estaria no meio caso os números fossem ordenados. No caso específico da **mediana de três**, é usada em sistemas tolerantes a falhas para decidir qual valor confiar quando há discordância entre sensores ou componentes.
+3. O programa deve solicitar ao usuário **três números inteiros**, de acordo com o exemplo:
+```bash
+Digite o primeiro número: 7
+Digite o segundo número: 2
+Digite o terceiro número: 5
+```
+4. O programa deve calcular a mediana utilizando uma **cadeia de declarações condicionais (`if`/`else`)**, possivelmente aninhadas, para determinar o valor central sem ordenar explicitamente os números.
+5. O programa deve imprimir no console a mediana dos três números informados, conforme exemplo:
+```bash
+A mediana dos números é: 5
+```
+
+#### Requisitos de Implementação
+1. O programa deve conter uma **classe chamada `MedianaDeTres`**.
+2. A classe deve possuir **três métodos públicos (public) e estáticos (static)**: `main`, `calcularMediana` e `formatarSaida`.
+3. O **método `main`** deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`).
+4. O **método `calcularMediana`** deve receber três parâmetros, `a`, `b` e `c`, todos do tipo `int`, e deve retornar um valor `int` representando a mediana.
+5. O **método `formatarSaida`** deve receber um valor `int` representando a mediana e retornar uma `String` formatada para exibição.
+6. Deve-se utilizar a **classe `java.util.Scanner`** para ler entradas do usuário.
+7. Deve-se utilizar **estruturas condicionais (`if`/`else`)**, sem ordenar explicitamente os números.
+
 </details>
