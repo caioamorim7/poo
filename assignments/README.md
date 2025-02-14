@@ -39,21 +39,21 @@ Hello, World!
 ```
 #### Requisitos de implementação
   
-1. O programa deve contar uma classe com nome `HelloWorld`
+1. O programa deve conter uma classe com nome `HelloWorld`
 2. A classe deve ter 1 método público (`public`) e estático (`static`): `main`
 3. O método `main` deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`)
 7. Utilizar a classe [System.out](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/System.html#out) para imprimir informações no console
 </details>
 
 <details>
-<summary><h4>Calculadora de índice de massa corporal (IMC)</h4></summary>
+<summary>Calculadora de índice de massa corporal (IMC)</summary>
 
 Referência: **DEITEL, P.; DEITEL, H.** *Java: How to Program, Early Objects*. 11th ed. Pearson, 2017. ISBN 978-0-13-474335-6.
 
 #### Especificação
 
 1. O programa deve solicitar ao usuário peso (kg) e altura (m).
-```
+```bash
 Digite seu peso em quilogramas: 80
 Digite sua altura em metros: 1.85
 ```
