@@ -2,7 +2,7 @@
 
 Referência: [Stronger Password](https://codeforces.com/problemset/problem/1997/A)
 
-##### Especificação
+#### Especificação
 
 1. O programa deve **fortalecer** a senha adicionando exatamente **uma letra minúscula** do alfabeto latino (`a-z`) em qualquer posição da string.
 2. O objetivo é **maximizar o tempo necessário para digitar a senha**. O tempo de digitação é calculado da seguinte forma:

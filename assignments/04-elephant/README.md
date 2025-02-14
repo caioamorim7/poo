@@ -2,7 +2,7 @@
 
 Referência: [Elephant](https://codeforces.com/problemset/problem/617/A)
 
-##### Especificação
+#### Especificação
 
 1. O programa deve calcular o **mínimo número de passos necessários** para um elefante viajar da posição **0** até a posição **x** na linha de coordenadas.
 2. O elefante pode dar **passos de tamanho 1, 2, 3, 4 ou 5** em cada movimento.

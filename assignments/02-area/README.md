@@ -2,7 +2,7 @@
 
 Referência: [Regular polygons](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
 
-##### Especificação
+#### Especificação
 
 1. O programa deve calcular a área de um polígono regular
 2. O programa deve solicitar ao usuário o número de lados (`n`) e o comprimento do lado (`s`) de um polígono regular, de acordo com o exemplo:
