@@ -45,8 +45,6 @@ Hello, World!
 7. Utilizar a classe [System.out](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/System.html#out) para imprimir informações no console
 </details>
 
-</details>
-
 <details>
 <summary><h4>Calculadora de índice de massa corporal (IMC)</h4></summary>
 
