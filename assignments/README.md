@@ -36,6 +36,7 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
 |   | [Sequência de Fibonnaci](./03-fibonacci) <br>
 |   | [Elefante visitando amigo](./04-elephant) <br>
 |   | [Senha forte](./05-password) |
+| 3 | |
 
 <details>
 <summary>Mediana de Três</summary>
