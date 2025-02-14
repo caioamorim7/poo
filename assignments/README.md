@@ -34,7 +34,7 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
 #### Especificação
 
 1. O programa deve imprimir no console a expressão "Hello, World!".
-```
+```bash
 Hello, World!
 ```
 #### Requisitos de implementação
@@ -155,7 +155,6 @@ A mediana dos números é: 5
 
 </details>
 
-
 <details>
 <summary>Número de Fibonacci</summary>
 
@@ -192,7 +191,6 @@ Digite um número inteiro não negativo: 7
 
 </details>
 
-```markdown
 <details>
 <summary>Elefante Visitando o Amigo</summary>
 
