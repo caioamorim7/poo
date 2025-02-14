@@ -1,6 +1,6 @@
 ### Elefante Visitando o Amigo
 
-Referência: [Problema do Elefante e os Passos Mínimos](https://codeforces.com/problemset/problem/617/A)
+Referência: [Elephant](https://codeforces.com/problemset/problem/617/A)
 
 ##### Especificação
 

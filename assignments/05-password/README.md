@@ -1,6 +1,6 @@
 ### Senha forte
 
-Referência: [Senha Forte](https://codeforces.com/problemset/problem/1997/A)
+Referência: [Stronger Password](https://codeforces.com/problemset/problem/1997/A)
 
 ##### Especificação
 
