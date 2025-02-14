@@ -84,7 +84,6 @@ Classificação: Eutrófico
 7. Utilizar a classe [System.out](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/System.html#out) para imprimir informações no console
 </details>
 
-
 <details>
 <summary>Cálculo da Área de um Polígono Regular</summary>
 
