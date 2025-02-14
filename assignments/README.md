@@ -29,7 +29,7 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
 ### Lista de atividades
 
 <details>
-<summary><h4>Hello, World!</h4></summary>
+<summary>Hello, World!</summary>
   
 #### Especificação
 
@@ -39,9 +39,9 @@ Hello, World!
 ```
 #### Requisitos de implementação
   
-1. O programa deve contar uma classe com nome *HelloWorld*
-2. A classe deve ter 1 método público (_public_) e estático (_static_): *main*
-3. O método *main* deve receber um parâmetro do tipo _String[]_ e não retornar nenhum valor (_void_)
+1. O programa deve contar uma classe com nome `HelloWorld`
+2. A classe deve ter 1 método público (`public`) e estático (`static`): `main`
+3. O método `main` deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`)
 7. Utilizar a classe [System.out](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/System.html#out) para imprimir informações no console
 </details>
 
