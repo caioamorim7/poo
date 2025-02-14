@@ -1,6 +1,8 @@
 ## Atividades práticas de programação em java
 
-### Instruções gerais para entrega das atividades
+<details>
+<summary>Instruções gerais para entrega das atividades</summary>
+
 * Realizar fork do repositório da disciplina
 * Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome do último diretório deve ser seu nome e sobrenome):
 ```bash
@@ -13,9 +15,12 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
 * Submeter link do pull request no [ambiente virtual](https://ambientevirtual.idp.edu.br/)
 * Cumprir prazo de entrega
 
-### Instruções gerais para testes locais das atividades
+</details>
 
- ada atividade é acompanhada de testes unitários. Para avaliar seu código antes de submetê-lo, execute os seguintes comandos a partir de seu diretório pessoal de cada atividade
+<details>
+<summary>Instruções para testes locais das atividades</summary>
+
+Cada atividade é acompanhada de testes unitários. Para avaliar seu código antes de submetê-lo, execute os seguintes comandos a partir de seu diretório pessoal de cada atividade
  ```bash
  mkdir -p lib
 
@@ -25,8 +30,10 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
  
  java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
  ```
+</details>
 
-### Lista de atividades
+<details> 
+<summary>Lista de atividades</summary>
 
 |Semana| Atividades |
 |---|---|
@@ -37,6 +44,8 @@ mkdir poo/assignments/00-hello/submissions/fabricio-santana/src
 |   | [Elefante visitando amigo](./04-elephant) <br>
 |   | [Senha forte](./05-password) |
 | 3 | |
+
+</details> 
 
 <details>
 <summary>Mediana de Três</summary>
