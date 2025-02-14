@@ -54,6 +54,7 @@ Finalizada as devidas introduções, vamos seguir para a instalação das ferram
 * Instalação dos seguintes plugins no VS Code
     * Java Platform Extension for Visual Code
     * Extension Pack for Java
+    * GitHub
     * GitHub Copilot
     * GitHub Copilot Chat
 
