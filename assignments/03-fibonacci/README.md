@@ -2,7 +2,7 @@
 
 Referência: [Sequência de Fibonnaci](https://en.wikipedia.org/wiki/Fibonacci_sequence), ver também [Implementações da sequência de Fibonnaci](https://en.wikibooks.org/wiki/Algorithm_Implementation/Mathematics/Fibonacci_Number_Program)
 
-##### Especificação
+#### Especificação
 
 1. O programa deve calcular o **n-ésimo número da sequência de Fibonacci**.
 2. A sequência de Fibonacci é definida da seguinte forma:
