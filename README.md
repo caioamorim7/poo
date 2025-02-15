@@ -12,11 +12,10 @@ Vamos começar! 🎉
 
 ### 📚 Referências importantes
 - [Plano de ensino](http://www.google.com) (oficial)
-- [Aulas]()
-- [Leituras]()
-- [Atividades]()
+- [Aulas](./lectures)
+- [Leituras](./readings)
+- [Atividades](./assignments)
 - [Projetos]()
-- [Referências]()
 
 ### 🏁 Antes de começar
 
@@ -302,8 +301,5 @@ x64
 ```
 
 </details>
-
-
-
 
 > 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
