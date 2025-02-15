@@ -32,6 +32,27 @@ Cada atividade é acompanhada de testes unitários. Para avaliar seu código ant
  ```
 </details>
 
+<details>
+<summary>Compilar, empacotar, decompilar e executar programa java na linha de comando</summary>
+
+Execute os comandos abaixo para compilar, empacotar, decompilar e executar programa java na linha de comando 
+
+```bash
+javac -cp "lib/*" -d bin src/*.java test/*.java
+
+java -cp bin/ HelloWorld
+
+java -jar lib/junit-platform-console-standalone-1.11.4.jar execute --class-path target --scan-class-path
+
+jar --create --file bin/HelloWorld.jar --main-class HelloWorld -C bin/ HelloWorld.class
+
+java -jar bin/HelloWorld.jar
+
+javap -cp bin/ -c HelloWorld
+```
+
+</details>
+
 <details> 
 <summary>Lista de atividades</summary>
 
