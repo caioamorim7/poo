@@ -1,7 +1,7 @@
 ### **Sequência de Collatz**  
 
 **Referência:** 
-1. [CS 2110: Object-Oriented Programming and Data Structures](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
+1. [CS 2110: Object-Oriented Programming and Data Structures @ Cornell University](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
 2. [Code Forces](https://codeforces.com/contest/1982/problem/B)
 
 ---

@@ -1,6 +1,6 @@
 ### Elefante Visitando o Amigo
 
-Referência: [Elephant](https://codeforces.com/problemset/problem/617/A)
+Referência: [Elephant @ CodeForces](https://codeforces.com/problemset/problem/617/A)
 
 #### Especificação
 

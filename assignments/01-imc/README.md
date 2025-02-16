@@ -1,6 +1,6 @@
 ### Calculadora de índice de massa corporal (IMC)
 
-Referência: **DEITEL, P.; DEITEL, H.** *Java: How to Program, Early Objects*. 11th ed. Pearson, 2017. ISBN 978-0-13-474335-6.
+**Referência:*** **DEITEL, P.; DEITEL, H.** *Java: How to Program, Early Objects*. 11th ed. Pearson, 2017. ISBN 978-0-13-474335-6.
 
 #### Especificação
 
