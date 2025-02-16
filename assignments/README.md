@@ -59,12 +59,16 @@ javap -cp bin/ -c HelloWorld
 |Semana| Atividades |
 |---|---|
 | 1 | [Hello, World!](./00-hello) |
-| 2 | [Calculadora de índice de massa corporal (IMC)](./01-imc) <br>
-|   | [Calculadora da Área de um Polígono Regular](./02-area) <br>
-|   | [Sequência de Fibonnaci](./03-fibonacci) <br>
-|   | [Elefante visitando amigo](./04-elephant) <br>
+| 2 | [Calculadora de índice de massa corporal (IMC)](./01-imc)|
+|   | [Calculadora da Área de um Polígono Regular](./02-area) |
+|   | [Sequência de Fibonnaci](./03-fibonacci) |
+|   | [Elefante visitando amigo](./04-elephant) |
 |   | [Senha forte](./05-password) |
-| 3 | |
+| 3 | [Calculadora de frequência cardíaca alvo](./06-heart) |
+|   | [Registro de saúde digital](./07-health) |
+|   |  teste |
+|   |   |
+|   |   |
 
 </details> 
 
