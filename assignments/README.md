@@ -67,8 +67,8 @@ javap -cp bin/ -c HelloWorld
 | 3 | [Calculadora de frequência cardíaca alvo](./06-heart) |
 |   | [Registro de saúde digital](./07-health) |
 |   | [Palíndromos](08-palindromes) |
-|   |   |
-|   |   |
+|   | [Conjectura de Collatz](./09-collatz) |
+|   | [Mediana de três](./10-median)  |
 
 </details> 
 
