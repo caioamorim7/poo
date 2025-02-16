@@ -1,4 +1,4 @@
-class FindPrime { 
+class CustomFindPrime { 
     public static void main(String[] args) { 
         int num; 
         boolean isPrime; 

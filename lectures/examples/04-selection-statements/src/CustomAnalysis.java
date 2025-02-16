@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Analysis {
+public class CustomAnalysis {
     
     public static void main(String[] args) throws Exception {
         

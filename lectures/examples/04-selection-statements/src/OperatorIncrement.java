@@ -1,4 +1,4 @@
-public class Increment {
+public class OperatorIncrement {
     public static void main(String[] args) throws Exception {
         int c = 5;
         System.out.printf("c before postincrement: %d%n", c);
