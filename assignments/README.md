@@ -66,40 +66,9 @@ javap -cp bin/ -c HelloWorld
 |   | [Senha forte](./05-password) |
 | 3 | [Calculadora de frequência cardíaca alvo](./06-heart) |
 |   | [Registro de saúde digital](./07-health) |
-|   |  teste |
+|   | [Palíndromos](08-palindromes) |
 |   |   |
 |   |   |
 
 </details> 
 
-<details>
-<summary>Mediana de Três</summary>
-
-Referência: [Tarefa aplicada no curso Object-Oriented Programming and Data Structures (CS 2110) da Cornell University](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
-
-##### Especificação
-
-1. O programa deve determinar a **mediana** de três números inteiros informados pelo usuário.
-2. A mediana de um conjunto de números é o valor que estaria no meio caso os números fossem ordenados. No caso específico da **mediana de três**, é usada em sistemas tolerantes a falhas para decidir qual valor confiar quando há discordância entre sensores ou componentes.
-3. O programa deve solicitar ao usuário **três números inteiros**, de acordo com o exemplo:
-```bash
-Digite o primeiro número: 7
-Digite o segundo número: 2
-Digite o terceiro número: 5
-```
-4. O programa deve calcular a mediana utilizando uma **cadeia de declarações condicionais (`if`/`else`)**, possivelmente aninhadas, para determinar o valor central sem ordenar explicitamente os números.
-5. O programa deve imprimir no console a mediana dos três números informados, conforme exemplo:
-```bash
-A mediana dos números é: 5
-```
-
-#### Requisitos de Implementação
-1. O programa deve conter uma **classe chamada `MedianaDeTres`**.
-2. A classe deve possuir **três métodos públicos (public) e estáticos (static)**: `main`, `calcularMediana` e `formatarSaida`.
-3. O **método `main`** deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`).
-4. O **método `calcularMediana`** deve receber três parâmetros, `a`, `b` e `c`, todos do tipo `int`, e deve retornar um valor `int` representando a mediana.
-5. O **método `formatarSaida`** deve receber um valor `int` representando a mediana e retornar uma `String` formatada para exibição.
-6. Deve-se utilizar a **classe `java.util.Scanner`** para ler entradas do usuário.
-7. Deve-se utilizar **estruturas condicionais (`if`/`else`)**, sem ordenar explicitamente os números.
-
-</details>

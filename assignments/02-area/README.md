@@ -1,6 +1,6 @@
 ### Cálculo da Área de um Polígono Regular
 
-Referência: [Regular polygons](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
+Referência: **Referência:** [CS 2110: Object-Oriented Programming and Data Structures](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
 
 #### Especificação
 
