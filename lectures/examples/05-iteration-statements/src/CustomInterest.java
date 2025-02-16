@@ -1,4 +1,4 @@
-public class Interest {
+public class CustomInterest {
     public static void main(String[] args) {
         double amount;
         double principal = 1000.0;

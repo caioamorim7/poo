@@ -1,11 +1,9 @@
-
-
-public class Student {
+public class CustomStudent {
 
     private String name;
     private double average;
 
-    public Student(String name, double average) {
+    public CustomStudent(String name, double average) {
         this.name = name;
         if (average > 0.0) {
             if (average <= 100.0) {

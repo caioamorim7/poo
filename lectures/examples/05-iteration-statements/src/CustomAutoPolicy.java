@@ -1,9 +1,9 @@
-public class AutoPolicy {
+public class CustomAutoPolicy {
     private int accountNumber;
     private String makeAndModel;
     private String state;
 
-    public AutoPolicy(int accountNumber, String makeAndModel, String state) {
+    public CustomAutoPolicy(int accountNumber, String makeAndModel, String state) {
         this.accountNumber = accountNumber;
         this.makeAndModel = makeAndModel;
         this.state = state;

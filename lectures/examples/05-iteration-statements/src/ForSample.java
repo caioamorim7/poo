@@ -1,4 +1,4 @@
-class Sample { 
+class ForSample { 
     public static void main(String[] args) { 
         int a, b; 
         b = 4; 

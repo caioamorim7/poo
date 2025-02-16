@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class LetterGrades {
+public class CustomLetterGrades {
     public static void main(String[] args) {
         int total = 0;
         int gradeCounter = 0;

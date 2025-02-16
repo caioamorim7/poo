@@ -1,4 +1,4 @@
-class Ternary { 
+class IfTernary { 
     public static void main(String[] args) { 
         int i, k; 
         i = 10; 

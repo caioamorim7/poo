@@ -1,4 +1,4 @@
-public class BreakTest {
+public class JumpBreakTest {
     public static void main(String[] args) {
         int count;
 

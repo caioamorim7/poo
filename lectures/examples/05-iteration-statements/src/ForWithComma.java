@@ -1,4 +1,4 @@
-class Comma { 
+class ForWithComma { 
     public static void main(String[] args) { 
         int a, b; 
         for(a=1, b=4; a<b; a++, b--) { 
