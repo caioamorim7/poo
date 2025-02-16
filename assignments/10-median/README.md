@@ -2,6 +2,8 @@
 
 Referência: [CS 2110: Object-Oriented Programming and Data Structures @ Cornell University](https://www.cs.cornell.edu/courses/cs2110/2025sp/assignments/a1_handout.html)
 
+---
+
 #### Descrição
 
 A **mediana** de um conjunto de números é o valor que estaria no meio se o conjunto estivesse ordenado. Um caso especial de mediana é a **"Mediana de Três"**, que é amplamente utilizada em sistemas **tolerantes a falhas** para **tomar decisões baseadas em múltiplas entradas** quando os componentes de um sistema não concordam entre si.  
@@ -11,6 +13,8 @@ Esse procedimento é **comumente executado em software de voo da SpaceX** para d
 O objetivo deste programa é **determinar a mediana de três números inteiros distintos ou duplicados, sem a necessidade de ordenação explícita da lista**.  
 
 O algoritmo deve ser implementado utilizando **cadeia de estruturas condicionais (`if/else`)**, possivelmente aninhadas, para determinar o valor mediano.  
+
+---
 
 #### Especificação
 
@@ -27,6 +31,7 @@ Digite o terceiro número: 5
 ```bash
 A mediana dos números é: 5
 ```
+---
 
 #### Requisitos de Implementação
 
