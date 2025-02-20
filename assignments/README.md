@@ -42,7 +42,7 @@ git push
 ```
 * Enviar um pull request
 ```bash
-gh pr create --base fabriciosantana/poo:2025.1 --head seu-usuario:2025.1 --title "Minha tarefa XXX" --body "Descrição das alterações realizadas."
+gh pr create --base 2025.1 --head seu-usuario:2025.1 --title "Minha tarefa XXX" --body "Descrição das alterações realizadas."
 ```
 * Observar se os testes do pull request rodaram com sucesso
 * Submeter link do pull request no [ambiente virtual](https://ambientevirtual.idp.edu.br/)
