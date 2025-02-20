@@ -50,13 +50,13 @@ Finalizada as devidas introduções, vamos seguir para a instalação das ferram
     * (opcional) Instalação do OpenJDK 21 no Linux via SDKMAN!
 * Instalação do VS Code no Linux via apt
     * (opcional) Instalação manual do VS Code no Linux
+* Instalação do Git
 * Instalação do Github Cli
 * Instalação dos seguintes plugins no VS Code
     * Java Platform Extension for Visual Code
     * Extension Pack for Java
+    * Git
     * GitHub
-    * GitHub Copilot
-    * GitHub Copilot Chat
 
 Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base de conhecimento com os seguintes recursos:
 * [Introduction to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/)
@@ -302,7 +302,23 @@ x64
 ```
 </details>
 
+<details>
+
+<summary><h4>Instalação do Git</h4></summary>
+
+1. Instalar o Git
+```bash
+sudo apt install git -y
+```
+
+2. Verificar instalação do git
+```bash
+git --version
+```
+
 </details>
+
+<details>
 
 <summary><h4>Instalação do Github Cli</h4></summary>
 
@@ -311,12 +327,17 @@ x64
 sudo apt install gh
 ```
 
-2. Logar no Github
+2. Verificar instalação do Github Cli
+```bash
+gh --version
+```
+
+3. Logar no Github
 ```bash
 gh auth login
 ```
 
-<details>
+</details>
 
 
 > 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
