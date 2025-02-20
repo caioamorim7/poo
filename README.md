@@ -83,12 +83,20 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y openjdk-21-jdk
 ```
 
-3. **Verificar a instalação**
+3. **Configurar variáveis de ambiente**
+
+```bash
+echo "export JAVA_HOME=/opt/jdk-21.0.2" >> ~/.bashrc
+echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
+4. **Verificar a instalação**
 
 ```bash
 java -version
 ```
-4. **Confirmar a instalação**
+5. **Confirmar a instalação**
 
 ```bash
 openjdk version "21.0.2" 2024-01-16
