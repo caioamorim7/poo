@@ -141,7 +141,7 @@ sudo mv jdk-21.0.2 /opt/
 3. **Configurar variáveis de ambiente**
 
 ```bash
-echo 'export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64' >> ~/.bashrc
+echo 'export JAVA_HOME=/opt/jdk-21.0.2' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
