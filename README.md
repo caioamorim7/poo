@@ -304,7 +304,7 @@ x64
 
 <details>
 
-<summary><h4>Instalação do Git</h4></summary>
+<summary><h4>🐙 Instalação do Git</h4></summary>
 
 1. Instalar o Git
 ```bash
@@ -320,7 +320,7 @@ git --version
 
 <details>
 
-<summary><h4>Instalação do Github Cli</h4></summary>
+<summary><h4>🔧 Instalação do Github Cli</h4></summary>
 
 1. Instalar o Github Cli
 ```bash
