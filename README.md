@@ -45,11 +45,12 @@ Em síntese, para aproveitar todo o conteúdo e praticar muito você precisa de 
 * Instalar uma IDE, recomenda-se o VS Code com os plugins para Java e Git
 
 Finalizada as devidas introduções, vamos seguir para a instalação das ferramentas com os passos abaixo:
-* [Instalação do OpenJDK 21 no Linux via apt](#-instalação-do-openjdk-21-no-linux-via-apt)
-    * (opcional) [Instalação manual do OpenJDK 21 no Linux](#-instalação-manual-do-openjdk-21-no-linux)
-    * (opcional) [Instalação do OpenJDK 21 no Linux via SDKMAN!](#-instalação-do-openjdk-21-via-sdkman)
-* [Instalação do VS Code no Linux via apt](#️-instalar-o-vs-code-via-apt)
-    * (opcional) [Instalação manual do VS Code no Linux](#️-instalação-manual-do-vs-code-no-linux)
+* Instalação do OpenJDK 21 no Linux via apt
+    * (opcional) Instalação manual do OpenJDK 21 no Linux
+    * (opcional) Instalação do OpenJDK 21 no Linux via SDKMAN!
+* Instalação do VS Code no Linux via apt
+    * (opcional) Instalação manual do VS Code no Linux
+* Instalação do Github Cli
 * Instalação dos seguintes plugins no VS Code
     * Java Platform Extension for Visual Code
     * Extension Pack for Java
@@ -299,7 +300,23 @@ code --version
 cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
 x64
 ```
+</details>
 
 </details>
+
+<summary><h4>Instalação do Github Cli</h4></summary>
+
+1. Instalar o Github Cli
+```bash
+sudo apt install gh
+```
+
+2. Logar no Github
+```bash
+gh auth login
+```
+
+<details>
+
 
 > 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
