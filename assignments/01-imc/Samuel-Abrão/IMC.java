@@ -7,7 +7,7 @@ public class IMC {
         this.altura = altura;
     }
 
-    public double calcularIMC() { // Agora sem parâmetros
+    public double calcularIMC() { 
         return peso / (altura * altura);
     }
 
