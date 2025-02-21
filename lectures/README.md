@@ -3,6 +3,7 @@
 Aqui você encontrará referência para os slides utilizados ao longo do curso.
 
 - [Aula 1 - Introdução e contextualização](https://1drv.ms/p/s!Avnn2LcOmn0Y3ltEAM4VkDlZVnQZ?e=a8rE6j)
+- [Aula 2 - Introdução à linguagem java - elementos, tipos primitivos, jshell](https://1drv.ms/p/s!Avnn2LcOmn0Y3xZnW3vJA-cF9oB2?e=5xlCcv)
 
 ## Referências
 

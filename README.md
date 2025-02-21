@@ -50,13 +50,13 @@ Finalizada as devidas introduções, vamos seguir para a instalação das ferram
     * (opcional) Instalação do OpenJDK 21 no Linux via SDKMAN!
 * Instalação do VS Code no Linux via apt
     * (opcional) Instalação manual do VS Code no Linux
+* Instalação do Git
 * Instalação do Github Cli
 * Instalação dos seguintes plugins no VS Code
     * Java Platform Extension for Visual Code
     * Extension Pack for Java
+    * Git
     * GitHub
-    * GitHub Copilot
-    * GitHub Copilot Chat
 
 Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base de conhecimento com os seguintes recursos:
 * [Introduction to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/)
@@ -83,12 +83,20 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y openjdk-21-jdk
 ```
 
-3. **Verificar a instalação**
+3. **Configurar variáveis de ambiente**
+
+```bash
+echo 'export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+4. **Verificar a instalação**
 
 ```bash
 java -version
 ```
-4. **Confirmar a instalação**
+5. **Confirmar a instalação**
 
 ```bash
 openjdk version "21.0.2" 2024-01-16
@@ -133,8 +141,8 @@ sudo mv jdk-21.0.2 /opt/
 3. **Configurar variáveis de ambiente**
 
 ```bash
-echo "export JAVA_HOME=/opt/jdk-21.0.2" >> ~/.bashrc
-echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/.bashrc
+echo 'export JAVA_HOME=/opt/jdk-21.0.2' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -302,21 +310,42 @@ x64
 ```
 </details>
 
+<details>
+
+<summary><h4>🐙 Instalação do Git</h4></summary>
+
+1. Instalar o Git
+```bash
+sudo apt install git -y
+```
+
+2. Verificar instalação do git
+```bash
+git --version
+```
+
 </details>
 
-<summary><h4>Instalação do Github Cli</h4></summary>
+<details>
+
+<summary><h4>🔧 Instalação do Github Cli</h4></summary>
 
 1. Instalar o Github Cli
 ```bash
 sudo apt install gh
 ```
 
-2. Logar no Github
+2. Verificar instalação do Github Cli
+```bash
+gh --version
+```
+
+3. Logar no Github
 ```bash
 gh auth login
 ```
 
-<details>
+</details>
 
 
 > 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
