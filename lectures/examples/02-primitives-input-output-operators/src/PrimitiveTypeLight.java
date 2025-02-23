@@ -1,4 +1,4 @@
-class Light {
+class PrimitiveTypeLight {
 
     public static void main(String[] args) { 
         int lightspeed; 
