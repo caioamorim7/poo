@@ -1,4 +1,4 @@
-class Modulus { 
+class OperatorArithmeticModulus { 
     public static void main(String[] args) { 
         int x = 42; 
         double y = 42.25; 

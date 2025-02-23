@@ -1,4 +1,4 @@
-class VarDemo { 
+class PrimitveTypeVarDemo { 
     public static void main(String[] args) { 
 
         var avg = 10.0; 

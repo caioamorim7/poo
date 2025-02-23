@@ -1,4 +1,4 @@
-class BoolTest { 
+class PrimitiveTypeBoolTest { 
 	public static void main(String[] args) {
 		boolean b; 
 		b = false; 
