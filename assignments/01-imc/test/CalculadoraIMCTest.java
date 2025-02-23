@@ -20,9 +20,9 @@ public class CalculadoraIMCTest {
         assertEquals("Abaixo do peso", CalculadoraIMC.classificarIMC(16.33));
         assertEquals("Eutrófico", CalculadoraIMC.classificarIMC(22.86));
         assertEquals("Sobrepeso", CalculadoraIMC.classificarIMC(26.12));
-        assertEquals("Obesidade Grau I", CalculadoraIMC.classificarIMC(31.02));
-        assertEquals("Obesidade Grau II", CalculadoraIMC.classificarIMC(35.92));
-        assertEquals("Obesidade Grau III", CalculadoraIMC.classificarIMC(42.45));
+        assertEquals("Obesidade grau I", CalculadoraIMC.classificarIMC(31.02));
+        assertEquals("Obesidade grau II", CalculadoraIMC.classificarIMC(35.92));
+        assertEquals("Obesidade grau III", CalculadoraIMC.classificarIMC(42.45));
     }
 
     @Test
