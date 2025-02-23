@@ -1,22 +1,31 @@
-public class StringReverser {
-    public String reverse(String input) {
+import java.util.Scanner;
 
-        String res = new String();
-  
-        for (int i = s.length() - 1; i >= 0; i--) {
-            res += s.charAt(i);
-        }
-        return res.toString();
- 
-    }
+public class StringReverser {
 
     public static void main(String[] args) {
         
-        Scanner scanner = new Scanner(System.in);
+        try(Scanner scanner = new Scanner(System.in)){
 
-        String input = scanner.nextLine();
+            System.out.print("Digite uma string: ");
+            String input = scanner.nextLine();
 
-        System.out.println(reverser.reverse(input));
+            System.out.printf("String invertida: %s\n", reverse(input));
+       }
     }
 
+    public String reverse(String inputString) {
+
+        if (inputString == "") {
+            throw new IllegalArgumentException("A string não pode ser nula.");
+        }
+
+        String reversedString = new String();
+  
+        for (int i = inputString.length(); i > 0; i--) {
+            reversedString += inputString.charAt(i);
+        }
+        
+        return reversedString;
+ 
+    }
 }
