@@ -9,7 +9,7 @@ gh repo fork fabriciosantana/poo
 ```
 * Clonar seu repositório que você acabou de clonar
 ```bash
-git clone https://github.com/<seu-usuario>/poo.git
+git clone https://github.com/seu-usuario/poo.git
 ```
 * Adicionar o repositório original como remoto
 ```bash
