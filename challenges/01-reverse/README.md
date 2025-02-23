@@ -2,7 +2,7 @@
 
 Referência: [String](https://en.wikipedia.org/wiki/String_(computer_science))
 
-Neste desafio, você deve implementar um programa que recebe uma string como entrada e retorna a string invertida.
+Neste desafio, você deve encontrar e corrigir bugs no programa que recebe uma string como entrada e retorna a string invertida.
 
 ---
 
@@ -33,7 +33,6 @@ Neste desafio, você deve implementar um programa que recebe uma string como ent
     Digite uma string: Hello, World!
     String invertida: !dlroW ,olleH
     ```
-
 ---
 
 #### Requisitos de Implementação
