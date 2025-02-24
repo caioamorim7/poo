@@ -3,6 +3,9 @@
 Aqui você encontrará referência para os slides utilizados ao longo do curso.
 
 - [Aula 1 - Introdução e contextualização](https://1drv.ms/p/s!Avnn2LcOmn0Y3ltEAM4VkDlZVnQZ?e=a8rE6j)
+- [Aula 2 - Plataforma e Linguagem java - elementos, tipos primitivos, jshell](https://1drv.ms/p/s!Avnn2LcOmn0Y3xZnW3vJA-cF9oB2?e=5xlCcv)
+- [Aula 3 - Programação em Java - custom types, entrada e saída, operadores e controle de fluxo](https://1drv.ms/p/s!Avnn2LcOmn0Y3zPoINGBudmIix2X?e=H5Orac)
+- [Aula 4 - Programação Orientada a Objetos em Java - classes, objetos e métodos](https://1drv.ms/p/s!Avnn2LcOmn0Y3z07tfmzQYKuLXJK?e=WDMEbX)
 
 ## Referências
 
