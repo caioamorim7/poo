@@ -10,14 +10,14 @@ public class CalculadoraPoligono{
         System.out.print("Digite o comprimento dos lados em metros: ");
         double s = scanner.nextDouble();
 
-        double area = caluclarArea(n, s);
+        double area = calcularArea(n, s);
         String resultadoFormatado = formatarSaida(area);
 
         System.out.println(resultadoFormatado);
         scanner.close();
     }
 
-    public static double caluclarArea(double n, double s){
+    public static double calcularArea(double n, double s){
         return (1.0 / 4) * Math.pow(s, 2) * n * (1 / Math.tan(Math.PI / n));
     }
 
