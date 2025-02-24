@@ -1,4 +1,4 @@
-class DynInit { 
+class OperatorAssignmentDynInit { 
     public static void main(String[] args) { 
         double a = 3.0, b = 4.0; 
         // c is dynamically initialized 

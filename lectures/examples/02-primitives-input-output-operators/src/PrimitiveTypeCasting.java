@@ -1,4 +1,4 @@
-class Conversion { 
+class PrimitiveTypeCasting { 
     public static void main(String[] args) { 
             byte b; 
             int i = 257; 

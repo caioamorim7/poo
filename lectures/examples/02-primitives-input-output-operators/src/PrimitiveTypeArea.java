@@ -1,4 +1,4 @@
-class Area { 
+class PrimitiveTypeArea { 
 
     public static void main(String[] args) { 
 

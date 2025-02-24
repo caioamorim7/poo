@@ -1,4 +1,4 @@
-class Promote { 
+class PrimitiveTypeCastingPromote { 
     public static void main(String[] args) { 
             byte b = 42; 
             char c = 'a'; 

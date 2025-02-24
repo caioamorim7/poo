@@ -1,6 +1,6 @@
 ### Número de Fibonacci
 
-Referência: [Sequência de Fibonnaci](https://en.wikipedia.org/wiki/Fibonacci_sequence), ver também [Implementações da sequência de Fibonnaci](https://en.wikibooks.org/wiki/Algorithm_Implementation/Mathematics/Fibonacci_Number_Program)
+Referência: [Sequência de Fibonnaci](https://en.wikipedia.org/wiki/Fibonacci_sequence), ver também [Implementações da sequência de Fibonnaci](https://en.wikibooks.org/wiki/Algorithm_Implementation/Mathematics/Fibonacci_Number_Program). [Code Forces](https://codeforces.com/problemset/problem/193/E)
 
 #### Especificação
 

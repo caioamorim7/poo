@@ -1,4 +1,4 @@
-class CharDemo { 
+class PrimitiveTypeCharDemo { 
 
     public static void main(String[] args) { 
         char ch1, ch2; 
