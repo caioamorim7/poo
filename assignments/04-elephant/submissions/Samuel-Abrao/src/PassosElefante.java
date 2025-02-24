@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ElefantePassos{
+public class PassosElefante{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         
