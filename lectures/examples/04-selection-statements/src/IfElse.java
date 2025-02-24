@@ -21,3 +21,7 @@ class IfElse {
     } 
 
 } 
+
+//A cada mês passado ele menciona o mês e diz qual estação que ele pode estar
+//Ao final ele menciona que "Bogus Month" que seria um m~es inexistente
+//Último comando ele só imprimi a frase que abril é "tal" estação
