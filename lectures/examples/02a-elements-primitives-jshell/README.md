@@ -1,0 +1,3 @@
+### Jshell
+
+O [JShell](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jshell.html) é uma ferramenta interativa introduzida no Java 9 que permite executar comandos e testar código Java de forma rápida, sem a necessidade de compilar ou criar um arquivo .java. Ele é conhecido como um REPL (Read-Eval-Print Loop), ou seja, um ambiente interativo onde você pode ler, executar (evaluate) e imprimir resultados de código Java em tempo real.
