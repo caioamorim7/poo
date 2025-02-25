@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class FortalecerSenha {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Digite a senha: ");
     String senha = new String();
     do {
+      System.out.println("Digite a senha: ");
       senha = scanner.nextLine();
     } while (senha.length() > 10 || senha.length() < 0 || !senha.matches("[a-z]+"));
     scanner.close();
