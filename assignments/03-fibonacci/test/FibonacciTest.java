@@ -67,7 +67,7 @@ public class FibonacciTest {
 
     @Test
     public void testFormatacaoSaida() {
-        String saida = Fibonacci.formatarSaida(7, 13);
+        String saida = Fibonacci.formatarSaida(13, 7);
         assertEquals("O 7º número de Fibonacci é: 13", saida, "A formatação da saída está incorreta.");
     }
 }

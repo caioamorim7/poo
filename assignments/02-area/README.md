@@ -29,7 +29,7 @@ A área do polígono é: 64.95 metros quadrados
 1. O programa deve conter uma **classe chamada `CalculadoraPoligono`**.
 2. A classe deve possuir **três métodos públicos (public) e estáticos (static)**: `main`, `calcularArea` e `formatarSaida`.
 3. O **método `main`** deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`).
-4. O **método `calcularArea`** deve receber dois parâmetros, `n` e `s`, ambos do tipo `double`, e deve retornar um valor `double` representando a área do polígono.
+4. O **método `calcularArea`** deve receber dois parâmetros, `n` e `s`, sendo `n` do tipo `int` e `s` do tipo `double`, e deve retornar um valor `double` representando a área do polígono.
 5. O **método `formatarSaida`** deve receber um valor `double` representando a área e retornar uma `String` formatada para exibição.
 6. Deve-se utilizar a **classe `java.util.Scanner`** para ler entradas do usuário.
 7. Deve-se utilizar a **classe `Math`** para cálculos matemáticos, incluindo a constante `Math.PI` e a função `Math.tan()`.
