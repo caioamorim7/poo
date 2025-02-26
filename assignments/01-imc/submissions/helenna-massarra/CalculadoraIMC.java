@@ -9,7 +9,6 @@ public class CalculadoraIMC {
 
         System.out.print("Digite sua altura em metros: ");
         double altura = scanner.nextDouble();
-
         double imc = calcularIMC(peso, altura);
         String classificacao = classificarIMC(imc);
 
