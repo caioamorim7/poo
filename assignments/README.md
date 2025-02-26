@@ -27,6 +27,10 @@ git merge upstream/2025.1
 ```
 
 ```bash
+gh repo set-default fabriciosantana/poo
+```
+
+```bash
 gh repo sync
 ```
 * Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome do último diretório deve ser seu nome e sobrenome):

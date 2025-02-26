@@ -1,0 +1,30 @@
+int a = 10 // int literal
+System.out.println(a)
+long a = 10L // long literal
+System.out.println(a)
+int a = 010 // base octal
+System.out.println(a)
+int a = 0x10 // base hexadecimal
+System.out.println(a)
+int a = 0b10 // base binária
+System.out.println(a)
+
+double a = 10
+System.out.println(a)
+double a = 10D
+System.out.println(a)
+float a = 10F
+System.out.println(a)
+
+boolean a = true
+System.out.println(a)
+boolean a = false
+System.out.println(a)
+
+char a = 'a';
+System.out.println(a)
+char a = '\141'; // código unicode 'a' em octal
+System.out.println(a)
+char a = '\u0061'; // código unicode do 'a' em hexadecimal
+System.out.println(a)
+
