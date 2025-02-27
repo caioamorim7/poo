@@ -9,7 +9,7 @@ gh repo fork fabriciosantana/poo
 ```
 * Clonar seu repositório que você acabou de clonar
 ```bash
-git clone https://github.com/<seu-usuario>/poo.git
+git clone https://github.com/seu-usuario/poo.git
 ```
 * Adicionar o repositório original como remoto
 ```bash
@@ -24,6 +24,10 @@ git remote -v
 git fetch upstream
 git checkout 2025.1
 git merge upstream/2025.1
+```
+
+```bash
+gh repo set-default fabriciosantana/poo
 ```
 
 ```bash
@@ -56,11 +60,17 @@ gh pr create --base 2025.1 --head seu-usuario:2025.1 --title "Minha tarefa XXX" 
 Cada atividade é acompanhada de testes unitários. Para avaliar seu código antes de submetê-lo, execute os seguintes comandos a partir de seu diretório pessoal de cada atividade
  ```bash
  mkdir -p lib
+ ```
 
+```bash
  curl -L -o lib/junit-platform-console-standalone-1.11.4.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+```
 
+```bash
  javac -cp "lib/*" -d bin src/*.java ../../test/*.java
- 
+ ```
+
+ ```bash
  java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
  ```
 </details>
@@ -72,15 +82,25 @@ Execute os comandos abaixo para compilar, empacotar, decompilar e executar progr
 
 ```bash
 javac -cp "lib/*" -d bin src/*.java test/*.java
+```
 
+```bash
 java -cp bin/ HelloWorld
+```
 
+```bash
 java -jar lib/junit-platform-console-standalone-1.11.4.jar execute --class-path target --scan-class-path
+```
 
+```bash
 jar --create --file bin/HelloWorld.jar --main-class HelloWorld -C bin/ HelloWorld.class
+```
 
+```bash
 java -jar bin/HelloWorld.jar
+```
 
+```bash
 javap -cp bin/ -c HelloWorld
 ```
 

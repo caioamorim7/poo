@@ -11,10 +11,11 @@ Utilize este material como um recurso adicional para fortalecer seus conheciment
 Vamos começar! 🎉
 
 ### 📚 Referências importantes
-- [Plano de ensino](http://www.google.com](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
+- [Plano de ensino](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
 - [Aulas](./lectures)
 - [Leituras](./readings)
 - [Atividades](./assignments)
+- [Desafios](./challenges)
 - [Projetos](./projects)
 
 ### 🏁 Antes de começar
