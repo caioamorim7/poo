@@ -1,63 +1,83 @@
 #!/bin/bash
 
-# Perguntar qual tarefa deseja testar
-read -p "Digite o diretório da tarefa (pressione Enter para testar todas as tarefas): " task_dir
-
-# Perguntar para qual aluno deseja executar os testes
-read -p "Digite o diretório do aluno (pressione Enter para testar todos os alunos): " student_dir
-
-# Configurar diretórios base
+# Diretório base para as tarefas
 BASE_DIR="assignments"
-JUNIT_JAR="lib/junit-platform-console-standalone-1.11.4.jar"
 
-# Baixar JUnit caso não esteja presente
-if [ ! -f "$JUNIT_JAR" ]; then
-  echo "Baixando JUnit..."
-  mkdir -p lib
-  curl -L -o "$JUNIT_JAR" https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
-fi
+# Solicita a tarefa a ser testada uma única vez
+read -p "Digite o diretório da tarefa (ou pressione Enter para testar todas): " TASK_DIR
 
-# Identificar as tarefas a serem testadas
-if [ -z "$task_dir" ]; then
-  tasks=($(ls -d $BASE_DIR/*/))
+# Se não for informado, roda todas as tarefas disponíveis
+if [ -z "$TASK_DIR" ]; then
+    echo "🔎 Nenhuma tarefa específica informada. Buscando todas as tarefas disponíveis..."
+    TASKS=($(ls -d $BASE_DIR/*/ 2>/dev/null))
 else
-  tasks=("$BASE_DIR/$task_dir/")
+    TASKS=("$BASE_DIR/$TASK_DIR/")
 fi
 
-# Iterar sobre as tarefas
-for task in "${tasks[@]}"; do
-  task_name=$(basename "$task")
-  echo "Executando testes para a tarefa: $task_name"
+# Solicita o aluno a ser testado uma única vez
+read -p "Digite o diretório do aluno (ou pressione Enter para testar todos): " STUDENT_DIR
 
-  # Identificar os alunos a serem testados
-  if [ -z "$student_dir" ]; then
-    students=($(ls -d "$task/submissions/"*/))
-  else
-    students=("$task/submissions/$student_dir/")
-  fi
+# Itera sobre todas as tarefas selecionadas
+for TASK in "${TASKS[@]}"; do
+    TASK_NAME=$(basename "$TASK")
 
-  # Iterar sobre os alunos
-  for student in "${students[@]}"; do
-    student_name=$(basename "$student")
-    echo "Executando testes para o aluno: $student_name"
-
-    # Caminho do código do aluno
-    src_dir="$student/src"
-    bin_dir="$student/bin"
-
-    # Criar diretório bin se não existir
-    mkdir -p "$bin_dir"
-
-    # Compilar código
-    javac -cp "$JUNIT_JAR" -d "$bin_dir" "$src_dir"/*.java "$task/test/"*.java
-    if [ $? -ne 0 ]; then
-      echo "❌ Erro na compilação para $student_name na tarefa $task_name"
-      continue
+    # Verifica se o diretório da tarefa realmente existe
+    if [ ! -d "$TASK" ]; then
+        echo "⚠️  Aviso: O diretório da tarefa '$TASK_NAME' não existe! Pulando..."
+        continue
     fi
 
-    # Executar testes
-    java -jar "$JUNIT_JAR" --class-path "$bin_dir" --scan-class-path
-  done
+    # Diretório de submissões
+    SUBMISSIONS_DIR="$TASK/submissions"
+
+    # Se não existir submissões para essa tarefa, pula para a próxima
+    if [ ! -d "$SUBMISSIONS_DIR" ]; then
+        echo "⚠️  Aviso: Nenhuma submissão encontrada para a tarefa '$TASK_NAME'. Pulando..."
+        continue
+    fi
+
+    # Define a lista de alunos a testar
+    if [ -z "$STUDENT_DIR" ]; then
+        echo "📂 Nenhum aluno específico informado. Testando todas as submissões para '$TASK_NAME'."
+        STUDENTS=($(ls -d $SUBMISSIONS_DIR/*/ 2>/dev/null))
+    else
+        # Valida se o diretório do aluno existe
+        if [ ! -d "$SUBMISSIONS_DIR/$STUDENT_DIR" ]; then
+            echo "⚠️  Aviso: O diretório do aluno '$STUDENT_DIR' não existe para a tarefa '$TASK_NAME'! Pulando..."
+            continue
+        fi
+        STUDENTS=("$SUBMISSIONS_DIR/$STUDENT_DIR/")
+    fi
+
+    # Loop para testar cada submissão de aluno
+    for STUDENT in "${STUDENTS[@]}"; do
+        STUDENT_NAME=$(basename "$STUDENT")
+        echo "🚀 Executando testes para a tarefa '$TASK_NAME' do aluno '$STUDENT_NAME'..."
+
+        # Diretório onde os arquivos estão
+        CODE_DIR="$STUDENT/src"
+
+        # Verifica se o código-fonte existe
+        if [ ! -d "$CODE_DIR" ]; then
+            echo "⚠️  Aviso: Nenhum código-fonte encontrado em '$CODE_DIR'. Pulando..."
+            continue
+        fi
+
+        # Diretório de compilação
+        BIN_DIR="$STUDENT/bin"
+        mkdir -p "$BIN_DIR"
+        
+        # Baixa dependências (caso necessário)
+        mkdir -p "$STUDENT/lib"
+        curl -L -o "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" \
+             https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+        
+        # Compila os arquivos
+        javac -cp "$STUDENT/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK/test"/*.java
+
+        # Executa os testes
+        java -jar "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path
+    done
 done
 
-echo "✅ Testes concluídos!"
+echo "✅ Execução dos testes finalizada!"
