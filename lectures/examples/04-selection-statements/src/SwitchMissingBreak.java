@@ -21,3 +21,5 @@ class MissingBreak {
         } 
     } 
 }
+
+// Esse codígo roda em uma lógica onde, ira ocorrer a iteração da variável i, e essas iterações vão atender os requisitos 

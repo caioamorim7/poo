@@ -47,3 +47,5 @@ class Menu {
         } 
     } 
 }
+
+// Este código é um exemplo do uso de switch onde há uma variável, e baseado no seu valor , diferentes blocos de código são executados 
