@@ -1,4 +1,3 @@
-package src;
 import java.util.Scanner;
 public class FortalecerSenha{
     public static void main(String[] args) {
