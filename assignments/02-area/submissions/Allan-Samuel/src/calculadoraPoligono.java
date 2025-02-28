@@ -4,7 +4,7 @@
 import java.util.Scanner;
 import java.lang.Math;
  
-public class calculadoraPoligono {
+public class CalculadoraPoligono {
 
     public static double calcularArea(int n, double s){
         
