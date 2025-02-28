@@ -20,7 +20,7 @@ public class FortalecerSenha {
             return;
         }
         
-        // Fortalece a senha inserindo uma letra "aleatória" em qualquer posição
+        // Fortalece a senha encontrando a melhor inserção de caractere
         String senhaFortalecida = fortalecerSenha(senha);
         
         // Calcula o tempo de digitação
@@ -36,21 +36,21 @@ public class FortalecerSenha {
         String melhorSenha = null;
         int maxTempo = 0;
 
-        // Testa todas as posições possíveis para inserção de uma letra "aleatória"
+        // Testa todas as posições possíveis para inserção de uma nova letra
         for (int i = 0; i <= s.length(); i++) {
-            // Calcula a letra "aleatória" com base no código ASCII da primeira letra
-            char letraAleatoria = (char) ('a' + (s.charAt(0) - 'a' + i) % 26);
-            
-            // Insere a letra aleatória na posição i
-            String novaSenha = s.substring(0, i) + letraAleatoria + s.substring(i);
-            
-            // Calcula o tempo de digitação da nova senha
-            int tempo = calcularTempoDigitacao(novaSenha);
-            
-            // Mantém a senha que maximiza o tempo
-            if (tempo > maxTempo) {
-                maxTempo = tempo;
-                melhorSenha = novaSenha;
+            // Testa todas as letras possíveis (a-z)
+            for (char c = 'a'; c <= 'z'; c++) {
+                // Cria uma nova senha inserindo a letra `c` na posição `i`
+                String novaSenha = s.substring(0, i) + c + s.substring(i);
+                
+                // Calcula o tempo de digitação da nova senha
+                int tempo = calcularTempoDigitacao(novaSenha);
+
+                // Mantém a senha que maximiza o tempo
+                if (tempo > maxTempo) {
+                    maxTempo = tempo;
+                    melhorSenha = novaSenha;
+                }
             }
         }
         return melhorSenha;
