@@ -11,7 +11,7 @@ public class CalculadoraIMC {
         System.out.println("Digite sua altura em metros:");
         double altura = scanner.nextDouble();
 
-        double imc = calculoIMC(peso, altura);
+        double imc = calcularIMC(peso, altura);
 
         System.out.printf("Seu IMC é: %.2f%n", imc);
         System.out.println("Classificação: "+classificarIMC(imc));
@@ -20,7 +20,7 @@ public class CalculadoraIMC {
 
     }
 
-    public static double calculoIMC(double peso, double altura){
+    public static double calcularIMC(double peso, double altura){
         return peso / Math.pow(altura, 2);
     }
 
