@@ -13,27 +13,17 @@ public class Fibonacci {
             return 1;
         }
 
-        long a = 0; 
-        long b = 1; 
-        long fib = 0;
-        
-        for (int i = 2; i <= n; i++) {
-            fib = a + b;
-            a = b;
-            b = fib;
-        }
-
-        return fib;
+        return calcularFibonacci(n - 1) + calcularFibonacci(n - 2);  // Dessa vez utilizando recursividade ao invés de loop.
     }
     
     public static String formatarSaida(int n, long fib) {
-        return "O " + n + "º número de Fibonacci é: " + fib;
+        return String.format("O " + n + "º número de Fibonacci é: " + fib);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite um número inteiro não negativo: ");
+        System.out.print("Digite um número inteiro não negativo: ");
         int n = scanner.nextInt();
 
         if (n < 0) {
