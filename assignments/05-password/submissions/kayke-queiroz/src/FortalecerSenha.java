@@ -14,6 +14,12 @@ public class FortalecerSenha {
             return;
         }
 
+        // Se a senha já tiver 10 caracteres, não é possível fortalecer
+        if (senha.length() == 10) {
+            System.out.println("A senha já possui o tamanho máximo permitido.");
+            return;
+        }
+
         // Verifica se a senha contém apenas letras minúsculas
         if (!senha.matches("[a-z]+")) {
             System.out.println("A senha deve conter apenas letras minúsculas.");
