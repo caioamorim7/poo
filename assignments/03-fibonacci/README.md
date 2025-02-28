@@ -27,6 +27,6 @@ Digite um número inteiro não negativo: 7
 2. A classe deve possuir **três métodos públicos (`public`) e estáticos (`static`)**: `main`, `calcularFibonacci` e `formatarSaida`.
 3. O **método `main`** deve receber um parâmetro do tipo `String[]` e não retornar nenhum valor (`void`).
 4. O **método `calcularFibonacci`** deve receber um parâmetro `n` do tipo `int` e retornar um valor `long` representando o n-ésimo número de Fibonacci.
-5. O **método `formatarSaida`** deve receber um valor `long` representando o número de Fibonacci calculado e retornar uma `String` formatada para exibição.
+5. O **método `formatarSaida`** deve receber um valor `long` representando o número de Fibonacci calculado e um valor `int` representando o **n-ésimo número de Fibonacci** e deve retornar uma `String` formatada para exibição.
 6. Deve-se utilizar a **classe `java.util.Scanner`** para ler entradas do usuário.
 7. Deve-se implementar uma abordagem eficiente para o cálculo da sequência de Fibonacci, evitando a ineficiência da recursão simples.

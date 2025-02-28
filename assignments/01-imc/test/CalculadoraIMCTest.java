@@ -5,14 +5,14 @@ public class CalculadoraIMCTest {
 
     @Test
     public void testCalcularIMCValoresNormais() {
-        assertEquals(16.33, CalculadoraIMC.calcularIMC(50, 1.75), 0.01);
-        assertEquals(19.59, CalculadoraIMC.calcularIMC(60, 1.75), 0.01);
-        assertEquals(22.86, CalculadoraIMC.calcularIMC(70, 1.75), 0.01);
-        assertEquals(26.12, CalculadoraIMC.calcularIMC(80, 1.75), 0.01);
-        assertEquals(31.02, CalculadoraIMC.calcularIMC(95, 1.75), 0.01);
-        assertEquals(35.92, CalculadoraIMC.calcularIMC(110, 1.75), 0.01);
-        assertEquals(39.18, CalculadoraIMC.calcularIMC(120, 1.75), 0.01);
-        assertEquals(42.45, CalculadoraIMC.calcularIMC(130, 1.75), 0.01);
+        assertEquals(16.33, CalculadoraIMC.calcularIMC(50D, 1.75), 0.01);
+        assertEquals(19.59, CalculadoraIMC.calcularIMC(60D, 1.75), 0.01);
+        assertEquals(22.86, CalculadoraIMC.calcularIMC(70D, 1.75), 0.01);
+        assertEquals(26.12, CalculadoraIMC.calcularIMC(80D, 1.75), 0.01);
+        assertEquals(31.02, CalculadoraIMC.calcularIMC(95D, 1.75), 0.01);
+        assertEquals(35.92, CalculadoraIMC.calcularIMC(110D, 1.75), 0.01);
+        assertEquals(39.18, CalculadoraIMC.calcularIMC(120D, 1.75), 0.01);
+        assertEquals(42.45, CalculadoraIMC.calcularIMC(130D, 1.75), 0.01);
     }
 
     @Test

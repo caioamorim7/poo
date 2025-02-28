@@ -1,0 +1,49 @@
+System.out.println("Byte Wrapper")
+int minValue = Byte.MIN_VALUE
+System.out.println("Menor valor do byte é: " + minValue)
+int maxValue = Byte.MAX_VALUE
+System.out.println("Maior valor do byte é: " + maxValue)
+int size = Byte.SIZE
+System.out.println("A quantidade de bits usada para representar um valor do tipo byte é: " + size)
+int bytes = Byte.BYTES
+System.out.println("A quantidade de bytes usada para representar um valor do tipo byte é: " + bytes)
+System.out.println("---")
+
+System.out.println("Short Wrapper")
+short minValue = Short.MIN_VALUE
+System.out.println("Menor valor do short é: " + minValue)
+short maxValue = Short.MAX_VALUE
+System.out.println("Menor valor do short é: " + maxValue)
+int size = Short.SIZE
+System.out.println("A quantidade de bits usada para representar um valor do tipo short é: " + size)
+int bytes = Short.BYTES
+System.out.println("A quantidade de bytes usada para representar um valor do tipo short é: " + bytes)
+System.out.println("---")
+
+System.out.println("Integer Wrapper")
+int minValue = Integer.MIN_VALUE
+System.out.println("Menor valor do byte é: " + minValue)
+int maxValue = Integer.MAX_VALUE
+System.out.println("Menor valor do byte é: " + maxValue)
+int size = Integer.SIZE
+System.out.println("A quantidade de bits usada para representar um valor do tipo integer é: " + size)
+int bytes = Integer.BYTES
+System.out.println("A quantidade de bytes usada para representar um valor do tipo integer é: " + bytes)
+System.out.println("---")
+
+System.out.println("Long Wrapper")
+long minValue = Long.MIN_VALUE
+System.out.println("Menor valor do byte é: " + minValue)
+long maxValue = Long.MAX_VALUE
+System.out.println("Menor valor do byte é: " + maxValue)
+int size = Long.SIZE
+System.out.println("A quantidade de bits usada para representar um valor do tipo long é: " + size)
+int bytes = Long.BYTES
+System.out.println("A quantidade de bytes usada para representar um valor do tipo long é: " + bytes)
+System.out.println("---")
+long longValue = 10L
+
+System.out.println(Float.MIN_VALUE)
+System.out.println(Float.MAX_VALUE)
+System.out.println(Double.MIN_VALUE)
+System.out.println(Double.MAX_VALUE)
