@@ -9,7 +9,7 @@ public class Fibonacci {
     }
 
     public static String formatarSaida (long f, int n) {
-        return "O " + n + "º número de fibonacci é: " + f;
+        return "O " + n + "º número de Fibonacci é: " + f;
     }
     
     public static void main(String[] args) {
