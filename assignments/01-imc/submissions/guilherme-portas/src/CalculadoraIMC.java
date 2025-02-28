@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class CalculadoraIMC {
 
-    public Double CalcularIMC (double peso, double altura) {
+    public static Double calcularIMC (double peso, double altura) {
         double imc = (float) peso / (altura * altura);
         return imc;
     }
 
-    public String ClassificarIMC (double imc) {
+    public static String classificarIMC (double imc) {
         String classificacao;
         if (imc < 18.5f)
             classificacao = "Abaixo do peso";
@@ -44,11 +44,10 @@ public class CalculadoraIMC {
         double altura = scanner.nextDouble();
         ////System.out.println("Sua altura é: " + altura);
         
-        CalculadoraIMC calculadoraIMC = new CalculadoraIMC();
-        double imc = calculadoraIMC.CalcularIMC(peso, altura);
+        double imc = calcularIMC(peso, altura);
         
         System.out.println("Seu IMC é: " + imc);
-        System.out.print("Classificação: " + calculadoraIMC.ClassificarIMC(imc));
+        System.out.print("Classificação: " + classificarIMC(imc));
 
         scanner.close();
     }
