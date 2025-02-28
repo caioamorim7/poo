@@ -19,12 +19,12 @@ public class CalculadoraIMC {
                 return "Sobrepeso";               
 }else{
         if (imc >= 29.99 && imc < 34.99) {
-                return "Obesidade Grau I";
+                return "Obesidade grau I";
 }else{
         if (imc >= 34.99 && imc < 39.99) {
-                return "Obesidade Grau II";
+                return "Obesidade grau II";
 }else{
-                return "Obesidade Grau III";
+                return "Obesidade grau III";
                 
                 }
             }
