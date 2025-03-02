@@ -4,7 +4,7 @@ public class PassosElefante {
     public static int calcularPassosMinimos (int x) {
         if (1 <= x & x <= 5)
             return 1;
-        else if (x % 5 == x / 5)
+        else if (x % 5 == 0)
             return x / 5;
         else return x / 5 + 1;
     }

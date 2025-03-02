@@ -5,6 +5,13 @@ public class FortalecerSenha {
     public static String fortalecerSenha (String s) {
         Random rand = new Random();
         char letra = (char) (rand.nextInt(26) + 'a');
+        for (int pos = 1; pos < s.length(); pos++) {
+            if (s.charAt(pos) == s.charAt(pos - 1)) {
+                while (s.charAt(pos) == letra)
+                    letra = (char) (rand.nextInt(26) + 'a');
+                return new StringBuilder(s).insert(pos, letra).toString();
+            }
+        }
         return new StringBuilder(s).insert(s.length() - rand.nextInt(s.length()), letra).toString();
     }
     public static int calcularTempoDigitacao (String s) {
