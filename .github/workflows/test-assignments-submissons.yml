@@ -95,8 +95,11 @@ jobs:
     
             # Baixa dependências (se necessário)
             mkdir -p "$STUDENT_DIR/lib"
-            curl -L -o "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" \
-              https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+            if ! curl -L -o "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" \
+              https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar; then
+              echo "❌ Erro: Falha no download do JUnit"
+              exit 1
+            fi
     
             # Compila os arquivos
             if ! javac -cp "$STUDENT_DIR/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK_DIR/test"/*.java; then
