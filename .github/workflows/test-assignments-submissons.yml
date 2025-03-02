@@ -99,7 +99,10 @@ jobs:
               https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
     
             # Compila os arquivos
-            javac -cp "$STUDENT_DIR/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK_DIR/test"/*.java
+            if ! javac -cp "$STUDENT_DIR/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK_DIR/test"/*.java; then
+              echo "❌ Erro: Falha na compilação dos arquivos Java"
+              exit 1
+            fi
     
             # Executa os testes
             java -jar "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path
