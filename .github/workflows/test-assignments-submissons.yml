@@ -105,7 +105,10 @@ jobs:
             fi
     
             # Executa os testes
-            java -jar "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path
+            if ! java -jar "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path; then
+              echo "❌ Erro: Falha na execução dos testes"
+              exit 1
+            fi
           done
         done
       
