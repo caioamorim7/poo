@@ -31,6 +31,7 @@ jobs:
         echo "Verificando os arquivos alterados"
 
         if [ "${{ github.event_name }}" = "pull_request" ]; then
+          echo "Recuperando alterações do pull request"
           BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
           git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
         else
