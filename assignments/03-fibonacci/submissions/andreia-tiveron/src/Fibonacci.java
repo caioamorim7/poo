@@ -11,7 +11,7 @@ public class Fibonacci{
             System.out.println("Número inválido.");
         }else{
             long resultado = calcularFibonacci(n);
-            System.out.println(formatarSaida(n, resultado));
+            System.out.println(formatarSaida(resultado, n));
         }
 
         scanner.close();
@@ -32,7 +32,7 @@ public class Fibonacci{
         }
         return b;
     }
-    public static String formatarSaida(int n, long resultado){
+    public static String formatarSaida(long resultado, int n){
         return String.format("O %dº número de Fibonacci é: %d", n, resultado);
     }
 }
