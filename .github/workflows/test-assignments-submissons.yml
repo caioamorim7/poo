@@ -80,6 +80,9 @@ jobs:
         IFS=","
         eval "TASKS_LIST=(${{ env.tasks }})"
         eval "STUDENTS_LIST=(${{ env.students }})"
+        echo "lista de tarefas $TASKS_LIST"
+        echo "lista de tarefas $STUDENTS_LIST"
+        
         
         for task in "${TASKS_LIST[@]}"; do
           for student in "${STUDENTS_LIST[@]}"; do
