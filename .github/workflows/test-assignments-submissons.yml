@@ -11,11 +11,10 @@ on:
       - 2025.1
     paths:
       - 'assignments/**/submissions/**'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   test-assignments-submissions:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -25,43 +24,39 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Detect tasks and students
+    - name: Detect modified tasks and students
       id: detect-tasks-students
       run: |
-        echo "Verificando os arquivos alterados"
-
+        echo "🔍 Verificando os arquivos alterados..."
+    
         if [ "${{ github.event_name }}" = "pull_request" ]; then
-          echo "Recuperando alterações do pull request"
+          echo "📥 Recuperando alterações do Pull Request"
           BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
           git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
         else
           BASE_REF="${{ github.event.before }}"
         fi
-
-        echo "Diretório base $BASE_REF"
     
+        echo "🔎 Diretório base: $BASE_REF"
+    
+        # Identifica arquivos modificados
         MODIFIED_FILES=$(git diff --name-only $BASE_REF ${{ github.sha }})
     
-        # Obtém todas as tarefas modificadas
-        MODIFIED_TASKS=$(echo "$MODIFIED_FILES" | grep 'assignments/' | cut -d '/' -f2 | sort -u)
-
-        echo "Tarefas modificadas $MODIFIED_TASKS"
+        # Obtém todas as tarefas alteradas
+        MODIFIED_TASKS=($(echo "$MODIFIED_FILES" | grep -oE 'assignments/[^/]+' | cut -d '/' -f2 | sort -u))
+        MODIFIED_STUDENTS=($(echo "$MODIFIED_FILES" | grep -oE 'submissions/[^/]+' | cut -d '/' -f2 | sort -u))
     
-        # Obtém todos os alunos com submissões alteradas
-        MODIFIED_STUDENTS=$(echo "$MODIFIED_FILES" | grep 'submissions/' | cut -d '/' -f4 | sort -u)
-
-        echo "Aluno que enviou a modificação $MODIFIED_STUDENTS"
-    
-        if [ -z "$MODIFIED_TASKS" ] || [ -z "$MODIFIED_STUDENTS" ]; then
+        if [ ${#MODIFIED_TASKS[@]} -eq 0 ] || [ ${#MODIFIED_STUDENTS[@]} -eq 0 ]; then
           echo "❌ Erro: Nenhuma alteração detectada no diretório correto (assignments/**/submissions/**)"
           exit 1
         fi
     
-        echo "Tarefas detectadas: $MODIFIED_TASKS"
-        echo "tasks=$MODIFIED_TASKS" >> $GITHUB_ENV
+        echo "📂 Tarefas detectadas: ${MODIFIED_TASKS[*]}"
+        echo "🧑‍🎓 Alunos detectados: ${MODIFIED_STUDENTS[*]}"
     
-        echo "Alunos detectados: $MODIFIED_STUDENTS"
-        echo "students=$MODIFIED_STUDENTS" >> $GITHUB_ENV
+        # Corrigindo erro ao salvar valores no ambiente do GitHub Actions
+        echo "tasks=$(IFS=,; echo "${MODIFIED_TASKS[*]}")" >> $GITHUB_ENV
+        echo "students=$(IFS=,; echo "${MODIFIED_STUDENTS[*]}")" >> $GITHUB_ENV
 
     - name: Set up JDK 21
       uses: actions/setup-java@v2
@@ -69,49 +64,72 @@ jobs:
         distribution: 'zulu'
         java-version: '21'
 
+    - name: Download JUnit dependency
+      id: download-junit
+      run: |
+        echo "⬇️ Baixando JUnit..."
+        mkdir -p test-libs
+        curl -L -o test-libs/junit-platform-console-standalone-1.11.4.jar \
+          https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+
     - name: Execute tests for modified submissions
       run: |
+        echo "🚀 Iniciando testes para as tarefas alteradas..."
+        TEST_FAILURES=0
+
         for task in ${{ env.tasks }}; do
           for student in ${{ env.students }}; do
-            echo "🚀 Executando testes para a tarefa '$task' do aluno '$student'..."
-    
-            # Caminhos
+            echo "🔍 Testando: Tarefa '$task' | Aluno '$student'"
+
+            # Diretórios relevantes
             TASK_DIR="assignments/$task"
             STUDENT_DIR="$TASK_DIR/submissions/$student"
-    
-            if [ ! -d "$STUDENT_DIR" ]; then
-              echo "⚠️  Aviso: O diretório do aluno '$student' não existe para a tarefa '$task'! Pulando..."
-              continue
-            fi
-    
             CODE_DIR="$STUDENT_DIR/src"
-            if [ ! -d "$CODE_DIR" ]; then
-              echo "⚠️  Aviso: Nenhum código-fonte encontrado em '$CODE_DIR'. Pulando..."
+            BIN_DIR="$STUDENT_DIR/bin"
+            LIB_DIR="$STUDENT_DIR/lib"
+
+            # Valida se o diretório do aluno existe
+            if [ ! -d "$STUDENT_DIR" ]; then
+              echo "⚠️  O diretório do aluno '$student' não existe para a tarefa '$task'. Pulando..."
               continue
             fi
-    
-            BIN_DIR="$STUDENT_DIR/bin"
-            mkdir -p "$BIN_DIR"
-    
-            # Baixa dependências (se necessário)
-            mkdir -p "$STUDENT_DIR/lib"
-            if ! curl -L -o "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" \
-              https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar; then
-              echo "❌ Erro: Falha no download do JUnit"
-              exit 1
+
+            # Verifica se há código-fonte para compilar
+            if [ ! -d "$CODE_DIR" ]; then
+              echo "⚠️  Nenhum código encontrado em '$CODE_DIR'. Pulando..."
+              continue
             fi
-    
-            # Compila os arquivos
-            if ! javac -cp "$STUDENT_DIR/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK_DIR/test"/*.java; then
-              echo "❌ Erro: Falha na compilação dos arquivos Java"
-              exit 1
+
+            # Configura diretórios
+            mkdir -p "$BIN_DIR" "$LIB_DIR"
+
+            # Copia a dependência para o diretório do estudante
+            cp test-libs/junit-platform-console-standalone-1.11.4.jar "$LIB_DIR/"
+
+            # Compila os arquivos Java
+            echo "⚙️ Compilando código..."
+            if ! javac -cp "$LIB_DIR/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK_DIR/test"/*.java; then
+              echo "❌ Erro na compilação do aluno '$student' na tarefa '$task'"
+              TEST_FAILURES=$((TEST_FAILURES + 1))
+              continue
             fi
-    
+
             # Executa os testes
-            if ! java -jar "$STUDENT_DIR/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path; then
-              echo "❌ Erro: Falha na execução dos testes"
-              exit 1
+            echo "🧪 Executando testes..."
+            if ! java -jar "$LIB_DIR/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path; then
+              echo "❌ Falha nos testes para aluno '$student' na tarefa '$task'"
+              TEST_FAILURES=$((TEST_FAILURES + 1))
+              continue
             fi
+
+            echo "✅ Testes bem-sucedidos para '$student' na tarefa '$task'!"
           done
         done
-      
+
+        if [ $TEST_FAILURES -gt 0 ]; then
+          echo "❌ $TEST_FAILURES falha(s) nos testes. Verifique os logs!"
+          exit 1
+        fi
+
+    - name: Cleanup temporary files
+      run: rm -rf test-libs
