@@ -78,8 +78,11 @@ jobs:
         TEST_FAILURES=0
 
         IFS=","
-        for task in ${{ env.tasks }}; do
-          for student in ${{ env.students }}; do
+        eval "TASKS_LIST=(${{ env.tasks }})"
+        eval "STUDENTS_LIST=(${{ env.students }})"
+        
+        for task in "${TASKS_LIST[@]}"; do
+          for student in "${STUDENTS_LIST[@]}"; do
             echo "🔍 Testando: Tarefa '$task' | Aluno '$student'"
 
             # Diretórios relevantes
