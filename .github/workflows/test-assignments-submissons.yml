@@ -54,7 +54,7 @@ jobs:
         echo "📂 Tarefas detectadas: ${MODIFIED_TASKS[*]}"
         echo "🧑‍🎓 Alunos detectados: ${MODIFIED_STUDENTS[*]}"
     
-        # Corrigindo erro ao salvar valores no ambiente do GitHub Actions
+        # recuperando a lista de diretórios separada por vírgula
         echo "tasks=$(IFS=,; echo "${MODIFIED_TASKS[*]}")" >> $GITHUB_ENV
         echo "students=$(IFS=,; echo "${MODIFIED_STUDENTS[*]}")" >> $GITHUB_ENV
 
@@ -77,6 +77,7 @@ jobs:
         echo "🚀 Iniciando testes para as tarefas alteradas..."
         TEST_FAILURES=0
 
+        IFS=","
         for task in ${{ env.tasks }}; do
           for student in ${{ env.students }}; do
             echo "🔍 Testando: Tarefa '$task' | Aluno '$student'"
