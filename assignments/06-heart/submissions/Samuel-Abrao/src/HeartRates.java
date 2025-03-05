@@ -15,62 +15,25 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getDayOfBirth() {
-        return dayOfBirth;
-    }
-
-    public void setDayOfBirth(int dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
-    }
-
-    public int getMonthOfBirth() {
-        return monthOfBirth;
-    }
-
-    public void setMonthOfBirth(int monthOfBirth) {
-        this.monthOfBirth = monthOfBirth;
-    }
-
-    public int getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-    }
-
-    public int calculateAge(int currentDay, int currentMonth, int currentYear) {
+    public int calculateAge() {
+        int currentYear = 2025;
         int age = currentYear - yearOfBirth;
-        if (currentMonth < monthOfBirth || (currentMonth == monthOfBirth && currentDay < dayOfBirth)) {
+
+        if (monthOfBirth > 3 || (monthOfBirth == 3 && dayOfBirth > 5)) {
             age--;
         }
+
         return age;
     }
 
-    public int calculateMaxHeartRate(int currentDay, int currentMonth, int currentYear) {
-        return 220 - calculateAge(currentDay, currentMonth, currentYear);
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge();
     }
 
-    public String calculateTargetHeartRate(int currentDay, int currentMonth, int currentYear) {
-        int maxHeartRate = calculateMaxHeartRate(currentDay, currentMonth, currentYear);
-        int minTarget = (int) (maxHeartRate * 0.50);
-        int maxTarget = (int) (maxHeartRate * 0.85);
+    public String calculateTargetHeartRate() {
+        int maxHeartRate = calculateMaxHeartRate();
+        int minTarget = (int) Math.round(maxHeartRate * 0.50);
+        int maxTarget = (int) Math.round(maxHeartRate * 0.85);
         return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
@@ -90,16 +53,11 @@ public class HeartRates {
 
         HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
-        System.out.print("Digite a data atual (dia mês ano): ");
-        int currentDay = scanner.nextInt();
-        int currentMonth = scanner.nextInt();
-        int currentYear = scanner.nextInt();
-
-        System.out.println("\nNome: " + person.getFirstName() + " " + person.getLastName());
-        System.out.println("Data de nascimento: " + person.getDayOfBirth() + "/" + person.getMonthOfBirth() + "/" + person.getYearOfBirth());
-        System.out.println("Idade: " + person.calculateAge(currentDay, currentMonth, currentYear) + " anos");
-        System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate(currentDay, currentMonth, currentYear) + " bpm");
-        System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate(currentDay, currentMonth, currentYear));
+        System.out.println("\nNome: " + person.firstName + " " + person.lastName);
+        System.out.println("Data de nascimento: " + person.dayOfBirth + "/" + person.monthOfBirth + "/" + person.yearOfBirth);
+        System.out.println("Idade: " + person.calculateAge() + " anos");
+        System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
 
         scanner.close();
     }
