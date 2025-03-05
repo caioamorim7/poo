@@ -19,9 +19,7 @@ public class PassosElefante {
     }
 
     public static int calcularPassosMinimos(int x) {
-    
-        double resultado = (double) (x + 4) / 5;
-        return (int) Math.ceil(resultado);
+        return (x + 4) / 5;  
     }
 
     public static String formatarSaida(int passos) {
