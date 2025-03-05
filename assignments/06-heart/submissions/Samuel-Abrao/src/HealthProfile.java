@@ -43,15 +43,14 @@ public class HealthProfile {
 
     public String calculateTargetHeartRate(int currentYear) {
         int maxRate = calculateMaxHeartRate(currentYear);
-        double minTarget = maxRate * 0.50;
-        double maxTarget = maxRate * 0.85;
-        return String.format("%.0f bpm - %.0f bpm", minTarget, maxTarget);
+        int minTarget = (int) (maxRate * 0.50);
+        int maxTarget = (int) (maxRate * 0.85);
+        return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
     public double calculateBMI() {
-        return (double) weight / ((height / 100.0) * (height / 100.0));
+        return weight / Math.pow(height / 100.0, 2);
     }
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -84,6 +83,6 @@ public class HealthProfile {
         System.out.println("Idade: " + person.calculateAge(2025) + " anos");
         System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate(2025) + " bpm");
         System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate(2025));
-        System.out.printf("IMC: %.2f%n", person.calculateBMI());
+        System.out.printf("IMC: %.1f%n", person.calculateBMI());
     }
 }
