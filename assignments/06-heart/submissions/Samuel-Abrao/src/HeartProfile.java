@@ -8,7 +8,7 @@ public class HeartRates {
     private int monthOfBirth;
     private int yearOfBirth;
 
-    public HeartRates(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
+    public HeartProfile(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dayOfBirth = dayOfBirth;
