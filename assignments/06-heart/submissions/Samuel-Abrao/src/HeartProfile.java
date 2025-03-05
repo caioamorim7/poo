@@ -1,14 +1,14 @@
 import java.util.Scanner;
 import java.time.Year;
 
-public class HeartRates {
+public class HealthProfile {
     private String firstName;
     private String lastName;
     private int dayOfBirth;
     private int monthOfBirth;
     private int yearOfBirth;
 
-    public HeartProfile(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
+    public HealthProfile(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dayOfBirth = dayOfBirth;
@@ -56,12 +56,12 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+    public int calculateAge() {
+        return Year.now().getValue() - yearOfBirth;
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge(Year.now().getValue());
+        return 220 - calculateAge();
     }
 
     public String calculateTargetHeartRate() {
@@ -87,9 +87,9 @@ public class HeartRates {
 
         scanner.close();
 
-        HeartRates pessoa = new HeartRates(firstName, lastName, day, month, year);
+        HealthProfile pessoa = new HealthProfile(firstName, lastName, day, month, year);
 
-        int idade = pessoa.calculateAge(Year.now().getValue());
+        int idade = pessoa.calculateAge();
         int maxHeartRate = pessoa.calculateMaxHeartRate();
         String targetHeartRate = pessoa.calculateTargetHeartRate();
 
