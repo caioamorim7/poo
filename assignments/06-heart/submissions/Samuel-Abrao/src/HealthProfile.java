@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.time.Year;
 
 public class HealthProfile {
     private String firstName;
@@ -34,39 +33,19 @@ public class HealthProfile {
         return gender;
     }
 
-    public int getDayOfBirth() {
-        return dayOfBirth;
+    public int calculateAge(int currentYear) {
+        return currentYear - yearOfBirth;
     }
 
-    public int getMonthOfBirth() {
-        return monthOfBirth;
+    public int calculateMaxHeartRate(int currentYear) {
+        return 220 - calculateAge(currentYear);
     }
 
-    public int getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int calculateAge() {
-        return Year.now().getValue() - yearOfBirth;
-    }
-
-    public int calculateMaxHeartRate() {
-        return 220 - calculateAge();
-    }
-
-    public String calculateTargetHeartRate() {
-        int maxHeartRate = calculateMaxHeartRate();
-        int minTarget = (int) (maxHeartRate * 0.50);
-        int maxTarget = (int) (maxHeartRate * 0.85);
-        return minTarget + " bpm - " + maxTarget + " bpm";
+    public String calculateTargetHeartRate(int currentYear) {
+        int maxRate = calculateMaxHeartRate(currentYear);
+        double minTarget = maxRate * 0.50;
+        double maxTarget = maxRate * 0.85;
+        return String.format("%.0f bpm - %.0f bpm", minTarget, maxTarget);
     }
 
     public double calculateBMI() {
@@ -101,9 +80,9 @@ public class HealthProfile {
         HealthProfile person = new HealthProfile(firstName, lastName, gender, day, month, year, weight, height);
 
         System.out.println("\nNome: " + person.getFirstName() + " " + person.getLastName());
-        System.out.println("Idade: " + person.calculateAge() + " anos");
-        System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
-        System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
+        System.out.println("Idade: " + person.calculateAge(2025) + " anos");
+        System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate(2025) + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate(2025));
         System.out.printf("IMC: %.2f%n", person.calculateBMI());
     }
 }
