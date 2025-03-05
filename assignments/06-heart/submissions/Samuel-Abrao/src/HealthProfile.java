@@ -49,9 +49,9 @@ public class HealthProfile {
     }
 
     public double calculateBMI() {
-        double heightInMeters = height / 100.0;
-        return weight / (heightInMeters * heightInMeters);
+        return (double) weight / ((height / 100.0) * (height / 100.0));
     }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
