@@ -32,17 +32,17 @@ public class HeartProfile {
         System.out.print("Digite seu peso em libras: ");
         double weightInPounds = scanner.nextDouble();
 
-        HeartProfile hr = new HeartProfile(firstName, lastName, gender, dayOfBirth, monthOfBirth, yearOfBirth, heightInInches, weightInPounds);
+        HeartProfile hp = new HeartProfile(firstName, lastName, gender, dayOfBirth, monthOfBirth, yearOfBirth, heightInInches, weightInPounds);
 
-        System.out.println("Nome: " + hr.getFirstName() + " " + hr.getLastName());
-        System.out.println("Gênero: " + hr.getGender());
-        System.out.println("Data de nascimento: " + hr.getDayOfBirth() + "/" + hr.getMonthOfBirth() + "/" + hr.getYearOfBirth());
-        System.out.println("Idade: " + hr.calculateAge(2025));
-        System.out.println("Altura: " + hr.getHeightInInches() + " Polegadas");
-        System.out.println("Peso: " + hr.getWeightInPounds() + " Libras");
-        System.out.printf("Índice de Massa Corporal (BMI): %.1f \n", hr.calculateBMI());
-        System.out.println("Frequência cardíaca máxima: " + hr.calculateMaxHeartRate());
-        System.out.println("Faixa de frequência cardíaca alvo: " + hr.calculateTargetHeartRate());
+        System.out.println("Nome: " + hp.getFirstName() + " " + hp.getLastName());
+        System.out.println("Gênero: " + hp.getGender());
+        System.out.println("Data de nascimento: " + hp.getDayOfBirth() + "/" + hp.getMonthOfBirth() + "/" + hp.getYearOfBirth());
+        System.out.println("Idade: " + hp.calculateAge(2025));
+        System.out.println("Altura: " + hp.getHeightInInches() + " Polegadas");
+        System.out.println("Peso: " + hp.getWeightInPounds() + " Libras");
+        System.out.printf("Índice de Massa Corporal (BMI): %.1f \n", hp.calculateBMI());
+        System.out.println("Frequência cardíaca máxima: " + hp.calculateMaxHeartRate());
+        System.out.println("Faixa de frequência cardíaca alvo: " + hp.calculateTargetHeartRate());
         System.out.printf(  "%-13s Classificação \n" + 
                             "%-13s Abaixo do peso \n" + 
                             "%-13s Peso normal \n" +
