@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class PalindromeChecker {
     
     public static boolean isValidInput(String input) {
-        if (input == null || input.trim().isEmpty()) {
-            return false;
-        }
-        return true;
+        return input != null && !input.trim().isEmpty();
     }
 
     public static boolean isPalindrome(String input) {
-        input = input.toLowerCase();
+        if (input == null) {
+            return false;
+        }
+
+        input = input.toLowerCase().replaceAll("\\s+", ""); // Remove espaços
         int left = 0;
         int right = input.length() - 1;
 
