@@ -65,7 +65,7 @@ public class HeartRates {
 
         int currentYear = 2025;
         System.out.println("\nNome: " + person.firstName + " " + person.lastName);
-        System.out.println("Data de nascimento: " + person.dayOfBirth + "/" + person.monthOfBirth + "/" + person.yearOfBirth);
+        System.out.println("Data de nascimento: " + String.format("%02d/%02d/%d", person.dayOfBirth, person.monthOfBirth, person.yearOfBirth));
         System.out.println("Idade: " + person.calculateAge(currentYear) + " anos");
         System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate(currentYear) + " bpm");
 
