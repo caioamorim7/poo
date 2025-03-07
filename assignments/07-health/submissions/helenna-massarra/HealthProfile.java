@@ -92,4 +92,4 @@ public class HealthProfile {
         HealthProfile profile = new HealthProfile(firstName, lastName, gender, day, month, year, height, weight);
         profile.displayProfile();
     }
-}
+} 
