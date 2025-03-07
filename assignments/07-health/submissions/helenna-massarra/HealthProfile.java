@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
 
 public class HealthProfile {
@@ -21,12 +23,15 @@ public class HealthProfile {
         this.weightInPounds = weight;
     }
 
-    public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+    public int calculateAge() {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
+        Period period = Period.between(birthDate, currentDate);
+        return period.getYears();
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge(2025);
+        return 220 - calculateAge();
     }
 
     public String calculateTargetHeartRate() {
@@ -52,7 +57,7 @@ public class HealthProfile {
         System.out.printf("\nNome: %s %s\n", firstName, lastName);
         System.out.printf("Gênero: %s\n", (gender == 'M' || gender == 'm') ? "Masculino" : "Feminino");
         System.out.printf("Data de nascimento: %d/%d/%d\n", dayOfBirth, monthOfBirth, yearOfBirth);
-        System.out.printf("Idade: %d anos\n", calculateAge(2025));
+        System.out.printf("Idade: %d anos\n", calculateAge());
         System.out.printf("Altura: %.2f polegadas\n", heightInInches);
         System.out.printf("Peso: %.2f libras\n", weightInPounds);
         System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", calculateBMI());
