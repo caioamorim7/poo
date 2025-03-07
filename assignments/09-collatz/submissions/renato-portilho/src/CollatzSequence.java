@@ -11,25 +11,25 @@ public class CollatzSequence {
         System.out.println("Erro: O número deve ser um inteiro positivo.");
     } else {
         System.out.println("Sequência de Collatz: ");
-        int soma = somaCollatz(num);
+        int soma = calculateCollatzSum(num);
         System.out.println("Soma: " + soma);
     }
     }
 
-    public static int proximoCollatz(int n){
+    public static int nextCollatz(int n){
           if( (n%2) == 0){
             return n/2;
           }else
           return (n*3) + 1;
     }
 
-    public static int somaCollatz(int n){
+    public static int calculateCollatzSum(int n){
         int soma = 0; 
 
         while (n != 1) {
             System.out.print(n + "→");
             soma += n; 
-            n = proximoCollatz(n); 
+            n = nextCollatz(n); 
         }
         System.out.print(n); 
         System.out.println();
