@@ -15,7 +15,7 @@ public class PalindromeChecker {
     }
 
     public static boolean isValidInput(String input) {
-        if(input.strip() == "") {
+        if(input.strip().equals("")) {
             System.out.println("Erro: A entrada não pode estar vazia."); 
             return false;
         }
@@ -25,10 +25,10 @@ public class PalindromeChecker {
     public static boolean isPalindrome(String input) {
         input = input.toLowerCase();
         int pos_inicial = 0, pos_final = input.length() -1;
-        do {
+        while (pos_inicial != pos_final && pos_inicial != pos_final +1) {
             if(input.charAt(pos_inicial) != input.charAt(pos_final)) return false;
             pos_inicial++; pos_final--;
-        } while (pos_inicial != pos_final && pos_inicial != pos_final +1);
+        }
         return true;
     }
 }
