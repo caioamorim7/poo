@@ -21,19 +21,76 @@ public class HealthProfile {
         this.weightInPounds = weightInPounds;
     }
 
-    public int calculateAge() {
-        int currentYear = 2025;
-        int age = currentYear - yearOfBirth;
+    public String getFirstName() {
+        return firstName;
+    }
 
-        if (monthOfBirth > 3 || (monthOfBirth == 3 && dayOfBirth > 5)) {
-            age--;
-        }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-        return age;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public void setDayOfBirth(int dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
+    }
+
+    public int getMonthOfBirth() {
+        return monthOfBirth;
+    }
+
+    public void setMonthOfBirth(int monthOfBirth) {
+        this.monthOfBirth = monthOfBirth;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public double getHeightInInches() {
+        return heightInInches;
+    }
+
+    public void setHeightInInches(double heightInInches) {
+        this.heightInInches = heightInInches;
+    }
+
+    public double getWeightInPounds() {
+        return weightInPounds;
+    }
+
+    public void setWeightInPounds(double weightInPounds) {
+        this.weightInPounds = weightInPounds;
+    }
+
+    public int calculateAge(int currentYear) {
+        return currentYear - yearOfBirth;
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge();
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate() {
@@ -45,15 +102,6 @@ public class HealthProfile {
 
     public double calculateBMI() {
         return (weightInPounds * 703) / (heightInInches * heightInInches);
-    }
-
-    public static void displayBMITable() {
-        System.out.println("\nTabela de Classificação do BMI:");
-        System.out.println("BMI\t\tClassificação");
-        System.out.println("Menos de 18.5\tAbaixo do peso");
-        System.out.println("18.5 – 24.9\tPeso normal");
-        System.out.println("25.0 – 29.9\tSobrepeso");
-        System.out.println("30.0 ou mais\tObesidade");
     }
 
     public static void main(String[] args) {
@@ -74,24 +122,28 @@ public class HealthProfile {
         int year = scanner.nextInt();
 
         System.out.print("Digite sua altura em polegadas: ");
-        double heightInInches = scanner.nextDouble();
+        double height = scanner.nextDouble();
 
         System.out.print("Digite seu peso em libras: ");
-        double weightInPounds = scanner.nextDouble();
+        double weight = scanner.nextDouble();
 
-        HealthProfile person = new HealthProfile(firstName, lastName, gender, day, month, year, heightInInches, weightInPounds);
+        HealthProfile person = new HealthProfile(firstName, lastName, gender, day, month, year, height, weight);
 
-        System.out.println("\nNome: " + person.firstName + " " + person.lastName);
-        System.out.println("Gênero: " + (person.gender == 'M' ? "Masculino" : "Feminino"));
-        System.out.println("Data de nascimento: " + person.dayOfBirth + "/" + person.monthOfBirth + "/" + person.yearOfBirth);
-        System.out.println("Idade: " + person.calculateAge() + " anos");
-        System.out.println("Altura: " + person.heightInInches + " polegadas");
-        System.out.println("Peso: " + person.weightInPounds + " libras");
-        System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", person.calculateBMI());
+        System.out.println("\nNome: " + person.getFirstName() + " " + person.getLastName());
+        System.out.println("Gênero: " + (person.getGender() == 'M' ? "Masculino" : "Feminino"));
+        System.out.println("Data de nascimento: " + String.format("%02d/%02d/%d", person.getDayOfBirth(), person.getMonthOfBirth(), person.getYearOfBirth()));
+        System.out.println("Idade: " + person.calculateAge(2025) + " anos");
+        System.out.println("Altura: " + person.getHeightInInches() + " polegadas");
+        System.out.println("Peso: " + person.getWeightInPounds() + " libras");
+        System.out.printf("Índice de Massa Corporal (BMI): %.1f%n", person.calculateBMI());
         System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
         System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
 
-        displayBMITable();
+        System.out.println("\nTabela de referência do BMI:");
+        System.out.println("Menos de 18.5   - Abaixo do peso");
+        System.out.println("18.5 – 24.9     - Peso normal");
+        System.out.println("25.0 – 29.9     - Sobrepeso");
+        System.out.println("30.0 ou mais    - Obesidade");
 
         scanner.close();
     }
