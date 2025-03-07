@@ -12,10 +12,11 @@ public class CollatzSequence {
 
     // soma da sequencia
     public static int calculateCollatzSum(int n){
-        int soma = n;
-        while (n != 1){
-            n = nextCollatz(n);
-            soma += n;
+        int current = n;
+        int soma = current;
+        while (current != 1){
+            current = nextCollatz(current);
+            soma += current;
         }
         return soma;
     }
