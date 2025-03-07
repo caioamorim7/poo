@@ -9,7 +9,7 @@ public class PalindromeChecker {
     }
     public static boolean isPalindrome(String input) {
         // Converte a entrada para minúsculas para ignorar diferenças entre maiúsculas e minúsculas
-        input = input.toLowerCase();
+        input = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         int length = input.length(); // Obtém o tamanho da string
         // Compara os caracteres da esquerda para a direita e da direita para a esquerda
         for (int i = 0; i < length / 2; i++) {
