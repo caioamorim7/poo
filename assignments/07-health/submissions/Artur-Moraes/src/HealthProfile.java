@@ -106,7 +106,7 @@ public class HealthProfile {
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge(2025);
+        return 220 - calculateAge();
     }
 
     public String calculateTargetHeartRate() {
