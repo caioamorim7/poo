@@ -13,7 +13,7 @@ public class StringReverser {
        }
     }
 
-    public String reverse(String inputString) {
+    public static String reverse(String inputString) {
 
         if (inputString == "") {
             throw new IllegalArgumentException("A string não pode ser nula.");
@@ -21,7 +21,7 @@ public class StringReverser {
 
         String reversedString = new String();
   
-        for (int i = inputString.length(); i > 0; i--) {
+        for (int i = inputString.length()-1; i >= 0; i--) {
             reversedString += inputString.charAt(i);
         }
         
