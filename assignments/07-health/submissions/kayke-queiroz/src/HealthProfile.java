@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class HealthProfile {
-    // Atributos privados
+  
     private String nome;
     private String sobrenome;
     private int diaNascimento;
@@ -12,7 +12,7 @@ public class HealthProfile {
     private double altura;
     private double peso;
 
-    // Construtor
+    
     public HealthProfile(String nome, String sobrenome, char sexo, int diaNascimento, int mesNascimento, int anoNascimento, double altura, double peso) {
         this.nome = nome;
         this.sobrenome = sobrenome;
