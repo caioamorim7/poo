@@ -7,21 +7,17 @@ public class Time1 {
         if (hour < 0 || hour >= 24 || minute < 0 || minute >= 60 || second < 0 || second >= 60) { 
             throw new IllegalArgumentException("hour, minute and/or second was out of range");
         } 
-18 
-19      this.hour = hour; 
-20      this.minute = minute; 
-21      this.second = second; 
-22   } 
-23 
-24   // convert to String in universal-time format (HH:MM:SS) 
-25   public String toUniversalString() { 
-26      
-27   } 
-28 
-29   // convert to String in standard-time format (H:MM:SS AM or PM) 
-30   public String toString() { 
-31      
-32      
-33      
-34   } 
-35 } 
+        
+        this.hour = hour; 
+        this.minute = minute; 
+        this.second = second; 
+    } 
+
+    public String toUniversalString() { 
+        return String.format("%02d:%02d:%02d", hour, minute, second);
+    } 
+
+    public String toString() { 
+        return String.format("%d:%02d:%02d %s", ((hour == 0 || hour == 12) ? 12 : hour % 12), minute, second, (hour < 12 ? "AM" : "PM"));
+    } 
+} 
