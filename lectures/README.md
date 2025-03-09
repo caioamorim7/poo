@@ -9,7 +9,7 @@ Aqui você encontrará referência para os slides utilizados ao longo do curso.
 |3|[Aula 3 - Programação em Java - custom types, entrada e saída, operadores e controle de fluxo](https://1drv.ms/p/s!Avnn2LcOmn0Y3zPoINGBudmIix2X?e=H5Orac)| [Quizz: plataforma java, elementos da linguagem e tipos primitivos](https://idp2.vevox.com/#/share/AIMIDN010NEQOHBNNEZA/meetingdata/710808/session/714745/pollresults); <br> Análise de código: [estruturas de seleção](/lectures/examples/04-selection-statements/) e [estruturas de iteração](/lectures/examples/05-iteration-statements/)|
 |4|[Aula 4 - Programação Orientada a Objetos em Java - classes, objetos e métodos](https://1drv.ms/p/s!Avnn2LcOmn0Y3z07tfmzQYKuLXJK?e=WDMEbX)| [Desafio: StringReverse](../challenges/01-reverse)|
 | 5 | [Aula 5 - Programação Orientada a Objetos em Java - classes, objetos e métodos (cont.)](https://1drv.ms/p/s!Avnn2LcOmn0Y31s3uczqB-Lou_2O?e=q233L4)| [Quizz: estruturas de controle - seleção e iteração](https://idp2.display.vevox.com/#/present/721485/87WXDZ85NQFOYWI2DEH8) |
-| 6 | [Aula 6 - Programação Orientada a Objetos em Java - herança, polimorfismo, encapsulamento]()| |
+| 6 | [Aula 6 - Programação Orientada a Objetos em Java - herança, polimorfismo, encapsulamento](https://1drv.ms/p/s!Avnn2LcOmn0Y32GgrYpPTFA8lUHl?e=u7L4jb)| |
 | 7 | [Aula 7 - Array e ArrayList](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) |  |
 
 ### Referências
