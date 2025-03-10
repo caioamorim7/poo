@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class HeartRates {
     private String firstName, lastName;
@@ -59,10 +60,15 @@ public class HeartRates {
     }
     
     public int calculateAge (int currentYear) {
+        int idade;
         if (this.yearOfBirth > currentYear) {
             throw new java.lang.Error("Data de nascimento impossível ou ano atual inválido.");
         }
-        else return currentYear - this.yearOfBirth;
+        else {
+            idade = currentYear - this.yearOfBirth; 
+            if (LocalDate.now().getMonthValue() < this.monthOfBirth) idade--;
+        }
+        return idade;
     }
 
     public int calculateMaxHeartRate () {
@@ -70,7 +76,7 @@ public class HeartRates {
     }
 
     public String calculateTargetHeartRate () {
-        double max = (double) calculateMaxHeartRate();
-        return max * 0.5 + " bpm - " + max * 0.85 + " bpm";
+        int max = calculateMaxHeartRate();
+        return (int) (max * 0.5) + " bpm - " + (int) (max * 0.85) + " bpm";
     }
 }
