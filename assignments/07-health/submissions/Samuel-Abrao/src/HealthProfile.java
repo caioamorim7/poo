@@ -86,7 +86,7 @@ public class HealthProfile {
     }
 
     public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+        return currentYear - yearOfBirth - 1;
     }
 
     public int calculateMaxHeartRate() {
