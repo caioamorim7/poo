@@ -56,7 +56,7 @@ public class HeartRates {
     }
 
     public int calculateAge(int currentYear) {
-        return (currentYear - yearOfBirth) - 1;
+        return (currentYear - yearOfBirth);
     }
 
     public int calculateMaxHeartRate() {
