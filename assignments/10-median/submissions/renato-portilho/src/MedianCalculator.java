@@ -13,12 +13,12 @@ public class MedianCalculator {
         System.out.println("Digite o terceiro número inteiro: ");
         int c = scanner.nextInt();
 
-        int mediana = encontrarMediana(a, b, c);
+        int mediana = findMedian(a, b, c);
         System.out.println("A mediana é: "+mediana);
 
     }
 
-    public static int encontrarMediana(int a, int b, int c){
+    public static int findMedian(int a, int b, int c){
         if((a < b && a > c) || (a>b && a<c)){
             return a;
         }else if ((b>a && b<c) || (b<a && b>c)) {

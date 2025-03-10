@@ -9,7 +9,7 @@ public class Main {
          System.out.println("Digite seu Primeiro nome: ");
          String firstName = scanner.nextLine();
 
-         System.out.println("Digite seu lastName: ");
+         System.out.println("Digite seu nome: ");
          String lastName = scanner.nextLine();
 
          
