@@ -59,8 +59,9 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public int calculateAge(int currentYear) {
+    public int calculateAge() {
         Calendar today = Calendar.getInstance();
+        int currentYear = today.get(Calendar.YEAR);
         int currentMonth = today.get(Calendar.MONTH) + 1; // Janeiro é 0
         int currentDay = today.get(Calendar.DAY_OF_MONTH);
 
@@ -75,7 +76,7 @@ public class HeartRates {
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge(2025);
+        return 220 - calculateAge();
     }
 
     public String calculateTargetHeartRate() {
@@ -105,7 +106,7 @@ public class HeartRates {
         // Exibir informações
         System.out.println("\nNome: " + person.getFirstName() + " " + person.getLastName());
         System.out.println("Data de nascimento: " + String.format("%02d/%02d/%04d", person.getDayOfBirth(), person.getMonthOfBirth(), person.getYearOfBirth()));
-        System.out.println("Idade: " + person.calculateAge(2025) + " anos");
+        System.out.println("Idade: " + person.calculateAge() + " anos");
         System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
         System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
 
