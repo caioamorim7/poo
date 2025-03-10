@@ -21,7 +21,7 @@ public class StringReverser {
 
         String reversedString = new String();
   
-        for (int i = inputString.length() -1; i >= 0; i--) {
+        for (int i = inputString.length()-1; i >= 0; i--) {
             reversedString += inputString.charAt(i);
         }
         
