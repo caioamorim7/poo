@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class CollatzSequence {
-    public static void generateCollatzSequence(int n) {
+    public static int calculateCollatzSum(int n) {
         int sum = 0;
         System.out.print("Sequência de Collatz: " + n);
         while (n != 1) {
@@ -15,6 +15,7 @@ public class CollatzSequence {
         }
         sum += 1;
         System.out.println("\nSoma dos termos: " + sum);
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class CollatzSequence {
         if (scanner.hasNextInt()) {
             int n = scanner.nextInt();
             if (n > 0) {
-                generateCollatzSequence(n);
+                calculateCollatzSum(n);
             } else {
                 System.out.println("Erro: O número deve ser um inteiro positivo.");
             }
