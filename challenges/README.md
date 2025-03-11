@@ -11,7 +11,7 @@ Cada desafio é acompanhada de testes unitários. Para avaliar seu código antes
 ```
 
 ```bash
- javac -cp "lib/*" -d bin src/*.java test/*.java
+ javac -cp "lib/*" -d bin src/*.java ../../test/*.java
  ```
 
  ```bash
