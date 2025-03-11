@@ -1,7 +1,5 @@
 ### Desafios
 
-Os desafios contém programas com falhas de compilação e lógica que precisam ser corrigidos.
-
 Cada desafio é acompanhada de testes unitários. Para avaliar seu código antes de submetê-lo, execute os seguintes comandos a partir de seu diretório pessoal de cada desafio.
 
  ```bash
