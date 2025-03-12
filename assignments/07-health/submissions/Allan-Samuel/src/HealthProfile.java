@@ -24,12 +24,19 @@ public class HealthProfile {
         this.weightInPounds = weightInPounds;
     }
 
-    public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+    // Método para calcular a idade considerando o mês e o dia (para não dar erro)
+    public int calculateAge(int currentYear, int currentMonth, int currentDay) {
+        int age = currentYear - yearOfBirth;
+
+        if (monthOfBirth > currentMonth || (monthOfBirth == currentMonth && dayOfBirth > currentDay)) {
+            age--; 
+        }
+        
+        return age;
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge(2024);
+        return 220 - calculateAge(2024, 3, 12); // Com a data atual sendo 12 de março de 2024
     }
 
     public String calculateTargetHeartRate() {
@@ -101,16 +108,24 @@ public class HealthProfile {
 
         HealthProfile profile = new HealthProfile(firstName, lastName, gender, day, month, year, height, weight);
 
+        int currentYear = 2024;
+        int currentMonth = 3; 
+        int currentDay = 12;
+
+        int age = profile.calculateAge(currentYear, currentMonth, currentDay);
+        int maxHeartRate = profile.calculateMaxHeartRate();
+        String targetHeartRate = profile.calculateTargetHeartRate();
+
         System.out.println("\n--- Informações do Paciente ---");
         System.out.println("Nome: " + profile.getFirstName() + " " + profile.getLastName());
         System.out.println("Gênero: " + (profile.getGender() == 'M' ? "Masculino" : "Feminino"));
         System.out.println("Data de nascimento: " + profile.getDayOfBirth() + "/" + profile.getMonthOfBirth() + "/" + profile.getYearOfBirth());
-        System.out.println("Idade: " + profile.calculateAge(2024) + " anos");
+        System.out.println("Idade: " + age + " anos");
         System.out.println("Altura: " + profile.getHeightInInches() + " polegadas");
         System.out.println("Peso: " + profile.getWeightInPounds() + " libras");
         System.out.printf("Índice de Massa Corporal (BMI): %.1f%n", profile.calculateBMI());
-        System.out.println("Frequência cardíaca máxima: " + profile.calculateMaxHeartRate() + " bpm");
-        System.out.println("Faixa de frequência cardíaca alvo: " + profile.calculateTargetHeartRate());
+        System.out.println("Frequência cardíaca máxima: " + maxHeartRate + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + targetHeartRate);
 
         System.out.println("\n--- Tabela de Referência do BMI ---");
         System.out.println("BMI\t\tClassificação");
