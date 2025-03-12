@@ -10,6 +10,7 @@ public class PalindromeChecker {
     }
 
     public static boolean isPalindrome(String input) {
+        input = input.replaceAll("\\s+", ""); // Remove todos os espaços por conta do erro que estava dando no código.
         input = input.toLowerCase(); // Ignora maiúsculas e minúsculas
         int length = input.length();
 
