@@ -17,19 +17,29 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public int calculateAge(int currentYear) {
-        return currentYear - this.yearOfBirth;
+    // calculando a idade considerando o mês e o dia (para passar nos testes)
+    public int calculateAge(int currentYear, int currentMonth, int currentDay) {
+        int age = currentYear - this.yearOfBirth;
+
+        if (this.monthOfBirth > currentMonth || (this.monthOfBirth == currentMonth && this.dayOfBirth > currentDay)) {
+            age--; 
+        }
+        
+        return age;
     }
 
-    public int calculateMaxHeartRate() {
-        return 220 - calculateAge(LocalDate.now().getYear());
+    public int calculateMaxHeartRate(int currentYear, int currentMonth, int currentDay) {
+        int age = calculateAge(currentYear, currentMonth, currentDay);
+        return 220 - age;
     }
 
-    public String calculateTargetHeartRate() {
-        int maxHeartRate = calculateMaxHeartRate();
+    public String calculateTargetHeartRate(int currentYear, int currentMonth, int currentDay) {
+        int maxHeartRate = calculateMaxHeartRate(currentYear, currentMonth, currentDay);
         double minTarget = maxHeartRate * 0.50;
         double maxTarget = maxHeartRate * 0.85;
-        return String.format("%.0f bpm - %.0f bpm", minTarget, maxTarget);
+        
+        // Arredonda os valores para o número inteiro mais próximo (tentar corrigir o erro)
+        return String.format("%.0f bpm - %.0f bpm", minTarget, (double) Math.round(maxTarget));
     }
 
     public String getFirstName() {
@@ -69,10 +79,12 @@ public class HeartRates {
         HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
         int currentYear = LocalDate.now().getYear();
-        int age = person.calculateAge(currentYear);
-        int maxHeartRate = person.calculateMaxHeartRate();
-        String targetHeartRate = person.calculateTargetHeartRate();
+        int currentMonth = LocalDate.now().getMonthValue();
+        int currentDay = LocalDate.now().getDayOfMonth();
 
+        int age = person.calculateAge(currentYear, currentMonth, currentDay);
+        int maxHeartRate = person.calculateMaxHeartRate(currentYear, currentMonth, currentDay);
+        String targetHeartRate = person.calculateTargetHeartRate(currentYear, currentMonth, currentDay);
         System.out.println("\nMonitoramento da Frequência Cardíaca:\n");
         System.out.println("Nome: " + person.getFirstName() + " " + person.getLastName());
         System.out.printf("Data de nascimento: %02d/%02d/%d%n", person.getDayOfBirth(), person.getMonthOfBirth(), person.getYearOfBirth());
