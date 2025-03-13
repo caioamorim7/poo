@@ -10,7 +10,7 @@ public class HealthProfile {
     private final double heightInInches;
     private final double weightInPounds;
 
-    public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double heightInInches, double weightInPounds) {
+     public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double heightInInches, double weightInPounds) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -21,20 +21,23 @@ public class HealthProfile {
         this.weightInPounds = weightInPounds;
     }
 
-    public int calculateAge(int currentYear) {
+    public int calculateAge() {
+        int currentYear = 2025;
         int age = currentYear - yearOfBirth;
+
         if (monthOfBirth > 3 || (monthOfBirth == 3 && dayOfBirth > 5)) {
             age--;
         }
+
         return age;
     }
 
-    public int calculateMaxHeartRate(int currentYear) {
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge();
     }
 
-    public String calculateTargetHeartRate(int currentYear) {
-        int maxHeartRate = calculateMaxHeartRate(currentYear);
+    public String calculateTargetHeartRate() {
+        int maxHeartRate = calculateMaxHeartRate();
         int minTarget = (int) Math.round(maxHeartRate * 0.50);
         int maxTarget = (int) Math.round(maxHeartRate * 0.85);
         return minTarget + " bpm - " + maxTarget + " bpm";
@@ -42,18 +45,6 @@ public class HealthProfile {
 
     public double calculateBMI() {
         return (weightInPounds * 703) / (heightInInches * heightInInches);
-    }
-
-    public void displayHealthInfo(int currentYear) {
-        System.out.printf("\nNome: %s %s%n", firstName, lastName);
-        System.out.printf("Gênero: %s%n", (gender == 'M' ? "Masculino" : "Feminino"));
-        System.out.printf("Data de nascimento: %02d/%02d/%d%n", dayOfBirth, monthOfBirth, yearOfBirth);
-        System.out.printf("Idade: %d anos%n", calculateAge(currentYear));
-        System.out.printf("Altura: %.2f polegadas%n", heightInInches);
-        System.out.printf("Peso: %.2f libras%n", weightInPounds);
-        System.out.printf("Índice de Massa Corporal (BMI): %.1f%n", calculateBMI());
-        System.out.printf("Frequência cardíaca máxima: %d bpm%n", calculateMaxHeartRate(currentYear));
-        System.out.printf("Faixa de frequência cardíaca alvo: %s%n", calculateTargetHeartRate(currentYear));
     }
 
     public static void displayBMITable() {
@@ -90,8 +81,15 @@ public class HealthProfile {
 
         HealthProfile person = new HealthProfile(firstName, lastName, gender, day, month, year, heightInInches, weightInPounds);
 
-        int currentYear = 2025;
-        person.displayHealthInfo(currentYear);
+        System.out.println("\nNome: " + person.firstName + " " + person.lastName);
+        System.out.println("Gênero: " + (person.gender == 'M' ? "Masculino" : "Feminino"));
+        System.out.println("Data de nascimento: " + person.dayOfBirth + "/" + person.monthOfBirth + "/" + person.yearOfBirth);
+        System.out.println("Idade: " + person.calculateAge() + " anos");
+        System.out.println("Altura: " + person.heightInInches + " polegadas");
+        System.out.println("Peso: " + person.weightInPounds + " libras");
+        System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", person.calculateBMI());
+        System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
 
         displayBMITable();
 

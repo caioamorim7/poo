@@ -1,16 +1,14 @@
 import java.util.Scanner;
+import java.time.Year;
 
 public class HeartRates {
-    private final String firstName;
-    private final String lastName;
-    private final int dayOfBirth;
-    private final int monthOfBirth;
-    private final int yearOfBirth;
+    private String firstName;
+    private String lastName;
+    private int dayOfBirth;
+    private int monthOfBirth;
+    private int yearOfBirth;
 
     public HeartRates(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
-        if (yearOfBirth > 2025) {
-            throw new IllegalArgumentException("Ano de nascimento não pode estar no futuro.");
-        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.dayOfBirth = dayOfBirth;
@@ -18,56 +16,87 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public void setDayOfBirth(int dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
+    }
+
+    public int getMonthOfBirth() {
+        return monthOfBirth;
+    }
+
+    public void setMonthOfBirth(int monthOfBirth) {
+        this.monthOfBirth = monthOfBirth;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
     public int calculateAge(int currentYear) {
-        if (yearOfBirth > currentYear) {
-            throw new IllegalArgumentException("Ano de nascimento não pode estar no futuro.");
-        }
-        int age = currentYear - yearOfBirth;
-        if (monthOfBirth > 3 || (monthOfBirth == 3 && dayOfBirth > 5)) {
-            age--;
-        }
-        return age;
+        return currentYear - yearOfBirth;
     }
 
-    public int calculateMaxHeartRate(int currentYear) {
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge(Year.now().getValue());
     }
 
-    public int[] calculateTargetHeartRate(int currentYear) {
-        int maxRate = calculateMaxHeartRate(currentYear);
-        return new int[]{(int) Math.round(maxRate * 0.50), (int) Math.round(maxRate * 0.85)};
-    }
-
-    public void displayHeartRates(int currentYear) {
-        System.out.printf("\nNome: %s %s\n", firstName, lastName);
-        System.out.printf("Data de nascimento: %02d/%02d/%d\n", dayOfBirth, monthOfBirth, yearOfBirth);
-        System.out.printf("Idade: %d anos\n", calculateAge(currentYear));
-        System.out.printf("Frequência cardíaca máxima: %d bpm\n", calculateMaxHeartRate(currentYear));
-        int[] targetRange = calculateTargetHeartRate(currentYear);
-        System.out.printf("Faixa de frequência cardíaca alvo: %d bpm - %d bpm\n", targetRange[0], targetRange[1]);
+    public String calculateTargetHeartRate() {
+        int maxHeartRate = calculateMaxHeartRate();
+        int minTarget = (int) (maxHeartRate * 0.50);
+        int maxTarget = (int) (maxHeartRate * 0.85);
+        return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite seu primeiro nome: ");
-        String firstName = scanner.next();
+        String firstName = scanner.nextLine();
 
         System.out.print("Digite seu sobrenome: ");
-        String lastName = scanner.next();
+        String lastName = scanner.nextLine();
 
-        System.out.print("Digite sua data de nascimento (dia mês ano): ");
+        System.out.print("Digite sua data de nascimento (dia mês ano separados por espaço): ");
         int day = scanner.nextInt();
         int month = scanner.nextInt();
         int year = scanner.nextInt();
 
-        try {
-            HeartRates person = new HeartRates(firstName, lastName, day, month, year);
-            person.displayHeartRates(2025);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
-
         scanner.close();
+
+        HeartRates pessoa = new HeartRates(firstName, lastName, day, month, year);
+
+        int idade = pessoa.calculateAge(Year.now().getValue());
+        int maxHeartRate = pessoa.calculateMaxHeartRate();
+        String targetHeartRate = pessoa.calculateTargetHeartRate();
+
+        System.out.println("\nNome: " + pessoa.getFirstName() + " " + pessoa.getLastName());
+        System.out.printf("Data de nascimento: %02d/%02d/%d%n", pessoa.getDayOfBirth(), pessoa.getMonthOfBirth(), pessoa.getYearOfBirth());
+        System.out.println("Idade: " + idade + " anos");
+        System.out.println("Frequência cardíaca máxima: " + maxHeartRate + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + targetHeartRate);
     }
 }
