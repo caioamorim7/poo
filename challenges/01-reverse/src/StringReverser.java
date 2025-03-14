@@ -13,14 +13,14 @@ public class StringReverser {
 
     public static String reverse(String inputString) {
 
-        if (inputString.isEmpty()) {
+        if (inputString == null) {
             throw new IllegalArgumentException("A string não pode ser nula.");
         }
 
         StringBuilder reversedString = new StringBuilder();
   
         for (int i = inputString.length()-1; i >= 0; i--) {
-            reversedString += inputString.charAt(i);
+            reversedString.append(inputString.charAt(i));
         }
         
         return reversedString.toString();
