@@ -7,6 +7,7 @@ public class StringReverser {
             System.out.print("Digite uma string: ");
             String input = scanner.nextLine();
             System.out.printf("String invertida: %s\n", reverse(input));
+
        }
     }
 
