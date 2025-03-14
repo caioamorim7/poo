@@ -6,7 +6,7 @@ No seu primeiro dia de tralho você recebeu a especificação do sistema. Sua ta
 
 #### Objetivo do Sistema
 
-O objetivo do sistema é possibilitar que os clientes possam abrir contas bancárias, realizar transações financeiras e gerenciar seus.
+O objetivo do sistema é possibilitar que os clientes possam abrir contas bancárias, realizar transações financeiras e gerenciar seus investimentos.
 
 O sistema deverá permitir:
 
@@ -28,15 +28,15 @@ O projeto será implementado em 4 semanas, cada uma focada em um conjunto de fun
 
 ##### Geral
 
-1. Ao inciar, o programa deve exibir um menu de opções para o usuário escolher a ação desejada.
+1. Ao inciar, o programa deve exibir um menu de opções para o usuário escolher a ação desejada: 1. [Abrir conta](#abertura-de-conta); 2. [Consultar cliente](#consultar-cliente); 3. [Depositar]; (#depositar); 4. [Sacar](#sacar); 5. [Sair](#sair)
 ```bash
 Seja bem-vindo ao IDP Bank! Escolha uma das opções abaixo:
 
-1. [Abrir conta](#abertura-de-conta)
-2. [Consultar cliente](#consultar-cliente)
-3. [Depositar](#depositar)
-4. [Sacar](#sacar)
-5. [Sair](#sair)
+1. Abrir conta
+2. Consultar cliente
+3. Depositar
+4. Sacar
+5. Sair
 
 Digite o número correspondente à opção desejada: 
 ```
