@@ -2,84 +2,68 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class HealthProfile {
-  
-    private String nome;
-    private String sobrenome;
-    private int diaNascimento;
-    private int mesNascimento;
-    private int anoNascimento;
-    private char sexo;
-    private double altura;
-    private double peso;
+    private String firstName;
+    private String lastName;
+    private char gender;
+    private int dayOfBirth;
+    private int monthOfBirth;
+    private int yearOfBirth;
+    private double heightInInches;
+    private double weightInPounds;
 
-    
-    public HealthProfile(String nome, String sobrenome, char sexo, int diaNascimento, int mesNascimento, int anoNascimento, double altura, double peso) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.sexo = sexo;
-        this.diaNascimento = diaNascimento;
-        this.mesNascimento = mesNascimento;
-        this.anoNascimento = anoNascimento;
-        this.altura = altura;
-        this.peso = peso;
+    public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double heightInInches, double weightInPounds) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.dayOfBirth = dayOfBirth;
+        this.monthOfBirth = monthOfBirth;
+        this.yearOfBirth = yearOfBirth;
+        this.heightInInches = heightInInches;
+        this.weightInPounds = weightInPounds;
     }
 
-    // Métodos getters e setters
-    public String getNome() {
-        return nome;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public char getGender() {
+        return gender;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    public int calcularIdade() {
-        Calendar hoje = Calendar.getInstance();
-        int anoAtual = hoje.get(Calendar.YEAR);
-        int mesAtual = hoje.get(Calendar.MONTH) + 1;
-        int diaAtual = hoje.get(Calendar.DAY_OF_MONTH);
-
-        int idade = anoAtual - anoNascimento;
-        if (mesNascimento > mesAtual || (mesNascimento == mesAtual && diaNascimento > diaAtual)) {
-            idade--;
+    public int calculateAge(int currentYear) {
+        int age = currentYear - yearOfBirth;
+        Calendar today = Calendar.getInstance();
+        int currentMonth = today.get(Calendar.MONTH) + 1;
+        int currentDay = today.get(Calendar.DAY_OF_MONTH);
+        
+        if (monthOfBirth > currentMonth || (monthOfBirth == currentMonth && dayOfBirth > currentDay)) {
+            age--;
         }
-        return idade;
+        return age;
     }
 
-    public int calcularFrequenciaMaxima() {
-        return 220 - calcularIdade();
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge(Calendar.getInstance().get(Calendar.YEAR));
     }
 
-    public String calcularFrequenciaAlvo() {
-        int maxFrequencia = calcularFrequenciaMaxima();
-        int minAlvo = (int) (maxFrequencia * 0.50);
-        int maxAlvo = (int) (maxFrequencia * 0.85);
-        return minAlvo + " bpm - " + maxAlvo + " bpm";
+    public String calculateTargetHeartRate() {
+        int maxRate = calculateMaxHeartRate();
+        int minTarget = (int) (maxRate * 0.50);
+        int maxTarget = (int) (maxRate * 0.85);
+        return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
-    public double calcularIMC() {
-        return (peso * 703) / (altura * altura);
+    public double calculateBMI() {
+        return (weightInPounds * 703) / (heightInInches * heightInInches);
     }
 
-    public static void exibirTabelaIMC() {
-        System.out.println("\nÍndice de Massa Corporal (IMC) - Classificação:");
-        System.out.println("Abaixo de 18.5: Abaixo do peso");
+    public static void displayBMITable() {
+        System.out.println("\nÍndice de Massa Corporal (BMI) - Classificação:");
+        System.out.println("Menos de 18.5: Abaixo do peso");
         System.out.println("18.5 - 24.9: Peso normal");
         System.out.println("25.0 - 29.9: Sobrepeso");
         System.out.println("30.0 ou mais: Obesidade");
@@ -88,40 +72,43 @@ public class HealthProfile {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Nome: ");
-        String nome = scanner.nextLine();
+        System.out.print("Digite seu primeiro nome: ");
+        String firstName = scanner.nextLine();
 
-        System.out.print("Sobrenome: ");
-        String sobrenome = scanner.nextLine();
+        System.out.print("Digite seu sobrenome: ");
+        String lastName = scanner.nextLine();
 
-        char sexo;
+        char gender;
         do {
-            System.out.print("Sexo (M/F): ");
-            sexo = scanner.next().toUpperCase().charAt(0);
-        } while (sexo != 'M' && sexo != 'F');
+            System.out.print("Digite seu gênero (M/F): ");
+            gender = scanner.next().toUpperCase().charAt(0);
+        } while (gender != 'M' && gender != 'F');
 
-        System.out.print("Data de nascimento (dia mês ano): ");
-        int dia = scanner.nextInt();
-        int mes = scanner.nextInt();
-        int ano = scanner.nextInt();
+        System.out.print("Digite sua data de nascimento (dia, mês e ano separados por espaço): ");
+        int day = scanner.nextInt();
+        int month = scanner.nextInt();
+        int year = scanner.nextInt();
 
-        System.out.print("Altura (em polegadas): ");
-        double altura = scanner.nextDouble();
+        System.out.print("Digite sua altura em polegadas: ");
+        double height = scanner.nextDouble();
 
-        System.out.print("Peso (em libras): ");
-        double peso = scanner.nextDouble();
+        System.out.print("Digite seu peso em libras: ");
+        double weight = scanner.nextDouble();
 
-        HealthProfile perfil = new HealthProfile(nome, sobrenome, sexo, dia, mes, ano, altura, peso);
+        HealthProfile profile = new HealthProfile(firstName, lastName, gender, day, month, year, height, weight);
 
         System.out.println("\nPerfil de Saúde:");
-        System.out.println("Nome: " + perfil.getNome() + " " + perfil.getSobrenome());
-        System.out.println("Sexo: " + (perfil.getSexo() == 'M' ? "Masculino" : "Feminino"));
-        System.out.println("Idade: " + perfil.calcularIdade() + " anos");
-        System.out.printf("IMC: %.1f\n", perfil.calcularIMC());
-        System.out.println("Frequência cardíaca máxima: " + perfil.calcularFrequenciaMaxima() + " bpm");
-        System.out.println("Frequência cardíaca alvo: " + perfil.calcularFrequenciaAlvo());
+        System.out.println("Nome: " + profile.getFirstName() + " " + profile.getLastName());
+        System.out.println("Gênero: " + (profile.getGender() == 'M' ? "Masculino" : "Feminino"));
+        System.out.println("Data de nascimento: " + day + "/" + month + "/" + year);
+        System.out.println("Idade: " + profile.calculateAge(Calendar.getInstance().get(Calendar.YEAR)) + " anos");
+        System.out.println("Altura: " + height + " polegadas");
+        System.out.println("Peso: " + weight + " libras");
+        System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", profile.calculateBMI());
+        System.out.println("Frequência cardíaca máxima: " + profile.calculateMaxHeartRate() + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + profile.calculateTargetHeartRate());
 
-        exibirTabelaIMC();
+        displayBMITable();
         scanner.close();
     }
 }
