@@ -6,7 +6,7 @@ No seu primeiro dia de tralho você recebeu a especificação do sistema. Sua ta
 
 #### Objetivo do Sistema
 
-O objetivo do sistema é possibilitar que os clientes possam abrir contas bancárias, realizar transações financeiras e gerenciar seus.
+O objetivo do sistema é possibilitar que os clientes possam abrir contas bancárias, realizar transações financeiras e gerenciar seus investimentos.
 
 O sistema deverá permitir:
 
