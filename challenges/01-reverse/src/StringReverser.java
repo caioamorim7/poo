@@ -17,13 +17,13 @@ public class StringReverser {
             throw new IllegalArgumentException("A string não pode ser nula.");
         }
 
-        String reversedString = new String();
+        StringBuilder reversedString = new StringBuilder();
   
         for (int i = inputString.length()-1; i >= 0; i--) {
             reversedString += inputString.charAt(i);
         }
         
-        return reversedString;
+        return reversedString.toString();
  
     }
 }
