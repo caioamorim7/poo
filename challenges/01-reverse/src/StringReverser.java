@@ -4,24 +4,24 @@ public class StringReverser {
 
     public static void main(String[] args) {
         
-        try(Scanner scanner = new Scanner(System.in)){
+        try(Scanner poo = new Scanner(System.in)){
 
             System.out.print("Digite uma string: ");
-            String input = scanner.nextLine();
+            String input = poo.nextLine();
 
             System.out.printf("String invertida: %s\n", reverse(input));
        }
     }
 
-    public String reverse(String inputString) {
+    public static String reverse(String inputString) {
 
-        if (inputString == "") {
+        if (inputString.isEmpty()) {
             throw new IllegalArgumentException("A string não pode ser nula.");
         }
 
         String reversedString = new String();
   
-        for (int i = inputString.length(); i > 0; i--) {
+        for (int i = inputString.length()-1; i >= 0; i--) {
             reversedString += inputString.charAt(i);
         }
         
