@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class StringReverser {
 
     public static void main(String[] args) {
-        
         try(Scanner scanner = new Scanner(System.in)){
-
             System.out.print("Digite uma string: ");
             String input = scanner.nextLine();
             System.out.printf("String invertida: %s\n", reverse(input));
@@ -15,7 +13,7 @@ public class StringReverser {
 
     public static String reverse(String inputString) {
 
-        if (inputString.equals("")) {
+        if (inputString.isEmpty()) {
             throw new IllegalArgumentException("A string não pode ser nula.");
         }
 
