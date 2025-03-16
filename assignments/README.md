@@ -122,5 +122,5 @@ javap -cp bin/ -c HelloWorld
 |   | [Conjectura de Collatz](./09-collatz) |
 |   | [Mediana de três](./10-median)  |
 | 3 | [Parking](./11-parking)  |
-|   | [Perfect Number](./12-perfect)  |
-|   | [Savings Account](./11-savings)  |
+|   | [Savings Account](./12-savings) |
+| 4 | [Perfect Number](./13-perfect)  |
