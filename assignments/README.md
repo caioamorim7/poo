@@ -121,4 +121,6 @@ javap -cp bin/ -c HelloWorld
 |   | [Palíndromos](08-palindrome) |
 |   | [Conjectura de Collatz](./09-collatz) |
 |   | [Mediana de três](./10-median)  |
-| 3 |   |
+| 3 | [Parking](./11-parking)  |
+|   | [Perfect Number](./12-perfect)  |
+|   | [Savings Account](./11-savings)  |
