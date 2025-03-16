@@ -1,58 +1,54 @@
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class SavingsAccountTest {
-    private SavingsAccount saver1;
-    private SavingsAccount saver2;
+class SavingsAccountTest {
+    private SavingsAccount account;
 
     @BeforeEach
     void setUp() {
-        // Criando contas com saldos iniciais
-        saver1 = new SavingsAccount(2000.00);
-        saver2 = new SavingsAccount(3000.00);
+        account = new SavingsAccount(1000.00);
+        SavingsAccount.setAnnualInterestRate(12); // Define taxa inicial de 4%
     }
 
     @Test
     void testCalculateMonthlyInterest() {
-        SavingsAccount.setAnnualInterestRate(4.0); // Definindo taxa de juros como 4%
-
-        saver1.calculateMonthlyInterest();
-        saver2.calculateMonthlyInterest();
-
-        assertEquals(2006.67, saver1.getSavingsBalance(), 0.01);
-        assertEquals(3010.00, saver2.getSavingsBalance(), 0.01);
+        account.calculateMonthlyInterest();
+        assertEquals(1009.49, account.getBalance(), 0.01);
     }
 
     @Test
-    void testModifyInterestRateWithSetter() {
-        SavingsAccount.setAnnualInterestRate(5.0); // Alterando taxa de juros para 5%
-        saver1.calculateMonthlyInterest();
-        saver2.calculateMonthlyInterest();
-
-        assertEquals(2008.33, saver1.getSavingsBalance(), 0.01);
-        assertEquals(3012.50, saver2.getSavingsBalance(), 0.01);
+    void testModifyInterestRate() {
+        SavingsAccount.setAnnualInterestRate(10);
+        account.calculateMonthlyInterest();
+        assertEquals(1007.97, account.getBalance(), 0.01);
     }
 
     @Test
-    void testGetAnnualInterestRate() {
-        SavingsAccount.setAnnualInterestRate(3.5);
-        assertEquals(0.035, SavingsAccount.getAnnualInterestRate());
+    void testBalanceAfter12Months() {
+        for (int i = 0; i < 12; i++) {
+            account.calculateMonthlyInterest();
+        }
+        assertEquals(1120.00, account.getBalance(), 0.01);
     }
 
     @Test
-    void testNegativeInterestRate() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            SavingsAccount.setAnnualInterestRate(-1.0);
-        });
-        assertEquals("A taxa de juros não pode ser negativa.", exception.getMessage());
+    void testBalanceAfter13MonthsWithUpdatedRate() {
+        for (int i = 0; i < 12; i++) {
+            account.calculateMonthlyInterest();
+        }
+        SavingsAccount.setAnnualInterestRate(10);
+        account.calculateMonthlyInterest();
+        assertEquals(1128.93, account.getBalance(), 0.01);
     }
 
     @Test
     void testNegativeInitialBalance() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            new SavingsAccount(-500.00);
-        });
-        assertEquals("O saldo inicial não pode ser negativo.", exception.getMessage());
+        assertThrows(IllegalArgumentException.class, () -> new SavingsAccount(-1000));
+    }
+
+    @Test
+    void testNegativeInterestRate() {
+        assertThrows(IllegalArgumentException.class, () -> SavingsAccount.setAnnualInterestRate(-5));
     }
 }
