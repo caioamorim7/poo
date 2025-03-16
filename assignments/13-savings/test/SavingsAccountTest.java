@@ -8,7 +8,7 @@ class SavingsAccountTest {
     @BeforeEach
     void setUp() {
         account = new SavingsAccount(1000.00);
-        SavingsAccount.setAnnualInterestRate(12); // Define taxa inicial de 4%
+        SavingsAccount.setAnnualInterestRate(12); 
     }
 
     @Test
