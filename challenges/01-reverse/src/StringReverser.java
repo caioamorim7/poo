@@ -10,22 +10,24 @@ public class StringReverser {
             String input = poo.nextLine();
 
             System.out.printf("String invertida: %s\n", reverse(input));
+
        }
     }
 
+    public static String reverse(String inputString) {
     public static String reverse(String inputString) {
 
         if (inputString.isEmpty()) {
             throw new IllegalArgumentException("A string não pode ser nula.");
         }
 
-        String reversedString = new String();
+        StringBuilder reversedString = new StringBuilder();
   
         for (int i = inputString.length()-1; i >= 0; i--) {
             reversedString += inputString.charAt(i);
         }
         
-        return reversedString;
+        return reversedString.toString();
  
     }
 }

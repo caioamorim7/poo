@@ -7,7 +7,7 @@ public class PassosElefante {
         int n = scanner.nextInt();
         scanner.close();
 
-        if(x < 1 || x > 1000000){
+        if(n < 1 || n > 1000000){
             System.out.println("A posição deve estar entre 1 e 1.000.000");
             return;
         }
