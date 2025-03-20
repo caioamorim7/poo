@@ -20,7 +20,7 @@ public class ParkingGarage{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     
-        double totalarrrecadado = 0;
+        double totalarrecadado = 0;
         int customerCount = 0;
 
     while (true) {
@@ -33,7 +33,7 @@ public class ParkingGarage{
             break;
             }
 
-        if (hours <=0 || hours > 24) {
+        if (hours < 0 || hours > 24) {
             System.out.println("Número inválido de horas! Digite um valor entre 0 e 24.");
                 continue;
             }
@@ -47,7 +47,7 @@ public class ParkingGarage{
             System.out.printf("Cliente %d: Taxa de estacionamento: $%.2f%n", customerCount, charge);
         }    
 
-        System.out.printf("Total arrecadado ontem: $%.2f%n", totalRevenue);
+        System.out.printf("Total arrecadado ontem: $%.2f%n", totalarrecadado);
         scanner.close();
         
     }
