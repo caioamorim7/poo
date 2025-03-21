@@ -12,7 +12,7 @@ Aqui você encontrará referência para os slides utilizados ao longo do curso.
 |  | [Estudo de caso: IDP Bank (Semana 1)](../challenges/02-bank/) | Desenvolvimento do estudo de caso: IDP Bank (Semana 1) |
 | 6 | [Aula 6 - Programação Orientada a Objetos em Java - herança, extends, override, super, abstract, polimorfismo, encapsulamento, package, import](https://1drv.ms/p/s!Avnn2LcOmn0Y32GgrYpPTFA8lUHl?e=u7L4jb)| [Quizz: Introdução à programação orientada a objetos](https://idp2.vevox.com/#/share/JWELEXXZROTD8KL0Z1QT/meetingdata/720920/session/724857) <br> Análise de código do programa [payroll](./examples/09-inheritance/payroll/) | 
 | 10 | Continuação: Programação Orientada a Objetos em Java - herança, extends, override, super, abstract, polimorfismo, encapsulamento, package, import   | [Estudo de caso: IDP Bank (Semana 1)](../challenges/02-bank/) | Desenvolvimento do estudo de caso: IDP Bank (Semana 2)  |
-| 7 | [Aula 7 - Array e ArrayList](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) |  |
+|  | [Aula 7 - Array e ArrayList](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) |  |
 
 ### Referências
 
