@@ -15,8 +15,8 @@ class SavingsAccount {
     }
 
     public void calculateMonthlyInterest() {
-        double monthlyRate = (annualInterestRate / 100) / 12; 
-        savingsBalance += savingsBalance * monthlyRate;
+        double monthlyRate = Math.pow(1 + (annualInterestRate / 100) / 12, 1);
+        savingsBalance *= monthlyRate;
     }
 
     public static void setAnnualInterestRate(double rate) {
