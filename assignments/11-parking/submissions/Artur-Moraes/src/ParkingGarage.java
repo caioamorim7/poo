@@ -17,12 +17,12 @@ public class ParkingGarage {
                 continue;
             }
             preco = calculateCharges(hours);
-            System.out.printf("Cliente %d: Taxa de estacionamento: %.2f\n", cliente, preco);
+            System.out.printf("Cliente %d: Taxa de estacionamento: $%.2f\n", cliente, preco);
             total += preco;
             cliente++;
         } 
 
-        System.out.printf("Total arrecadado ontem: %.2f\n", total);
+        System.out.printf("Total arrecadado ontem: $%.2f\n", total);
         scanner.close();
     }
 
@@ -31,7 +31,8 @@ public class ParkingGarage {
             return 2.00;
         }
         if (hours <= 19) {
-            return (hours - 3) * 0.5 + 2.00;
+            double taxaExtra = Math.ceil(hours - 3) * 0.5;
+            return taxaExtra + 2.00;
         }
         return 10.00;
     }
