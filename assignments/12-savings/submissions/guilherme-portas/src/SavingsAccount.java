@@ -2,14 +2,10 @@ import java.lang.Math;
 
 public class SavingsAccount {
     private double savingsBalance;
-    private double taxaAnual;
+    private static double annualInterestRate;
 
-    public static double annualInterestRate() {
-        return 10;
-    }
-
-    public void setSavingsBalance(double savingsBalance) {
-        if(savingsBalance < 0) throw new java.lang.IllegalArgumentException("O saldo inicial não pode ser negativo.");
+    public SavingsAccount(double savingsBalance) {
+        if(savingsBalance < 0) throw new IllegalArgumentException("O saldo inicial não pode ser negativo.");
         else this.savingsBalance = savingsBalance;
     }
 
@@ -17,17 +13,19 @@ public class SavingsAccount {
         return this.savingsBalance;
     }
     
-    public double calculateMonthlyInterest() {
-        return Math.pow(1 + this.taxaAnual / 100d, 1d/12) - 1;
+    public static void setAnnualInterestRate(double annualInterestRate) {
+        if(annualInterestRate < 0) {
+            throw new IllegalArgumentException("A taxa de juros não pode ser negativa.");
+        }
+        SavingsAccount.annualInterestRate = annualInterestRate;
     }
 
-    public void setTaxaJuros(double taxaAnual) {
-        this.taxaAnual = taxaAnual;
+    public double getAnnualInterestRate() {
+        return SavingsAccount.annualInterestRate;
     }
 
-    public double getTaxaJuros() {
-        return this.taxaAnual;
+    public void calculateMonthlyInterest() {
+        double monthlyInterestRate = Math.pow(1 + annualInterestRate / 100d, 1d/12) - 1;
+        savingsBalance += savingsBalance * monthlyInterestRate;
     }
-
-
 }
