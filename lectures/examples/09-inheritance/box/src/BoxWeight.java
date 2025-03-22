@@ -1,4 +1,4 @@
-class BoxWeight extends Box {
+public class BoxWeight extends Box {
     double weight; // weight of box 
     
     // construct clone of an object 

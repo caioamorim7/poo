@@ -1,4 +1,4 @@
-public class RefDemoApp {
+public class DemoRefApp {
    
     public static void main(String[] args) { 
         BoxWeight weightbox = new BoxWeight(3, 5, 7, 8.37); 

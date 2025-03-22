@@ -1,4 +1,4 @@
-public class BoxApp {
+public class DemoBoxApp {
     public static void main(String[] args) throws Exception {
         BoxWeight mybox1 = new BoxWeight(10, 20, 15, 34.3); 
         BoxWeight mybox2 = new BoxWeight(2, 3, 4, 0.076); 
