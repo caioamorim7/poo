@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 class Customer{
     private String firstName;
@@ -40,17 +39,16 @@ class Customer{
     public boolean addAccount(Account accounts){
         this.accounts = accounts;
     return true;
-}
+    }
 
-public Account getAccount(){
+    public Account getAccount(){
     return accounts;
-}
+    }
 
-public String displayInformation(){
+    public String displayInformation(){
     return "Nome: " + firstName + " " + lastName + "\n"+
            "CPF: " + cpf + "\n" +
            "Número da Conta: " + accounts.getId() + "\n" +
-           "Saldo: R$ " + accounts.getBalance();
-}
-
+           "Saldo: R$ " + String.format("%.2f", accounts.getBalance());
+    }
 }
