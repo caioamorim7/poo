@@ -48,12 +48,11 @@ class AudioBook extends Book {
 
         @Override 
         public String toString() {
-            return super.toString() + ", Tamanho: " + fileSizeInMB + "MB, Duranção: " + playLengthInMinutes + "min, Narrador: " + narrator;
+            return super.toString() + ", Tamanho: " + fileSizeInMB + "MB, Duração: " + playLengthInMinutes + "min, Narrador: " + narrator;
         }
 }
 
 public class BookApp {
-    public static void main(String[] args) {
         Book genericBook = new Book("Java Basics", 2020, "John Doe");
         PrintBook printBook = new PrintBook("Effective Java", 2018, "Joshua Bloch", "Addison-Wesley", "978-0134685991");
         AudioBook audioBook = new AudioBook("Clean Code", 2008, "Robert C. Martin", 512.5, 750, "John Smith");
