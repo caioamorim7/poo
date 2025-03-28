@@ -1,6 +1,4 @@
 
-import java.lang.invoke.StringConcatFactory;
-
 class Book {
     protected String title;
     protected int year;
@@ -53,6 +51,7 @@ class AudioBook extends Book {
 }
 
 public class BookApp {
+         public static void main(String[] args) {
         Book genericBook = new Book("Java Basics", 2020, "John Doe");
         PrintBook printBook = new PrintBook("Effective Java", 2018, "Joshua Bloch", "Addison-Wesley", "978-0134685991");
         AudioBook audioBook = new AudioBook("Clean Code", 2008, "Robert C. Martin", 512.5, 750, "John Smith");
