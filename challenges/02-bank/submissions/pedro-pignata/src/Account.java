@@ -1,12 +1,11 @@
-import java.util.Scanner;
-
-    class Account {
+class Account {
     private int id;
     private double balance;
+    private static int accountCounter = 0;
 
-    public Account(int id, double balance){
-        this.id = id; 
+    public Account(double balancem){
         this.balance = 0.0;
+        this.id = ++accountCounter;
     }
 
     public double getBalance(){
@@ -25,7 +24,19 @@ import java.util.Scanner;
         this.id = id;
     }
 
-    // public void setBalance(double balance) {
-    //     this.balance = balance;
-    // }
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        } else {
+            System.out.println("O valor do depósito deve ser positivo.");
+        }
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
 }
