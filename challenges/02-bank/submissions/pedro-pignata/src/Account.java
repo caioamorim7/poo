@@ -40,3 +40,28 @@ class Account {
         return false;
     }
 }
+
+/*
+
+public class Account{
+    private int id = 999
+    private double balance;
+
+    Account(){
+        this.id += 1
+        this.balance = 0
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public void setBalance(double balance){
+    return
+    }
+}
+ */
