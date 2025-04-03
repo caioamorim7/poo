@@ -1,5 +1,3 @@
-package poo.assignments.07-health.submissions.rafael-lopes;
-
 public import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.Period;
