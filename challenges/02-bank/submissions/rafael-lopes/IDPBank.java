@@ -1,13 +1,9 @@
-package poo.challenges.bank02.submissions.rafael_lopes;
-
-
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class IDPBank {
-
     private static List<Customer> customers = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -22,7 +18,7 @@ public class IDPBank {
             System.out.print("Escolha uma opção: ");
 
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // limpar o Enter que fica no buffer
+            scanner.nextLine(); // limpa buffer
 
             switch (opcao) {
                 case 1:
@@ -41,13 +37,14 @@ public class IDPBank {
                     System.out.println("Saindo do sistema. Até logo!");
                     scanner.close();
                     return;
-                default:
+                    default :
                     System.out.println("Opção inválida! Tente novamente.");
+                    break;
+                }
             }
         }
-    }
-
-    private static void abrirConta() {
+        
+        private static void abrirConta() {
         System.out.println("\nDigite os dados do cliente para abrir a conta:");
 
         System.out.print("Primeiro nome: ");
@@ -98,10 +95,8 @@ public class IDPBank {
                 System.out.print("Digite o valor para depositar: R$ ");
                 double valor = scanner.nextDouble();
                 scanner.nextLine();
-
-                boolean sucesso = c.getAccount().deposit(valor);
-
-                if (sucesso) {
+                
+                if (c.getAccount().deposit(valor)) {
                     System.out.println("Depósito realizado com sucesso!");
                 } else {
                     System.out.println("Valor inválido.");
@@ -149,3 +144,5 @@ public class IDPBank {
         scanner.nextLine();
     }
 }
+
+

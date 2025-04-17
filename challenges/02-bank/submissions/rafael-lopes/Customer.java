@@ -1,7 +1,3 @@
-package poo.challenges.bank02.submissions.rafael_lopes;
-
-
-
 
 public class Customer {
     private String firstName;
@@ -9,36 +5,40 @@ public class Customer {
     private String cpf;
     private Account account;
 
-    public Customer(String firstName, String lastName, String cpf){
+    public Customer(String firstName, String lastName, String cpf) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cpf = cpf;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return firstName;
     }
-    
-    public String getCpf(){
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getCpf() {
         return cpf;
     }
 
-    public Account getAccount(){
+    public Account getAccount() {
         return account;
     }
 
-    public boolean addAccount(Account account){
-        if (this.account == null){
+    public boolean addAccount(Account account) {
+        if (this.account == null) {
             this.account = account;
             return true;
         }
         return false;
     }
 
-    public String displayInformation(){
-        return "Nome: " + firstName + " " + lastName + "\n"+
+    public String displayInformation() {
+        return "Nome: " + firstName + " " + lastName + "\n" +
                "CPF: " + cpf + "\n" +
                "Número da Conta: " + (account != null ? account.getId() : "Nenhum") + "\n" +
                "Saldo: " + (account != null ? account.getBalance() : "R$ 0,00");
-    }   
+    }
 }
