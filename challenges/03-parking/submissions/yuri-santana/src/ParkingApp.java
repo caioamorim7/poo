@@ -8,16 +8,12 @@ public class ParkingApp {
       Truck truck = new Truck("222", "Ford", "sei la");
       Motorcycle motorcycle = new Motorcycle("333", "Honda", "ninja");
       listaVeiculos.add(car);
-      listaVeiculos.add(truck);
       listaVeiculos.add(motorcycle);
-      System.out.println(car);
-      System.out.println("o valor a pagar por 4h: R$ " + car.calculateParkingFee(4) + "\n");
-      
-      System.out.println(motorcycle);
-      System.out.println("o valor a pagar por 4h: R$ " + motorcycle.calculateParkingFee(4) + "\n");
+      listaVeiculos.add(truck);
 
-      System.out.println(truck);
-      System.out.println("o valor a pagar por 4h: R$ " + truck.calculateParkingFee(4) + "\n");
-
+      for (Vehicle vehicle : listaVeiculos) {
+        System.out.println(vehicle);
+        System.out.println("o valor a pagar por 4h: R$ " + vehicle.calculateParkingFee(4) + "\n");
+      }
   }
 }
