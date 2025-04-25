@@ -11,7 +11,7 @@ public class Motorcycle extends Vehicle{
 
   @Override
   public String toString() {
-    return "Veículo: Moto" + super.toString();
+    return "Moto" + super.toString();
   }
   
 }

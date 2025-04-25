@@ -11,7 +11,7 @@ public class Truck extends Vehicle {
 
   @Override
   public String toString() {
-    return "Veículo: Caminhão" + super.toString();
+    return "Caminhão" + super.toString();
   }
 
 }
