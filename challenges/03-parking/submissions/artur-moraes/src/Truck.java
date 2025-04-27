@@ -11,7 +11,7 @@ public class Truck extends Vehicle {
 
     @Override //sobrescreve o metodo toString
     public String toString(){
-        return "Veículo: Caminhão - " + super.toString(); // pega de vehicle
+        return "Caminhão - " + super.toString(); // pega de vehicle
     }
     
 }
