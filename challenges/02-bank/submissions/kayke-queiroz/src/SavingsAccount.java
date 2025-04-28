@@ -1,8 +1,11 @@
-class SalaryAccount extends Account {
+class SavingsAccount extends Account {
+    private static final double INTEREST_RATE = 0.005; // 0,5% ao mês
 
     @Override
     public void deposit(double amount) {
-        throw new UnsupportedOperationException("Depósitos manuais não são permitidos nesta conta.");
+        if (amount > 0) {
+            balance += amount;
+        }
     }
 
     @Override
@@ -12,5 +15,9 @@ class SalaryAccount extends Account {
         } else {
             throw new IllegalArgumentException("Saldo insuficiente.");
         }
+    }
+
+    public void applyInterest() {
+        balance += balance * INTEREST_RATE;
     }
 }
