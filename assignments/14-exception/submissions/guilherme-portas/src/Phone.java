@@ -1,6 +1,6 @@
 public class Phone {
-    String name;
-    String serialNumber;
+    private String name;
+    private String serialNumber;
 
     public Phone(String name, String serialNumber) throws ValidationException {
         if(name == null || name.isEmpty()) {
@@ -13,5 +13,13 @@ public class Phone {
             this.name = name;
             this.serialNumber = serialNumber;
         }
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSerialNumber() {
+        return this.serialNumber;
     }
 }
