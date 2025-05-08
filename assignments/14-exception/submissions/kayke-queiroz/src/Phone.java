@@ -14,4 +14,13 @@ public class Phone {
         this.name = name;
         this.serialNumber = serialNumber;
     }
+
+  
+    public String getName() {
+        return name;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 }
