@@ -7,9 +7,9 @@ public class PhoneApp {
             System.out.println("Erro ao criar telefone 1: " + e.getMessage());
         }
 
-        // Teste 2: número de série inválido (menos de 16 caracteres)
+        // Teste 2: serial number com menos de 16 dígitos
         try {
-            Phone phone2 = new Phone("Samsung", "12345");
+            Phone phone2 = new Phone("Samsung", "123456");
         } catch (ValidationException e) {
             System.out.println("Erro ao criar telefone 2: " + e.getMessage());
         }
