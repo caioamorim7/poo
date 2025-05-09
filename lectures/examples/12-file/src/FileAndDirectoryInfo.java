@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileAndDirectoryInfo { 
@@ -10,7 +9,8 @@ public class FileAndDirectoryInfo {
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("Enter file or directory name:"); 
 
-            Path path = Paths.get(input.nextLine());
+            Path path = Path.of(input.nextLine()); //Paths.get(input.nextLine());
+
 
             if (Files.exists(path)){
                 System.out.printf("%n%s exists%n", path.getFileName());
