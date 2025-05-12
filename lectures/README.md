@@ -23,6 +23,8 @@ Nesta página você encontra:
 | 11 | Continuação aula anterior | [Estudo de caso: IDP Bank (Semana 2)](../challenges/02-bank/) | Desenvolvimento do estudo de caso: IDP Bank (Semana 2)  |
 | 12 | [Arrays](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) | [Quizz: herança, extends, override, super, abstract, polimorfismo, encapsulamento, package, import](https://idp2.vevox.com/#/share/88XFCK5F9CGYWC2UU07E/meetingdata/727316/session/731253) |
 | 12 | Continuação aula anterior | [Análise de código arrays](../lectures/examples/07-arrays) |
+| 13 | [Manipulação de arquivos em Java](https://1drv.ms/p/c/187d9a0eb7d8e7f9/ER83TNCSyDBEu5m2MiR-xDkBBf8nV7BOBS-IKMNyMY0WjQ?e=ZJDNe6) |  |
+
 
 ### Livros de referência
 
