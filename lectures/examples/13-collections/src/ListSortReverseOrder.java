@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class SortReverseOrder {
+public class ListSortReverseOrder {
     public static void main(String[] args) {
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
