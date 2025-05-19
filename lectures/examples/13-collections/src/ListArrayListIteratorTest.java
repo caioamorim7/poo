@@ -3,7 +3,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class ListArrayListTest {
+public class ListArrayListIteratorTest {
     public static void main(String[] args) {
 
         String[] colors = {"MAGENTA", "RED", "WHITE", "BLUE", "CYAN"};

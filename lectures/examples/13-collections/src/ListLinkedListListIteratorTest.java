@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ListLinkedListTest {
+public class ListLinkedListListIteratorTest {
     public static void main(String[] args) {
         
         String[] colors = {"black", "yellow", "green", "blue", "violet", "silver"};
