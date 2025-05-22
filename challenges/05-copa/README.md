@@ -91,4 +91,4 @@ Time1 vs Time3 - Vencedor: Time3
         * `Time getTime2()`
         * `Time getVencedor()`
 * A classe coda `CopaIDPApp` deve criar diretamente, sem necessidade de coletar dados no terminal, no mínimo 3 times, com no mínimo 2 atletas cada time, e criar no mínimo 4 partidas e gravar o relatório.
-    * Para gravar o relatório utilize a classe `FileWriter` em bloco `try-with-resources` para garantir fechamento automático.
+    * Para gravar o relatório utilize as classes `java.nio.file.Files`, `java.nio.file.Path` e `java.nio.file.Paths` em bloco `try-with-resources` para garantir fechamento automático.
