@@ -1,0 +1,20 @@
+Real Madrid vs Barca - Vencedor Real Madrid - 6
+-Atletas:
+atleta:Fabricio
+atleta:Yuri
+
+Real Madrid vs Flamengo - Vencedor Real Madrid - 6
+-Atletas:
+atleta:Fabricio
+atleta:Yuri
+
+Flamengo vs Barca - Vencedor Flamengo - 3
+-Atletas:
+atleta:Rafa
+atleta:Renato
+
+Real Madrid vs Barca - Vencedor Barca - 3
+-Atletas:
+atleta:Pig
+atleta:dutra
+
