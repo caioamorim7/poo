@@ -7,7 +7,6 @@ import java.util.List;
 
 public class CopaIDPApp {
     public static void main(String[] args) {
-        // Criando Times
         Time time1 = new Time("Time1");
         time1.adicionarAtleta("Atleta1");
         time1.adicionarAtleta("Atleta2");
@@ -20,13 +19,11 @@ public class CopaIDPApp {
         time3.adicionarAtleta("Atleta5");
         time3.adicionarAtleta("Atleta6");
 
-        // Criando Partidas
         new Partida(time1, time2, time1);
         new Partida(time2, time3, time3);
         new Partida(time1, time3, time3);
         new Partida(time3, time1, time3);
 
-        // Geração do relatório
         gerarRelatorio(Arrays.asList(time1, time2, time3));
     }
 
@@ -58,7 +55,6 @@ public class CopaIDPApp {
               .append("  \n");
         }
 
-        // Escrevendo em arquivo
         Path path = Paths.get("relatorio_copa_idp.txt");
         try {
             Files.writeString(path, sb.toString());
