@@ -9,7 +9,7 @@ Explique o que é um banco de dados relacional e por que ele é amplamente utili
 3. Compare bancos relacionais com bancos orientados a documentos.
 ```
 
-### A Base de Dados `books`
+### Banco de dados
 
 ```
 Descreva uma estrutura de banco de dados de exemplo para armazenar dados sobre livros.
