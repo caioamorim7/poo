@@ -31,15 +31,6 @@ Mostre como usar SQL para consultar e modificar dados em uma base relacional.
 7. Remova registros com DELETE.
 ```
 
-### Configuração do Java DB
-
-```
-Explique como configurar o banco Java DB (Apache Derby) em diferentes sistemas operacionais.
-1. Quais são os comandos para criar uma base de dados no Windows, macOS e Linux?
-2. Quais variáveis de ambiente precisam ser definidas?
-3. O que é a ferramenta `ij` e como ela é usada?
-```
-
 ### Conexão com o Banco via JDBC
 
 ```
