@@ -29,7 +29,6 @@ Trocar [HOST] pelo nome do seu servidor
 
 ```bash
 psql "postgresql://[USER]:[PASSOWORD]@[HOST]:5432/postgres?sslmode=require"
-postgres=> CREATE DATABASE dvdrental;
 postgres=> \l
 postgres=> exit
 ```
@@ -41,8 +40,8 @@ Trocar [PASSWORD] pela senha do banco de dados
 Trocar [HOST] pelo nome do seu servidor
 
 ```bash
-pg_restore -U [USER] -h [HOST] -p 5432 -d dvdrental -v dvdrental.tar --no-owner --clean --if-exists
-psql "postgresql://[USER]:[PASSOWORD]@[HOST]:5432/dvdrental?sslmode=require"
+pg_restore -U [USER] -h [HOST] -p 5432 -d postgres -v dvdrental.tar --no-owner --clean --if-exists
+psql "postgresql://[USER]:[PASSOWORD]@[HOST]:5432/postgres?sslmode=require"
 postgres=> SELECT * FROM film;
 ```
 
