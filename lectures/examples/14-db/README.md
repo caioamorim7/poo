@@ -1,12 +1,12 @@
 
-### Instalar cliente do Postgres SQL
+### Instalar cliente do PostgreSQL
 ```bash
 sudo apt update
 sudo apt install postgresql-client
 psql --version
 ```
 
-### Baixar driver de conexão com o Postgres SQL
+### Baixar driver de conexão com o PostgreSQL
 ```bash
 /14-db> mkdir lib
 /14-db> cd lib/
