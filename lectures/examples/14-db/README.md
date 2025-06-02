@@ -99,7 +99,15 @@ postgres=> SELECT * FROM film;
 curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
 sudo apt install pgadmin4-web
+```
+
+- Configuar o pgAdmin
+```bash
 sudo /usr/pgadmin4/bin/setup-web.sh
+```
+
+- Alterar a porta para rodar o pgAdmin para 8888
+```bash
 sudo nano /etc/apache2/ports.conf
 sudo service apache2 restart
 ```
