@@ -50,6 +50,9 @@ postgres=# exit
 - Testar conexão com banco
 ```bash
 psql -h localhost -p 5432 -U postgres -d postgres
+```
+
+```bash
 postgres=> SELECT * FROM film;
 postgres=> exit
 ```
@@ -118,6 +121,9 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 - Alterar a porta para rodar o pgAdmin para 8888
 ```bash
 sudo nano /etc/apache2/ports.conf
+```
+
+```bash
 sudo service apache2 restart
 ```
 
