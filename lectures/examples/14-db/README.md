@@ -19,6 +19,15 @@ sudo apt install postgresql postgresql-contrib postgresql-common postgresql-clie
 sudo service postgresql start
 ```
 
+- Definir a senha inicial do usuário postgres
+```bash
+sudo -u postgres psql
+```
+
+```bash
+postgres=#  \password postgres
+```
+
 - Testar conexão com PostgreSQL
 ```bash
 psql -h localhost -p 5432 -U postgres -d postgres
