@@ -82,13 +82,6 @@ postgres=> \l
 postgres=> exit
 ```
 
-- Baixar driver de conexão com o PostgreSQL
-```bash
-/14-db> mkdir lib
-/14-db> cd lib/
-/14-db/lib> wget https://jdbc.postgresql.org/download/postgresql-42.7.6.jar
-```
-
 - Baixar o banco de dados de exemplo
 ```bash
 /14-db> mkdir db
@@ -136,11 +129,24 @@ docker-compose up -d
 
 - Criar arquivo `db.properties` a partir do arquivo exemplo `db.properties.sample` e atualizar valores
 ```bash
+url=jdbc:postgresql://[HOST]:5432/postgres
+user=[USER]
+password=[PASSWORD]
+```
+
+- Baixar driver de conexão com o PostgreSQL
+```bash
+/14-db> mkdir lib
+/14-db> cd lib/
+/14-db/lib> wget https://jdbc.postgresql.org/download/postgresql-42.7.6.jar
 ```
 
 - Compilar e rodar programa
-```bash
-javac -d bin src/Film.java
 
+Substituir [PROGRAM] pelo nome do programa que deja rodar.
+
+```bash
+/14-db> javac -d bin src/[PROGRAM].java
+/14-db> java -cp bin:lib/* [PROGRAM]
 ```
 

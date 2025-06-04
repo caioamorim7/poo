@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.Properties;
 
-public class UpdateCategory {
+public class PreparedStatementDeleteDemo {
     public static void main(String[] args) throws Exception {
         Properties props = new Properties();
         props.load(Files.newInputStream(Paths.get("db.properties")));
@@ -13,12 +13,11 @@ public class UpdateCategory {
         try (Connection conn = DriverManager.getConnection(
                 props.getProperty("url"), props.getProperty("user"), props.getProperty("password"))) {
 
-            String sql = "UPDATE category SET name = ?, last_update = CURRENT_TIMESTAMP WHERE category_id = ?";
+            String sql = "DELETE FROM category WHERE name = ?";
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, "CATEGORIA_ATUALIZADA");
-                ps.setInt(2, 1); 
+                ps.setString(1, "EXEMPLO_CATEGORIA");
                 int rows = ps.executeUpdate();
-                System.out.println("Linhas atualizadas: " + rows);
+                System.out.println("Linhas removidas: " + rows);
             }
         }
     }
