@@ -28,8 +28,5 @@ public class ConnectionDemo {
         } catch(IOException ioex){
             System.err.println("Erro ao ler arquivo de configuração: " + ioex.getMessage());
         }
-        
-
-
     }
 }
