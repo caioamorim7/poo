@@ -1,6 +1,5 @@
 package br.edu.idp.cc.poo.dvdrental.util;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

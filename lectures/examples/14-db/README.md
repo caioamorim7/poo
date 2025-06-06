@@ -117,8 +117,9 @@ sudo nano /etc/apache2/ports.conf
 ```
 
 ```bash
-sudo service apache2 restart
+sudo service apache2 start
 ```
+- Acesse no browser o endereço http://localhost:8888/pgadmin4
 
 ### Configurar servidor PostgreSQL e pgAdmin4 no docker
 ```bash
