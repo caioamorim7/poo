@@ -1,33 +1,33 @@
 package br.edu.idp.cc.poo.dvdrental.util;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+import java.io.InputStream;
 
 public class ConnectionFactory {
-    private static final Properties properties = new Properties();
+    private static final String PROPERTIES_FILE = "/db.properties";  // arquivo no root do classpath
+    private static String url;
+    private static String user;
+    private static String password;
 
     static {
-        try (InputStream input = ConnectionFactory.class.getClassLoader().getResourceAsStream("db.properties")) {
+        try (InputStream input = ConnectionFactory.class.getResourceAsStream(PROPERTIES_FILE)) {
             if (input == null) {
-                throw new RuntimeException("Arquivo db.properties não encontrado no resources");
+                throw new RuntimeException("Arquivo " + PROPERTIES_FILE + " não encontrado no classpath.");
             }
-            properties.load(input);
-            String driver = properties.getProperty("jdbc.driver");
-            Class.forName(driver);  // Carrega o driver uma vez só
-        } catch (IOException | ClassNotFoundException ex) {
-            throw new RuntimeException("Erro ao carregar configuração do banco ou driver JDBC", ex);
+            Properties props = new Properties();
+            props.load(input);
+            url = props.getProperty("db.url");
+            user = props.getProperty("db.user");
+            password = props.getProperty("db.password");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public static Connection getConnection() throws SQLException {
-        String url = properties.getProperty("jdbc.url");
-        String user = properties.getProperty("jdbc.user");
-        String password = properties.getProperty("jdbc.password");
-
         return DriverManager.getConnection(url, user, password);
     }
 }
