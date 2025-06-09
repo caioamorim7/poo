@@ -22,3 +22,6 @@ mvn compile
 mvn exec:java -Dexec.mainClass="br.edu.idp.cc.poo.dvdrental.Main"
 ```
 
+```bash
+mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=[SONAR_PROJECT_KEY] -Dsonar.token=[SONAR_TOKEN]
+```
