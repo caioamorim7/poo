@@ -11,10 +11,10 @@ public class ConnectionDataSourceDemo {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
 
         dataSource.setServerNames(new String[] {"localhost"});
-        dataSource.setPortNumbers(new int[] {5432});
+        dataSource.setPortNumbers(new int[] {8888});
         dataSource.setDatabaseName("postgres");
         dataSource.setUser("postgres");
-        dataSource.setPassword("postgres");
+        dataSource.setPassword("123456");
 
         String sql = "SELECT title, release_year FROM film ORDER BY title LIMIT 5";
 
