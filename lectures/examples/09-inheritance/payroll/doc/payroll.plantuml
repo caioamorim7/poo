@@ -1,4 +1,4 @@
-@startuml
+@startuml payroll
 package "br.edu.idp.cc.poo.payroll" {
 
     abstract class Employee {
