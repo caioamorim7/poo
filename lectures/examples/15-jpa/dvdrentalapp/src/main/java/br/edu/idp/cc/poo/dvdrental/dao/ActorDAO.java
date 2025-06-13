@@ -1,6 +1,10 @@
 package br.edu.idp.cc.poo.dvdrental.dao;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.Predicate;
 import java.util.List;
 
 import br.edu.idp.cc.poo.dvdrental.util.AuditLogger;
@@ -22,7 +26,11 @@ public class ActorDAO {
     }
 
     public List<Actor> findAll() {
-        return em.createQuery("SELECT a FROM Actor a ORDER BY a.actorId", Actor.class).getResultList();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> cq = cb.createQuery(Actor.class);
+        Root<Actor> root = cq.from(Actor.class);
+        cq.select(root).orderBy(cb.asc(root.get("actorId")));
+        return em.createQuery(cq).getResultList();
     }
 
     public Actor findById(int id) {
@@ -30,9 +38,15 @@ public class ActorDAO {
     }
 
     public List<Actor> findByName(String name) {
-        return em.createQuery("SELECT a FROM Actor a WHERE a.firstName LIKE :name OR a.lastName LIKE :name", Actor.class)
-                 .setParameter("name", "%" + name + "%")
-                 .getResultList();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> cq = cb.createQuery(Actor.class);
+        Root<Actor> root = cq.from(Actor.class);
+
+        Predicate firstNameLike = cb.like(root.get("firstName"), "%" + name + "%");
+        Predicate lastNameLike = cb.like(root.get("lastName"), "%" + name + "%");
+        cq.select(root).where(cb.or(firstNameLike, lastNameLike));
+
+        return em.createQuery(cq).getResultList();
     }
 
     public void update(Actor actor) {
