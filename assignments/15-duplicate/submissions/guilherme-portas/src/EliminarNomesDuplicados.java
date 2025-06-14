@@ -15,7 +15,7 @@ public class EliminarNomesDuplicados {
                 String nome = scanner.nextLine();
 
                 if(nome.equalsIgnoreCase("fim")) break;
-                if(setContainsIgnoreCase(serieNomes, nome).isEmpty()) {
+                if(!setContainsIgnoreCase(serieNomes, nome)) {
                     serieNomes.add(nome);
                 }
             }
@@ -36,21 +36,21 @@ public class EliminarNomesDuplicados {
                     String nomeAhPesquisar = scanner.nextLine();
 
                     if(nomeAhPesquisar.equalsIgnoreCase("sair")) break;
-                    if(!setContainsIgnoreCase(serieNomes, nomeAhPesquisar).isEmpty()) System.out.println("Nome encontrado.");
+                    if(setContainsIgnoreCase(serieNomes, nomeAhPesquisar)) System.out.println("Nome encontrado.");
                     else System.out.println("Nome não encontrado.");
                 }
         }
     }
 
-    public static String setContainsIgnoreCase(Set<String> set, String searchStr) {
-        if(set == null || searchStr == null) return "";
+    public static boolean setContainsIgnoreCase(Set<String> set, String searchStr) {
+        if(set == null || searchStr == null) return false;
 
         Iterator<String> it = set.iterator();
         while(it.hasNext()) {
             String str = it.next();
             if (str.equalsIgnoreCase(searchStr))
-                return str;
+                return true;
         }
-        return "";
+        return false;
     }
 }
