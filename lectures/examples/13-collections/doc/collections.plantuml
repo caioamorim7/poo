@@ -1,0 +1,103 @@
+@startuml
+
+interface Collection {
+    +int size()
+    +boolean isEmpty()
+    +boolean add(E e)
+    +boolean remove(Object o)
+    +Iterator<E> iterator()
+}
+
+interface List<E> extends Collection {
+    +E get(int index)
+    +E set(int index, E element)
+    +void add(int index, E element)
+    +E remove(int index)
+}
+
+interface Set extends Collection {
+
+}
+
+interface SortedSet extends Set {
+    +Comparator<? super E> comparator()
+    +E first()
+    +E last()
+}
+
+interface Queue extends Collection {
+    +boolean offer(E e)
+    +E poll()
+    +E peek()
+}
+
+interface Deque extends Queue {
+    +void addFirst(E e)
+    +void addLast(E e)
+    +E removeFirst()
+    +E removeLast()
+}
+
+interface Map {
+    +int size()
+    +boolean isEmpty()
+    +V get(Object key)
+    +V put(K key, V value)
+    +V remove(Object key)
+    +Set<K> keySet()
+    +Collection<V> values()
+}
+
+interface SortedMap extends Map {
+    +Comparator<? super K> comparator()
+    +K firstKey()
+    +K lastKey()
+}
+
+class ArrayList<E> implements List<E>{
+    -Object[] elementData
+    -int size
+    +void add()
+    +void clear()
+    +boolen contains()
+    +E get()
+}
+
+class LinkedList<E> implements List, Deque{
+    -Node<E> first
+    -Node<E> last
+    -int size
+}
+
+class HashSet {
+    -HashMap<E,Object> map
+}
+
+class TreeSet {
+    -TreeMap<E,Object> map
+}
+
+class HashMap {
+    -Node<K,V>[] table
+    -int size
+}
+
+class TreeMap {
+    -Entry<K,V> root
+    -int size
+}
+
+class PriorityQueue {
+    -Object[] queue
+    -int size
+}
+
+' Relações
+
+Set <|.. HashSet
+SortedSet <|.. TreeSet
+Queue <|.. PriorityQueue
+Map <|.. HashMap
+SortedMap <|.. TreeMap
+
+@enduml
