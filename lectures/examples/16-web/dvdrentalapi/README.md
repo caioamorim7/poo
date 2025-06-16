@@ -40,3 +40,27 @@ curl http://localhost:8080/actor
 ```bash
 curl http://localhost:8080/actor/5
 ```
+
+```bash
+curl http://localhost:8080/actor/search
+```
+
+```bash
+curl http://localhost:8080/actor/search/findByLastName?name=Santana
+```
+
+```bash
+curl -i -H "Content-Type:application/json" -d '{"firstName": "Curl Fabricio", "lastName": "Curl Santana"}' http://localhost:8080/actor
+```
+
+```bash
+curl -X PUT -H "Content-Type:application/json" -d '{"firstName": "Fabricio", "lastName": "Atualizado via PUT"}' http://localhost:8080/actor/5
+```
+
+```bash
+curl -X PATCH -H "Content-Type:application/json" -d '{"firstName": "Fabricio Atualizado via PATCH"}' http://localhost:8080/actor/5
+```
+
+```bash
+curl -X DELETE http://localhost:8080/actor/269
+```
