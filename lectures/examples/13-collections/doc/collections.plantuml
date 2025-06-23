@@ -214,25 +214,109 @@ package "Collections (java.util)" {
     }
 
     class ArrayList<E> implements List<E>{
-        -Object[] elementData
-        -int size
-        +void add()
+        +void add(int index, E element)
+        +boolean add(E e)
+        +boolean addAll(int index, Collection<? extends E> c)
+        +boolean addAll(Collection<? extends E> c)
+        +void addFirst(E element)
+        +void addLast(E element)
         +void clear()
-        +boolen contains()
-        +E get()
+        +Object clone()
+        +boolean contains(Object o)
+        +void ensureCapacity(int minCapacity)
+        +boolean equals(Object o)
+        +void forEach(Consumer<? super E> action)
+        +E get(int index)
+        +E getFirst()
+        +E getLast()
+        +int hashCode()
+        +int indexOf(Object o)
+        +boolean isEmpty()
+        +Iterator<E> iterator()
+        +int lastIndexOf(Object o)
+        +ListIterator<E> listIterator()
+        +ListIterator<E> listIterator(int index)
+        +E remove(int index)
+        +boolean remove(Object o)
+        +boolean removeAll(Collection<?> c)
+        +E removeFirst()
+        +boolean removeIf(Predicate<? super E> filter)
+        +E removeLast()
+        -void removeRange(int fromIndex, int toIndex)
+        +boolean retainAll(Collection<?> c)
+        +E set(int index, E element)
+        +int size()
+        +Spliterator<E> spliterator()
+        +List<E> subList(int fromIndex, int toIndex)
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
+        +void trimToSize()
     }
 
-    class LinkedList<E> implements List, Deque{
-        -Node<E> first
-        -Node<E> last
-        -int size
+    class LinkedList<E> implements List, Deque<E>{
+        +void add(int index, E element)
+        +boolean add(E e)
+        +boolean addAll(int index, Collection<? extends E> c)
+        +boolean addAll(Collection<? extends E> c)
+        +void addFirst(E e)
+        +void addLast(E e)
+        +void clear()
+        +Object clone()
+        +boolean contains(Object o)
+        +Iterator<E> descendingIterator()
+        +E element()
+        +E get(int index)
+        +E getFirst()
+        +E getLast()
+        +int indexOf(Object o)
+        +int lastIndexOf(Object o)
+        +ListIterator<E> listIterator(int index)
+        +boolean offer(E e)
+        +boolean offerFirst(E e)
+        +boolean offerLast(E e)
+        +E peek()
+        +E peekFirst()
+        +E peekLast()
+        +E poll()
+        +E pollFirst()
+        +E pollLast()
+        +E pop()
+        +void push(E e)
+        +E remove()
+        +E remove(int index)
+        +boolean remove(Object o)
+        +E removeFirst()
+        +boolean removeFirstOccurrence(Object o)
+        +E removeLast()
+        +boolean removeLastOccurrence(Object o)
+        +LinkedList<E> reversed()
+        +E set(int index, E element)
+        +int size()
+        +Spliterator<E> spliterator()
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
     }
 
-    class HashSet {
-        -HashMap<E,Object> map
+    class HashSet implements Set<E> {
+        +boolean add(E e)
+        +void clear()
+        +Object clone()
+        +boolean contains(Object o)
+        +boolean isEmpty()
+        +Iterator<E> iterator()
+        +static <T> HashSet<T> newHashSet(int numElements)
+        +boolean remove(Object o)
+        +int size()
+        +Spliterator<E> spliterator()
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
     }
 
-    class TreeSet {
+    class LinkedHashSet extends HashSet<E> {
+        
+    }
+
+    class TreeSet implements NavigableSet<E>{
         -TreeMap<E,Object> map
     }
 
@@ -252,9 +336,6 @@ package "Collections (java.util)" {
     }
 
     ' Relações
-
-    Set <|.. HashSet
-    SortedSet <|.. TreeSet
     Queue <|.. PriorityQueue
     Map <|.. HashMap
     SortedMap <|.. TreeMap
