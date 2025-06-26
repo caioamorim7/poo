@@ -12,9 +12,9 @@ import br.edu.idp.cc.poo.dvdrental.model.Actor;
 import br.edu.idp.cc.poo.dvdrental.repository.ActorRepository;
 
 @SpringBootApplication
-public class Application {
+public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
     @Bean
