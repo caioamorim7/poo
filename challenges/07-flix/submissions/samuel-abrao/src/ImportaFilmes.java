@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 public class ImportaFilmes {
-    private static final String URL = 
+    private static final String URL =
         "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require";
     private static final String USER = "postgres.snghnxpdoffuasscqmms";
     private static final String PASS = "idpccpoo";
@@ -19,6 +19,7 @@ public class ImportaFilmes {
         }
         Class.forName("org.postgresql.Driver");
         List<String> linhas = Files.readAllLines(Paths.get(args[0]));
+
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
              PreparedStatement ins = conn.prepareStatement(
                  "INSERT INTO film(title,language_id,rental_duration,rental_rate,replacement_cost) VALUES(?,?,?,?,?)");
@@ -27,8 +28,9 @@ public class ImportaFilmes {
              PreparedStatement sel = conn.prepareStatement(
                  "SELECT title, rental_rate FROM film WHERE rental_duration = 99")) {
 
-            for (int i = 1; i < linhas.size(); i++) {
-                String[] p = linhas.get(i).split(";");
+            for (String linha : linhas) {
+                if (linha.trim().isEmpty() || linha.startsWith("title;")) continue;
+                String[] p = linha.split(";");
                 ins.setString(1, p[0]);
                 ins.setInt(2, Integer.parseInt(p[1]));
                 ins.setInt(3, Integer.parseInt(p[2]));
@@ -36,7 +38,9 @@ public class ImportaFilmes {
                 ins.setDouble(5, Double.parseDouble(p[4]));
                 ins.executeUpdate();
             }
+
             upd.executeUpdate();
+
             try (ResultSet rs = sel.executeQuery()) {
                 while (rs.next()) {
                     System.out.printf("%s – %.2f%n",
