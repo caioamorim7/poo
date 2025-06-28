@@ -1,14 +1,18 @@
 // Nome: Allan Samuel Alves do Monte
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "******"; 
-        String filePath = "C:\Users\Nitro five\poo\challenges\07-flix\submissions\allan-samuel\new_films.txt"; 
+        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
+        String user = "postgres.snghnxpdoffuasscqmms";
+        String password = "idpccpoo"; 
+        String filePath = "../../data/new_films.txt"; 
 
         List<Film> films = FilmFileReader.readFilmsFromFile(filePath);
 
