@@ -10,7 +10,7 @@ public class ImportaFilmes {
     private static final String URL =
         "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require";
     private static final String USER = "postgres.snghnxpdoffuasscqmms";
-    private static final String PASS = "idpccpoo";
+    private static final String PASS = "";
 
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
@@ -18,7 +18,7 @@ public class ImportaFilmes {
             System.exit(1);
         }
         Class.forName("org.postgresql.Driver");
-        List<String> linhas = Files.readAllLines(Paths.get(args[0]));
+        List<String> linhas = Files.readAllLines(Paths.get("../../data/new_films.txt"));
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
              PreparedStatement ins = conn.prepareStatement(
