@@ -8,12 +8,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        String filePath = "/home/massarrahelenna/poo/challenges/07-flix/data/new_films.txt"; 
+        String filePath = "../../data/new_films.txt"; 
         List<Film> films = FilmFileReader.readFilmsFromFile(filePath); //classe que le o arquivo, usando java.nio.file.Files.readAllLines()
 
         String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
         String user = "postgres.snghnxpdoffuasscqmms";
-        String password = "idpccpoo";
+        String password = "";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
