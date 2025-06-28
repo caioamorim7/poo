@@ -8,14 +8,14 @@ import java.util.List;
 public class IDPFlixApp {
 
     // configuração do DB
-    private static final String JDBC_URL      = "jdbc:postgresql://localhost:5432/dvdrental";
+    private static final String JDBC_URL      = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
     // usuario
-    private static final String JDBC_USER     = "postgres"; 
+    private static final String JDBC_USER     = "postgres.snghnxpdoffuasscqmms"; 
     // senha
-    private static final String JDBC_PASSWORD = "postgres";
+    private static final String JDBC_PASSWORD = "";
 
     public static void main(String[] args) {
-        String filePath = "data/new_films.txt";  // tem que estar na pasta onde vai ser executado o programa
+        String filePath = "../../data/new_films.txt";  // tem que estar na pasta onde vai ser executado o programa
         List<Film> films = FilmFileReader.readFilms(filePath); // Lê todas as linhas do arquivo de uma vez
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
