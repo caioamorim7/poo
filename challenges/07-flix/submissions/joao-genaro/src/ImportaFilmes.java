@@ -10,7 +10,7 @@ public class ImportaFilmes {
     private static final String URL =
         "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require";
     private static final String USER = "postgres.snghnxpdoffuasscqmms";
-    private static final String PASS = "idpccpoo";
+    private static final String PASS = "";
 
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
