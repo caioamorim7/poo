@@ -1,11 +1,14 @@
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
 
 public class FilmMain {
     public static void main(String[] args) {
         String url="jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
         String user="postgres.snghnxpdoffuasscqmms";
-        String password= "idpccpoo";
+        String password= "";
 
         String filePath = "../../data/new_films.txt";
 
