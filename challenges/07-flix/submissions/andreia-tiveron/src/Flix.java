@@ -8,7 +8,7 @@ import java.util.List;
 public class Flix {
     private static final String DB_URL = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
     private static final String DB_USER = "postgres.snghnxpdoffuasscqmms";
-    private static final String DB_PASSWORD = "idpccpoo";
+    private static final String DB_PASSWORD = "";
 
     public static void main(String[] args) {
         String filePath = "C:/Users/andre/Downloads/Estrutura de Dados/POO/poo/challenges/07-flix/data/new_films.txt";
