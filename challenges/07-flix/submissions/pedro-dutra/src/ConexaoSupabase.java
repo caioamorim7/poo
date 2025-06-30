@@ -6,7 +6,7 @@ public class ConexaoSupabase {
 
     private static final String URL = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
     private static final String USUARIO = "postgres.azrwlyjtlxykpbuimxmh";
-    private static final String SENHA = "Tereza01";
+    private static final String SENHA = "";
 
     public static Connection conectar() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
