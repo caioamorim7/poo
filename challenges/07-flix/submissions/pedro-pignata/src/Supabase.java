@@ -6,7 +6,7 @@ public class Supabase {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:5432/postgres";
         String usuario = "postgres";
-        String senha = "postgres";
+        String senha = "";
 
         try (Connection conexao = DriverManager.getConnection(url, usuario, senha)) {
             System.out.println("Conexão estabelecida com sucesso!");

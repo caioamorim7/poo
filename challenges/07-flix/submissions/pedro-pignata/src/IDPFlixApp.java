@@ -9,7 +9,7 @@ public class IDPFlixApp {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:5432/postgres";
         String user = "postgres";
-        String password = "postgres";
+        String password = "";
         String filePath = "../../data/new_films.txt";
 
         List<Film> films = FilmFileReader.readFilmsFromFile(filePath);
