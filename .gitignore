@@ -16,6 +16,7 @@
 *.nar
 *.ear
 *.zip
+*.tar
 *.tar.gz
 *.rar
 
@@ -24,3 +25,10 @@ hs_err_pid*
 replay_pid*
 .vscode/
 target/
+lib/
+bin/
+
+.qodo/
+*.properties
+*.properties.local
+*.properties.supabase
