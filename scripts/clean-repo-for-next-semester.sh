@@ -13,4 +13,7 @@ done
 echo "🧹 Limpando arquivos em readings/..."
 find "${BASE_DIR}/readings" -type f -name "*.pdf" -exec rm -f {} \;
 
+echo "🧹 Limpando 'challenges/' (mantendo .gitkeep)..."
+find "${BASE_DIR}/challenges" -mindepth 1 -not -name ".gitkeep" -exec rm -rf {} +
+
 echo "✅ Diretórios limpos com sucesso!"
