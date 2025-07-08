@@ -35,18 +35,19 @@ jobs:
         run: npm install -g pnpm
 
       - name: Setup pnpm environment and install @antfu/ni
+        working-directory: slides
         run: |
           export SHELL=/bin/bash
           pnpm setup
+          export PNPM_HOME="$HOME/.local/share/pnpm"
+          export PATH="$PNPM_HOME:$PATH"
           pnpm add -g @antfu/ni
-
-      - name: Install dependencies
-        working-directory: slides
-        run: nci --no-frozen-lockfile
+          nci --no-frozen-lockfile
+          nr build --base /${{ github.event.repository.name }}/
 
       - name: Build slides
         working-directory: slides
-        run: nr build --base /${{ github.event.repository.name }}/
+        run: 
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
