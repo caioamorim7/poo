@@ -41,7 +41,7 @@ jobs:
           export PNPM_HOME="$HOME/.local/share/pnpm"
           export PATH="$PNPM_HOME:$PATH"
           pnpm add -g @antfu/ni
-          nci
+          nci --prefer-frozen-lockfile
           nr build --base /${{github.event.repository.name}}/
         working-directory: slides
 
