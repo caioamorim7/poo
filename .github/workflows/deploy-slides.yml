@@ -36,7 +36,10 @@ jobs:
 
       - name: Setup @antfu/ni
         run: |
+          export SHELL=/bin/bash
           pnpm setup
+          export PNPM_HOME="$HOME/.local/share/pnpm"
+          export PATH="$PNPM_HOME:$PATH"
           pnpm add -g @antfu/ni
 
       - name: Install dependencies
