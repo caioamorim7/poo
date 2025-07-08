@@ -45,10 +45,6 @@ jobs:
           nci --no-frozen-lockfile
           nr build --base /${{ github.event.repository.name }}/
 
-      - name: Build slides
-        working-directory: slides
-        run: 
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
