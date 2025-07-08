@@ -3,8 +3,12 @@ name: Deploy Slides
 on:
   push:
     branches: [ "2025.2" ]
+    paths:
+      - 'slides/**'
   pull_request:
     branches: [ "2025.2" ]
+    paths:
+      - 'slides/**'
   workflow_dispatch:
 
 permissions:
@@ -27,21 +31,26 @@ jobs:
         with:
           node-version: 'lts/*'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+        run: pnpm add -g @antfu/ni
 
       - name: Install dependencies
         run: nci
+        working-directory: slides
 
       - name: Build
         run: nr build --base /${{github.event.repository.name}}/
+        working-directory: slides
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: slides/dist
 
   deploy:
     environment:
