@@ -41,13 +41,8 @@ jobs:
           export PNPM_HOME="$HOME/.local/share/pnpm"
           export PATH="$PNPM_HOME:$PATH"
           pnpm add -g @antfu/ni
-
-      - name: Install dependencies
-        run: nci
-        working-directory: slides
-
-      - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
+          nci
+          nr build --base /${{github.event.repository.name}}/
         working-directory: slides
 
       - name: Setup Pages
