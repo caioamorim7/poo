@@ -24,6 +24,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PNPM_HOME: ${{ runner.temp }}/.pnpm
+      PATH: ${{ runner.temp }}/.pnpm:${{ env.PATH }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -34,16 +38,19 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Setup @antfu/ni
+      - name: Setup pnpm environment and install @antfu/ni
         run: |
           export SHELL=/bin/bash
           pnpm setup
-          export PNPM_HOME="$HOME/.local/share/pnpm"
-          export PATH="$PNPM_HOME:$PATH"
           pnpm add -g @antfu/ni
-          nci --prefer-frozen-lockfile
-          nr build --base /${{github.event.repository.name}}/
+
+      - name: Install dependencies
         working-directory: slides
+        run: nci --no-frozen-lockfile
+
+      - name: Build slides
+        working-directory: slides
+        run: nr build --base /${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
