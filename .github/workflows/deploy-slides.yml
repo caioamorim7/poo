@@ -35,7 +35,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Setup @antfu/ni
-        run: 
+        run: |
           pnpm setup
           pnpm add -g @antfu/ni
 
