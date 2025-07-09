@@ -1,5 +1,6 @@
 ---
 layout: default
+transition: slide-left
 ---
 
 ## Introduçao e contextualização
@@ -62,7 +63,7 @@ layout: default
 
 ## Como a disciplina de programação orientada a objetos contribui com a formação?​
 
-<div class="w-full flex flex-col items-center justify-center text-center mt-6" v-click>
+<figure class="w-full flex flex-col items-center justify-center text-center mt-6" v-click>
   <img 
     src="https://saileshdhakal.com.np/media/funny.jpg" 
     alt="Cartoon de classe e objeto"
@@ -71,13 +72,13 @@ layout: default
   <figcaption class="text-xs italic text-gray-600">
     <a href="https://saileshdhakal.com.np/posts/oops-concept">Fonte: Understanding Object Oriented Programming, the simpler way!</a>
   </figcaption>
-</div>
+</figure>
 
 ---
 
 ## Quais são as perspectivas de carreira ao concluir o curso?​
 
-<div class="w-full flex flex-col items-center justify-center text-center mt-6" v-click>
+<figure class="w-full flex flex-col items-center justify-center text-center mt-6" v-click>
   <img 
     src="https://media.licdn.com/dms/image/v2/C4D12AQGKOh8gdPjzuQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1629419926607?e=1757548800&v=beta&t=Do4wCl156U7ijeI5V6Y1Havs0uLay8Ejg_MVdSpxasg" 
     alt="Cartoon de classe e objeto"
@@ -86,7 +87,7 @@ layout: default
   <figcaption class="text-xs italic text-gray-600">
     <a href="https://www.linkedin.com/pulse/se-voc%C3%AA-n%C3%A3o-sabe-para-onde-ir-qualquer-caminho-serve-pablo-berriel/">Fonte: Se você não sabe onde quer chegar, qualquer caminho serve.</a>
   </figcaption>
-</div>
+</figure>
 
 ---
 
@@ -120,3 +121,59 @@ layout: default
 <div class="mt-4 text-sm text-left text-gray-600">
   Fonte: <a href="https://www.youtube.com/watch?v=BRTOIPdyPYU&t=74s" class="underline text-blue-600" target="_blank">Steve Jobs: Everyone should learn to code</a>
 </div>
+
+---
+
+## O que é uma linguagem de computador  (e programação)?
+
+- Programar é se comunicar com o computador
+- Elementos da comunicação ( Emissor --> Receptor)
+  - Canal (meio)
+  - Referente (conteúdo)
+  - Mensagem (forma)
+  - Código (signos)
+- Elementos da linguagem
+  - Léxico (vocabulário)  
+  - Sintaxe (estrutura)  
+  - Semântica (significado)
+
+---
+
+## Exemplo de código com explicações
+
+<div class="mt-5">
+  
+```java {all|1,6|2,5|3-4}
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Olá, mundo!");
+  }
+}
+```
+</div> 
+
+---
+
+## Qual linguagem de programação?
+
+A disciplina será na linguagem de programação **Java**
+
+<div style="width: 100%; max-height: 280px; overflow-y: scroll; border: none;">
+  <iframe 
+    src="https://flo.uri.sh/visualisation/19114866/embed?auto=1"
+    style="width: 100%; height: 1900px; border: none;"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<div class="mt-4 text-sm text-center text-gray-600">
+  Fonte: 
+  <a 
+    href="https://spectrum.ieee.org/top-programming-languages-2024" 
+    target="_blank" 
+    class="underline text-blue-600"
+  >
+    https://spectrum.ieee.org/top-programming-languages-2024
+  </a>
+</div>
+
