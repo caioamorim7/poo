@@ -92,12 +92,6 @@ layout: default
 
 ## Por que aprender programação?
 
----
-layout: default
----
-
-## Por que aprender programação?
-
 <div class="grid grid-cols-2 gap-6 items-center mt-6">
   <!-- Vídeo YouTube incorporado -->
   <div class="flex justify-center">
