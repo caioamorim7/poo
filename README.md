@@ -2,21 +2,28 @@
 
 Seja bem-vindo(a)! 🤗
 
-Este repositório reúne materiais, tarefas, projetos, leituras e referências bibliográficas da disciplina **Programação Orientada a Objetos**, oferecida no **[Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa](http://idp.edu.br)** e ministrada pelo professor **[Fabricio Santana](https://github.com/fabriciosantana/)** no **1º semestre de 2025**. 👨🏾‍🏫
+Este repositório reúne materiais, tarefas, projetos, leituras e referências bibliográficas da disciplina **Programação Orientada a Objetos**, oferecida no **[Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa](http://idp.edu.br)** e ministrada pelo professor **[Fabricio Santana](https://github.com/fabriciosantana/)** no **1º semestre de 2025**. 
 
-Durante o curso, serão abordados tópicos fundamentais, como introdução à programação, classes, objetos, herança, polimorfismo, encapsulamento e persistência, além de outros conceitos essenciais para a construção de aplicações robustas e escaláveis. 💻
+Durante o curso, serão abordados tópicos fundamentais, como introdução à programação, classes, objetos, herança, polimorfismo, encapsulamento e persistência, além de outros conceitos essenciais para a construção de aplicações robustas e escaláveis. 
 
-Utilize este material como um recurso adicional para fortalecer seus conhecimentos e aprimorar suas habilidades na linguagem Java. 🌟
+Utilize este material como um recurso adicional para fortalecer seus conhecimentos e aprimorar suas habilidades na linguagem Java.
 
-Vamos começar! 🎉
+Nesta página você encontra:
+* [Links importantes](#-links-importantes)
+* [Informações iniciais](#-antes-de-começar)
+* [Livros de referência](#livros-de-referência)
+* [Artigos](#artigos)
+* [Cursos de outras universidades](#outros-cursos)
 
-### 📚 Referências importantes
+
+### 📚 Links importantes
 - [Plano de ensino](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
 - [Aulas](./lectures)
 - [Leituras](./readings)
 - [Atividades](./assignments)
 - [Desafios](./challenges)
 - [Projetos](./projects)
+- [Como fazer?](./howto/)
 
 ### 🏁 Antes de começar
 
@@ -45,308 +52,24 @@ Em síntese, para aproveitar todo o conteúdo e praticar muito você precisa de 
 * Instalar uma das distrições do Java Development Kit (JDK), recomenda-se o OpenJDK 21
 * Instalar uma IDE, recomenda-se o VS Code com os plugins para Java e Git
 
-Finalizada as devidas introduções, vamos seguir para a instalação das ferramentas com os passos abaixo:
-* Instalação do OpenJDK 21 no Linux via apt
-    * (opcional) Instalação manual do OpenJDK 21 no Linux
-    * (opcional) Instalação do OpenJDK 21 no Linux via SDKMAN!
-* Instalação do VS Code no Linux via apt
-    * (opcional) Instalação manual do VS Code no Linux
-* Instalação do Git
-* Instalação do Github Cli
-* Instalação dos seguintes plugins no VS Code
-    * Java Platform Extension for Visual Code
-    * Extension Pack for Java
-    * Git
-    * GitHub
-
 Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base de conhecimento com os seguintes recursos:
 * [Introduction to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/)
 * [Getting started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
 * [Intro to GitHub](https://education.github.com/experiences/intro_to_github)
 * [GitHub Foundations (Microsoft)](https://education.github.com/experiences/intro_to_github)
 
-### 🛠️ Configuração do ambiente
+### Livros de referência
 
-<details>
-<summary><h4>🐧 Instalação do OpenJDK 21 no Linux via apt</h4></summary>
+1. BUDD, Timothy. **An Introduction to Object-Oriented Programming**. 3. ed. Boston: Addison-Wesley, 2002. ISBN 0-201-76031-2.
+2. DEITEL, Paul; DEITEL, Harvey. **Java: How to Program, Early Objects**. 11. ed. Boston: Pearson, 2017. ISBN 978-0-13-474335-6.
+3. SCHILDT, Herbert. **Java: The Complete Reference: Comprehensive Coverage of the Java Language**. 12. ed. New York: McGraw Hill, 2021. ISBN 978-1-26-046342-2.
+4. SEGEWICK, Robert; WAYNE, Kevin. **Computer Science: An Interdisciplinary Approach**. Boston: Addison-Wesley, 2016. ISBN 978-0-13-407642-3.
+5. WEISFELD, Matt. **The Object-Oriented Thought Process**. 5. ed. Boston: Addison-Wesley, 2019. ISBN 978-0-13-476872-4.
 
-Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
+### Artigos
 
-1. **Atualizar pacotes**
+### Outros Cursos
 
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-2. **Instalar o OpenJDK 21**
-
-```bash
-sudo apt install -y openjdk-21-jdk
-```
-
-3. **Configurar variáveis de ambiente**
-
-```bash
-echo 'export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64' >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-```
-
-4. **Verificar a instalação**
-
-```bash
-java -version
-```
-5. **Confirmar a instalação**
-
-```bash
-openjdk version "21.0.2" 2024-01-16
-OpenJDK Runtime Environment (build 21.0.2+13-58)
-OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
-```
-
-5. **Configuarar o OpenJDK 21 como padrão**
-
-Esse passo é necessário apenas caso tenha várias versões do Java instaladas
-
-```bash
-sudo update-alternatives --config java
-```
-
-```bash
-sudo update-alternatives --config javac
-```
-
-</details>
-
-<details>
-<summary><h4>🐧 Instalação manual do OpenJDK 21 no Linux</h4></summary>
-
-Executar os seguintes comandos no terminal para instalar o OpenJDK 21 no Linux:
-
-1. **Baixar o OpenJDK**
-
-Baixar executando o comando abaixo no terminal ou fazer download da versão 21 em https://jdk.java.net/archive/
-
-```bash
-wget https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz
-```
-
-2. **Extrair o arquivo baixado e mova para o diretório /opt/**
-
-```bash
-tar -xvzf openjdk-21.0.2_linux-x64_bin.tar.gz
-sudo mv jdk-21.0.2 /opt/
-```
-
-3. **Configurar variáveis de ambiente**
-
-```bash
-echo 'export JAVA_HOME=/opt/jdk-21.0.2' >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-```
-
-4. **Verificar a instalação**
-
-```bash
-java -version
-```
-
-5. **Confirmar a instalação**
-
-```bash
-openjdk version "21.0.2" 2024-01-16
-OpenJDK Runtime Environment (build 21.0.2+13-58)
-OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
-```
-
-6. **Configuarar o OpenJDK 21 como padrão**
-
-Esse passo é necessário apenas caso tenha várias versões do Java instaladas
-
-```bash
-sudo update-alternatives --config java
-```
-
-```bash
-sudo update-alternatives --config javac
-```
-
-</details>
-
-
-<details>
-<summary><h4>🐧 Instalação do OpenJDK 21 via SDKMAN</h4></summary>
-
-O [SDKMAN!](https://sdkman.io/) é uma ferramenta que facilita a instalação e o gerenciamento de múltiplas versões do JDK no Linux e macOS. Com ele, você pode instalar, atualizar e alternar entre diferentes versões do Java facilmente.
-
-1. **Instalar o SDKMAN!**
-
-```bash
-curl -s "https://get.sdkman.io" | bash
-```
-
-2. **Ativar o SDKMAN!**
-
-```bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-```
-
-3. **Verificar instalação**
-
-```bash
-sdk version
-```
-
-4. **Confirmar instalação**
-
-```bash
-SDKMAN 5.19.0
-```
-
-5. **Instalar o OpenJDK 21**
-
-```bash
-sdk install java 21.0.2-open
-```
-
-6. **Verificar a instalação do OpenJDK 21**
-
-```bash
-java -version
-```
-
-7. **Confirmar a instalação do OpenJDK 21**
-
-```bash
-openjdk version "21.0.2" 2024-01-16
-OpenJDK Runtime Environment (build 21.0.2+13-58)
-OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
-```
-
-Comando úteis do SDKMAN!
-
-```bash
-sdk update
-
-sdk list java
-
-sdk current java
-```
-
-</details>
-
-
-<details>
-
-<summary><h4>📦 Instalar o VS Code via apt</h4></summary>
-
-1. **Atualizar pacotes**
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-2. **Baixar o VS Code e adicionar a chave do GPG da Microsoft**
-
-```bash
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/packages.microsoft.gpg > /dev/null
-```
-
-3. **Adicionar o repositório do VS Code
-
-```bash
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-```
-
-4. **Instalar o VS Code**
-
-```bash
-sudo apt update
-sudo apt install -y code
-```
-
-5. **Verificar instalação**
-
-```bash
-code --version
-```
-
-6. **Confirmar instalação**
-
-```bash
-1.96.4
-cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
-x64
-```
-
-</details>
-
-<details>
-<summary><h4>🖥️ Instalação manual do VS Code no Linux</h4></summary>
-
-1. **Baixar o pacote .deb**
-
-O pacote está disponível no link https://code.visualstudio.com/download
-
-2. **Instalar o pacote**
-
-```bash
-sudo dpkg -i code_*.deb
-```
-
-3. **Verificar instalação**
-
-```bash
-code --version
-```
-
-4. **Confirmar instalação**
-
-```bash
-1.96.4
-cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
-x64
-```
-</details>
-
-<details>
-
-<summary><h4>🐙 Instalação do Git</h4></summary>
-
-1. Instalar o Git
-```bash
-sudo apt install git -y
-```
-
-2. Verificar instalação do git
-```bash
-git --version
-```
-
-</details>
-
-<details>
-
-<summary><h4>🔧 Instalação do Github Cli</h4></summary>
-
-1. Instalar o Github Cli
-```bash
-sudo apt install gh
-```
-
-2. Verificar instalação do Github Cli
-```bash
-gh --version
-```
-
-3. Logar no Github
-```bash
-gh auth login
-```
-
-</details>
-
-
-> 🎉 **Parabéns!** Você concluiu a configuração do ambiente com sucesso! Agora está pronto para começar a programar. 🚀
+https://www.cs.cornell.edu/courses/JavaAndDS/definitions.html
+https://www.cs.cornell.edu/info/people/tt/Principled_Programming.html
+https://andrewcmyers.github.io/oodds/
