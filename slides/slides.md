@@ -1,5 +1,6 @@
 ---
-title: Programação Orientada a Objetos em Java
+course: Programação Orientada a Objetos em Java
+semester: 2025.2
 ---
 
 # Sumário

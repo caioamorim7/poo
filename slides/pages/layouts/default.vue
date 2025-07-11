@@ -2,7 +2,7 @@
   <div class="slidev-layout default w-full h-full relative bg-white text-gray-800">
     <!-- Header azul -->
     <header class="absolute top-0 left-0 right-0 h-12 px-6 py-2 flex justify-between items-center text-sm bg-blue-900 text-gray-200 z-10 shadow-md">
-      <div>{{ $slidev.configs.title || 'Programação Orientada a Objetos' }}</div>
+      <div>{{ $slidev.configs.title || 'Programação Orientada a Objetos com Java' }}</div>
       <div>Página {{ $slidev.nav.currentPage }}/{{ $slidev.nav.total }}</div>
     </header>
 
@@ -18,7 +18,7 @@
       </div>
       <div>Ciência da Computação - IDP</div>
       <div>Programação Orientada a Objetos com Java</div>      
-      <div>2025.2</div>
+      <div>${($slidev.configs.semester }}</div>
       <div>Prof. Fabricio Santana</div>
     </footer>
   </div>

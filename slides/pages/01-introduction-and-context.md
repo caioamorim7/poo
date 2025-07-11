@@ -1,10 +1,11 @@
 ---
-layout: default
-transition: slide-left
+layout: capa
+class: Aula 01 - Introdução e contextualização
 ---
 
-## Introduçao e contextualização
-
+---
+layout: default
+transition: slide-left
 ---
 
 ## Que experiências você traz?
@@ -147,21 +148,6 @@ transition: slide-left
   - Semântica (significado)
   
 </div>
-
----
-
-## Exemplo de código com explicações
-
-<div class="mt-5">
-  
-```java {all|1,6|2,5|3-4}
-public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Olá, mundo!");
-  }
-}
-```
-</div> 
 
 ---
 
