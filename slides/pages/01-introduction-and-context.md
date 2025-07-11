@@ -91,16 +91,6 @@ layout: default
 
 ---
 
-## Exemplo com imagem
-
-<FigureWithCaption 
-  src="https://saileshdhakal.com.np/media/funny.jpg" 
-  alt="Cartoon de classe e objeto"
-  link="https://saileshdhakal.com.np/posts/oops-concept"
-/>
-
----
-
 ## Quais são as perspectivas de carreira ao concluir o curso?​
 
 <figure class="w-full flex flex-col items-center justify-center text-center mt-4" v-click>
@@ -146,7 +136,6 @@ layout: default
   </div>
 
 </div>
-
 
 ---
 
@@ -238,32 +227,31 @@ A disciplina adota a linguagem de programação **Java**
 
 ## E o que muda com a inteligência artificial?
 
-<div v-click>
-
-  <div class="grid grid-cols-2 gap-6 items-center mt-4">
-    <div class="w-full flex flex-col items-center justify-center text-center mt-4">
-      <Youtube id="yj73GIEKmLI" width="100%" height="300px"/>
-    </div>
-    <div class="text-lg leading-relaxed" v-click>
-      <p class="italic justify-center  text-justify">
-        <strong>Everybody in the world is now a programmer</strong>
-        <br/>
-        <span class="text-base">Jensen Huang, 2024</span>
-      </p>
-    </div>
+<div class="grid grid-cols-2 gap-6 items-center mt-4" v-click>
+  <div class="w-full flex flex-col items-center justify-center text-center">
+    <Youtube id="yj73GIEKmLI" width="100%" height="300px"/>
+  </div>
+  <div class="text-lg leading-relaxed" >
+    <p class="italic justify-center  text-justify">
+      <strong>Everybody in the world is now a programmer</strong>
+      <br/>
+      <span class="text-base">Jensen Huang, 2024</span>
+    </p>
   </div>
 
-  <div class="mt-4 text-sm text-center text-gray-600">
-      Fonte: 
-      <a 
-        href="https://www.youtube.com/watch?v=yj73GIEKmLI" 
-        target="_blank" 
-        class="underline text-blue-600">
-        https://www.youtube.com/watch?v=yj73GIEKmLI
-      </a>
-  </div>
+  <div class="col-span-2 text-sm text-center text-gray-600">
+    Fonte: 
+    <a 
+      href="https://www.youtube.com/watch?v=yj73GIEKmLI" 
+      target="_blank" 
+      class="underline text-blue-600">
+      https://www.youtube.com/watch?v=yj73GIEKmLI
+    </a>
+</div>
 
 </div>
+
+
 
 ---
 
@@ -467,3 +455,51 @@ A disciplina adota a linguagem de programação **Java**
 - A nota máxima de cada uma das avaliações será 10,0​
 
 </div>
+
+---
+
+## O que fazer para a próxima aula  ?​
+
+<div class="text-xs mt-2 grid grid-cols-2 ">
+
+<div>
+
+- Revisar o [repositório da disciplina](https://github.com/fabriciosantana/poo/) no GitHub: todas as informações estarão lá!​
+- Preparar sua estação para desenvolvimento Java​
+  - Sugestão: usar Linux para as atividades práticas​
+    - [WSL​](https://learn.microsoft.com/pt-br/windows/wsl/install)
+    - [GitHub Codespaces​](https://github.com/features/codespaces)
+    - [Docker](https://code.visualstudio.com/docs/devcontainers/containers)
+  - [VS Code](https://code.visualstudio.com/) e extensões Java (sugestão, há dezenas de IDEs)​
+  - [JDK 21](https://docs.oracle.com/en/java/javase/21/) (sugestão: [OpenJDK](https://openjdk.org/), há dezenas de distribuição do JDK)​
+  - [GitHub​](https://github.com/)
+  - [SDKMAN](https://sdkman.io/) (pra quem precisa trabalhar com várias versões do JDK)​
+  - [Junit 5​](https://junit.org/junit5/)
+  - [Maven​](https://maven.apache.org/)
+   ​
+</div>
+
+<div class="ml-20">
+
+- Informações adicionais ​
+  - [Introduction to Linux​](https://training.linuxfoundation.org/training/introduction-to-linux/)
+  - [Getting started with Visual Studio Code​](https://code.visualstudio.com/docs/introvideos/basics)
+  - [Intro to GitHub​](https://education.github.com/experiences/intro_to_github)
+  - [GitHub Foundations (Microsoft)​](https://education.github.com/experiences/intro_to_github)
+
+</div>
+
+</div>
+
+---
+
+## 1ª Leitura
+
+- SCHILDT, Herbert. [The history and evolution of Java](https://1drv.ms/b/s!Avnn2LcOmn0Y3mnfmCUIsHXeIOq5?e=jeM4eh). In: ____. Java the complete reference: comprehensive coverage of the Java language. 12. Ed. New York: McGraw Hill, 2021. Cap. 1. ISBN 978-1-26-046342-2.​
+  - Procedimento para entrega entrega do resumo​
+  - Escrever o resumo em folha A4 branca​
+    - Fazer Fork do repositório da disciplina​
+    - Digitalizar em PDF e gravar no diretório _poo/readings/01/*seunome-seusobrenome*.pdf​_
+    - Enviar Pull Request para o repositório da disciplina​
+    - Submeter link do Pull Request no Ambiente Virtual​
+- Prazo: conforme ambiente virtual
