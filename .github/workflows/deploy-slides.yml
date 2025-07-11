@@ -46,11 +46,7 @@ jobs:
           mkdir -p dist
 
           # Build da página principal
-          pnpm slidev build index.md --base /poo/ -o $(pwd)/dist
-
-          # Build de cada aula individual
-          pnpm slidev build pages/01-introduction-and-context.md --base /poo/01-introduction-and-context/ -o $(pwd)/dist/01-introduction-and-context
-          pnpm slidev build pages/02-elements.md --base /poo/02-elements/ -o $(pwd)/dist/02-elements
+          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
