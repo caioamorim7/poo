@@ -1,11 +1,17 @@
 ---
 layout: capa
-class: Aula 01 - Introdução e contextualização
+transition: slide-left
+class: Introdução e contextualização
+goals:
+  - Reconhecer o papel da disciplina de Programação Orientada a Objetos
+  - Compreender os fundamentos da linguagem de programação
+  - Entender a motivação pela escolha da linguagem Java
+  - Refletir sobre o impacto da inteligência artificial
+  - Conhecer o plano de ensino da disciplina
 ---
 
 ---
 layout: default
-transition: slide-left
 ---
 
 ## Que experiências você traz?
@@ -66,7 +72,7 @@ transition: slide-left
 
 ---
 
-## Como a disciplina de programação orientada a objetos contribui com a formação?​
+## Como esta disciplina contribuirá com sua formação?​
 
 <figure class="w-full flex flex-col items-center justify-center text-center mt-4" v-click>
   <img 
@@ -82,6 +88,16 @@ transition: slide-left
             </a>
   </figcaption>
 </figure>
+
+---
+
+## Exemplo com imagem
+
+<FigureWithCaption 
+  src="https://saileshdhakal.com.np/media/funny.jpg" 
+  alt="Cartoon de classe e objeto"
+  link="https://saileshdhakal.com.np/posts/oops-concept"
+/>
 
 ---
 
@@ -106,29 +122,31 @@ transition: slide-left
 
 ## Por que aprender programação?
 
-<div class="grid grid-cols-2 gap-6 items-center mt-4">
+<div class="grid grid-cols-2 gap-6 items-center " v-click>
   <!-- Vídeo YouTube incorporado -->
   <div class="w-full flex flex-col items-center justify-center text-center mt-4">
     <Youtube id="BRTOlPdyPYU?start=74" width="100%" height="300"/>
   </div>
 
   <!-- Citação -->
-  <div class="text-lg leading-relaxed" v-click>
+  <div class="text-lg leading-relaxed">
     <p class="italic justify-center  text-justify">
       <strong>Everybody in this country should learn how to program a computer, should learn a computer language, because it teaches you how to think</strong>
       <br/>
       <span class="text-base">Steve Jobs, 1995</span>
     </p>
   </div>
-</div>
-
-<div class="mt-4 text-sm text-center text-gray-600">
+  
+  <div class="col-span-2 text-sm text-center text-gray-600">
   Fonte: <a href="https://www.youtube.com/watch?v=BRTOIPdyPYU&t=74s" 
             class="underline text-blue-600" 
             target="_blank">
           https://www.youtube.com/watch?v=BRTOIPdyPYU&t=74s
           </a>
+  </div>
+
 </div>
+
 
 ---
 
