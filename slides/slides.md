@@ -159,7 +159,7 @@ A disciplina adota a linguagem de programação **Java**
 A disciplina adota a linguagem de programação **Java**
 
 <FigureWithCaption 
-  src="/images/tiobe.png" 
+  src="$(pwd)/images/tiobe.png" 
   alt="Tiobe Index"
   link="https://www.tiobe.com/tiobe-index/"
 />
