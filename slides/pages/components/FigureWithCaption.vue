@@ -28,12 +28,16 @@ const props = defineProps({
 const baseURL = import.meta.env.BASE_URL
 
 const computedSrc = computed(() => {
-  // Se for uma URL externa (http, https, //), retorna como está
   if (/^(https?:)?\/\//.test(props.src)) {
-    return props.src
+    return props.src // URL externa
   }
-  // Caso contrário, adiciona o baseURL (caso de imagem local)
-  return `${baseURL}${props.src}`
+
+  if (props.src.startsWith('/')) {
+    return props.src // já começa da raiz
+  }
+
+  // imagem local relativa no public/
+  return '/' + props.src
 })
 
 console.log(baseURL)
