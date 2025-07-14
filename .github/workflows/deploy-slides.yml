@@ -51,6 +51,9 @@ jobs:
           pnpm slidev build pages/01-introduction.md --base /poo/01-introduction/ -o $(pwd)/dist/01-introduction
           pnpm slidev build pages/02-elements.md --base /poo/02-elements/ -o $(pwd)/dist/02-elements
 
+          ls $(pwd)/dist/
+          ls $(pwd)/dist/01-introduction
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
