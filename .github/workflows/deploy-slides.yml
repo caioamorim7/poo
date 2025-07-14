@@ -52,6 +52,7 @@ jobs:
           pnpm slidev build pages/02-elements.md --base /poo/02-elements/ -o $(pwd)/dist/02-elements
 
           ls $(pwd)/dist/
+          ls $(pwd)/dist/images
           
           ls $(pwd)/dist/01-introduction/
 
