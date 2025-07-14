@@ -6,7 +6,7 @@
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export",
-    "aula01":"slidev pages/01-introduction-and-context.md"
+    "aula01":"slidev pages/01-introduction.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0",
