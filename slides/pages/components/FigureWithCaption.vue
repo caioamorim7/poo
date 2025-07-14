@@ -36,4 +36,7 @@ const computedSrc = computed(() => {
   return `${baseURL}${props.src}`
 })
 
+console.log(baseURL)
+console.log(props.src)
+
 </script>
