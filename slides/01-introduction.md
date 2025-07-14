@@ -1,7 +1,7 @@
 ---
 layout: frontcover
-transition: slide-left
-title: IDP - POO - Introdução
+transition: none
+title: IDP - POO
 id: aula01
 lesson: Introdução e contextualização
 goals:
@@ -208,6 +208,16 @@ A disciplina adota a linguagem de programação **Java**
   quote="Probably in 2025, we at Meta, as well as the other companies that are basically working on this, are going to have an AI that can effectively be a sort of mid-level engineer that you have at your company that can write code"
   author="Mark Zuckerberg, 2025"
   sourceUrl="https://www.youtube.com/watch?v=uDL_6A6zB0w"
+/>
+
+---
+
+## E o que muda com a inteligência artificial?
+
+<FigureWithCaption 
+  src="images/english.png" 
+  alt="Andrej Karpathy"
+  link="https://x.com/karpathy/status/1617979122625712128"
 />
 
 ---

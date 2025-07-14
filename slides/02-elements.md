@@ -1,5 +1,7 @@
 ---
 layout: frontcover
+transition: none
+title: IDP - POO
 id: aula02
 lesson: Elementos da linguagem Java
 goals:
