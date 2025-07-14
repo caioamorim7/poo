@@ -275,7 +275,7 @@ A disciplina adota a linguagem de programação **Java**
 
 <figure class="w-full flex flex-col items-center justify-center text-center">
   <img 
-    src="/images/bike.gif" 
+    src="images/bike.gif" 
     class="max-h-[300px] rounded shadow mb-2"
   />
 </figure>
@@ -402,13 +402,13 @@ A disciplina adota a linguagem de programação **Java**
 <div class="mt-4">
 
 - SCHILDT, Herbert. [The history and evolution of Java](https://1drv.ms/b/s!Avnn2LcOmn0Y3mnfmCUIsHXeIOq5?e=jeM4eh). In: ____. Java the complete reference: comprehensive coverage of the Java language. 12. Ed. New York: McGraw Hill, 2021. Cap. 1. ISBN 978-1-26-046342-2.​
-  - Procedimento para entrega entrega do resumo​
+- **Procedimento para entrega entrega do resumo​**
   - Escrever o resumo em folha A4 branca​
     - Fazer Fork do repositório da disciplina​
-    - Digitalizar em PDF e gravar no diretório _poo/readings/01/*seunome-seusobrenome*.pdf​_
+    - Digitalizar em PDF e gravar no diretório _poo/readings/01-history/*seunome-seusobrenome*.pdf​_
     - Enviar Pull Request para o repositório da disciplina​
     - Submeter link do Pull Request no Ambiente Virtual​
-- Prazo: conforme ambiente virtual
+  - **Prazo**: conforme ambiente virtual
 
 </div>
 
