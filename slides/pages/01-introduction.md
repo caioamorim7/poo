@@ -160,7 +160,7 @@ A disciplina adota a linguagem de programação **Java**
 A disciplina adota a linguagem de programação **Java**
 
 <FigureWithCaption 
-  src="/images/tiobe.png" 
+  src="images/tiobe.png" 
   alt="Tiobe Index"
   link="https://www.tiobe.com/tiobe-index/"
 />
@@ -172,7 +172,7 @@ A disciplina adota a linguagem de programação **Java**
 A disciplina adota a linguagem de programação **Java**
 
 <FigureWithCaption 
-  src="/images/cursos.png" 
+  src="images/cursos.png" 
   alt="Outros cursos"
   link="https://1drv.ms/x/c/187d9a0eb7d8e7f9/Efnn2LcOmn0ggBiTLwAAAAABYnkEvdSiCdc3X7JUZgqrpg?e=Ll4Gt6"
 />
@@ -194,7 +194,7 @@ A disciplina adota a linguagem de programação **Java**
 ## E o que muda com a inteligência artificial?
 
 <FigureWithCaption 
-  src="/images/google.png" 
+  src="images/google.png" 
   alt="Sundar Pichai"
   link="https://fortune.com/2024/10/30/googles-code-ai-sundar-pichai/"
 />
@@ -345,7 +345,6 @@ A disciplina adota a linguagem de programação **Java**
 ## Como o aprendizado será avaliado?​
 
 <div class="mt-4">
-
 - 8 exercícios práticos: 0,0 a 0,5 cada um (NE1-8)​
 - 8 resumos de leituras: 0,0 a 0,25 cada um (NR1-8) ​
 - 1 Seminário: 0,0 a 3,0 (NS)​
