@@ -1,6 +1,7 @@
 ---
 layout: frontcover
 transition: slide-left
+title: IDP - POO - Introdução
 id: aula01
 lesson: Introdução e contextualização
 goals:
