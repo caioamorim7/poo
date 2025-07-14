@@ -275,7 +275,7 @@ A disciplina adota a linguagem de programação **Java**
 
 <figure class="w-full flex flex-col items-center justify-center text-center">
   <img 
-    src="images/bike.gif" 
+    src="/images/bike.gif" 
     class="max-h-[300px] rounded shadow mb-2"
   />
 </figure>
