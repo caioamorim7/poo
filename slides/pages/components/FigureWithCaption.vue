@@ -37,7 +37,7 @@ const computedSrc = computed(() => {
   }
 
   // imagem local relativa no public/
-  return '/' + props.src
+  return props.src
 })
 
 console.log(baseURL)
