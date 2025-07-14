@@ -33,7 +33,7 @@ const computedSrc = computed(() => {
   }
 
   if (props.src.startsWith('/')) {
-    return props.src // já começa da raiz
+    return "/" + props.src // já começa da raiz
   }
 
   // imagem local relativa no public/
