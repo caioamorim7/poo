@@ -109,25 +109,6 @@ layout: default
 
 ---
 
-## O que é uma linguagem de computador  (e programação)?
-
-<div class="mt-4">
-
-- Programar é se comunicar com o computador
-- Elementos da comunicação ( Emissor --> Receptor)
-  - Canal (meio)
-  - Referente (conteúdo)
-  - Mensagem (forma)
-  - Código (signos)
-- Elementos da linguagem
-  - Léxico (vocabulário)  
-  - Sintaxe (estrutura)  
-  - Semântica (significado)
-  
-</div>
-
----
-
 ## Qual linguagem de programação aprender?
 
 <div v-click>

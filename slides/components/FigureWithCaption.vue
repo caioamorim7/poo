@@ -4,13 +4,14 @@
     <img 
       :src="computedSrc"
       :alt="alt"
-      class="max-h-[300px] rounded shadow mb-2"
+      class="max-h-[270px] rounded shadow mb-2"
     />
-    <figcaption class="mt-4 text-sm text-center text-gray-600">
+    <figcaption class="mt-4 text-xs text-center text-gray-600">
       Fonte: 
       <a :href="link" target="_blank" class="underline text-blue-600">
         {{ link }}
       </a>
+      <div>{{ reference }}</div>
     </figcaption>
   </figure>
 </template>
@@ -22,7 +23,8 @@ import { computed } from 'vue'
 const props = defineProps({
   src: String,
   alt: String,
-  link: String
+  link: String,
+  reference: String
 })
 
 const baseURL = import.meta.env.BASE_URL
