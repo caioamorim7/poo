@@ -5,8 +5,8 @@ title: IDP - POO
 id: aula02
 lesson: Plataforma e linguagem Java
 goals:
-  - Apresentar os elementos da linguagem Java
-  - ...
+  - Compreender a plataforma Java e suas principais ferramentas
+  - Executar código Java no jshell
 ---
 
 ---
