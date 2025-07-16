@@ -3,7 +3,7 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula02
-lesson: Plataforma e linguagem Java
+lesson: Plataforma Java
 goals:
   - Compreender a plataforma Java e suas principais ferramentas
   - Executar código Java no jshell
@@ -14,7 +14,7 @@ layout: default
 lesson: Plataforma e linguagem Java
 ---
 
-# O que é programação?
+## O que é programação?
 
 <div class="mt-6 text-3xl text-center" v-click>
     “Programação é a arte de 
@@ -41,11 +41,10 @@ lesson: Plataforma e linguagem Java
 
 ---
 
-## O que é uma linguagem de computador  (e programação)?
+## O que é programação?
 
-<div class="mt-4">
+**Programar é se comunicar com o computador**
 
-- Programar é se comunicar com o computador
 - Elementos da comunicação ( Emissor --> Receptor)
   - Canal (meio)
   - Referente (conteúdo)
@@ -55,9 +54,7 @@ lesson: Plataforma e linguagem Java
   - Léxico (vocabulário)  
   - Sintaxe (estrutura)  
   - Semântica (significado)
-  
-</div>
-
+    
 ---
 
 ## Como o computador executa uma tarefa?
@@ -146,6 +143,16 @@ Progresso dos modelos da openAI em codificação:​
 
 ---
 
+## O que é a plataforma Java?
+
+Java é um conjunto de softwares e especificações de computador que fornece uma plataforma de software para desenvolver aplicativos e implantá-los em um ambiente de computação multiplataforma.
+
+<ReferenceLink
+  reference="https://en.wikipedia.org/wiki/Java_(software_platform)"
+  />
+
+---
+
 ## O que usar para programar Java?
 
 Plataformas Java
@@ -154,19 +161,42 @@ Plataformas Java
 - Java ME (Micro Edition)
 - Java Card
 
+<Reference
+  reference="MUGHAL, Khalid; STRELNIKOV, Vasily. OCP Oracle Certified Professional Java SE 17 Developer (Exam 1Z0-829) Programmer's Guide. Oracle Press, 2023."
+/>
+
 ---
 
-## O que usar para programar Java?
+## Principais características do Java
 
-Ferramentas 
-- Java Development Kit (JDK)
-  - jshell: read-eval-print-loop (REPL)​
-  - javac: compila código java em byte code​
-  - java: executa uma aplicação java​
-  - jar: compacta os arquivos para distribuição​
-  - javadoc: gera documentação do código​
-  - jpackage: para distribuição como um executável​
-  - ...​
+- Implementa vários paradigmas de programação
+  - Programação orientada a objetos
+  - Programação procedural
+  - Programação funcional
+- Bytecode interpretado pela Java Virtual Machine (JVM)
+- Arquitetura neutra e portabilidade do ByteCode (_Write Once, run everywhere_)
+- Simplicidade
+- Dinâmico e ditribuído
+- Robusto e seguro
+- Performance e multithread
+
+<Reference
+  reference="MUGHAL, Khalid; STRELNIKOV, Vasily. OCP Oracle Certified Professional Java SE 17 Developer (Exam 1Z0-829) Programmer's Guide. Oracle Press, 2023."
+/>
+
+---
+
+## Ferramentas Java
+
+Java Development Kit (JDK)
+
+- jshell: read-eval-print-loop (REPL)​
+- javac: compila código java em byte code​
+- java: executa uma aplicação java​
+- jar: compacta os arquivos para distribuição​
+- javadoc: gera documentação do código​
+- jpackage: para distribuição como um executável​
+- ...​
   
 <ReferenceLink
   reference="https://docs.oracle.com/en/java/javase/21/docs/specs/man/index.html​"
@@ -187,8 +217,6 @@ OpenJDK Runtime Environment (build 21.0.2+13-58)
 OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
 ```
 
-
-
 ---
 
 ## jshell
@@ -205,8 +233,8 @@ jshell>
 
 - Escrever qualquer **declaração**, **instrução** ou **expressão** Java
 ```bash
-jshell> System.out.println("Hello, World!");
-Hello, World!
+jshell> "Hello, World!"
+$1 ==> "Hello, World!"
 ```
 
 - Executar comandos **jshell** começam sempre com "/"
