@@ -48,13 +48,18 @@ jobs:
           # Build da página principal
           pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist
 
-          pnpm slidev build 01-introduction.md --base /poo/01-introduction/ -o $(pwd)/dist/01-introduction
-          pnpm slidev build 02-elements.md --base /poo/02-elements/ -o $(pwd)/dist/02-elements
+          for file in ./*.md; do
+            filename=$(basename "$file" .md)
+            
+            # Ignora o arquivo readme.md (case insensitive)
+            if [[ "$filename,," == "readme" ]]; then
+              continue
+            fi
 
-          ls $(pwd)/dist/
-          ls $(pwd)/dist/images
-          
-          ls $(pwd)/dist/01-introduction/
+            output="dist/$filename"
+            base="/poo/$filename/"
+            pnpm slidev build "$file" --base "$base" -o "$output"
+          done
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
