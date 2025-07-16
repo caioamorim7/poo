@@ -6,7 +6,7 @@
       :alt="alt"
       class="max-h-[270px] rounded shadow mb-2"
     />
-    <figcaption class="mt-4 text-xs text-center text-gray-600">
+    <figcaption class="mt-2 text-xs text-center text-gray-600">
       Fonte: 
       <a :href="link" target="_blank" class="underline text-blue-600">
         {{ link }}
