@@ -560,6 +560,10 @@ Elementos básicos
 - _literals​_
 - _separators​_
 - **_operators​_**
+    - **_arithmetic_**
+    - _relacional_
+    - _logical_
+    - _bitwise_
 
 </div>
 
@@ -568,6 +572,87 @@ Elementos básicos
 <FigureWithCaption
     src="images/operatorsArithmetic.png"
     alt="Java arithmetic operators"
+    reference="SCHILDT, Herbert. Java: The Complete Reference. 12. ed. New York: McGraw-Hill Education, 2021. ISBN 978-1-26-046342-2.​"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _arithmetic operators_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+
+- _identifiers​_
+- _keywords​_
+- _literals​_
+- _separators​_
+- **_operators​_**
+    - **_arithmetic_**
+    - _relacional_
+    - _logical_
+    - _bitwise_
+
+</div>
+
+<div>
+
+```bash
+jshell> 10 + 10 // adição
+$1 ==> 20
+
+jshell> 10 - 10 // subtração
+$2 ==> 0
+
+jshell> 10 * 10 // multiplicação
+$3 ==> 100
+
+jshell> 10 / 10 // divisão
+$4 ==> 1
+
+jshell> 23 % 10 // módulo
+$5 ==> 3
+
+jshell> 10 + 0B1010 + 012 + 0XA // bases diferentes
+$6 ==> 40
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _relational operators_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+
+- _identifiers​_
+- _keywords​_
+- _literals​_
+- _separators​_
+- **_operators​_**
+    - _arithmetic_
+    - **_relacional_**
+    - _logical_
+    - _bitwise_
+
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/operatorsRelational.png"
+    alt="Java relational operators"
     reference="SCHILDT, Herbert. Java: The Complete Reference. 12. ed. New York: McGraw-Hill Education, 2021. ISBN 978-1-26-046342-2.​"
 />
 
@@ -589,14 +674,65 @@ Elementos básicos
 - _literals​_
 - _separators​_
 - **_operators​_**
+    - _arithmetic_
+    - **_relacional_**
+    - _logical_
+    - _bitwise_
+
+</div>
+
+<div>
+
+```bash
+jshell> 1 + 1 == 2 // igual a
+$1 ==> true
+
+jshell> 1 + 1 != 3 // diferente de
+$2 ==> true
+
+jshell> 1 + 1 > 3 // maior que
+$3 ==> false
+
+jshell> 1 + 1 < 3 // menor que
+$4 ==> true
+
+jshell> 1 + 1 >= 2 // maior ou igual que
+$5 ==> true
+
+jshell> 1 + 1 <= 2 // menor ou igual que
+$6 ==> true
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _logical operators_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+
+- _identifiers​_
+- _keywords​_
+- _literals​_
+- _separators​_
+- **_operators​_**
+    - _arithmetic_
+    - _relacional_
+    - **_logical_**
+    - _bitwise_
 
 </div>
 
 <div>
 
 <FigureWithCaption
-    src="images/operatorsRelational.png"
-    alt="Java relational operators"
+    src="images/operatorsBooleanLogical.png"
+    alt="Java boolean logical operators"
     reference="SCHILDT, Herbert. Java: The Complete Reference. 12. ed. New York: McGraw-Hill Education, 2021. ISBN 978-1-26-046342-2.​"
 />
 
@@ -618,14 +754,65 @@ Elementos básicos
 - _literals​_
 - _separators​_
 - **_operators​_**
+    - _arithmetic_
+    - _relacional_
+    - **_logical_**
+    - _bitwise_
+
+</div>
+
+<div>
+
+```bash
+jshell> 1 + 1 == 2 && 1 - 1 != 2 // E
+$1 ==> true
+
+jshell> 1 + 1 == 2 || 1 - 1 > 2 // OU
+$2 ==> true
+
+jshell> 1 + 1 == 2 && 1 - 1 > 2
+$3 ==> false
+
+jshell> 1 + 1 == 2 ^ 1 - 1 > 2 // OU exclusivo
+$4 ==> true
+
+jshell> 1 + 1 == 2 ^ 1 - 1 < 2 // igual a 
+$5 ==> false
+
+jshell> 1 + 1 == 2 ? true : false // op. ternário
+$6 ==> true
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _bitwise operators_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+
+- _identifiers​_
+- _keywords​_
+- _literals​_
+- _separators​_
+- **_operators​_**
+    - _arithmetic_
+    - _relacional_
+    - _logical_
+    - **_bitwise_**
 
 </div>
 
 <div>
 
 <FigureWithCaption
-    src="images/operatorsBooleanLogical.png"
-    alt="Java boolean logical operators"
+    src="images/operatorsBitwise.png"
+    alt="Java bitwise operators"
     reference="SCHILDT, Herbert. Java: The Complete Reference. 12. ed. New York: McGraw-Hill Education, 2021. ISBN 978-1-26-046342-2.​"
 />
 
@@ -647,16 +834,38 @@ Elementos básicos
 - _literals​_
 - _separators​_
 - **_operators​_**
+    - _arithmetic_
+    - _relacional_
+    - _logical_
+    - **_bitwise_**
 
 </div>
 
 <div>
 
-<FigureWithCaption
-    src="images/operatorsBitwise.png"
-    alt="Java bitwise operators"
-    reference="SCHILDT, Herbert. Java: The Complete Reference. 12. ed. New York: McGraw-Hill Education, 2021. ISBN 978-1-26-046342-2.​"
-/>
+```bash
+jshell> 0B10  // 0B00000000000000000000000000000010
+$1 ==> 2 
+
+jshell> ~0B10 // 0B11111111111111111111111111111101
+$2 ==> -3 
+
+jshell> 0B101 & 0B100 // 0B100
+$3 ==> 4
+
+jshell> 0B101 ^ 0B100 //0B001
+$4 ==> 1
+
+jshell> 0B101 | 0B100 //0B101
+$5 ==> 5
+
+jshell> 0B101>>1 // 0B10
+$6 ==> 2
+
+jshell> 0B101<<1 // 0B1010
+$7 ==> 10
+```
+
 
 </div>
 
