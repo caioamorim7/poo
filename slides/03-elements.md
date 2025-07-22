@@ -134,7 +134,35 @@ Elementos básicos
 
 ---
 
-## Elementos da linguagem Java - _literals_
+## Elementos da linguagem Java - _integer literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/literalsInteger.png"
+    alt="Java integer literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-IntegerLiteral"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _integer literals_
 
 <div class="mt-4 grid grid-cols-2">
 <div>
@@ -151,23 +179,272 @@ Elementos básicos
 <div>
 
 ```bash
-@fabriciosantana ➜ /workspaces/poo (2025.2)$ jshell
-|  Welcome to JShell -- Version 21.0.2
-|  For an introduction type: /help intro
-jshell> 5
-$1 ==> 5
-jshell> 9.98
-$2 ==> 9.98
+jshell> 10 // decimal integer literal
+$1 ==> 10
+
+jshell> 0X10 // hexadecimal integer literal
+$2 ==> 16
+
+jshell> 010 // octal integer literal
+$3 ==> 8
+
+jshell> 0B10 // binary integer literal
+$4 ==> 2
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _floating point literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/literalsFloating.png"
+    alt="Java floating point literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-3.10.2"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _floating point literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+```bash
+jshell> 10F // decimal float literal
+$1 ==> 10.0
+
+jshell> 10E2F // decimal float literal
+$2 ==> 1000.0
+
+jshell> 10.0F // decimal float literal
+$3 ==> 10.0
+
+jshell> 10.0 // decimal double literal
+$4 ==> 10.0
+
+jshell> 10D // decimal double literal
+$5 ==> 10.0
+
+jshell> 10E2 // decimal double literal
+$6 ==> 1000.0
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _boolean literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/literalsBoolean.png"
+    alt="Java boolean literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-BooleanLiteral"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _boolean literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+```bash
+jshell> true // boolean literal
+$1 ==> true
+
+jshell> false // boolean literal
+$2 ==> false
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _character literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/literalsCharacter.png"
+    alt="Java character literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-CharacterLiteral"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _character literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+```bash
+jshell> 'A'
+$1 ==> 'A'
+
 jshell> 'a'
-$3 ==> 'a'
-jshell> "Olá, Mundo!"
-$4 ==> "Olá, Mundo!"
-jshell> true
-$5 ==> true
-jshell> false
-$6 ==> false
-jshell> null
-$7 ==> null
+$2 ==> 'a'
+
+jshell> '$'
+$3 ==> '$'
+
+jshell> '\u0024'
+$4 ==> '$'
+```
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _String literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+<FigureWithCaption
+    src="images/literalsString.png"
+    alt="Java string literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-StringLiteral"
+/>
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _String literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+```bash
+jshell> ""
+$1 ==> ""
+
+jshell> "Programação Orientada a Objetos"
+$2 ==> "Programação Orientada a Objetos"
+
+jshell> "Programação " + 
+   ...> "Orientada a " +
+   ...> "Objetos" +
+$3 ==> "Programação Orientada a Objetos"
 ```
 
 </div>
