@@ -1,5 +1,4 @@
 Nesta página você encontra:
-* [Procedimento para entrega das leituras](#procedimento-para-entrega-das-leituras)
 * [Leituras sobre programação orientada a objetos](#leituras-sobre-programação-orientada-a-objetos)
 
 ### Leituras sobre programação orientada a objetos
