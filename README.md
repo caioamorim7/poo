@@ -15,7 +15,6 @@ Nesta página você encontra:
 * [Artigos](#artigos)
 * [Cursos de outras universidades](#outros-cursos)
 
-
 ### Links importantes
 - [Plano de ensino](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
 - [Aulas](./lectures)
