@@ -109,6 +109,49 @@ layout: default
 
 ---
 
+## E o que muda com a inteligência artificial?
+
+<VideoWithQuote
+  videoId="yj73GIEKmLI"
+  quote="Everybody in the world is now a programmer"
+  author="Jensen Huang, 2024"
+  sourceUrl="https://www.youtube.com/watch?v=yj73GIEKmLI"
+  v-click
+/>
+
+---
+
+## E o que muda com a inteligência artificial?
+
+<FigureWithCaption 
+  src="images/google.png" 
+  alt="Sundar Pichai"
+  link="https://fortune.com/2024/10/30/googles-code-ai-sundar-pichai/"
+/>
+
+---
+
+## E o que muda com a inteligência artificial?
+
+<VideoWithQuote
+  videoId="uDL_6A6zB0w"
+  quote="Probably in 2025, we at Meta, as well as the other companies that are basically working on this, are going to have an AI that can effectively be a sort of mid-level engineer that you have at your company that can write code"
+  author="Mark Zuckerberg, 2025"
+  sourceUrl="https://www.youtube.com/watch?v=uDL_6A6zB0w"
+/>
+
+---
+
+## E o que muda com a inteligência artificial?
+
+<FigureWithCaption 
+  src="images/english.png" 
+  alt="Andrej Karpathy"
+  link="https://x.com/karpathy/status/1617979122625712128"
+/>
+
+---
+
 ## Qual linguagem de programação aprender?
 
 <div v-click>
@@ -156,49 +199,6 @@ A disciplina adota a linguagem de programação **Java**
   src="images/cursos.png" 
   alt="Outros cursos"
   link="https://1drv.ms/x/c/187d9a0eb7d8e7f9/Efnn2LcOmn0ggBiTLwAAAAABYnkEvdSiCdc3X7JUZgqrpg?e=Ll4Gt6"
-/>
-
----
-
-## E o que muda com a inteligência artificial?
-
-<VideoWithQuote
-  videoId="yj73GIEKmLI"
-  quote="Everybody in the world is now a programmer"
-  author="Jensen Huang, 2024"
-  sourceUrl="https://www.youtube.com/watch?v=yj73GIEKmLI"
-  v-click
-/>
-
----
-
-## E o que muda com a inteligência artificial?
-
-<FigureWithCaption 
-  src="images/google.png" 
-  alt="Sundar Pichai"
-  link="https://fortune.com/2024/10/30/googles-code-ai-sundar-pichai/"
-/>
-
----
-
-## E o que muda com a inteligência artificial?
-
-<VideoWithQuote
-  videoId="uDL_6A6zB0w"
-  quote="Probably in 2025, we at Meta, as well as the other companies that are basically working on this, are going to have an AI that can effectively be a sort of mid-level engineer that you have at your company that can write code"
-  author="Mark Zuckerberg, 2025"
-  sourceUrl="https://www.youtube.com/watch?v=uDL_6A6zB0w"
-/>
-
----
-
-## E o que muda com a inteligência artificial?
-
-<FigureWithCaption 
-  src="images/english.png" 
-  alt="Andrej Karpathy"
-  link="https://x.com/karpathy/status/1617979122625712128"
 />
 
 ---
