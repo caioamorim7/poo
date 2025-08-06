@@ -68,8 +68,6 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 
 ### Artigos
 
-### Outras leituras
-
 1. [The End of Programming as We Know It ](https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/)
 1. [The Impact of AI on Computer Science Education](https://cacm.acm.org/news/the-impact-of-ai-on-computer-science-education/)
 1. [English will become the most popular development language in 6 years](https://blog.almaer.com/english-will-become-the-most-popular-development-language-in-6-years/)
