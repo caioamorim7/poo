@@ -16,5 +16,5 @@ Cada atividade é acompanhada de testes unitários. Para avaliar seu código ant
  ```
  * Executar testes unitários e verificar o resultado no console
  ```bash
- java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path bin --scan-class-path
+ java -jar lib/junit-platform-console-standalone-1.11.4.jar execute --class-path bin --scan-class-path
  ```
