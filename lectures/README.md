@@ -1,5 +1,3 @@
-## Conteúdo da disciplina
-
 Nesta página você encontra:
 * [Slides apresentados em sala](#slides-apresentados-em-sala)
 
