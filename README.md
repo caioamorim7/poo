@@ -2,21 +2,21 @@
 
 Seja bem-vindo(a)! 🤗
 
-Este repositório reúne materiais, tarefas, projetos, leituras e referências bibliográficas da disciplina **Programação Orientada a Objetos**, oferecida no **[Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa](http://idp.edu.br)** e ministrada pelo professor **[Fabricio Santana](https://github.com/fabriciosantana/)** no **1º semestre de 2025**. 
+Este repositório reúne materiais, tarefas, projetos, leituras e referências bibliográficas da disciplina **Programação Orientada a Objetos**, oferecida no **[Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa](http://idp.edu.br)** e ministrada pelo professor **[Fabricio Santana](https://github.com/fabriciosantana/)** no **2º semestre de 2025**. 
 
 Durante o curso, serão abordados tópicos fundamentais, como introdução à programação, classes, objetos, herança, polimorfismo, encapsulamento e persistência, além de outros conceitos essenciais para a construção de aplicações robustas e escaláveis. 
 
 Utilize este material como um recurso adicional para fortalecer seus conhecimentos e aprimorar suas habilidades na linguagem Java.
 
 Nesta página você encontra:
-* [Links importantes](#-links-importantes)
-* [Informações iniciais](#-antes-de-começar)
+* [Links importantes](#links-importanteslinks-importantes)
+* [Informações iniciais](#antes-de-começar)
 * [Livros de referência](#livros-de-referência)
 * [Artigos](#artigos)
 * [Cursos de outras universidades](#outros-cursos)
 
 
-### 📚 Links importantes
+### Links importantes
 - [Plano de ensino](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
 - [Aulas](./lectures)
 - [Leituras](./readings)
@@ -25,7 +25,7 @@ Nesta página você encontra:
 - [Projetos](./projects)
 - [Como fazer?](./howto/)
 
-### 🏁 Antes de começar
+### Antes de começar
 
 Para executar os códigos de exemplo, realizar as atividades práticas e desenvolver o projeto, é essencial ter um computador e configurá-lo com as ferramentas apropriadas.
 
