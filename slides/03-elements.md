@@ -143,6 +143,42 @@ Elementos básicos
 - _identifiers​_
 - _keywords​_
 - **_literals​_**
+    - **_integer literals_**
+    - **_
+- _separators​_
+- _operators​_
+
+</div>
+
+<div>
+
+- base decimal
+- base hexadecimal
+- base octal
+- base binária
+
+<FigureWithCaption
+    src="images/literalsInteger.png"
+    alt="Java integer literals"
+    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-3.10"
+/>
+
+
+</div>
+
+</div>
+
+---
+
+## Elementos da linguagem Java - _integer literals_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+Elementos básicos
+- _identifiers​_
+- _keywords​_
+- **_literals​_**
 - _separators​_
 - _operators​_
 
