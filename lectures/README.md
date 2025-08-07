@@ -6,7 +6,7 @@ Nesta página você encontra:
 |#|Conteúdo|Atividade em sala|
 |---|---|---|
 | 1 | [Apresentação da disciplina e contextualização](https://fabriciosantana.github.io/poo/01-introduction)| |
-| 2 | [Plataforma e Linguagem java - elementos, tipos primitivos, jshell](https://fabriciosantana.github.io/poo/02-platform)| [Execução de código no jshell](./examples/02a-elements-primitives-jshell/) <br> [Hello, World!](/lectures/examples/00-hello)|
+| 2 | [Plataforma Java - linguagem, jshell, java e javac](https://fabriciosantana.github.io/poo/02-platform)| [Execução de código no jshell](./examples/02a-elements-primitives-jshell/) <br> [Hello, World!](/lectures/examples/00-hello)|
 
 ### Slides apresentados em sala (em revisão)
 |#|Conteúdo|Atividade em sala|

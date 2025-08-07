@@ -3,7 +3,7 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula02
-lesson: Plataforma Java
+lesson: Plataforma Java - linguagem, jshell, java e javac
 goals:
   - Compreender a plataforma Java e suas principais ferramentas
   - Configurar estação de desenvolvimento
