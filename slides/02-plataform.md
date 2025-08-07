@@ -110,7 +110,7 @@ Manipular dados
 
 <div>
   <FigureWithCaption
-    src="http://www.btechsmartclass.com/c_programming/cp_images/computer-languages.png"
+    src="images/computer-languages.png"
     alt="Linguagens"
     link="http://www.btechsmartclass.com/c_programming/C-Computer-Languages.html"
   />
