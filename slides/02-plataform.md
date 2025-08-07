@@ -6,7 +6,10 @@ id: aula02
 lesson: Plataforma Java
 goals:
   - Compreender a plataforma Java e suas principais ferramentas
+  - Configurar estação de desenvolvimento
   - Executar código Java no jshell
+  - Desenvolver, compilar, executar e testar programa Hello, World!
+  - Submeter programa para o repositório da disciplina
 ---
 
 ---
