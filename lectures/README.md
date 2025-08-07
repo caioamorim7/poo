@@ -8,10 +8,9 @@ Nesta página você encontra:
 | 1 | [Apresentação da disciplina e contextualização](https://fabriciosantana.github.io/poo/01-introduction)| |
 | 2 | [Plataforma e Linguagem java - elementos, tipos primitivos, jshell](https://fabriciosantana.github.io/poo/02-platform)| [Execução de código no jshell](./examples/02a-elements-primitives-jshell/) <br> [Hello, World!](/lectures/examples/00-hello)|
 
-### Aulas em revisão
+### Slides apresentados em sala (em revisão)
 |#|Conteúdo|Atividade em sala|
 |---|---|---|
-
 | 3 | [Programação em Java - custom types, entrada e saída, operadores e controle de fluxo](https://1drv.ms/p/s!Avnn2LcOmn0Y3zPoINGBudmIix2X?e=H5Orac)| [Quizz: plataforma java, elementos da linguagem e tipos primitivos](https://idp2.vevox.com/#/share/AIMIDN010NEQOHBNNEZA/meetingdata/710808/session/714745/pollresults); <br> Análise de código: [estruturas de seleção](/lectures/examples/04-selection-statements/) e [estruturas de iteração](/lectures/examples/05-iteration-statements/)|
 | 4 | Continuação aula anterior | Análise de código: [estruturas de seleção](/lectures/examples/04-selection-statements/) e [estruturas de iteração](/lectures/examples/05-iteration-statements/)|
 | 5 | Continuação aula anterior | [Desafio: StringReverse](../challenges/01-reverse) |
