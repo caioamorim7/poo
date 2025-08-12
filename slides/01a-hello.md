@@ -3,7 +3,7 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula01a
-lesson: Configuração de ambiente, visão geral sobre o github e procedimento para submissão de tarefas
+lesson: Configuração de ambiente, visão geral do github e procedimento para submissão de tarefas
 goals:
   - Configurar estação de desenvolvimento
   - Conhecer o github e procedimento para submissão de tarefas
@@ -15,13 +15,14 @@ goals:
 layout: default
 ---
 
-## Ferramentas
+## Ferramentas para estação de desenvolvimento
 
 <div class="text-xs mt-2 grid grid-cols-2 ">
 
 <div>
 
 - Revisar o [repositório da disciplina](https://github.com/fabriciosantana/poo/) no GitHub: todas as informações estarão lá!​
+  - Ver instruções para instalação das ferramentas no diretório **howto**
 - Preparar sua estação para desenvolvimento Java​
   - Sugestão: usar Linux para as atividades práticas​
     - [WSL​](https://learn.microsoft.com/pt-br/windows/wsl/install)
@@ -47,3 +48,57 @@ layout: default
 </div>
 
 </div>
+
+--- 
+
+## Fluxo de trabalho para submissão de tarefas
+
+<FigureWithCaption 
+  src="images/git.png" 
+  alt="Fluxo para envio de tarefas"
+  link="http://github.com/fabriciosantana"
+/>
+
+--- 
+
+## Primeiro programa Java
+
+Desenvolver código do programa HelloWorld
+```java
+public class HelloWorld {
+  System.out.println("Hello, World!");
+}
+```
+Compilar programa no terminal 
+
+```bash
+javac HelloWorld.java
+```
+
+Executar programa no terminal
+
+```bash
+java HelloWorld
+"Hello, World!"
+```
+
+--- 
+
+## Primeiro programa Java
+
+Adicionar arquivo no controle de versão
+```bash
+git add HelloWorld.java
+```
+
+Enviar (comitar) arquivo no respositório
+```bash
+git commit -m "Programa HelloWorld"
+```
+
+Enviar alteração para o repositório
+```bash
+git push
+```
+
+Enviar pull request usando a interface web do github.com
