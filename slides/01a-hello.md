@@ -102,3 +102,7 @@ git push
 ```
 
 Enviar pull request usando a interface web do github.com
+
+---
+layout: backcover
+---
