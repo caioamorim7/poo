@@ -1142,7 +1142,7 @@ Tamanho dos tipos primitivos
 
 <div>
 
-- type identifier [ = value ][, identifier [= value ] ...]; ​
+- type identifier [ = value ][, identifier [= value ] ...];
 - toda variável tem um tipo, um nome (identificador), um tamanho (bytes) e um valor​
 -  inferência de tipo para variável local (var v = 1;)​
 - escopo e inicialização
