@@ -6,17 +6,16 @@ Nesta página você encontra:
 |Semana| Atividades |
 |---|---|
 | 0 | [Hello, World!](./00-hello) |
-
-
-### Lista de atividades (em revisão)
-
-|Semana| Atividades |
-|---|---|
 | 1 | [Calculadora de índice de massa corporal (IMC)](./01-imc)|
 |   | [Calculadora da Área de um Polígono Regular](./02-area) |
 |   | [Sequência de Fibonnaci](./03-fibonacci) |
 |   | [Elefante visitando amigo](./04-elephant) |
 |   | [Senha forte](./05-password) |
+
+### Lista de atividades (em revisão)
+
+|Semana| Atividades |
+|---|---|
 | 2 | [Calculadora de frequência cardíaca alvo](./06-heart) |
 |   | [Registro de saúde digital](./07-health) |
 |   | [Palíndromos](08-palindrome) |

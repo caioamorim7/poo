@@ -5,7 +5,8 @@ title: IDP - POO
 id: aula02
 lesson: Plataforma Java - ferramenta, jshell, java e javac
 goals:
-  - Compreender a plataforma Java e suas principais ferramentas
+  - Compreender os aspectos introdutórios de programação de computadores
+  - Conhecer a plataforma Java e suas principais ferramentas
   - Executar código Java no jshell
 ---
 

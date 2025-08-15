@@ -34,12 +34,12 @@ layout: default
   - [SDKMAN](https://sdkman.io/) (pra quem precisa trabalhar com várias versões do JDK)​
   - [Junit 5​](https://junit.org/junit5/)
   - [Maven​](https://maven.apache.org/)
-   ​
+  
 </div>
 
 <div class="ml-20">
 
-- Informações adicionais ​
+- Informações adicionais
   - [Introduction to Linux​](https://training.linuxfoundation.org/training/introduction-to-linux/)
   - [Getting started with Visual Studio Code​](https://code.visualstudio.com/docs/introvideos/basics)
   - [Intro to GitHub​](https://education.github.com/experiences/intro_to_github)
@@ -102,3 +102,7 @@ git push
 ```
 
 Enviar pull request usando a interface web do github.com
+
+---
+layout: backcover
+---
