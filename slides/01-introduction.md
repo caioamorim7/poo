@@ -337,12 +337,12 @@ A disciplina adota a linguagem de programação **Java**
 
 <div class="mt-4">
 - 8 exercícios práticos: 0,0 a 0,5 cada um (NE1-8)​
-- 8 resumos de leituras: 0,0 a 0,25 cada um (NR1-8) ​
+- 8 resumos de leituras: 0,0 a 0,25 cada um (NR1-8)
 - 1 Seminário: 0,0 a 3,0 (NS)​
 - 1 Projeto: 0,0 a 3,0 (NPr)​
 - 2 Provas: 0,0 a 4,0 cada uma (NP1 e NP2)​
 
-- Nota da Avaliação 1: NE1 + NE2 + NE3 + NE4 + NR1 + NR2 + NR3 + NR4 + NS + NP1 ​
+- Nota da Avaliação 1: NE1 + NE2 + NE3 + NE4 + NR1 + NR2 + NR3 + NR4 + NS + NP1
 - Nota da Avaliação 2: NE5 + NE6 + NE7 + NE8 + NR5 + NR6 + NR7 + NR8 + NPr + NP2​
 
 - Ponto adicional por participação nas discussões: 0,0 a 0,5 em cada AV, não cumulativo​
@@ -371,12 +371,12 @@ A disciplina adota a linguagem de programação **Java**
   - [SDKMAN](https://sdkman.io/) (pra quem precisa trabalhar com várias versões do JDK)​
   - [Junit 5​](https://junit.org/junit5/)
   - [Maven​](https://maven.apache.org/)
-   ​
+  
 </div>
 
 <div class="ml-20">
 
-- Informações adicionais ​
+- Informações adicionais
   - [Introduction to Linux​](https://training.linuxfoundation.org/training/introduction-to-linux/)
   - [Getting started with Visual Studio Code​](https://code.visualstudio.com/docs/introvideos/basics)
   - [Intro to GitHub​](https://education.github.com/experiences/intro_to_github)
