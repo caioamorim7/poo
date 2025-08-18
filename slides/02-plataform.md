@@ -3,18 +3,16 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula02
-lesson: Plataforma Java - linguagem, jshell, java e javac
+lesson: Plataforma Java - ferramenta, jshell, java e javac
 goals:
-  - Compreender a plataforma Java e suas principais ferramentas
-  - Configurar estação de desenvolvimento
+  - Compreender os aspectos introdutórios de programação de computadores
+  - Conhecer a plataforma Java e suas principais ferramentas
   - Executar código Java no jshell
-  - Desenvolver, compilar, executar e testar programa Hello, World!
-  - Submeter programa para o repositório da disciplina
 ---
 
 ---
 layout: default
-lesson: Plataforma e linguagem Java
+lesson: Plataforma Java
 ---
 
 ## O que é programação?
