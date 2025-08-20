@@ -1,4 +1,4 @@
-public class fibon {
+public class Fibonacci {
 
     public static long calcularFibonacci(int n) {
         if (n < 0) {

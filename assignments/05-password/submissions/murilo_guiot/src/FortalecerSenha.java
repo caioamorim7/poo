@@ -1,4 +1,4 @@
-public class fortalecedorSenha {
+public class FortalecerSenha {
 
     public static int calcularTempoDigitacao(String senha) {
         if (senha == null || senha.isEmpty()) {

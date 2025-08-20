@@ -1,4 +1,4 @@
-public class passosElefante {
+public class PassosElefante {
 
     public static int calcularPassosMinimos(int x) {
         if (x < 1 || x > 1_000_000) {
