@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Fibonacci {
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         int n;
 
         Scanner input = new Scanner(System.in);
@@ -9,11 +9,11 @@ public class Fibonacci {
         System.out.print("Digite um número inteiro não negativo: ");
         n = input.nextInt();
 
-        long resultado = CalcularFibonacci(n);
-        System.out.println(FormatarSaida(resultado, n));
+        long resultado = calcularFibonacci(n);
+        System.out.println(formatarSaida(resultado, n));
     }
 
-    public static long CalcularFibonacci(int n) {
+    public static long calcularFibonacci(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
 
@@ -30,7 +30,7 @@ public class Fibonacci {
         return c;
     }
 
-    public static String FormatarSaida(long fibonacci, int n) {
+    public static String formatarSaida(long fibonacci, int n) {
         return String.format("O %dº número de Fibonacci é: %d", n, fibonacci);
     }
 }
