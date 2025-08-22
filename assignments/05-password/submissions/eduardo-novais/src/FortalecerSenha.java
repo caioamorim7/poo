@@ -4,53 +4,60 @@ public class FortalecerSenha {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Digite a senha: ");
-        String senha = input.nextLine();
+        int count = 0;
+        String password, strongPassword;
 
-        if (senha.length() < 1 || senha.length() > 10) {
-            System.out.println("Senha inválida! O comprimento deve ser entre 1 e 10.");
-            
-            return;
-        }
+        do {
+            System.out.print("Digite sua senha (0 a 10): ");
+            password = input.nextLine();
 
-        String novaSenha = fortalecerSenha(senha);
+            if (password.length() <= 0 || password.length() >= 10) {
+                System.out.println("Senha fora do intervalo permitido (0 a 10). Tente novamente.");
 
-        System.out.println("Senha fortalecida: " + novaSenha);
+                count = 0;
+            } else {
+                count = 1;
+            }
+
+        } while (count == 0);
+
+        strongPassword = fortalecerSenha(password);
+
+        System.out.println("Senha fortalecida: " + strongPassword);
+
+        input.close();
     }
 
     public static String fortalecerSenha(String s) {
-        String melhorSenha = "";
-        int maiorTempo = -1;
+        String bestPassword = "";
+        int loggerTime = -1;
 
         for (int i = 0; i <= s.length(); i++) {
             for (char c = 'a'; c <= 'z'; c++) {
-                String tentativa = s.substring(0, i) + c + s.substring(i);
+                String newPassword = s.substring(0, i) + c + s.substring(i);
 
-                int tempo = calcularTempoDigitacao(tentativa);
-
-                if (tempo > maiorTempo) {
-                    maiorTempo = tempo;
-                    melhorSenha = tentativa;
+                int time = calcularTempoDigitacao(newPassword);
+                if (time > loggerTime) {
+                    loggerTime = time;
+                    bestPassword = newPassword;
                 }
             }
         }
 
-        return melhorSenha;
+        return bestPassword;
     }
 
-    public static int calcularTempoDigitacao(String senha) {
-        int tempo = 2;
+    public static int calcularTempoDigitacao(String password) {
+        int time = 2;
 
-        if (senha.length() == 0) return 0;
-
-        for (int i = 1; i < senha.length(); i++) {
-            if (senha.charAt(i) == senha.charAt(i - 1)) {
-                tempo += 1;
+        for (int i = 1; i < password.length(); i++) {
+            if (password.charAt(i) == password.charAt(i - 1)) {
+                time += 1;
             } else {
-                tempo += 2;
+                time += 2;
             }
         }
 
-        return tempo;
+        return time;
     }
 }
