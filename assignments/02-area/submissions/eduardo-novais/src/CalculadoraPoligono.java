@@ -20,14 +20,14 @@ public class CalculadoraPoligono {
 
         area = calcularArea(numSides, lengthSide);
 
-        System.out.println(fomatarSaida(area));
+        System.out.println(formatarSaida(area));
     }
 
     public static double calcularArea(int n, double s) {
         return (1.0 / 4.0) * n * pow(s, 2.0) * (1.0 / tan(PI / n));
     }
 
-    public static String fomatarSaida(double area) {
+    public static String formatarSaida(double area) {
         return String.format("A área do Polígono é: %.2f m²", area);
     }
 }
