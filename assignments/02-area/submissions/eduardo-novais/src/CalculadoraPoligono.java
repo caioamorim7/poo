@@ -4,27 +4,27 @@ import static java.lang.Math.tan;
 import static java.lang.Math.pow;
 
 public class CalculadoraPoligono {
-    public static void Main(String[] args) {
-        int n;
-        double s, a;
+    public static void main(String[] args) {
+        int numSides;
+        double lengthSide, area;
 
         Scanner input = new Scanner(System.in);
 
         System.out.printf("Digite o numero de lados do Poligono: ");
-        n = input.nextInt();
+        numSides = input.nextInt();
 
         System.out.printf("Digite o comprimento do lado em metros: ");
-        s = input.nextDouble();
+        lengthSide = input.nextDouble();
 
         input.close();
 
-        a = calcularArea(n, s);
+        area = calcularArea(numSides, lengthSide);
 
-        System.out.println(fomatarSaida(a));
+        System.out.println(fomatarSaida(area));
     }
 
     public static double calcularArea(int n, double s) {
-        return (1 / 4) * pow(s, 2) * n * (1 / tan(PI / n));
+        return (1.0 / 4.0) * n * pow(s, 2.0) * (1.0 / tan(PI / n));
     }
 
     public static String fomatarSaida(double area) {
