@@ -13,7 +13,7 @@ public class FortalecerSenha {
             return;
         }
 
-        String senhaFortalecida = FortalecerSenha(senha);
+        String senhaFortalecida = fortalecerSenha(senha);
         System.out.println("Senha fortalecida: " + senhaFortalecida);
 
         leitor.close();
@@ -37,5 +37,21 @@ public class FortalecerSenha {
         }
 
         return melhorSenha;
+    }
+
+    public static int calcularTempoDigitacao(String senha) {
+        if (senha == null || senha.isEmpty()) return 0;
+
+        int tempo = 2; // O primeiro caractere sempre leva 2 segundos
+
+        for (int i = 1; i < senha.length(); i++) {
+            if (senha.charAt(i) == senha.charAt(i - 1)) {
+                tempo += 1;
+            } else {
+                tempo += 2;
+            }
+        }
+
+        return tempo;
     }
 }
