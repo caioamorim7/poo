@@ -32,7 +32,7 @@ public class CalculadoraIMC {
 
         } else if (imc >= 18.50 && imc < 24.99) {
 
-            return "Eutrofico";
+            return "Eutrófico";
 
         } else if (imc >= 25.0 && imc < 29.99){
 
