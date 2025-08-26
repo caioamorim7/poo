@@ -28,7 +28,7 @@ public class CalculadoraIMC {
     public static String classificarIMC (double imc){
         if (imc < 18.50) {
 
-            return "Voce esta abaixo do peso";
+            return "Abaixo do peso";
 
         } else if (imc >= 18.50 && imc < 24.99) {
 

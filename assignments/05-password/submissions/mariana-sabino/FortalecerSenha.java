@@ -54,3 +54,4 @@ public class FortalecerSenha {
         return tempo;
     }
 }
+
