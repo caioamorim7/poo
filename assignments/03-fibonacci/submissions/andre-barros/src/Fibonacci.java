@@ -16,10 +16,7 @@ public class Fibonacci {
 
         scanner.close();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> ba06837f6b0b66245252fb5f4ab931944ead3c04
     public static long calcularFibonacci(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
