@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class CalculadoraIMC {
     public static void main(String[] args) {
         double weight, height, IMC;
+        String classificação;
 
         Scanner input = new Scanner(System.in);
 
@@ -14,7 +15,9 @@ public class CalculadoraIMC {
 
         IMC = calcularIMC(weight, height);
 
-        System.out.printf(classificarIMC(IMC));
+        classificação = classificarIMC(IMC);
+
+        String.format("\nSeu IMC é: %.2f \nClassificação: %s!\n", IMC, classificação);
     }
 
     public static double calcularIMC(double weight, double height) {
@@ -23,17 +26,17 @@ public class CalculadoraIMC {
 
     public static String classificarIMC(double IMC) {
         if (IMC < 18.5) {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Abaixo do Peso!\n", IMC);
+            return String.format("Abaixo do peso" );
         } else if (IMC >= 18.5 && IMC < 24.99) {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Eutrófico!\n", IMC);
+            return String.format("Eutrófico" );
         } else if (IMC >= 25 && IMC < 29.99) {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Sobrepeso!\n", IMC);
+            return String.format("Sobrepeso");
         } else if (IMC >= 30 && IMC < 34.99) {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Obesidade Grau I!\n", IMC);
+            return String.format("Obesidade grau I");
         } else if (IMC >= 35 && IMC < 39.99) {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Obesidade Grau II!\n", IMC);
+            return String.format("Obesidade grau II");
         } else {
-            return String.format("\nSeu IMC é: %.2f \nClassificação: Obesidade Grau III!\n", IMC);
+            return String.format("Obesidade grau III");
         }
     }
 }
