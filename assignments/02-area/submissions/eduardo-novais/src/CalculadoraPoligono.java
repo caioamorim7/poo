@@ -28,6 +28,6 @@ public class CalculadoraPoligono {
     }
 
     public static String formatarSaida(double area) {
-        return String.format("A área do Polígono é: %.2f m²", area);
+        return String.format("A área do polígono é: %.2f metros quadrados", area);
     }
 }
