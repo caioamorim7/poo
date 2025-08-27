@@ -6,8 +6,7 @@ id: aula03
 lesson: Elementos da linguagem Java
 goals:
   - Reconhecer os elementos da linguagem Java
-  - Ambientar com as ferramentas de desenvolvimento Java
-  - Codificar o primeiro programa Java
+  - Executar no jshell comandos da linguagem Java
 ---
 
 ---
@@ -127,42 +126,6 @@ Elementos básicos
     alt="Java literals"
     link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-3.10"
 />
-
-</div>
-
-</div>
-
----
-
-## Elementos da linguagem Java - _integer literals_
-
-<div class="mt-4 grid grid-cols-2">
-<div>
-
-Elementos básicos
-- _identifiers​_
-- _keywords​_
-- **_literals​_**
-    - **_integer literals_**
-    - **_
-- _separators​_
-- _operators​_
-
-</div>
-
-<div>
-
-- base decimal
-- base hexadecimal
-- base octal
-- base binária
-
-<FigureWithCaption
-    src="images/literalsInteger.png"
-    alt="Java integer literals"
-    link="https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html#jls-3.10"
-/>
-
 
 </div>
 
@@ -901,11 +864,330 @@ $6 ==> 2
 jshell> 0B101<<1 // 0B1010
 $7 ==> 10
 ```
+</div>
+
+</div>
+
+--- 
+
+## Elementos da linguagem Java
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+- _Data Types_
+
+- _Variables_
+
+- _Declarations_
+
+- _Statements_
+
+</div>
+
+</div>
+
+--- 
+
+## Elementos da linguagem Java - _Data Types_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+- **_Data Types_**
+    - **_Primitive types_**: 
+        - são os tipos de dados mais básicos​
+        - Java possui 8 tipos primitivos
+    - **_Reference types_**
+        - _built-in_ x _custom_
+- _Variables_
+- _Declarations_
+- _Statements_
+
+</div>
+
+<div>
+
+- **_Primitive types_**
+
+<div class="grid grid-cols-2 border border-gray-300 text-center text-base w-full">
+  <!-- Cabeçalho -->
+  <div class="bg-blue-700 text-white font-bold p-2 border-r border-white">
+    Números inteiros<br/><em>(Integers)</em>
+  </div>
+  <div class="bg-blue-700 text-white font-bold p-2">
+    Números reais ou de ponto flutuante<br/><em>(floating-point numbers)</em>
+  </div>
+
+  <!-- Conteúdo números inteiros -->
+  <div class="bg-blue-50 p-4 border-t border-gray-300 border-r">
+    byte<br/>
+    short<br/>
+    <strong>int</strong><br/>
+    long
+  </div>
+
+  <!-- Conteúdo números reais -->
+  <div class="bg-blue-50 p-4 border-t border-gray-300">
+    <br/>
+    <strong>float</strong><br/>
+    <strong>double</strong>
+  </div>
+
+  <!-- Cabeçalho inferior -->
+  <div class="col-span-1 bg-blue-700 text-white font-bold p-2 border-t border-white">
+    Caractere
+  </div>
+  <div class="col-span-1 bg-blue-700 text-white font-bold p-2 border-t border-white">
+    Valor booleano
+  </div>
+
+  <!-- Conteúdo inferior -->
+  <div class="bg-blue-50 p-4 border-t border-gray-300 border-r">
+    char
+  </div>
+  <div class="bg-blue-50 p-4 border-t border-gray-300">
+    boolean
+  </div>
+</div>
+
+</div>
+
+</div>
+
+--- 
+
+## Elementos da linguagem Java - _Data Types_
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+- **_Data Types_**
+    - **_Primitive types_**: 
+        - são os tipos de dados mais básicos​
+        - Java possui 8 tipos primitivos
+    - **_Reference types_**
+        - _built-in_ x _custom_
+- _Variables_
+- _Declarations_
+- _Statements_
+
+</div>
+
+<div>
+
+- **_Primitive types Wrappers_**
+
+<div class="grid grid-cols-2 text-center text-black border border-gray-300 text-sm">
+  <!-- Cabeçalho -->
+  <div class="bg-blue-700 text-white font-bold p-2 border border-white">
+    Tipo Primitivo
+  </div>
+  <div class="bg-blue-700 text-white font-bold p-2">
+    Classe Wrapper
+  </div>
+
+  <!-- Linha 1 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">byte</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html" class="underline text-blue-600" target="_blank">Byte</a>
+  </div>
+
+  <!-- Linha 2 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">short</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html" class="underline text-blue-600" target="_blank">Short</a>
+  </div>
+
+  <!-- Linha 3 -->
+  <div class="bg-blue-50 p- border border-gray-300">char</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html" class="underline text-blue-600" target="_blank">Character</a>
+  </div>
+
+  <!-- Linha 4 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">int</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" class="underline text-blue-600" target="_blank">Integer</a>
+  </div>
+
+  <!-- Linha 5 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">long</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" class="underline text-blue-600" target="_blank">Long</a>
+  </div>
+
+  <!-- Linha 6 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">float</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html" class="underline text-blue-600" target="_blank">Float</a>
+  </div>
+
+  <!-- Linha 7 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">double</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" class="underline text-blue-600" target="_blank">Double</a>
+  </div>
+
+  <!-- Linha 8 -->
+  <div class="bg-blue-50 p-1 border border-gray-300">boolean</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">
+    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html" class="underline text-blue-600" target="_blank">Boolean</a>
+  </div>
+</div>
 
 
 </div>
 
 </div>
+
+---
+
+## Elementos da linguagem Java - _Data Types_
+
+Tamanho dos tipos primitivos
+
+<div class="grid grid-cols-5 text-center text-xs border border-gray-300">
+  <!-- Cabeçalhos -->
+  <div class="bg-blue-700 text-white font-bold p-2 border border-white">Tipo Primitivo</div>
+  <div class="bg-blue-700 text-white font-bold p-2 border border-white">Tamanho<br>(em bits)</div>
+  <div class="bg-blue-700 text-white font-bold p-2 border border-white">Mínimo</div>
+  <div class="bg-blue-700 text-white font-bold p-2 border border-white">Máximo</div>
+  <div class="bg-blue-700 text-white font-bold p-2">Qtd. números</div>
+
+  <!-- Linha: byte -->
+  <div class="bg-blue-50 p-1 border border-gray-300">byte</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">8</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">-128 (-2⁷)</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">127 (2⁷-1)</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">2⁸ = 256</div>
+
+  <!-- Linha: short -->
+  <div class="bg-blue-100 p-1 border border-gray-300">short</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">16</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">-32.768 (-2¹⁵)</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">32.767 (2¹⁵-1)</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">2¹⁶ = 65.536</div>
+
+  <!-- Linha: int -->
+  <div class="bg-blue-50 p-1 border border-gray-300">int</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">32</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">-2.147.483.648 (-2³¹)</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">2.147.483.647 (2³¹-1)</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">2³² = 4.294.967.296</div>
+
+  <!-- Linha: long -->
+  <div class="bg-blue-100 p-1 border border-gray-300">long</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">64</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">-9.223.372.036.854.775.808</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">9.223.372.036.854.775.807</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">2⁶⁴ = 18.446.744.073.709.551.616</div>
+
+  <!-- Linha: float -->
+  <div class="bg-blue-50 p-1 border border-gray-300">float</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">32</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">1.40129846432481707e−45</div>
+  <div class="bg-blue-50 p-1 border border-gray-300">3.4028234663852886E+38</div>
+  <div class="bg-blue-50 p-1 border border-gray-300"></div>
+
+  <!-- Linha: double -->
+  <div class="bg-blue-100 p-1 border border-gray-300">double</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">64</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">4.94065645841246544e−324</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">1.7976931348623157E+308</div>
+  <div class="bg-blue-100 p-1 border border-gray-300"></div>
+
+  <!-- Linha: boolean -->
+  <div class="bg-blue-50 p-1 border border-gray-300">boolean</div>
+  <div class="bg-blue-50 p-1 border border-gray-300"></div>
+  <div class="bg-blue-50 p-1 border border-gray-300"></div>
+  <div class="bg-blue-50 p-1 border border-gray-300">true or false</div>
+  <div class="bg-blue-50 p-1 border border-gray-300"></div>
+
+  <!-- Linha: char -->
+  <div class="bg-blue-100 p-1 border border-gray-300">char</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">16</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">\u0000</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">\uFFFF</div>
+  <div class="bg-blue-100 p-1 border border-gray-300">2¹⁶ = 65.536</div>
+</div>
+
+---
+
+## Elementos da linguagem Java - _Data Types_
+
+Tamanho dos tipos primitivos
+
+- Como inteiros com sinal são representados no computador? [Two’s complement​](https://en.wikipedia.org/wiki/Two%27s_complement)
+    - Exemplo 8 bits:​
+        * 5:  00000101​
+        * -5: 11111011 (inverte-se os bits da representação positiva e soma-se 1)​
+
+--- 
+
+## Elementos da linguagem Java - **_Variables_**
+
+<div class="mt-4 grid grid-cols-2">
+<div>
+
+- _Data Types_
+
+- **_Variables_**
+
+- _Declarations_
+
+- _Statements_
+
+</div>
+
+<div>
+
+- type identifier [ = value ][, identifier [= value ] ...];
+- toda variável tem um tipo, um nome (identificador), um tamanho (bytes) e um valor​
+-  inferência de tipo para variável local (var v = 1;)​
+- escopo e inicialização
+- conversão de tipos
+
+</div>
+
+</div>
+
+--- 
+
+## Elementos da linguagem Java
+
+<div class="mt-4 grid grid-cols-1">
+<div>
+
+- **_identifiers_**: nomes que identificam variáveis, classes, métodos, etc.​
+- **_keywords_**: não podem ser usadas como identificadores​
+- **_literals_**: representação do valor de um tipo primitivo, String ou null​
+- **_separators_**: separam trechos de código​
+- **_operators_**: realizam operações sobre variáveis e valores (literals)​
+
+- **_variables_**: local na memória para armazenar valor de certo tipo​
+- **_data types_**: primitive type e reference type​
+
+- **_declarations_**: int x;​
+- **_expressions_**: x + 5;​
+- **_statements_**: int y = x + 5​
+
+</div>
+
+</div>
+
+--- 
+
+## 1ª Atividade
+
+- Implementar os programas​ de acordo com especificação disponível no repositório da disciplina
+  - Calculadora de índice de massa corporal (IMC)​
+  - Calculadora da Área de um Polígono Regular​
+  - Sequência de Fibonnaci​
+  - Elefante visitando amigo​
+  - Senha forte
+
+- Prazo: conforme ambiente virtual
 
 ---
 layout: backcover
