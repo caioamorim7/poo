@@ -11,7 +11,7 @@ public class CalculadoraPoligono {
 
         double area = (n * Math.pow(comprimentoLado, 2)) / (4 * Math.tan(Math.PI / n));
 
-        return Math.round(area * 100.0) / 100.0;
+        return Math.round(area * 1000.0) / 1000.0;
     }
 
     public static String formatarSaida(double area) {
