@@ -33,3 +33,4 @@ bin/
 *.properties
 *.properties.local
 *.properties.supabase.DS_Store
+.DS_Store
