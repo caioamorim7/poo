@@ -20,11 +20,11 @@ public class CalculadoraIMC {
         scanner.close();
     }
 
-    private static double calcularIMC(double peso, double altura) {
+    public static double calcularIMC(double peso, double altura) {
         return peso / (altura * altura);
     }
 
-    private static String classificarIMC(double imc) {
+    public static String classificarIMC(double imc) {
         if (imc < 18.5) return "Abaixo do peso";
         if (imc < 25.0) return "Peso normal";
         if (imc < 30.0) return "Sobrepeso";
