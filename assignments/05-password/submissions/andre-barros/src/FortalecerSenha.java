@@ -5,34 +5,19 @@ public class FortalecerSenha {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-<<<<<<< HEAD
-
-        System.out.print("Digite a senha: ");
-        String s = scanner.next();
-
-
-=======
         // Entrada do usuário
         System.out.print("Digite a senha: ");
         String s = scanner.next();
 
->>>>>>> ba06837f6b0b66245252fb5f4ab931944ead3c04
         if (s.length() < 1 || s.length() > 10) {
             System.out.println("Tamanho inválido! A senha deve ter entre 1 e 10 caracteres.");
             scanner.close();
             return;
         }
 
-<<<<<<< HEAD
-
-        String senhaFortalecida = fortalecerSenha(s);
-
-
-=======
         String senhaFortalecida = fortalecerSenha(s);
 
         // Saída
->>>>>>> ba06837f6b0b66245252fb5f4ab931944ead3c04
         System.out.println("Senha fortalecida: " + senhaFortalecida);
 
         scanner.close();
@@ -62,11 +47,7 @@ public class FortalecerSenha {
     public static int calcularTempoDigitacao(String senha) {
         if (senha.isEmpty()) return 0;
 
-<<<<<<< HEAD
-        int tempo = 2; 
-=======
         int tempo = 2;
->>>>>>> ba06837f6b0b66245252fb5f4ab931944ead3c04
         for (int i = 1; i < senha.length(); i++) {
             if (senha.charAt(i) == senha.charAt(i - 1)) {
                 tempo += 1;

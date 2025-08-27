@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class CalculadoraPoligono {
@@ -25,6 +26,7 @@ public class CalculadoraPoligono {
     }
 
     public static String formatarSaida(double area) {
-        return String.format("A área do polígono é: %.2f metros quadrados", area);
+        return String.format(Locale.US, "A área do polígono é: %.2f metros quadrados", area);
     }
 }
+
