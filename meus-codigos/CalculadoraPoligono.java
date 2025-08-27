@@ -26,12 +26,12 @@ class CalculadoraPoligono{
         ler.close();
     }
 
-    public static double CalcularArea(int n, double s){
+    public static double calcularArea(int n, double s){
         double area = ((1.0/4.0) * (s * s) * n * (1.0 / tan(PI / n)));
         return area; 
     }
 
-    public static String FormatarSaida (double area){
+    public static String formatarSaida (double area){
         String area_formatada = String.format("%.2f", area);
         return area_formatada;
     }

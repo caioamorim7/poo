@@ -20,7 +20,7 @@ class Fibonacci{
         ler.close();
     }
 
-    public static long calcular_Fibonacci(int n){
+    public static long calcularFibonacci(int n){
         if (n <= 1){
             return n;            
         }
