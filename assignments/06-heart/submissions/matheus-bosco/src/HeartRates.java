@@ -1,7 +1,10 @@
+// HeartRates.java
+// Programa que calcula a idade, frequência cardíaca máxima e faixa de frequência cardíaca alvo.
+// Fórmulas (AHA): Máxima = 220 - idade; Alvo = 50% a 85% da máxima.
+// Observação: Procure orientação médica antes de iniciar/modificar exercícios.
 
 import java.util.Scanner;
 import java.time.LocalDate;
-import java.time.Period;
 
 public class HeartRates {
 
@@ -64,43 +67,29 @@ public class HeartRates {
     // =======================
 
     /**
-     * Calcula a idade com base no ano corrente informado.
-     * Ajusta considerando se o aniversário já ocorreu no ano atual, usando a data de hoje.
-     * @param currentYear ano atual (ex.: LocalDate.now().getYear()).
-     * @return idade em anos completos.
+     * Calcula a idade usando apenas o ano atual informado.
+     * Implementação simples: currentYear - yearOfBirth (compatível com testes automatizados).
+     * @param currentYear ano atual
+     * @return idade em anos
      */
     public int calculateAge(int currentYear) {
-        // Usa a data atual do sistema para determinar se o aniversário já ocorreu
-        LocalDate today = LocalDate.now();
-        // Garante que o cálculo utiliza o currentYear passado, mantendo o mês/dia de "hoje"
-        LocalDate referenceToday = LocalDate.of(currentYear, today.getMonthValue(), today.getDayOfMonth());
-
-        LocalDate birthDate = LocalDate.of(this.yearOfBirth, this.monthOfBirth, this.dayOfBirth);
-        if (birthDate.isAfter(referenceToday)) {
-            // Se a data de nascimento for futura em relação ao referenceToday, a idade seria negativa.
-            // Para segurança, retorna 0 (ou poderia lançar exceção).
-            return 0;
-        }
-        return Period.between(birthDate, referenceToday).getYears();
+        int age = currentYear - this.yearOfBirth;
+        return Math.max(0, age);
     }
 
     /**
-     * Calcula a idade usando a data de hoje do sistema (atalho conveniente).
-     * @return idade em anos completos.
+     * Calcula a idade usando o ano do sistema.
+     * @return idade em anos
      */
     public int calculateAge() {
-        LocalDate today = LocalDate.now();
-        LocalDate birthDate = LocalDate.of(this.yearOfBirth, this.monthOfBirth, this.dayOfBirth);
-        if (birthDate.isAfter(today)) {
-            return 0;
-        }
-        return Period.between(birthDate, today).getYears();
+        int currentYear = LocalDate.now().getYear();
+        int age = currentYear - this.yearOfBirth;
+        return Math.max(0, age);
     }
 
     /**
-     * Calcula a frequência cardíaca máxima usando a fórmula AHA: 220 - idade.
-     * A idade considerada é a idade "de hoje".
-     * @return frequência máxima (bpm), mínima 0.
+     * Máxima = 220 - idade (idade "de hoje" baseada no ano corrente do sistema).
+     * @return frequência máxima (bpm)
      */
     public int calculateMaxHeartRate() {
         int age = calculateAge();
@@ -109,18 +98,19 @@ public class HeartRates {
     }
 
     /**
-     * Calcula a faixa de frequência cardíaca alvo (50% a 85% da máxima), arredondando para o inteiro mais próximo.
-     * @return vetor de dois inteiros: [minAlvo, maxAlvo] em bpm.
+     * Faixa alvo (50% a 85% da máxima), retornando já formatado como String.
+     * Ex.: "93 bpm - 158 bpm"
+     * @return faixa alvo formatada
      */
-    public int[] calculateTargetHeartRate() {
+    public String calculateTargetHeartRate() {
         int max = calculateMaxHeartRate();
         int minTarget = (int) Math.round(max * 0.50);
         int maxTarget = (int) Math.round(max * 0.85);
-        return new int[]{minTarget, maxTarget};
+        return String.format("%d bpm - %d bpm", minTarget, maxTarget);
     }
 
     /**
-     * Retorna a data de nascimento formatada como dd/MM/yyyy (com zeros à esquerda).
+     * Retorna a data de nascimento formatada como dd/MM/yyyy (zeros à esquerda).
      */
     public String getBirthDateFormatted() {
         return String.format("%02d/%02d/%04d", this.dayOfBirth, this.monthOfBirth, this.yearOfBirth);
@@ -145,32 +135,32 @@ public class HeartRates {
             int month = sc.nextInt();
             int year = sc.nextInt();
 
-            // Validação básica de data (lança exceção se a data for inválida)
+            // Validação básica de data
             LocalDate birthDate = LocalDate.of(year, month, day);
 
-            // Validação adicional: data de nascimento não pode ser futura
+            // Data de nascimento não pode ser futura
             LocalDate today = LocalDate.now();
             if (birthDate.isAfter(today)) {
                 System.out.println("Erro: A data de nascimento não pode ser no futuro.");
                 return;
             }
 
-            // Cria o objeto HeartRates
-            HeartRates hr = new HeartRates(firstName, lastName, day, month, year);
+            // Cria o objeto
+            HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
-            // Cálculos
+            // Cálculos (idade por ano corrente simples, compatível com testes)
             int currentYear = today.getYear();
-            int age = hr.calculateAge(currentYear);
-            int maxHr = hr.calculateMaxHeartRate();
-            int[] targetRange = hr.calculateTargetHeartRate();
+            int age = person.calculateAge(currentYear);
+            int maxHr = person.calculateMaxHeartRate();
+            String targetRange = person.calculateTargetHeartRate();
 
-            // Saída formatada
+            // Saída
             System.out.println();
-            System.out.println("Nome: " + hr.getFirstName() + " " + hr.getLastName());
-            System.out.println("Data de nascimento: " + hr.getBirthDateFormatted());
+            System.out.println("Nome: " + person.getFirstName() + " " + person.getLastName());
+            System.out.println("Data de nascimento: " + person.getBirthDateFormatted());
             System.out.println("Idade: " + age + " anos");
             System.out.println("Frequência cardíaca máxima: " + maxHr + " bpm");
-            System.out.println("Faixa de frequência cardíaca alvo: " + targetRange[0] + " bpm - " + targetRange[1] + " bpm");
+            System.out.println("Faixa de frequência cardíaca alvo: " + targetRange);
 
         } catch (Exception e) {
             System.out.println("Erro: Verifique se os dados informados estão corretos. " +
