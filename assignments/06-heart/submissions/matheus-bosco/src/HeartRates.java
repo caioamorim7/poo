@@ -7,7 +7,6 @@ public class HeartRates {
     private int monthOfBirth;
     private int yearOfBirth;
 
-    // Construtor
     public HeartRates(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,28 +15,13 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    // Getters
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public int getDayOfBirth() { return dayOfBirth; }
+    public int getMonthOfBirth() { return monthOfBirth; }
+    public int getYearOfBirth() { return yearOfBirth; }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getDayOfBirth() {
-        return dayOfBirth;
-    }
-
-    public int getMonthOfBirth() {
-        return monthOfBirth;
-    }
-
-    public int getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    // Calcular idade (considerando mês/dia do aniversário)
+    // Idade correta, considerando se já fez aniversário
     public int calculateAge(int currentYear) {
         LocalDate today = LocalDate.now();
         int age = currentYear - yearOfBirth;
@@ -48,17 +32,17 @@ public class HeartRates {
         return age;
     }
 
-    // Frequência máxima (sem parâmetro)
+    // Frequência máxima
     public int calculateMaxHeartRate() {
         int currentYear = LocalDate.now().getYear();
         return 220 - calculateAge(currentYear);
     }
 
-    // Faixa alvo (sem parâmetro, sem "bpm")
+    // Faixa alvo com "bpm"
     public String calculateTargetHeartRate() {
         int maxHR = calculateMaxHeartRate();
         int minTarget = (int)(maxHR * 0.50);
         int maxTarget = (int)(maxHR * 0.85);
-        return minTarget + " - " + maxTarget;
+        return minTarget + " bpm - " + maxTarget + " bpm";
     }
 }
