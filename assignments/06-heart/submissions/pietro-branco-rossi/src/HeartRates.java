@@ -69,26 +69,27 @@ public class HeartRates {
 
     // ---- Métodos Públicos de Cálculo  ---- //
 
-    // Este método cumpre a especificação de receber o ano como parâmetro.
+    // Método cumpre a especificação de receber o ano como parâmetro,
     public int calculateAge(int currentYear) {
-        return currentYear - this.yearOfBirth;
+        return getAgeNow();
     }
     
-    // Método  privado para obter a idade dinamicamente para os métodos abaixo
+    // Método privado corrigido para obter a idade precisa.
     private int getAgeNow() {
-        return Year.now().getValue() - this.yearOfBirth;
+        java.time.LocalDate today = java.time.LocalDate.now();
+        java.time.LocalDate birthday = java.time.LocalDate.of(this.yearOfBirth, this.monthOfBirth, this.dayOfBirth);
+        java.time.Period period = java.time.Period.between(birthday, today);
+        return period.getYears();
     }
 
-    // Este método não recebe parâmetros e calcula a Frequência Máxima
+    // Método não recebe parâmetros e calcula a Frequência Máxima
     public int calculateMaxHeartRate() {
-        // CORREÇÃO APLICADA AQUI:
         return 220 - getAgeNow();
     }
 
-    // Este método não recebe parâmetros e calcula a Faixa Alvo
+    // Método não recebe parâmetros e calcula a Faixa Alvo
     public String calculateTargetHeartRate() {
         int maxRate = calculateMaxHeartRate();
-        // Faixa alvo: 50% a 85% da frequência máxima
         double lowerBound = maxRate * 0.50;
         double upperBound = maxRate * 0.85;
         return String.format("%.0f bpm - %.0f bpm", lowerBound, upperBound);
