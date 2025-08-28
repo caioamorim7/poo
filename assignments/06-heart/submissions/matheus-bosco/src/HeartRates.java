@@ -51,4 +51,3 @@ public class HeartRates {
         return minTarget + " bpm - " + maxTarget + " bpm";
     }
 }
-git checkout 2025.2
