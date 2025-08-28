@@ -69,23 +69,22 @@ public class HeartRates {
 
     // ---- Métodos Públicos de Cálculo  ---- //
 
-    // Voltando ao cálculo de idade simples que o teste espera.
+    // Este é agora o ÚNICO método que calcula a idade.
     public int calculateAge(int currentYear) {
         return currentYear - this.yearOfBirth;
     }
     
-    private int getAgeNow() {
-        return Year.now().getValue() - this.yearOfBirth;
-    }
+    // MUDANÇA 1: O método getAgeNow() foi REMOVIDO.
 
+    // MUDANÇA 2: Este método agora usa o calculateAge(currentYear)
     public int calculateMaxHeartRate() {
-        return 220 - getAgeNow();
+        int currentYear = Year.now().getValue();
+        return 220 - calculateAge(currentYear);
     }
 
     public String calculateTargetHeartRate() {
         int maxRate = calculateMaxHeartRate();
         
-        // Trocando arredondamento por truncamento (casting para int) para passar no teste.
         int lowerBound = (int) (maxRate * 0.50);
         int upperBound = (int) (maxRate * 0.85);
         
