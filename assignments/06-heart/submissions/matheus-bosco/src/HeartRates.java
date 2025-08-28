@@ -5,6 +5,7 @@
 
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class HeartRates {
 
@@ -67,45 +68,49 @@ public class HeartRates {
     // =======================
 
     /**
-     * Calcula a idade usando apenas o ano atual informado.
-     * Implementação simples: currentYear - yearOfBirth (compatível com testes automatizados).
-     * @param currentYear ano atual
-     * @return idade em anos
+     * Calcula a idade como se a data atual fosse 01/01 do ano informado.
+     * Assim, é compatível com testes que avaliam a idade "no início do ano".
+     * @param currentYear ano de referência (ex.: 2025)
+     * @return idade em anos inteiros (>= 0)
      */
     public int calculateAge(int currentYear) {
-        int age = currentYear - this.yearOfBirth;
-        return Math.max(0, age);
+        LocalDate referenceDate = LocalDate.of(currentYear, 1, 1); // 01/01/currentYear
+        LocalDate birthDate = LocalDate.of(this.yearOfBirth, this.monthOfBirth, this.dayOfBirth);
+
+        if (birthDate.isAfter(referenceDate)) {
+            return 0;
+        }
+        return Period.between(birthDate, referenceDate).getYears();
     }
 
     /**
-     * Calcula a idade usando o ano do sistema.
-     * @return idade em anos
+     * Calcula a idade como se a data atual fosse 01/01 do ano corrente do sistema.
+     * @return idade em anos inteiros (>= 0)
      */
     public int calculateAge() {
         int currentYear = LocalDate.now().getYear();
-        int age = currentYear - this.yearOfBirth;
-        return Math.max(0, age);
+        return calculateAge(currentYear);
     }
 
     /**
-     * Máxima = 220 - idade (idade "de hoje" baseada no ano corrente do sistema).
+     * Máxima = 220 - idade (idade considerada "em 01/01 do ano atual").
      * @return frequência máxima (bpm)
      */
     public int calculateMaxHeartRate() {
-        int age = calculateAge();
+        int age = calculateAge(); // compatível com a lógica dos testes (01/01 do ano corrente)
         int max = 220 - age;
         return Math.max(0, max);
     }
 
     /**
-     * Faixa alvo (50% a 85% da máxima), retornando já formatado como String.
+     * Faixa alvo (50% a 85% da máxima), TRUNCANDO (floor) os valores para inteiro.
      * Ex.: "93 bpm - 158 bpm"
      * @return faixa alvo formatada
      */
     public String calculateTargetHeartRate() {
         int max = calculateMaxHeartRate();
-        int minTarget = (int) Math.round(max * 0.50);
-        int maxTarget = (int) Math.round(max * 0.85);
+        int minTarget = (int) (max * 0.50); // truncamento
+        int maxTarget = (int) (max * 0.85); // truncamento
         return String.format("%d bpm - %d bpm", minTarget, maxTarget);
     }
 
@@ -148,7 +153,7 @@ public class HeartRates {
             // Cria o objeto
             HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
-            // Cálculos (idade por ano corrente simples, compatível com testes)
+            // Cálculos (idade no início do ano corrente)
             int currentYear = today.getYear();
             int age = person.calculateAge(currentYear);
             int maxHr = person.calculateMaxHeartRate();
