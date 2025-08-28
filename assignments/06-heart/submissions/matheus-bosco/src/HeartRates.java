@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class HeartRates {
     private String firstName;
     private String lastName;
@@ -35,20 +37,25 @@ public class HeartRates {
         return yearOfBirth;
     }
 
-    // Calcular idade (AGORA com parâmetro)
+    // Calcular idade (considerando mês/dia do aniversário)
     public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+        LocalDate today = LocalDate.now();
+        int age = currentYear - yearOfBirth;
+        if (today.getMonthValue() < monthOfBirth ||
+           (today.getMonthValue() == monthOfBirth && today.getDayOfMonth() < dayOfBirth)) {
+            age--;
+        }
+        return age;
     }
 
     // Frequência máxima (sem parâmetro)
     public int calculateMaxHeartRate() {
-        int currentYear = java.time.LocalDate.now().getYear();
+        int currentYear = LocalDate.now().getYear();
         return 220 - calculateAge(currentYear);
     }
 
-    // Faixa alvo (sem parâmetro)
+    // Faixa alvo (sem parâmetro, sem "bpm")
     public String calculateTargetHeartRate() {
-        int currentYear = java.time.LocalDate.now().getYear();
         int maxHR = calculateMaxHeartRate();
         int minTarget = (int)(maxHR * 0.50);
         int maxTarget = (int)(maxHR * 0.85);
