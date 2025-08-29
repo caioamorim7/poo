@@ -1,5 +1,5 @@
 public class Box {
-    public String stuff;
+    private String stuff;
 
     public String getStuff () {
         return stuff;
