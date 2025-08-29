@@ -26,7 +26,6 @@ class App {
         int currentYear = Year.now().getValue();
 
         //---- Exibir as informações do usuário e os cálculos ----//
-        System.out.println("\n--- Resultados ---");
         System.out.printf("Nome: %s %s%n", pessoa.getFirstName(), pessoa.getLastName());
         System.out.printf("Data de nascimento: %d/%d/%d%n", pessoa.getDayOfBirth(), pessoa.getMonthOfBirth(), pessoa.getYearOfBirth());
         
