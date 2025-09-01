@@ -46,7 +46,7 @@ double d = input.nextDouble();
 float f = input.nextFloat();
 boolean b = input.nextBoolean();
 String s = input.next();
-String x = input.nexLine();
+String x = input.nextLine();
 
 input.close()
 ```
