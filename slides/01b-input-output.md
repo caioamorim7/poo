@@ -48,7 +48,7 @@ boolean b = input.nextBoolean();
 String s = input.next();
 String x = input.nextLine();
 
-input.close()
+input.close();
 ```
 
 * new Scanner(System.in): cria um scanner que lê do teclado.
