@@ -56,4 +56,4 @@ public class HealthProfileApp {
         System.out.println("25.0 – 29.9\tSobrepeso");
         System.out.println("30.0 ou mais\tObesidade");
     }
-}a
+}
