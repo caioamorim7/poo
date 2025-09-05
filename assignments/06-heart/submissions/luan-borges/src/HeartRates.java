@@ -1,5 +1,3 @@
-// HeartRates.java
-
 import java.util.Scanner;
 
 public class HeartRates {
