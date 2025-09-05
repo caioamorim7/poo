@@ -36,12 +36,13 @@ public class HealthProfile {
         while (true) {
             System.out.print("Digite seu gênero (M/F): ");
             genderInput = scanner.nextLine().trim();
-            if (!genderInput.isEmpty()) { //se tiver vazia retorna true, mas nega pelo ! entao false --- se tiver algo, volta verdadeiro mas vira false pelo !
+            if (!genderInput.isEmpty()) {
                 gender = Character.toUpperCase(genderInput.charAt(0));
                 if (gender == 'M' || gender == 'F') break;
             }
             System.out.println("Entrada inválida. Digite 'M' ou 'F'.");
         }
+
 
         System.out.print("Digite sua data de nascimento (dia, mês e ano separados por espaço): ");
         int day = scanner.nextInt();
@@ -169,7 +170,7 @@ public class HealthProfile {
     }
 
     public double calculateBMI() {
-        if (heightInInches <= 0){
+        if (heightInInches <= 0) {
             throw new IllegalArgumentException("Altura deve ser maior que zero.");
         }
         return (weightInPounds * 703) / (heightInInches * heightInInches);
