@@ -1,14 +1,14 @@
+public class PalindromeChecker {
 
-class PalindromeChecker {
-
+    // Verifica se a entrada é válida (não nula nem só espaços)
     public static boolean isValidInput(String input) {
         if (input == null) return false;
-        input = input.trim();
-        return !input.isEmpty();
+        return !input.trim().isEmpty();
     }
 
+    // Verifica se é palíndromo
     public static boolean isPalindrome(String input) {
-        input = input.toLowerCase(); 
+        input = input.toLowerCase();
         int left = 0;
         int right = input.length() - 1;
 
