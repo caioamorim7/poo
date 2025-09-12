@@ -17,7 +17,7 @@ public class ParkingGarage {
         int cliente = 1;
 
         while (true) {
-            System.out.print("Digite horas (-1 para sair): ");
+            System.out.print("Digite horagit (-1 para sair): ");
             double horas = sc.nextDouble();
             if (horas == -1) break;
 
