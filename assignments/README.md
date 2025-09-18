@@ -11,11 +11,6 @@ Nesta página você encontra:
 |   | [Sequência de Fibonnaci](./03-fibonacci) |
 |   | [Elefante visitando amigo](./04-elephant) |
 |   | [Senha forte](./05-password) |
-
-### Lista de atividades (em revisão)
-
-|Semana| Atividades |
-|---|---|
 | 2 | [Calculadora de frequência cardíaca alvo](./06-heart) |
 |   | [Registro de saúde digital](./07-health) |
 |   | [Palíndromos](08-palindrome) |
@@ -23,5 +18,10 @@ Nesta página você encontra:
 |   | [Mediana de três](./10-median)  |
 | 3 | [Parking](./11-parking)  |
 |   | [Savings Account](./12-savings) |
+
+### Lista de atividades (em revisão)
+
+|Semana| Atividades |
+|---|---|
 | 4 | [Books](./13-books)  |
 | 5 | [Exception](./14-exception/) |
