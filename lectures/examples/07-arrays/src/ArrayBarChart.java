@@ -1,4 +1,4 @@
-public class BarChart { 
+public class ArrayBarChart { 
     public static void main(String[] args) { 
         int[] array = {0, 0, 0, 0, 0, 0, 1, 2, 4, 2, 1}; 
         

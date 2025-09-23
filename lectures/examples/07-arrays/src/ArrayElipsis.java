@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArrayTest {
+public class ArrayElipsis {
 
     public static void main(String... args){
 

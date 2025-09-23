@@ -1,4 +1,4 @@
-public abstract class OutOfBoundArray {
+public abstract class ArrayIndexOutOfBound {
     public static void main(String[] args){
 
         String[] students = {"John", "Paul"};	

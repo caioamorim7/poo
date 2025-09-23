@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArraysMethodsDemo {
+public class ArraysCopyOf {
     public static void main(String[] args) {
 
         int[] numbers = {2, 10, 9, 8, 1, -3};
