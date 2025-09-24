@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ArrayListCollection {
+public class ArrayListAddRemoveBasic {
     public static void main(String... args){
         ArrayList<String> items = new ArrayList<>();
 
