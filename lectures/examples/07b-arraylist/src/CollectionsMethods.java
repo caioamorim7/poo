@@ -32,17 +32,5 @@ public class CollectionsMethods {
         for (String c : cidades)
             System.out.println(c);
         
-        ArrayList<String> cidades_copy = new ArrayList<>(cidades.size());
-
-        Collections.fill(cidades_copy, "A");
-
-        System.out.println(cidades_copy.size());
-        System.out.println(cidades.size());
-
-        Collections.copy(cidades_copy, cidades);
-
-        Collections.fill(cidades_copy, "Paracambi");
-        System.out.println(cidades);
-        System.out.println(cidades_copy);
     }
 }
