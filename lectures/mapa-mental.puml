@@ -1,0 +1,97 @@
+@startmindmap
+* Programacao Orientada a Objetos em Java
+** Plataforma Java
+*** Java Virtual Machine (JVM)
+*** Java Runtime Environment (JRE)
+*** Java Develoment Kit (JDK)
+**** jshell
+*****_ ambiente de aprendizado e teste REPL (Read-Eval-Print-Loop)
+**** javac
+*****_ compilador de programas java
+**** java
+*****_ executa programas java
+*****_ public static void main(String[] args){}
+** Elementos básicos da linguagem
+*** literais (valores)
+****_ números: inteiro e ponto-flutuante (decimal)
+****_ caractere: 'a'
+****_ boolean: true false
+****_ String: "a"
+*** identifiers
+****_ nomeiam variáveis, classes, métodos etc
+*** separators
+****_ {} [] () ; , ... @
+*** keywords (palavras reservadas)
+*** operadores
+**** associação
+*****_ =
+**** aritiméticos
+*****_ +, -, *, /, %
+*****_ ++, --
+**** relacionais
+*****_ < > <= >=d
+**** lógicos
+*****_ &&, &
+*****_ ||, |, ^
+*****_ !, ==
+**** bitwise
+*** tipos
+**** tipos primitivos
+***** inteiros
+******_ byte (8 bits): -127 a 128
+******_ short (16 bits): 
+******_ int (32 bits):
+******_ long (64 bits):
+***** ponto-flutuante (decimal)
+******_ float
+******_ double
+*****_ caractere: 'a'
+*****_ boolean: true ou false
+**** tipos complexos (reference types)
+*****:classe
+<code>
+public class Aluno {...}
+</code>;
+*****:interface
+<code>
+public interface Bolsita {...}
+</code>;
+*** variáveis
+****_ tipo identificador;
+****_ tipo identificador = valor_inicial;
+** Sintaxe Basica
+*** Tipos primitivos
+*** Variaveis e operadores
+*** Estruturas de controle (if, switch, loops)
+*** Entrada e saida
+** Orientacao a Objetos
+*** Classes e objetos
+*** Encapsulamento
+*** Heranca
+*** Polimorfismo
+*** Abstracao
+*** Interfaces
+*** Classes abstratas
+*** Pacotes e modularizacao
+*** Sobrecarga e sobrescrita de metodos
+** Construcao de Software
+*** Colecoes e Generics
+*** Tratamento de excecoes
+*** Manipulacao de strings
+*** Streams API
+*** Expressoes lambda
+*** Programacao concorrente (threads, executors)
+** Ferramentas e Boas Praticas
+*** Maven e Gradle
+*** IDEs (IntelliJ, Eclipse, VS Code)
+*** Testes unitarios (JUnit, Mockito)
+*** Documentacao com Javadoc
+*** Controle de versao (Git)
+*** Padroes de projeto (GoF)
+** Recursos Avancados
+*** Reflection e introspeccao
+*** Anotacoes
+*** Serializacao
+*** Modulos Java (JPMS)
+*** API de datas (java.time)
+@endmindmap
