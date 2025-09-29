@@ -3,7 +3,7 @@
 ** Plataforma Java
 *** Java Virtual Machine (JVM)
 *** Java Runtime Environment (JRE)
-*** Java Develoment Kit (JDK)
+*** Java Development Kit (JDK)
 **** jshell
 *****_ ambiente de aprendizado e teste REPL (Read-Eval-Print-Loop)
 **** javac
@@ -17,32 +17,39 @@
 ****_ caractere: 'a'
 ****_ boolean: true false
 ****_ String: "a"
+****_ null: ausência de referência
 *** identifiers
 ****_ nomeiam variáveis, classes, métodos etc
+****_ convenções: camelCase para variáveis, PascalCase para classes
 *** separators
 ****_ {} [] () ; , ... @
 *** keywords (palavras reservadas)
+****_ exemplos: package, class, interface, extends, implements
+****_ desde Java 10: var (inferencia de tipo local)
+****_ restrito: true, false, null (literais reservados)
 *** operadores
 **** associação
 *****_ =
+*****_ operadores compostos: += -= *= /= %=
 **** aritiméticos
 *****_ +, -, *, /, %
 *****_ ++, --
 **** relacionais
-*****_ < > <= >=d
+*****_ < > <= >= == !=
 **** lógicos
 *****_ &&, &
 *****_ ||, |, ^
 *****_ !, ==
 **** bitwise
+*****_ << >> >>> ~
 *** tipos
 **** tipos primitivos
-*****_ byte (8 bits): -127 a 128
-*****_ short (16 bits): 
-*****_ int (32 bits):
-*****_ long (64 bits):
-*****_ float
-*****_ double
+*****_ byte (8 bits): -128 a 127
+*****_ short (16 bits): -32.768 a 32.767
+*****_ int (32 bits): -2^31 a 2^31-1
+*****_ long (64 bits): -2^63 a 2^63-1 (sufixo L)
+*****_ float (32 bits, precisão simples)
+*****_ double (64 bits, precisão dupla)
 *****_ caractere: 'a'
 *****_ boolean: true ou false
 **** tipos complexos (reference types)
@@ -52,11 +59,13 @@ public class Aluno {...}
 </code>;
 *****:interface
 <code>
-public interface Bolsita {...}
+public interface Bolsista {...}
 </code>;
 *** variáveis
 ****_ tipo identificador;
 ****_ tipo identificador = valor_inicial;
+****_ final tipo IDENTIFICADOR = valor_inicial; (constante)
+****_ var identificador = expressao; (inferência local)
 ** Estruturas de controle
 *** estruturas de seleção
 ****_ if (condition) {statements}
@@ -64,6 +73,7 @@ public interface Bolsita {...}
 ****_ if (condition) {statements} else if (condition) {statements;} else {statements;}
 ****_ switch (selector) { case : statements; break; default: statements; break;}
 ****_ switch (selector) { case -> statement; default -> statements;}
+****_ switch (selector) { case -> statement; yield valor;}
 *** estruturas de iteração
 ****_ do {statements} while (condition)
 ****_ while (condition) {statements}
@@ -79,10 +89,18 @@ public interface Bolsita {...}
 --- Polimorfismo
 --- Interfaces
 --- Classes abstratas
+--- Composição
+--- Delegação
 --- Sobrecarga
 --- Sobrescrita
 --- Modificadores de acesso
+----_ public, protected, package-private (default), private
 --- Pacotes e modularizacao
+----_ organiza classes e controla visibilidade
+--- Ciclo de vida do objeto
+----_ criação (new), uso, elegível para GC (garbage collection)
+--- Contratos
+----_ equals, hashCode, toString bem definidos
 -- Coleções de elementos
 --- Array
 ----_ int[] i; int[] i = new int[5]; int[] i = {1, 2, 3}
@@ -108,4 +126,8 @@ public interface Bolsita {...}
 ---_ try {statements} catch (Exception e) {statements}
 ---_ try {statements} catch (ArrayIndexOutOfBoundsException e) {statements} catch (Exception e) {statements}
 ---_ try {statements} catch (ArrayIndexOutOfBoundsException a | Exception e) {statements}
+---_ try (Resource r = ...) {statements} (try-with-resources)
+---_ finally {cleanup}
+---_ métodos podem declarar throws TipoDeExcecao
+---_ exceções verificadas (checked) vs não verificadas (runtime)
 @endmindmap
