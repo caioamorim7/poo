@@ -88,24 +88,34 @@ public interface Bolsista {...}
 --- Pilares de POO
 ---- Abstração
 ---- Encapsulamento
------_ gets e sets
+----- Modificadores de acesso
+------_ public, protected, private, package-private (default)
+----- gets e sets
 ---- Herança
 -----_ cria relação entre classes do tipo é-um
 -----_ uma classe (subclasse) só pode herdar de uma e somente uma classe (superclasse)
 -----_ public class SuperClasse {}
 -----_ public class SubClasse extends SuperClasse {}
 ---- Polimorfismo
------_ mudança de comportamento definido na super classe
------_ @Override public void metodoDaSuperClasse(){}
+----- Sobrecarga (estático)
+------_ métodos com mesmo nome mas assinatura diferentes
+------_ assinatura: tipos, quantidades ou ordem dos parâmetros diferentes
+----- Sobrescrita (dinâmico)
+------_ mudança de comportamento definido na super classe
+------_ @Override
+------_ @Override public void metodoDaSuperClasse(){}
 --- Classes
 ----_ modelo, template de uma entidade do mundo real
 ----_ dados (atributos)
 ----_ comportamentos (métodos)
+----_ static: atributos e métodos da classe
 ---- Objetos
 -----_ instância de uma classe (new)
+-----_ construtor: método especial
 -----_ Classe o = new Classe();
 --- Composição
 ----_ cria relação entre classes do tipo tem-um
+----_ public class Carro {public Motor motor;}
 --- Interfaces
 ----_ define um contrato, capacidades
 ----_ uma classe pode implementar várias interfaces
@@ -113,14 +123,6 @@ public interface Bolsista {...}
 ----_ public class Classe implements Capacidade, ... {}
 --- Classes abstratas
 ----_ public abstract class ClasseAbstrata {} (não pode ser instanciada)
---- Sobrecarga
-----_ métodos com mesmo nome mas assinatura diferentes
-----_ assinatura: tipos, quantidades ou ordem dos parâmetros diferentes
---- Sobrescrita
-----_ mudança de comportamento definido na super classe
-----_ @Override
---- Modificadores de acesso
-----_ public, protected, private, package-private (default)
 --- Pacotes e modularizacao
 ----_ organiza classes e controla visibilidade
 ----_ package Nomepacote;
