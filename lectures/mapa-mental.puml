@@ -37,14 +37,12 @@
 **** bitwise
 *** tipos
 **** tipos primitivos
-***** inteiros
-******_ byte (8 bits): -127 a 128
-******_ short (16 bits): 
-******_ int (32 bits):
-******_ long (64 bits):
-***** ponto-flutuante (decimal)
-******_ float
-******_ double
+*****_ byte (8 bits): -127 a 128
+*****_ short (16 bits): 
+*****_ int (32 bits):
+*****_ long (64 bits):
+*****_ float
+*****_ double
 *****_ caractere: 'a'
 *****_ boolean: true ou false
 **** tipos complexos (reference types)
@@ -59,10 +57,13 @@ public interface Bolsita {...}
 *** variáveis
 ****_ tipo identificador;
 ****_ tipo identificador = valor_inicial;
-** Sintaxe Basica
-*** Tipos primitivos
-*** Variaveis e operadores
-*** Estruturas de controle (if, switch, loops)
+** Estruturas de controle
+*** estruturas de seleção
+****_ if (condition) {statements}
+****_ if (condition) {statements} else {statements}
+****_ if (condition) {statements} else if (condition) {statements} else {statements}
+****_ switch (condition) { case : statment; break; default: statment; break;}
+*** estruturas de iteração
 *** Entrada e saida
 ** Orientacao a Objetos
 *** Classes e objetos
