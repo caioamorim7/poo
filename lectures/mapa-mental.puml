@@ -80,39 +80,53 @@ public interface Bolsista {...}
 ****_ for (counter; condition; increment) {statements}
 ****_ for (type element : expression) {statements}
 -- Orientacao a Objetos
---- Classes e objetos
+--- Pilares de POO
+---- Abstração
+---- Encapsulamento
+-----_ gets e sets
+---- Herança
+-----_ cria relação entre classes do tipo é-um
+-----_ public class SuperClasse {}
+-----_ public class SubClasse extends SuperClasse {}
+---- Polimorfismo
+-----_ mudança de comportamento definido na super classe
+-----_ @Override public void metodoDaSuperClasse(){}
+--- Classes
+----_ modelo, template de uma entidade do mundo real
+--- Objetos
+----_ instância de uma classe (new)
 ----_ dados (atributos)
 ----_ comportamentos (métodos)
---- Abstração
---- Encapsulamento
-----_ gets e sets
 --- Composição
 ----_ cria relação entre classes do tipo tem-um
---- Herança
-----_ cria relação entre classes do tipo é-um
-----_ public class SuperClasse {}
-----_ public class SubClasse extends SuperClasse {}
---- Polimorfismo
-----_ mudança de comportamento definido na super classe
 --- Interfaces
 ----_ public interface Capacidade {}
 ----_ public class Classe implements Capacidade {}
 --- Classes abstratas
 ----_ public abstract class ClasseAbstrata {} (não pode ser instanciada)
-
 --- Sobrecarga
 ----_ métodos com mesmo nome mas assinatura diferentes
 ----_ assinatura: tipos, quantidades ou ordem dos parâmetros diferentes
 --- Sobrescrita
+----_ mudança de comportamento definido na super classe
 ----_ @Override
 --- Modificadores de acesso
-----_ public, protected, package-private (default), private
+----_ public, protected, private, package-private (default)
 --- Pacotes e modularizacao
 ----_ organiza classes e controla visibilidade
---- Ciclo de vida do objeto
-----_ criação (new), uso, elegível para GC (garbage collection)
---- Contratos
-----_ equals, hashCode, toString bem definidos
+----_ package Nomepacote;
+----_ import Nomepacote;
+--- Principios SOLID
+---- Single Responsibility Principle (SRP)
+-----_ cada classe ou modulo deve ter um unico motivo para mudar
+---- Open/Closed Principle (OCP)
+-----_ entidades ficam abertas para extensao mas fechadas para modificacao
+---- Liskov Substitution Principle (LSP)
+-----_ subclasses devem substituir suas superclasses sem quebrar o contrato
+---- Interface Segregation Principle (ISP)
+-----_ prefira interfaces pequenas e especificas a interfaces grandes e gerais
+---- Dependency Inversion Principle (DIP)
+-----_ depende de abstracoes e nao de implementacoes concretas para reduzir acoplamento
 -- Coleções de elementos
 --- Array
 ----_ int[] i; int[] i = new int[5]; int[] i = {1, 2, 3}
