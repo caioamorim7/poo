@@ -2,14 +2,19 @@
 * Programacao Orientada a Objetos em Java
 ** Plataforma Java
 *** Java Virtual Machine (JVM)
+****_ executa bytecode java de forma independente do sistema operacional
+****_ gerencia memória, threads e garbage collector em tempo de execução
 *** Java Runtime Environment (JRE)
+****_ combina a JVM com bibliotecas essenciais de execução
+****_ provê ambiente pronto para rodar aplicações java já compiladas
 *** Java Development Kit (JDK)
 **** jshell
 *****_ ambiente de aprendizado e teste REPL (Read-Eval-Print-Loop)
 **** javac
 *****_ compilador de programas java
+*****_ criar arquivo .class com bytecode a partir de cógido java em arquivos .java
 **** java
-*****_ executa programas java
+*****_ executa programas java previamente compilados
 *****_ public static void main(String[] args){}
 ** Elementos básicos da linguagem
 *** literais (valores)
@@ -18,10 +23,10 @@
 ****_ boolean: true false
 ****_ String: "a"
 ****_ null: ausência de referência
-*** identifiers
+*** identificadores
 ****_ nomeiam variáveis, classes, métodos etc
 ****_ convenções: camelCase para variáveis, PascalCase para classes
-*** separators
+*** separadores
 ****_ {} [] () ; , ... @
 *** keywords (palavras reservadas)
 ****_ exemplos: package, class, interface, extends, implements
@@ -30,7 +35,7 @@
 *** operadores
 **** associação
 *****_ =
-*****_ operadores compostos: += -= *= /= %=
+*****_ += -= *= /= %=
 **** aritiméticos
 *****_ +, -, *, /, %
 *****_ ++, --
@@ -135,6 +140,10 @@ public interface Bolsista {...}
 --- Array
 ----_ int[] i; int[] i = new int[5]; int[] i = {1, 2, 3}
 ----_ int[][] i; int[][] i = new int[5][4]; int[][] i = {{1, 2}, {3, 4}, {5, 6}}
+----_ tamanho fixo definido no momento da criação/inicialização
+----_ armazena tipos primitivos ou referências de maneira contígua
+----_ não pode ser redimensionamento
+----_ passado como parâmetro por referência
 ---- java.lang.Arrays
 -----_ sort
 -----_ compare
@@ -146,6 +155,9 @@ public interface Bolsista {...}
 --- Framework Collections
 ---- java.lang.ArrayList
 -----_ ArrayList<String> a = new ArrayList<>();
+-----_ cresce dinamicamente conforme novos elementos são adicionados
+-----_ permite acesso aleatório em tempo constante por índice
+-----_ passado como parâmetro por referência
 ---- java.lang.Collections
 -----_ binarySearch
 -----_ fill
