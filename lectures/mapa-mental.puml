@@ -61,38 +61,51 @@ public interface Bolsita {...}
 *** estruturas de seleção
 ****_ if (condition) {statements}
 ****_ if (condition) {statements} else {statements}
-****_ if (condition) {statements} else if (condition) {statements} else {statements}
-****_ switch (condition) { case : statment; break; default: statment; break;}
+****_ if (condition) {statements} else if (condition) {statements;} else {statements;}
+****_ switch (selector) { case : statements; break; default: statements; break;}
+****_ switch (selector) { case -> statement; default -> statements;}
 *** estruturas de iteração
-*** Entrada e saida
-** Orientacao a Objetos
-*** Classes e objetos
-*** Encapsulamento
-*** Heranca
-*** Polimorfismo
-*** Abstracao
-*** Interfaces
-*** Classes abstratas
-*** Pacotes e modularizacao
-*** Sobrecarga e sobrescrita de metodos
-** Construcao de Software
-*** Colecoes e Generics
-*** Tratamento de excecoes
-*** Manipulacao de strings
-*** Streams API
-*** Expressoes lambda
-*** Programacao concorrente (threads, executors)
-** Ferramentas e Boas Praticas
-*** Maven e Gradle
-*** IDEs (IntelliJ, Eclipse, VS Code)
-*** Testes unitarios (JUnit, Mockito)
-*** Documentacao com Javadoc
-*** Controle de versao (Git)
-*** Padroes de projeto (GoF)
-** Recursos Avancados
-*** Reflection e introspeccao
-*** Anotacoes
-*** Serializacao
-*** Modulos Java (JPMS)
-*** API de datas (java.time)
+****_ do {statements} while (condition)
+****_ while (condition) {statements}
+****_ for (counter; condition; increment) {statements}
+****_ for (type element : expression) {statements}
+-- Orientacao a Objetos
+--- Classes e objetos
+----_ dados (atributos)
+----_ comportamentos (métodos)
+--- Abstração
+--- Encapsulamento
+--- Herança
+--- Polimorfismo
+--- Interfaces
+--- Classes abstratas
+--- Sobrecarga
+--- Sobrescrita
+--- Modificadores de acesso
+--- Pacotes e modularizacao
+-- Coleções de elementos
+--- Array
+----_ int[] i; int[] i = new int[5]; int[] i = {1, 2, 3}
+----_ int[][] i; int[][] i = new int[5][4]; int[][] i = {{1, 2}, {3, 4}, {5, 6}}
+---- java.lang.Arrays
+-----_ sort
+-----_ compare
+-----_ copyOf
+-----_ fill
+-----_ binarySearch
+-----_ toString
+-----_ ...
+--- Framework Collections
+---- ArrayList
+-----_ ArrayList<String> a = new ArrayList<>();
+----- java.lang.Collections
+------_ binarySearch
+------_ fill
+------_ reverseOrder
+------_ shuffle
+------_ sort
+-- Tratamento de excecoes
+---_ try {statements} catch (Exception e) {statements}
+---_ try {statements} catch (ArrayIndexOutOfBoundsException e) {statements} catch (Exception e) {statements}
+---_ try {statements} catch (ArrayIndexOutOfBoundsException a | Exception e) {statements}
 @endmindmap
