@@ -85,14 +85,26 @@ public interface Bolsista {...}
 ----_ comportamentos (métodos)
 --- Abstração
 --- Encapsulamento
---- Herança
---- Polimorfismo
---- Interfaces
---- Classes abstratas
+----_ gets e sets
 --- Composição
---- Delegação
+----_ cria relação entre classes do tipo tem-um
+--- Herança
+----_ cria relação entre classes do tipo é-um
+----_ public class SuperClasse {}
+----_ public class SubClasse extends SuperClasse {}
+--- Polimorfismo
+----_ mudança de comportamento definido na super classe
+--- Interfaces
+----_ public interface Capacidade {}
+----_ public class Classe implements Capacidade {}
+--- Classes abstratas
+----_ public abstract class ClasseAbstrata {} (não pode ser instanciada)
+
 --- Sobrecarga
+----_ métodos com mesmo nome mas assinatura diferentes
+----_ assinatura: tipos, quantidades ou ordem dos parâmetros diferentes
 --- Sobrescrita
+----_ @Override
 --- Modificadores de acesso
 ----_ public, protected, package-private (default), private
 --- Pacotes e modularizacao
