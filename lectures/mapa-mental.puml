@@ -86,6 +86,7 @@ public interface Bolsista {...}
 -----_ gets e sets
 ---- Herança
 -----_ cria relação entre classes do tipo é-um
+-----_ uma classe (subclasse) só pode herdar de uma e somente uma classe (superclasse)
 -----_ public class SuperClasse {}
 -----_ public class SubClasse extends SuperClasse {}
 ---- Polimorfismo
@@ -93,15 +94,18 @@ public interface Bolsista {...}
 -----_ @Override public void metodoDaSuperClasse(){}
 --- Classes
 ----_ modelo, template de uma entidade do mundo real
---- Objetos
-----_ instância de uma classe (new)
 ----_ dados (atributos)
 ----_ comportamentos (métodos)
+---- Objetos
+-----_ instância de uma classe (new)
+-----_ Classe o = new Classe();
 --- Composição
 ----_ cria relação entre classes do tipo tem-um
 --- Interfaces
+----_ define um contrato, capacidades
+----_ uma classe pode implementar várias interfaces
 ----_ public interface Capacidade {}
-----_ public class Classe implements Capacidade {}
+----_ public class Classe implements Capacidade, ... {}
 --- Classes abstratas
 ----_ public abstract class ClasseAbstrata {} (não pode ser instanciada)
 --- Sobrecarga
@@ -140,14 +144,15 @@ public interface Bolsista {...}
 -----_ toString
 -----_ ...
 --- Framework Collections
----- ArrayList
+---- java.lang.ArrayList
 -----_ ArrayList<String> a = new ArrayList<>();
------ java.lang.Collections
-------_ binarySearch
-------_ fill
-------_ reverseOrder
-------_ shuffle
-------_ sort
+---- java.lang.Collections
+-----_ binarySearch
+-----_ fill
+-----_ reverseOrder
+-----_ shuffle
+-----_ sort
+-----_ ...
 -- Tratamento de excecoes
 ---_ try {statements} catch (Exception e) {statements}
 ---_ try {statements} catch (ArrayIndexOutOfBoundsException e) {statements} catch (Exception e) {statements}
