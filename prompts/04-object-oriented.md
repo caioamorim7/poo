@@ -7,7 +7,7 @@
 * Gere um exemplo completo em Java que instancia objetos, chama métodos e imprime estados, justificando a escolha de cada membro da classe.
 * Apresente más práticas (ex.: abuso de atributos `public`) e proponha melhorias que reforcem o encapsulamento.
 * Simule um cenário em que objetos representam registros de um sistema escolar e discuta como garantir consistência dos dados.
-* Reflita: por que compreender o ciclo de vida e o estado de objetos é fundamental para evitar bugs em aplicações Java?
+* por que compreender o ciclo de vida e o estado de objetos é fundamental para evitar bugs em aplicações Java?
 
 ---
 
