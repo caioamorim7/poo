@@ -44,6 +44,12 @@
 
 ---
 
+## Strings e Manipulação de Texto
+
+* Explique as características principais de `String` em Java, incluindo imutabilidade, pool de strings e o impacto disso em memória e desempenho.
+
+---
+
 ## Declaração de Variáveis, Expressions e Statements
 
 * Descreva a sintaxe para declarar variáveis, constantes (`final`) e variáveis locais com `var`, enfatizando onde cada forma é apropriada.
