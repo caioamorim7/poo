@@ -71,19 +71,33 @@ public interface Bolsista {...}
 ****_ tipo identificador = valor_inicial;
 ****_ final tipo IDENTIFICADOR = valor_inicial; (constante)
 ****_ var identificador = expressao; (inferência local)
+*** expressions 
+****_ (a + b)
+*** statements
+****_ int c = (a+b);
 ** Estruturas de controle
 *** estruturas de seleção
-****_ if (condition) {statements}
-****_ if (condition) {statements} else {statements}
-****_ if (condition) {statements} else if (condition) {statements;} else {statements;}
-****_ switch (selector) { case : statements; break; default: statements; break;}
-****_ switch (selector) { case -> statement; default -> statements;}
-****_ switch (selector) { case -> statement; yield valor;}
+**** if
+*****_ if (condition) {statements}
+*****_ if (condition) {statements} else {statements}
+*****_ if (condition) {statements} else if (condition) {statements;} else {statements;}
+**** switch statements
+*****_ switch (selector) { case label: statements; break; default: statements; }
+*****_ switch (dia) { case MONDAY, FRIDAY -> System.out.println("Dia útil diferente"); default -> System.out.println("Outro dia"); }
+*****_ direciona o fluxo e não produz valor para atribuição
+**** switch expressions
+*****_ var mensagem = switch (dia) { case MONDAY -> "Início"; case FRIDAY, SATURDAY -> "Descanso"; default -> "Rotina"; };
+*****_ switch (valor) { case 0 -> 0; default -> { log(); yield calcula(valor); } }
+*****_ avalia para um valor e pode aparecer em atribuições
 *** estruturas de iteração
-****_ do {statements} while (condition)
-****_ while (condition) {statements}
-****_ for (counter; condition; increment) {statements}
-****_ for (type element : expression) {statements}
+**** do-while
+*****_ do {statements} while (condition)
+**** while
+*****_ while (condition) {statements}
+**** for
+*****_ for (counter; condition; increment) {statements}
+**** enhanced for
+*****_ for (type element : expression) {statements}
 -- Orientacao a Objetos
 --- Pilares de POO
 ---- Abstração
