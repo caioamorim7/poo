@@ -15,7 +15,7 @@
 * Descreva a sintaxe tradicional do `switch` statement, explicando `case`, `break`, `default` e boas práticas para evitar fall-through acidental.
 * Apresente o `switch` com setas introduzido em Java 12+, destacando como ele simplifica blocos de decisão tanto em statements quanto em expressions.
 * Diferencie objetivamente `switch statements` (focam em direcionar fluxo, sem produzir valor direto) e `switch expressions` (avaliam e retornam um valor), demonstrando quando preferir cada forma.
-* Crie exercícios que misturem ambos os estilos, pedindo ao aluno para reescrever uma decisão condicional em `switch` statement e depois em `switch` expression com `yield`.
+* Demonstre uma decisão condicional em `switch` statement e depois em `switch` expression com `yield`.
 * Proponha um estudo de caso que refatore uma cadeia de `if/else` para `switch`, avaliando legibilidade, segurança contra fall-through e possibilidades de retorno de valores.
 * Quais critérios ajudam a escolher entre `if/else` complexos, `switch statements` e `switch expressions` em projetos modernos?
 
@@ -25,7 +25,7 @@
 
 * Explique o funcionamento dos laços `while` e `do-while`, destacando a diferença de avaliação da condição antes ou depois do corpo do laço.
 * Monte exemplos que demonstrem inicialização correta de variáveis de controle e prevenção de loops infinitos.
-* Crie exercícios onde o aluno converte um `while` em `do-while` (e vice-versa) analisando impactos no fluxo.
+* Demonstre a conversão de um `while` em `do-while` (e vice-versa) analisando impactos no fluxo.
 * Simule a leitura iterativa de dados com validação, mostrando como lidar com entradas inválidas usando cada laço.
 * Apresente um estudo de caso em que o laço `do-while` é preferível (ex.: menu interativo) e discuta o motivo.
 * Como planejar condições de saída claras reduz problemas de desempenho e travamentos em laços?
@@ -47,7 +47,7 @@
 
 * Explique o papel de `break`, `continue` e rótulos (`label`) em laços, mostrando quando seu uso é justificável.
 * Analise um trecho de código com múltiplas estruturas de controle e proponha simplificações para reduzir complexidade ciclomática.
-* Crie exercícios que peçam ao aluno para detectar e eliminar código morto ou caminhos inatingíveis em estruturas de controle.
+* Demonstre um exemplo com caminhos inatingíveis em estruturas de controle e como  detectar e eliminar código morto.
 * Apresente um mini projeto (ex.: simulador de caixa eletrônico) que combine condicionais e laços e testes de fluxo com casos de erro.
 * Discuta estratégias de teste como tabelas de decisão, fluxogramas e cobertura de ramos para validar estruturas de controle.
 * Quais métricas ou práticas de revisão ajudam a manter estruturas de controle legíveis e confiáveis?

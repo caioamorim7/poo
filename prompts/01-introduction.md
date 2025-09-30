@@ -41,7 +41,7 @@
 * Escreva um programa simples em Java que imprima “Olá, Mundo!”.
 * Modifique o programa anterior para receber o nome do usuário e personalizar a saudação.
 * Explique a diferença entre um arquivo .java e um arquivo .class. Como o compilador Java (javac) e a Máquina Virtual Java (JVM) interagem com esses arquivos?
-* Imagine-se como instrutor de novos desenvolvedores: explique a importância de entender a estrutura básica antes de criar programas complexos.
+* Explique a importância de entender a estrutura básica antes de criar programas complexos.
 * Quais dificuldades você encontrou ao compreender a estrutura básica de um programa em Java?
 
 ---
