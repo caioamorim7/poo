@@ -11,11 +11,11 @@ public class StudentParticipant extends Participant {
 
     @Override 
     public String describeRole(){
-        return "Papel: Estudante";
+        return "Papel: Estudante - " + this.course + "(semestre " + this.currentSemester + ")";
     }
 
     @Override
     public String toString() {
-        return super.toString() + " - Curso: " + this.course + " - Semestre: " + this.currentSemester;
+        return super.toString() + " - Curso: " + this.course + "(semestre " + this.currentSemester + ")";
     }
 }

@@ -25,10 +25,9 @@ public abstract class Participant{
         return this.email;  
     }
 
-
     @Override 
     public String toString() { // Constroi e retorna a string formatada direito
-        return "ID: " + this.id + " - Nome completo: " + this.fullName + " - E-mail: " + this.email;
+        return "ID: " + this.id + " - Nome: " + this.fullName + " - E-mail: " + this.email;
     }
 
 }

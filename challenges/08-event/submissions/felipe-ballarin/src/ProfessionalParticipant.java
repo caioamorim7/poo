@@ -9,7 +9,7 @@ public class ProfessionalParticipant extends Participant{
 
     @Override 
     public String describeRole(){
-        return "Papel: Profissional";
+        return "Papel: Profissional - Organização: " + this.organization;
     }
 
     @Override
