@@ -27,6 +27,6 @@ public abstract class Participant {
 
     @Override 
     public String toString() { 
-        return "ID: " + this.id + " - Nome completo: " + this.fullName + " - E-mail: " + this.email;
+        return "ID: " + this.id + "\nNome completo: " + this.fullName + "\nE-mail: " + this.email;
     }
 }

@@ -15,7 +15,6 @@ public class StudentParticipant extends Participant{
 
     @Override
     public String toString() {
-        return "Id: " + getId() + " \nNome: " + getFullName() + " \nEmail: " + getEmail() +
-               " \nCurso: " + this.course + " \nsemestre: " + this.currentSemester;
+        return super.toString() + " \nCurso: " + this.course + " \nsemestre: " + this.currentSemester;
     }
 }

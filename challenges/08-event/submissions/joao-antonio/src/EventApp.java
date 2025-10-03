@@ -19,6 +19,7 @@ public class EventApp {
         for (Participant participante : participantes) {
             System.out.println(participante);
             String role = participante.describeRole();
+            System.out.println(role);
             System.out.println("-----------------------------------\n");
         }
     }
