@@ -24,6 +24,6 @@ public class StudentParticipant extends Participant {
 
   @Override
   public String toString() {
-    return String.format("Type: Estudante\n%s\nCourse: %s\nSemester: %d", super.toString(), getCourse(), getCurrentSemester());
+    return String.format("Type: Estudante\n%s\nCourse: %s\nsemestre %d", super.toString(), getCourse(), getCurrentSemester());
   }
 }
