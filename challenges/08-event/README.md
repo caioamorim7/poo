@@ -21,7 +21,7 @@ Implemente o sistema seguindo as partes abaixo. Priorize o essencial para uma ap
    - `ProfessionalParticipant` com atributo adicional `organization` (`String`).
 6. Cada subclasse deve sobrescrever `describeRole()` e fornecer um `toString()` legível com as principais informações.
 
-### Parte 2 — Classe principal (40 pts)
+### Parte 2 — Classe principal
 1. Crie a classe `EventApp` com o método `public static void main(String[] args)` no mesmo pacote.
 2. No `main`:
    - Crie uma coleção (por exemplo, `ArrayList`) para armazenar instâncias de `Participant`.
