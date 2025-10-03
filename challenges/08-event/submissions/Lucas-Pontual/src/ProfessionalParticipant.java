@@ -2,17 +2,16 @@ public class ProfessionalParticipant extends Participant {
     private String organization;
 
     public ProfessionalParticipant(String id, String fullName, String email, String organization) {
-        super(id, fullName, email);
+        super(id, fullName, email, "Profissional");
         this.organization = organization;
     }
 
-    @Override
-    public String describeRole() {
-        return "Participante Profissional";
+    public String getOrganization() {
+        return organization;
     }
 
     @Override
     public String toString() {
-        return "Profissional: " + getFullName() + " (ID: " + getId() + ", Email: " + getEmail() + ", Organização: " + organization + ")";
+        return super.toString() + ", Organização: " + organization;
     }
 }

@@ -3,18 +3,21 @@ public class StudentParticipant extends Participant {
     private int currentSemester;
 
     public StudentParticipant(String id, String fullName, String email, String course, int currentSemester) {
-        super(id, fullName, email);
+        super(id, fullName, email, "Estudante");
         this.course = course;
         this.currentSemester = currentSemester;
     }
 
-    @Override
-    public String describeRole() {
-        return "Participante Estudante";
+    public String getCourse() {
+        return course;
+    }
+
+    public int getCurrentSemester() {
+        return currentSemester;
     }
 
     @Override
     public String toString() {
-        return "Estudante: " + getFullName() + " (ID: " + getId() + ", Email: " + getEmail() + ", Curso: " + course + ", Semestre: " + currentSemester + ")";
+        return super.toString() + ", Curso: " + course + ", Semestre: " + currentSemester;
     }
 }
