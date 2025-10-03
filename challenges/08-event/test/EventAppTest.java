@@ -30,8 +30,9 @@ class EventAppTest {
 
         String output = buffer.toString();
 
-        assertTrue(output.contains("Participantes cadastrados"));
-        assertTrue(output.contains("Estudante"));
-        assertTrue(output.contains("Profissional"));
+        assertTrue(output.contains("--- Lista de Participantes da IDP Tech Week ---")); 
+        
+        assertTrue(output.contains("Estudante [")); 
+        assertTrue(output.contains("Profissional ["));
     }
 }

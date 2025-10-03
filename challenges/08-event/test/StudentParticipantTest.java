@@ -36,7 +36,7 @@ class StudentParticipantTest {
         assertTrue(text.contains("stu-002"));
         assertTrue(text.contains("Bruno Lima"));
         assertTrue(text.contains("Engenharia de Software"));
-        assertTrue(text.contains("semestre 5"));
+        assertTrue(text.contains("Semestre: 5")); // Corrigido para "Semestre: 5"
         assertTrue(text.contains("bruno@example.com"));
     }
 
