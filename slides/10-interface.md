@@ -3,26 +3,100 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula10
-lesson: Interfaces
+lesson: Interfaces e polimorfismo baseado em contratos
 goals:
-  - 
+  - Definir interfaces para unificar classes não relacionadas
+  - Implementar múltiplas formas de pagamento com `Payable`
+  - Explorar métodos `default` e benefícios de contratos explícitos
 ---
 
 ---
 layout: default
-lesson: Interfaces
+lesson: Conceito de interface
 ---
 
-## Interfaces
+## Por que interfaces?
 
-- Possibilita definir que classes não relacionadas implementem um conjunto de métodos comuns​
+- Permitem agrupar comportamentos comuns sem herança múltipla
+- Classes implementam os métodos declarados pela interface
+- Objetos podem ser manipulados via tipo contrato (`Payable`)
+- Facilita inversão de dependência e testes
 
-- Define e padroniza as formas de interação com as classes​
+---
 
-- Analogia: pedal de acelerar e frear um carro​
-​
-- Um interface permite definir o que deve ser feito e não como​
+## Interface `Payable`
 
-<Reference
-  reference="DEITEL, Paul; DEITEL, Harvey. Java: How to Program, Early Objects. 11. ed. Boston: Pearson, 2017. ISBN 978-0-13-474335-6.​"
-/>
+```java
+// Payable.java
+public interface Payable {
+    double getPaymentAmount();
+
+    default String metodoDefault() {
+        return "Usando implementação default da interface";
+    }
+}
+```
+
+- Método abstrato obriga implementação específica
+- Método `default` fornece comportamento padrão reutilizável
+- Pode incluir métodos `static` utilitários
+
+---
+
+## Implementação em classes distintas
+
+```java
+// Invoice.java
+public class Invoice implements Payable {
+    @Override
+    public double getPaymentAmount() {
+        return getQuantity() * getPricePerItem();
+    }
+}
+
+// SalariedEmployee.java
+public class SalariedEmployee extends Employee implements Payable {
+    @Override
+    public double getPaymentAmount() {
+        return getWeeklySalary();
+    }
+}
+```
+
+- `Invoice` e funcionários compartilham o contrato `Payable`
+- Ganho: coleção heterogênea de itens pagáveis
+
+---
+
+## Processando polimorficamente
+
+```java
+// Main.java (trecho)
+Payable[] payableObjects = {
+    new Invoice("01234", "seat", 2, 375.00),
+    new SalariedEmployee("John", "Smith", "111-11-1111", 800.00)
+};
+
+for (Payable currentPayable : payableObjects) {
+    System.out.printf("%n%s %npayment due: $%,.2f%n",
+        currentPayable.toString(), currentPayable.getPaymentAmount());
+    System.out.println(currentPayable.metodoDefault());
+}
+```
+
+- Arrays de `Payable` tratam objetos distintos de forma uniforme
+- Classes podem sobrescrever o método `default` para customizar mensagens
+- `Employee` delega `getPaymentAmount()` para `earnings()`
+
+---
+
+## Quando preferir interfaces
+
+- Quando classes já possuem superclasse diferente (`Invoice` não é `Employee`)
+- Para conectar camadas (ex.: `PaymentProcessor` recebe `Payable`)
+- Ao definir APIs públicas duráveis (contratos > implementações)
+- Combine com imutabilidade para facilitar testes
+
+---
+layout: backcover
+---
