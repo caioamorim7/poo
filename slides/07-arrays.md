@@ -28,6 +28,8 @@ for (int counter = 0; counter < array.length; counter++) {
 
 - `array.length` retorna o tamanho atual
 - Índices zero-based: último elemento está em `length - 1`
+- Arrays são estruturas contíguas de tamanho fixo determinado na criação
+- Acesso por índice é `O(1)`; redimensionar requer criar novo array
 
 ---
 
@@ -37,6 +39,8 @@ for (int counter = 0; counter < array.length; counter++) {
 - `ArraySumOfElements` soma elementos acumulando em uma variável
 - `ArrayBarChart` transforma frequências em barras de texto
 - `RollDie` simula dados e registra resultados em um array
+- `for-each` é ideal quando não precisamos do índice
+- `Arrays.stream(array)` integra arrays com API de streams
 
 ---
 
@@ -55,6 +59,8 @@ for (int row = 0; row < array1.length; row++) {
 
 - Cada linha pode ter tamanho distinto (`array2` é irregular)
 - Inspecione com cuidado `array[row].length`
+- Arrays bidimensionais são arrays de arrays, não matrizes contíguas
+- Convenção: primeiro índice = linha, segundo = coluna
 
 ---
 
@@ -74,6 +80,8 @@ public static double average(double... numbers) {
 - `double...` permite chamar `average(1, 2, 3)`
 - Classe `Arrays` provê `sort`, `fill`, `copyOf`, `compare` (`ArraysSortFill.java`, `ArraysCompareCustomTypes.java`)
 - Explore `ArrayAsParameter` para entender passagem por referência
+- Varargs converte argumento variável em array automaticamente
+- Atenção ao auto-boxing quando usar arrays de wrappers (`Integer[]`)
 
 ---
 layout: backcover

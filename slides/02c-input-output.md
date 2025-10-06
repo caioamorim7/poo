@@ -32,6 +32,8 @@ System.out.printf("Valor informado: %s%n", s);
 - `nextInt`, `nextDouble`, `nextBoolean`, `next`, `nextLine`
 - Após `nextInt`, use `nextLine` para consumir `\n`
 - Sempre chame `input.close()` ao final
+- `Scanner` tokeniza a entrada usando delimitadores (default: espaços em branco)
+- Pode trocar delimitador com `useDelimiter(";")`
 
 ---
 
@@ -47,6 +49,8 @@ System.out.println("Olá, " + nome + "!");
 
 - Lança `IOException`: use `try-with-resources` ou trate o `throws`
 - Apropriado quando precisamos ler linhas completas sem parsing automático
+- `InputStreamReader` converte bytes em caracteres respeitando o charset informado
+- Diferencie **entrada padrão** (`System.in`) de arquivos ou sockets
 
 ---
 
@@ -56,6 +60,8 @@ System.out.println("Olá, " + nome + "!");
 - `System.out.println` imprime e adiciona `\n`
 - `System.out.printf("%-10s", valor)` alinha colunas
 - Caminho dos exemplos: `lectures/examples/02c-input-output`
+- `System.err` redireciona mensagens de erro (fluxo separado de `System.out`)
+- Locale influencia separador decimal (`1,5` vs `1.5`)
 
 ---
 
@@ -64,6 +70,7 @@ System.out.println("Olá, " + nome + "!");
 - Adaptar `ScannerSample2` para validar entrada inválida com `hasNextInt`
 - Criar menu interativo combinando leitura numérica e textual
 - Medir impacto de `Locale` na leitura de números decimais
+- Explore diferenças entre leitura síncrona e assíncrona em interfaces gráficas
 
 ---
 layout: backcover

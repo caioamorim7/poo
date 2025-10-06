@@ -36,6 +36,8 @@ catch (SecurityException | FileNotFoundException | FormatterClosedException e) {
 
 - `try-with-resources` garante fechamento do arquivo
 - `Formatter` permite formatar texto semelhante a `printf`
+- I/O síncrono pode bloquear: ideal planejar feedback ao usuário
+- Defina o charset explicitamente quando trabalhar com internacionalização
 
 ---
 
@@ -63,6 +65,8 @@ catch (IOException | NoSuchElementException | IllegalStateException e) {
 
 - `Path.of` evita APIs antigas (`File`)
 - Scanner segmenta tokens usando espaços em branco
+- `Files` (NIO.2) oferece operações utilitárias modernas (copy, move, exists)
+- Utilize `StandardOpenOption` ao precisar controlar append ou truncamento
 
 ---
 
@@ -72,6 +76,8 @@ catch (IOException | NoSuchElementException | IllegalStateException e) {
 - Evite sobrescrever arquivos importantes (verifique permissões)
 - Trate `NoSuchElementException` ao ler dados mal formatados
 - Prefira `BufferedWriter/Reader` para arquivos grandes
+- Considere serializar dados estruturados em CSV/JSON para facilitar interoperabilidade
+- Diagrama de estados ajuda a definir quando abrir/fechar recursos
 
 ---
 layout: backcover

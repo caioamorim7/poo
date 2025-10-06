@@ -33,6 +33,8 @@ al.removeLast();
 - Métodos `addFirst`/`addLast` exigem Java 21 (`ArrayList` implementação atual)
 - `size()` retorna quantidade de elementos válidos
 - Remova por índice (`remove(2)`) ou por objeto (`remove("F")`)
+- `ArrayList` implementa `List` usando um array redimensionável internamente
+- Crescimento automático duplica a capacidade quando necessário
 
 ---
 
@@ -49,6 +51,8 @@ Collections.addAll(cidades, "Florianópolis", "Porto Alegre");
 - Ordenar antes de executar `binarySearch`
 - `reverse` modifica a lista in place
 - `addAll` adiciona múltiplos elementos de uma vez
+- Métodos utilitários da classe `Collections` aplicam algoritmos genéricos
+- Comparadores customizados (`Comparator`) controlam ordem de ordenação
 
 ---
 
@@ -63,6 +67,8 @@ List<Integer> list = Arrays.asList(numbers);
 - `Arrays.asList` cria lista de tamanho fixo (espelho do array)
 - Utilize `new ArrayList<>(Arrays.asList(numbers))` para lista mutável
 - `ArrayListToArray` mostra caminho inverso (`toArray(new Integer[0])`)
+- Conversões preservam a ordem de inserção
+- Ao trabalhar com tipos primitivos, use wrappers (`Integer`, `Double`)
 
 ---
 
@@ -72,6 +78,8 @@ List<Integer> list = Arrays.asList(numbers);
 - Observe custo de remoções no meio da lista (realocação)
 - Use `contains` para verificar existência antes de remover
 - Documente ordem dos elementos quando representar filas ou pilhas
+- Custo amortizado: `add` ao final é `O(1)`, `add` em posições intermediárias é `O(n)`
+- Iteradores (`listIterator`) permitem percorrer e modificar com segurança
 
 ---
 layout: backcover

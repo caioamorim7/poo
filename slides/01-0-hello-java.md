@@ -21,6 +21,7 @@ lesson: Estrutura do projeto
 - Pasta `src` contém o arquivo `App.java`
 - Projeto sem Maven/Gradle: compilação direta com `javac`
 - Ótimo ponto de partida para entender o ciclo compilar-executar
+- Convenções: pacotes opcionais aqui, mas recomendável usar `package` para modularização
 
 ---
 
@@ -38,6 +39,8 @@ public class App {
 - Compilar: `javac -d out src/App.java`
 - Executar: `java -cp out App`
 - Use `-d` para gerar a pasta com bytecode organizado por pacote
+- `throws Exception` na assinatura sinaliza que exceções não tratadas serão propagadas
+- JVM busca a classe inicial dentro do classpath e invoca `main`
 
 ---
 
@@ -47,6 +50,8 @@ public class App {
 - Organize o bytecode em uma pasta separada (`out`, `build`, etc.)
 - Configure variáveis de ambiente `JAVA_HOME` e `PATH`
 - Documente comandos no README do projeto para facilitar a reprodução
+- Utilize pacotes (`package br.edu...`) para evitar colisão de nomes à medida que o projeto cresce
+- Convenções de nomenclatura: classes em PascalCase, métodos/variáveis em camelCase
 
 ---
 layout: backcover

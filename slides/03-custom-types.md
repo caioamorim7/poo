@@ -40,6 +40,8 @@ public class Account {
 
 - Encapsula estado e regras de validação (`balance > 0`)
 - Construtores oferecem diferentes formas de inicialização
+- Encapsulamento garante que invariantes sejam preservados internamente
+- Métodos públicos compõem a **interface** da classe
 
 ---
 
@@ -57,6 +59,8 @@ try (Scanner scanner = new Scanner(System.in)) {
 
 - `try-with-resources` garante fechamento automático
 - Separar coleta de dados (interface) da lógica da classe
+- Responsabilidade única: `Account` cuida da regra de saldo, `AccountApp` da interação
+- Objetos comunicam-se por mensagens (métodos) para manter coesão
 
 ---
 
@@ -84,6 +88,8 @@ public class Student {
 
 - Construtor centraliza a inicialização obrigatória
 - `toString` facilita registro no console (`StudentApp`)
+- Getters expõem estado de maneira controlada; setters permitem mutabilidade
+- Avalie quando optar por objetos imutáveis para simplificar concorrência
 
 ---
 
@@ -93,6 +99,8 @@ public class Student {
 - Forneça métodos de acesso apenas quando necessário
 - Valide dados de entrada dentro da classe
 - Crie métodos utilitários (`deposit`) para operações frequentes
+- Utilize testes de unidade para assegurar invariantes e evitar efeitos colaterais
+- Documente suposições (ex.: saldo não negativo) em JavaDoc
 
 ---
 layout: backcover

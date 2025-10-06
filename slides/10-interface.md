@@ -21,6 +21,8 @@ lesson: Conceito de interface
 - Classes implementam os métodos declarados pela interface
 - Objetos podem ser manipulados via tipo contrato (`Payable`)
 - Facilita inversão de dependência e testes
+- Interfaces descrevem *o que* fazer; implementações definem *como*
+- Uma classe pode implementar múltiplas interfaces simultaneamente
 
 ---
 
@@ -40,6 +42,8 @@ public interface Payable {
 - Método abstrato obriga implementação específica
 - Método `default` fornece comportamento padrão reutilizável
 - Pode incluir métodos `static` utilitários
+- Métodos `default` surgiram no Java 8 para evoluir APIs sem quebrar código
+- Constantes podem ser declaradas (implicitamente `public static final`)
 
 ---
 
@@ -65,6 +69,8 @@ public class SalariedEmployee extends Employee implements Payable {
 
 - `Invoice` e funcionários compartilham o contrato `Payable`
 - Ganho: coleção heterogênea de itens pagáveis
+- Interfaces favorecem programação orientada a interfaces (Dependency Inversion)
+- Permitem criar mocks em testes para simular comportamentos
 
 ---
 
@@ -87,6 +93,8 @@ for (Payable currentPayable : payableObjects) {
 - Arrays de `Payable` tratam objetos distintos de forma uniforme
 - Classes podem sobrescrever o método `default` para customizar mensagens
 - `Employee` delega `getPaymentAmount()` para `earnings()`
+- Polimorfismo baseado em interface funciona mesmo sem relação de herança entre classes
+- Combine com `instanceof` quando precisar de comportamentos específicos
 
 ---
 
@@ -96,6 +104,8 @@ for (Payable currentPayable : payableObjects) {
 - Para conectar camadas (ex.: `PaymentProcessor` recebe `Payable`)
 - Ao definir APIs públicas duráveis (contratos > implementações)
 - Combine com imutabilidade para facilitar testes
+- Aplique Interface Segregation Principle criando interfaces focadas
+- Registre expectativas em JavaDoc (`@implSpec`) ao definir contratos
 
 ---
 layout: backcover

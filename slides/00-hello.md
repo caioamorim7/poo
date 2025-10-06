@@ -22,6 +22,10 @@ lesson: HelloWorld via terminal
   - `src/HelloWorld.java`: classe com método `main`
   - `test/HelloWorldTest.java`: teste automatizado com JUnit 5
 - Objetivo: compilar, executar e garantir que a saída está correta
+- Estrutura mínima de um programa Java:
+  - Classe pública com mesmo nome do arquivo (`HelloWorld`)
+  - Método `public static void main(String[] args)` como ponto de entrada
+  - `System.out` representa a saída padrão do processo
 
 ---
 
@@ -68,6 +72,17 @@ void testMain() {
 
 - Executar testes com `mvn test` ou ferramenta da IDE
 - Técnica de redirecionamento captura `System.out`
+- JUnit 5 organiza testes em métodos anotados com `@Test`
+- `@BeforeEach`/`@AfterEach` delimitam ciclo de vida e preparam ambiente
+
+---
+
+## Conceitos-chave
+
+- **Compilação** transforma `.java` em bytecode `.class`
+- **Classpath** indica onde a JVM busca classes (`-cp src`)
+- **Testes unitários** validam comportamentos isolados e previnem regressões
+- **Saída padrão** permite interagir com usuários e ser redirecionada em pipelines
 
 ---
 layout: backcover

@@ -33,6 +33,8 @@ accounts.put("John Doe", balance + 1000);
 - `HashMap`: acesso `O(1)` médio, ordem não garantida
 - `TreeSet` mantém elementos ordenados automaticamente (`TreeSetDemo`)
 - `SetHashSetDemo`, `SetLinkedHashSetDemo` mostram diferenças de ordenação
+- Interfaces principais: `Collection`, `List`, `Set`, `Map`, `Queue`
+- Escolha baseia-se em ordenação, unicidade e custo de operações
 
 ---
 
@@ -53,6 +55,8 @@ while (!queue.isEmpty()) {
 - `PriorityQueue` devolve o menor elemento primeiro (ordem natural)
 - `ArrayDequeDemo` compara deque com pilha/fila
 - Escolha estrutura conforme necessidade de prioridade ou dupla extremidade
+- Filas seguem política FIFO; pilhas usam LIFO
+- Prefira `Deque` para pilhas modernas ao invés de `Stack`
 
 ---
 
@@ -75,6 +79,8 @@ System.out.println("Maximum: " + Collections.max(numbers));
 - `Collections.binarySearch` exige lista ordenada
 - `Collections.frequency`, `disjoint`, `addAll` simplificam operações comuns
 - Explore `CollectionsReverseCopyFillMaxMinTest` para copiar, preencher e inverter listas
+- `Comparator` customiza critérios; `Comparable` define ordem natural
+- Métodos utilitários operam sobre interfaces, não implementações concretas
 
 ---
 
@@ -84,6 +90,8 @@ System.out.println("Maximum: " + Collections.max(numbers));
 - `ListLinkedListIteratorTest`: demonstra `ListIterator` bidirecional
 - `SpliteratorDemo`: divide a coleção para processamento paralelo
 - Prefira `forEach` ou streams quando a legibilidade for melhor
+- *Fail-fast iterators* disparam `ConcurrentModificationException` em alterações indevidas
+- Streams permitem operações declarativas (`filter`, `map`, `reduce`) sobre coleções
 
 ---
 layout: backcover

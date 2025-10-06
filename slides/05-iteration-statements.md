@@ -23,6 +23,8 @@ lesson: Utilizando laços
   - `WhileCounter`, `WhileClassAverage*`
   - `DoWhile` e `DoWhileTest`
 - Compare as condições de parada e o momento em que são avaliadas
+- Laços **pré-teste** (`for`, `while`) verificam a condição antes da primeira iteração
+- `do-while` garante ao menos uma execução (pós-teste)
 
 ---
 
@@ -40,6 +42,8 @@ System.out.printf("Soma dos pares: %d%n", total);
 - Laço controlado por contador
 - Atualização `number += 2` gera sequência de pares
 - Excelente exercício para praticar invariantes
+- Invariante de laço: `total` sempre guarda a soma dos pares já visitados
+- Condição de término: `number <= 20` limita quantidade de iterações
 
 ---
 
@@ -56,6 +60,8 @@ while (grade != -1) {
 
 - Usa `-1` como sentinela para encerrar
 - Importante validar entrada e evitar `ArithmeticException` na divisão por zero
+- *Loop sentinel* depende de um valor especial que sinaliza término
+- Diferencie entradas controladas por contador vs por condição externa
 
 ---
 
@@ -65,6 +71,8 @@ while (grade != -1) {
 - `JumpContinue` e `JumpContinueTest`: pulam iterações específicas
 - `JumpReturn`: encerra o método a partir de um laço
 - Utilize com moderação: clareza do fluxo é prioridade
+- `break` sai do laço mais interno; `continue` avança para a próxima iteração
+- Prefira abstrações (`methods`, `streams`) quando loops ficarem complexos
 
 ---
 layout: backcover

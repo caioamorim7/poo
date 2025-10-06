@@ -42,6 +42,8 @@ public abstract class Employee {
 
 - Define atributos e comportamento comum
 - Método `earnings()` obriga subclasses a implementar regra própria
+- Herança promove reutilização, mas deve respeitar o Princípio da Substituição de Liskov
+- Use classes abstratas quando não faz sentido instanciar o tipo base diretamente
 
 ---
 
@@ -52,6 +54,8 @@ public abstract class Employee {
 - `CommissionEmployee`: baseia-se em vendas e taxa de comissão
 - `BasePlusCommissionEmployee`: herda de `CommissionEmployee` e adiciona salário base
 - Cada classe valida seus atributos antes de atribuí-los
+- Sobrescrita (`@Override`) redefine comportamento mantendo assinatura
+- Chamar `super(...)` no construtor garante inicialização do estado herdado
 
 ---
 
@@ -77,6 +81,9 @@ for (Employee currentEmployee : employees) {
 - `instanceof` garante tipo antes do cast
 - `earnings()` executa a implementação específica de cada classe
 - Experimente atualizar para o pattern matching (`instanceof Tipo var`)
+- Polimorfismo permite tratar objetos diferentes por meio de uma referência comum
+- Upcasting é implícito; downcasting requer verificação prévia
+- Arrays e coleções do tipo base aceitam quaisquer subclasses compatíveis
 
 ---
 
@@ -86,6 +93,8 @@ for (Employee currentEmployee : employees) {
 - Use `@Override` para sinalizar métodos sobrescritos
 - Evite duplicação movendo lógica comum para a superclasse
 - Documente invariantes (ex.: `weeklySalary >= 0`)
+- Avalie composição vs herança: escolha a abordagem que mantém o modelo flexível
+- Crie diagramas de classe para visualizar relacionamentos entre tipos
 
 ---
 layout: backcover

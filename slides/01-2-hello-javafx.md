@@ -22,6 +22,8 @@ lesson: JavaFX básico
   - `HelloStudentUI`: estende `javafx.application.Application`
   - `App`: classe de inicialização
 - Exibe uma janela 640x480 com mensagem dinâmica
+- JavaFX utiliza um grafo de cena composto por nós (`Scene`, `Parent`, `Node`)
+- `Stage` representa a janela nativa gerenciada pelo toolkit
 
 ---
 
@@ -50,6 +52,8 @@ public class HelloStudentUI extends Application {
 
 - `launch()` dispara o ciclo de vida JavaFX
 - `Stage` é a janela; `Scene` representa o conteúdo
+- `StackPane` é um contêiner que empilha filhos centralizados
+- `Label` é um controle de exibição somente leitura
 
 ---
 
@@ -59,6 +63,8 @@ public class HelloStudentUI extends Application {
 - Em IDEs, associe o SDK JavaFX nas configurações do projeto
 - Logs no console ajudam a depurar (`System.out.println`)
 - Para distribuir, empacote com `jlink` ou `jpackage`
+- Ciclo de vida: `init()` (opcional) -> `start()` -> interação -> `stop()`
+- CSS e FXML podem ser usados para separar estilo e layout
 
 ---
 layout: backcover

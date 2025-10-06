@@ -21,6 +21,8 @@ lesson: Por que criar métodos?
 - `MaximumFinder`: encapsula comparação em método separado
 - `RollDie`, `RandomIntegers`: simulam aleatoriedade com `java.security.SecureRandom`
 - `Craps`: combina vários métodos para estruturar um jogo completo
+- Métodos promovem reutilização, legibilidade e isolamento de responsabilidades
+- Parâmetros permitem generalizar comportamentos variando entradas
 
 ---
 
@@ -42,6 +44,8 @@ public static double maximum(double x, double y, double z) {
 
 - Método estático reaproveitável em vários contextos
 - Considere uma versão alternativa usando `Math.max`
+- Em Java, parâmetros são passados por valor (referências copiam o ponteiro)
+- Retornar valores evita depender de variáveis globais mutuáveis
 
 ---
 
@@ -61,6 +65,8 @@ public static double square(double doubleValue) {
 - Mesmo nome, assinaturas diferentes (`int` x `double`)
 - JVM escolhe a versão adequada em tempo de compilação
 - Evite sobrecargas que causem ambiguidade (`square(long)`?)
+- Assinatura = nome + lista ordenada de tipos dos parâmetros
+- Use JavaDoc para explicar diferenças semânticas entre sobrecargas
 
 ---
 
@@ -72,6 +78,8 @@ public static double square(double doubleValue) {
   - Use nomes distintos para evitar shadowing
   - Prefira variáveis locais sempre que possível
   - Inicialize variáveis próximo ao uso
+- Variáveis `static` pertencem à classe; locais existem apenas dentro do método
+- Documente efeitos colaterais e pré-condições para facilitar manutenção
 
 ---
 layout: backcover

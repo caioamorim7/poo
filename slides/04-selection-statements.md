@@ -30,6 +30,8 @@ else
 - Combine `||` e `&&` para expressar regras complexas
 - Sempre trate o caso `else` para valores inesperados
 - Considere extrair lógica para métodos auxiliares (`isSpring(month)`)
+- Condicionais avaliam expressões booleanas; somente `true` executa o bloco
+- Fluxogramas ajudam a visualizar caminhos de decisão e a documentar requisitos
 
 ---
 
@@ -44,6 +46,8 @@ System.out.printf("Absolute value of %d is %d%n", i, k);
 
 - Excelente para atribuições curtas
 - Evite expressões ternárias muito aninhadas
+- Operador ternário substitui `if-else` simples retornando um valor
+- Tipo resultante é determinado pela promoção das expressões em cada ramo
 
 ---
 
@@ -65,6 +69,9 @@ switch (i) {
 }
 ```
 
+- `switch` clássico usa `break` para impedir *fall-through*
+- Versão moderna suporta múltiplos rótulos por caso e blocos com `yield`
+
 ---
 
 ## Boas práticas
@@ -73,6 +80,8 @@ switch (i) {
 - Valide entrada do usuário antes de cair na lógica condicional
 - Utilize `enum` para mapear grupos de valores (`Season`)
 - Teste caminhos felizes e alternativos (`OperatorLogical.java`)
+- Avalie complexidade ciclomática para estimar quantidade mínima de testes
+- Documente casos-limite e comportamentos esperados para inputs inválidos
 
 ---
 layout: backcover

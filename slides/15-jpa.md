@@ -38,6 +38,8 @@ public class Actor {
 - Anotações mapeiam atributos para colunas da tabela `actor`
 - `@GeneratedValue` delega geração da chave ao banco
 - Construtor sem argumentos obrigatório pela JPA
+- Estados de entidade: *new*, *managed*, *detached*, *removed*
+- `@Column` pode configurar nulabilidade, tamanho e nome customizado
 
 ---
 
@@ -63,6 +65,8 @@ public List<Actor> findAll() {
 
 - Transações explícitas em operações mutáveis (`persist`, `merge`, `remove`)
 - Criteria API fornece consultas type-safe e dinâmicas
+- `EntityManager` mantém um *persistence context* com cache de primeiro nível
+- `merge` sincroniza entidades *detached*; `persist` cadastra entidades novas
 
 ---
 
@@ -84,6 +88,8 @@ allActors.forEach(System.out::println);
 - `persistence.xml` define unidade de persistência e conexão
 - Sempre feche `EntityManager` e `EntityManagerFactory`
 - Atualização e remoção reutilizam métodos `update` e `delete`
+- Use `TypedQuery` para consultas JPQL quando Criteria for excessivamente verbosa
+- Evite consultas N+1 configurando *fetch joins* ou relacionamentos com `fetch = FetchType.LAZY`
 
 ---
 
@@ -93,6 +99,8 @@ allActors.forEach(System.out::println);
 - `dvdrentalapp-sprintdatajpa`: configuração base para Spring Data JPA
 - `README.md` explica requisitos de banco e scripts de inicialização
 - Use `docker-compose` de JDBC para levantar o banco rapidamente
+- Mapeamentos mais complexos incluem relacionamentos (`@OneToMany`, `@ManyToMany`)
+- Validações combinam Bean Validation (`@NotNull`) com regras de banco
 
 ---
 layout: backcover

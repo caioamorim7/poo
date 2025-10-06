@@ -21,6 +21,8 @@ lesson: Estrutura Spring Boot
 - Arquivo principal: `HelloSpingbootApplication.java`
 - `pom.xml` traz dependências básicas do Spring Boot
 - `application.properties` configurado com valores padrão
+- `SpringApplication.run` inicializa o contexto IoC e embute o servidor Tomcat
+- Starter `spring-boot-starter-web` inclui MVC, JSON (Jackson) e validação básica
 
 ---
 
@@ -51,6 +53,8 @@ public class HelloSpingbootApplication {
 - `@SpringBootApplication`: marca ponto de entrada
 - `@RestController`: registra endpoints REST
 - `@RequestParam`: injeta parâmetro da query string
+- Endpoints REST retornam diretamente representações (por padrão JSON ou String)
+- `@SpringBootApplication` combina `@Configuration`, `@EnableAutoConfiguration` e `@ComponentScan`
 
 ---
 
@@ -62,6 +66,8 @@ public class HelloSpingbootApplication {
   - `curl "http://localhost:8080/hello?name=POO"`
 - Teste automatizado em `HelloSpingbootApplicationTests.java`
 - Exploradores HTTP (Insomnia, Postman) ajudam a validar respostas
+- Use `spring-boot-devtools` para recarregar a aplicação durante o desenvolvimento
+- Conceitos REST: recursos identificados por URI, verbos HTTP (`GET`, `POST`, ...), status codes
 
 ---
 layout: backcover

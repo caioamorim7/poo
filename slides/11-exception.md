@@ -38,6 +38,8 @@ catch (ArithmeticException e) {
 
 - Captura múltiplas exceções específicas
 - Loop continua até entrada válida (`continueLoop`)
+- `ArithmeticException` é não verificada (unchecked); `InputMismatchException` pertence a `java.util`
+- A ordem dos blocos `catch` deve ir do mais específico ao mais genérico
 
 ---
 
@@ -55,6 +57,8 @@ public class MyException extends Exception {
 - Permite sinalizar regras de negócio
 - Lançada em `quotient` (descomentando verificação)
 - Sempre propague (`throws`) ou trate a exceção customizada
+- Exceções checadas (`Exception`) exigem tratamento explícito
+- Mantenha mensagens claras para facilitar troubleshooting
 
 ---
 
@@ -75,6 +79,8 @@ doesNotThrowException();
 - `throwException` relança a exceção após tratamento
 - Bloco `finally` executa independentemente de erros
 - `doesNotThrowException` mostra `finally` mesmo sem exceção
+- `finally` é ideal para liberar recursos (fechar arquivos, conexões)
+- Propagação constrói *stack trace* revelando a cadeia de chamadas
 
 ---
 
@@ -84,6 +90,8 @@ doesNotThrowException();
 - Registre (`logger.error`) detalhes antes de repropagar
 - Não silencie exceções vazias (`catch (Exception e) {}`)
 - Utilize mensagens claras para ajudar no diagnóstico
+- Prefira exceções específicas (`IllegalArgumentException`, `IllegalStateException`)
+- Evite usar exceções para controle de fluxo normal
 
 ---
 layout: backcover

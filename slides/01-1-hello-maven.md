@@ -23,6 +23,8 @@ lesson: Estrutura Maven
   - `src/test/java`: testes
   - `pom.xml`: metadados do projeto e dependências
 - Build padrão gera `target/hello-maven-1.0-SNAPSHOT.jar`
+- Coordenadas Maven (`groupId:artifactId:version`) identificam o artefato
+- Ciclo de vida padrão: `validate -> compile -> test -> package -> verify -> install -> deploy`
 
 ---
 
@@ -64,6 +66,8 @@ public class App {
 
 - Propriedades garantem compilação com Java 21
 - Dependência `junit` disponível apenas na fase de teste
+- Plugins seguem o mesmo esquema de coordenadas
+- `maven-compiler-plugin` ajusta versão do bytecode emitido
 
 ---
 
@@ -74,6 +78,17 @@ public class App {
 - Criar JAR: `mvn package`
 - Executar entry point pelo plugin:
   - `mvn exec:java -Dexec.mainClass=br.edu.idp.cc.poo.App`
+- Goals podem ser encadeados (`mvn clean package`)
+- Profiles permitem variar dependências/configurações por ambiente
+
+---
+
+## Conceitos fundamentais
+
+- **Model POM**: arquivo XML que descreve dependências, build e metadata
+- **Repositório local** (`~/.m2/repository`): cacheia artefatos baixados
+- **Scopes** (`compile`, `test`, `runtime`) controlam visibilidade das dependências
+- **Plugins** estendem o Maven executando tarefas durante os ciclos de vida
 
 ---
 layout: backcover

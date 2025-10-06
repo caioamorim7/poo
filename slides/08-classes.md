@@ -32,6 +32,8 @@ public void setTime(int hour, int minute, int second) {
 - Validação centralizada evita estados inválidos
 - `this` diferencia variáveis de instância dos parâmetros
 - `toUniversalString` e `toString` oferecem formatações distintas
+- Reforce invariantes documentando intervalos válidos (0–23, 0–59)
+- Métodos públicos expõem comportamentos; atributos permanecem ocultos
 
 ---
 
@@ -57,6 +59,8 @@ public Time2(Time2 time) {
 - `this(...)` reaproveita lógica entre construtores
 - Construtor-cópia garante duplicação segura
 - Métodos `setHour`, `setMinute`, `setSecond` mantêm invariantes
+- Sobrecarga de construtores facilita criação com diferentes níveis de informação
+- `@Override` garante que assinaturas batam com a superclasse/ interface
 
 ---
 
@@ -66,6 +70,8 @@ public Time2(Time2 time) {
 - `Time1MemberAccessTest` enfatiza encapsulamento (acesso via métodos)
 - `ThisTest` ilustra uso de `this` para encadear construtores
 - Exercício: adicionar incremento de segundo preservando consistência
+- Considere implementar interfaces (`Comparable<Time2>`) para ordenação
+- Objetos podem ser compostos: `TimeRange` poderia reutilizar instâncias `Time2`
 
 ---
 layout: backcover

@@ -21,6 +21,8 @@ lesson: Estrutura modular
 - Estrutura Maven padrão (`src/main/java`, `src/main/resources`)
 - `module-info.java` declara dependências e exportações
 - Controladores FXML separados por tela (`PrimaryController`, `SecondaryController`)
+- `FXMLLoader` carrega descrições de interface declarativas (`*.fxml`)
+- `resources` compartilha assets (FXML, imagens, CSS) empacotados no JAR
 
 ---
 
@@ -40,6 +42,8 @@ module br.edu.idp.cc.poo {
 - `requires` expõe bibliotecas JavaFX
 - `opens` permite injeção do FXMLLoader
 - `exports` disponibiliza o pacote para consumo externo
+- Módulos Java (JPMS) evitam dependências implícitas entre pacotes
+- Necessário usar `--module-path` ao executar projetos modularizados
 
 ---
 
@@ -63,6 +67,8 @@ private void switchToPrimary() throws IOException {
 
 - Cada botão define o `onAction` no arquivo `.fxml`
 - `App.setRoot` troca o layout visível sem recriar o `Stage`
+- Controladores são instanciados pelo JavaFX e anotados com `@FXML`
+- Separação `MVC`: FXML (view), controller (interação), modelo (estado)
 
 ---
 
@@ -72,6 +78,8 @@ private void switchToPrimary() throws IOException {
 - Rode a aplicação: `mvn javafx:run`
 - Certifique-se de usar o plugin `org.openjfx:javafx-maven-plugin`
 - Empacote para distribuição com `mvn package`
+- Configure o plugin para adicionar parâmetros de VM se necessário (`jvmArgs`)
+- Use profiles para alternar entre ambientes (dev vs prod)
 
 ---
 layout: backcover

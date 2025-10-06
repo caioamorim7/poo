@@ -19,11 +19,13 @@ lesson: Estrutura do projeto
 
 - Diretório: `lectures/examples/16-web/dvdrentalapi`
 - Classes principais:
-  - `DvdrentalapiApplication`: ponto de entrada Spring Boot
-  - `Actor` (entidade JPA)
-  - `ActorRepository`: interface `JpaRepository`
-  - `ActorController`: expõe endpoint `/actors`
+- `DvdrentalapiApplication`: ponto de entrada Spring Boot
+- `Actor` (entidade JPA)
+- `ActorRepository`: interface `JpaRepository`
+- `ActorController`: expõe endpoint `/actors`
 - `application.properties.sample` configura datasource PostgreSQL
+- Arquitetura comum: Controller -> Service -> Repository -> Banco
+- API REST segue princípios de recursos, verbos HTTP e representações padronizadas
 
 ---
 
@@ -50,6 +52,8 @@ public class ActorController {
 - Injeção de dependências via construtor
 - `@GetMapping` mapeia requisições GET
 - Retorna lista serializada em JSON automaticamente
+- Spring usa Jackson para serializar/deserializar objetos Java ↔ JSON
+- Controle de erros pode ser feito com `@ControllerAdvice` e `ResponseEntity`
 
 ---
 
@@ -66,6 +70,8 @@ public interface ActorRepository extends JpaRepository<Actor, Integer> {
 - `JpaRepository` fornece CRUD básico
 - Consulta derivada (`findByLastName`) gera SQL automaticamente
 - `@RepositoryRestResource` ainda expõe endpoints HAL prontos
+- Métodos derivados entendem sufixos como `Containing`, `OrderBy`, `Top`
+- Repositórios Spring Data são *interfaces*; implementação gerada em tempo de execução
 
 ---
 
@@ -76,6 +82,8 @@ public interface ActorRepository extends JpaRepository<Actor, Integer> {
 - Rodar aplicação: `./mvnw spring-boot:run`
 - Testar endpoint: `curl http://localhost:8080/actors`
 - Explore `RepositoryRestResource` em `http://localhost:8080/actor`
+- Utilize `Spring Boot Devtools` ou `spring-boot:run -Dspring-boot.run.profiles=dev`
+- Documente a API com OpenAPI/Swagger para facilitar consumo
 
 ---
 layout: backcover

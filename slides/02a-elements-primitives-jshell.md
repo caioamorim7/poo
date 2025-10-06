@@ -21,6 +21,8 @@ lesson: JShell na prática
 - Feedback imediato para aprender sintaxe e semântica
 - Ideal para explorar tipos primitivos e operadores
 - Comandos úteis descritos em `README.md`
+- REPL segue ciclo *Read → Evaluate → Print → Loop*
+- Ambiente mantém estado entre comandos (variáveis, métodos e classes)
 
 ---
 
@@ -39,6 +41,7 @@ a
 
 - Suporte a bases decimal, octal, hexadecimal e binária
 - Literais de `char` podem usar códigos Unicode
+- JShell aceita `_` como separador legível em literais numéricos (`1_000_000`)
 
 ---
 
@@ -52,6 +55,8 @@ jshell> { int x = 10; System.out.println(x); }
 
 - Blocos delimitados por `{}` permitem testar escopo
 - `/vars` lista declarações existentes; `/drop x` remove variáveis
+- `/reset` limpa completamente o estado da sessão
+- `jshell> /help` lista instruções rápidas de navegação
 
 ---
 
@@ -61,6 +66,8 @@ jshell> { int x = 10; System.out.println(x); }
   - `PrimitiveInt.txt`, `PrimitiveDouble.txt`, `PrimitiveBoolean.txt`...
 - Explore promoção numérica e limites (`PrimitiveWrapper.txt`)
 - Combine com `/save` para registrar comandos favoritos
+- Tipos primitivos ocupam tamanhos fixos em bytes (int 32-bits, double 64-bits)
+- *Wrapper types* (`Integer`, `Double`) fornecem métodos utilitários e permitem uso em coleções
 
 ---
 layout: backcover
