@@ -1,8 +1,8 @@
-public class Estudante extends Participante {
+public class StudentParticipan extends Participante {
     private String curso;
     private int periodo;
 
-    public Estudante(String matricula, String nomeCompleto, String email, String curso, int periodo) {
+    public StudentParticipan(String matricula, String nomeCompleto, String email, String curso, int periodo) {
         super(matricula, nomeCompleto, email);
         this.curso = curso;
         this.periodo = periodo;
@@ -15,7 +15,7 @@ public class Estudante extends Participante {
 
     
     public String toString() {
-        return "[Estudante] " + getNomeCompleto() + " | Matrícula: " + getMatricula() + 
+        return "[StudentParticipan] " + getNomeCompleto() + " | Matrícula: " + getMatricula() + 
                " | Email: " + getEmail() +
                " | Curso: " + curso + " | Período: " + periodo;
     }

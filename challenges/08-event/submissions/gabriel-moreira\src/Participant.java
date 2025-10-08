@@ -1,25 +1,25 @@
-public abstract class Participante {
-    private String matricula;
-    private String nomeCompleto;
-    private String email;
+public abstract class Participant {
+    private String regNumber;   
+    private String fullLabel;   
+    private String mail;        
 
-    public Participante(String matricula, String nomeCompleto, String email) {
-        this.matricula = matricula;
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
+    public Participant(String regNumber, String fullLabel, String mail) {
+        this.regNumber = regNumber;
+        this.fullLabel = fullLabel;
+        this.mail = mail;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public String getRegNumber() {
+        return regNumber;
     }
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
+    public String getFullLabel() {
+        return fullLabel;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMail() {
+        return mail;
     }
 
-    public abstract String descreverPapel();
+    public abstract String describeRole();
 }

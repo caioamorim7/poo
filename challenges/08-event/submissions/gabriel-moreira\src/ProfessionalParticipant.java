@@ -1,7 +1,7 @@
-public class Profissional extends Participante {
+public class ProfessionalParticipant extends Participant {
     private String empresa;
 
-    public Profissional(String matricula, String nomeCompleto, String email, String empresa) {
+    public ProfessionalParticipant(String matricula, String nomeCompleto, String email, String empresa) {
         super(matricula, nomeCompleto, email);
         this.empresa = empresa;
     }
@@ -13,7 +13,7 @@ public class Profissional extends Participante {
 
     
     public String toString() {
-        return "[Profissional] " + getNomeCompleto() + " | Matrícula: " + getMatricula() +
+        return "[ProfessionalParticipant] " + getNomeCompleto() + " | Matrícula: " + getMatricula() +
                " | Email: " + getEmail() +
                " | Empresa: " + empresa;
     }
