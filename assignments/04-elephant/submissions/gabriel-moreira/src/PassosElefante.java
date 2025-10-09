@@ -6,7 +6,7 @@ public class PassosElefante {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Digite a posição da casa do amigo: ");
         int destino = entrada.nextInt();
-        entrada.close();
+        entrada.close(); // Adição correta
 
         if (destino < 1 || destino > 1_000_000) {
             System.out.println("Erro: a posição deve estar entre 1 e 1.000.000.");
@@ -19,6 +19,7 @@ public class PassosElefante {
     }
 
     public static int calcularPassosMinimos(int destino) {
+        // Lógica do teto: (a + b - 1) / b, onde a=destino e b=5
         return (destino + 4) / 5;
     }
 
