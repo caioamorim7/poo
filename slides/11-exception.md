@@ -12,6 +12,20 @@ goals:
 
 ---
 
+## Exceção
+
+- Exceção (__Exception__): indica um problema durante a execução de um programa
+- Tratamento de exceção (__Exception handling__): permite a aplicação resolver (tratar) exceções
+- Viabiliza o desenvolvimento de softwares mais robustos e tolerantes a falha   
+
+---
+
+## Exceção
+
+-  
+
+---
+
 ## Hierarquia essencial
 
 - *Throwable* divide-se em *Error* (falhas graves da JVM) e *Exception*
