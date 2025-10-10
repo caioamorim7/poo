@@ -20,7 +20,7 @@ Durante a manutenção, técnicos digitam as leituras de temperatura de cada sen
 1. Crie um `Scanner` para ler entradas linha a linha.
 2. Dentro de um laço, leia as leituras até que o usuário informe `FIM` (ignorando diferenças de maiúsculas e minúsculas).
 3. Para cada leitura:
-   - Use `SensorMonitor#addReading` para validar e armazenar.
+   - Use `SensorMonitor#addReading` para validar e armazenar (utilize `String#split` para separar as partes da linha; [documentação](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split(java.lang.String))).
    - Caso a validação falhe, capture `InvalidReadingException` e informe o motivo para o operador, sem encerrar o programa.
 4. Após encerrar a coleta, exiba a quantidade de leituras válidas e quantas foram ignoradas por erro.
 5. Permita que o usuário consulte a média de um sensor chamando `SensorMonitor#averageFor`. Caso não existam leituras para o sensor, a exceção `SensorNotFoundException` deve ser capturada e informada.
