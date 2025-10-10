@@ -12,6 +12,28 @@ goals:
 
 ---
 layout: default
+lesson: Hierarquia essencial
+---
+
+- `Throwable` divide-se em `Error` (falhas graves da JVM) e `Exception`
+- `Exception` agrupa erros recuperáveis; `RuntimeException` e subclasses são não checadas
+- Exceções checadas comuns: `IOException`, `SQLException`, `ClassNotFoundException`
+- Pacotes especializados: `java.io` (I/O), `java.sql` (banco), `java.time` (data/hora)
+- Consulte `lectures/examples/11-exception/doc/exceptions.puml` para o diagrama completo
+
+---
+
+## Checadas x não checadas
+
+- **Checadas** (`Exception` fora de `RuntimeException`): compilador exige `try-catch` ou `throws`
+- **Não checadas** (`RuntimeException`, `Error`): indicam bugs/condições inesperadas
+- Trate checadas próximas à fronteira externa (UI, APIs, persistência)
+- Envolva não checadas apenas para enriquecer contexto; evite ocultá-las
+- Propague mantendo causa (`throw new MinhaExcecao("falha", e);`)
+
+---
+
+layout: default
 lesson: Exceções aritméticas
 ---
 
@@ -62,6 +84,24 @@ public class MyException extends Exception {
 
 ---
 
+## Declaração e propagação
+
+```java
+// FileLoader.java
+public String load(String path) throws IOException {
+    try (BufferedReader reader = Files.newBufferedReader(Path.of(path))) {
+        return reader.readLine();
+    }
+}
+```
+
+- `throws` documenta exceções checadas propagadas pela API
+- Métodos podem capturar e traduzir (`throw new BusinessException("...", e);`)
+- Reavalie contratos após adicionar novas exceções; atualize documentação
+- Use exceções específicas para sinalizar causa semântica ao consumidor
+
+---
+
 ## Fluxo com `finally`
 
 ```java
@@ -81,6 +121,63 @@ doesNotThrowException();
 - `doesNotThrowException` mostra `finally` mesmo sem exceção
 - `finally` é ideal para liberar recursos (fechar arquivos, conexões)
 - Propagação constrói *stack trace* revelando a cadeia de chamadas
+
+---
+
+## Try-with-resources
+
+```java
+// TryWithResourcesDemo.java
+try (var reader = Files.newBufferedReader(path);
+     var writer = Files.newBufferedWriter(out)) {
+    writer.write(reader.readLine());
+}
+```
+
+- Fecha recursos automaticamente ao sair do bloco
+- Cada recurso deve implementar `AutoCloseable`
+- Recursos são fechados em ordem inversa à declaração
+- Captura `IOException` sem vazamento de descritores
+- Blocos `catch` e `finally` ainda podem ser adicionados se necessário
+
+---
+
+## Multi-catch e rethrow
+
+```java
+try {
+    process(request);
+}
+catch (IOException | SQLException e) {
+    throw new ServiceException("Falha de infraestrutura", e);
+}
+```
+
+- Multi-catch evita duplicação de tratamento para exceções relacionadas
+- Variável `e` é efetivamente final dentro do bloco
+- Use `throw` simples para repropagar mantendo o `stack trace`
+- Ao criar nova exceção, passe a causa original (`new ...(..., e)`)
+- Adicione contexto (ex.: parâmetros relevantes) antes de repropagar
+
+---
+
+## Encadeamento e suprimidas
+
+```java
+try {
+    runTask();
+}
+catch (OperationException e) {
+    e.getSuppressed(); // exceções fechadas em try-with-resources
+    throw e.initCause(new IllegalStateException("scheduler"));
+}
+```
+
+- `initCause` ou construtores permitem encadear causas
+- `getSuppressed()` captura exceções ocultadas por `try-with-resources`
+- Faça log das suprimidas para diagnosticar desalocações falhas
+- Exceções encadeadas facilitam rastrear origem real do erro
+- Evite sobrescrever causa original sem necessidade
 
 ---
 
