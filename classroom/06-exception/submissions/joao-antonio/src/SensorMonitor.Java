@@ -30,22 +30,20 @@ public class SensorMonitor {
             throw new InvalidReadingException("O valor da temperatura deve ser um número válido.");
         }
     }
-    public double averageFor(String sensorId) throws SensorNotFoundException {
-        double sum = 0;
-        int count = 0;
-        
-        for (SensorReading reading : readings) {
-            if (reading.getSensorId().equalsIgnoreCase(sensorId)) {
-                sum += reading.getTemperature();
-                count++;
-            }
+    public double averageFor(String id) throws SensorNotFoundException {
+        List<Double> sensorData = readings.get(id);
+        if (sensorData == null || sensorData.isEmpty()) {
+            throw new SensorNotFoundException("Não há leituras registradas para o sensor informado.");
         }
-        if (count == 0) {
-            throw new SensorNotFoundException("Nenhuma leitura encontrada para o sensor " + sensorId + ".");
-        }
-        return sum / count;
+
+        double soma = 0;
+        for (double t : sensorData) soma += t;
+        return soma / sensorData.size();
     }
+
     public int getTotalReadings() {
-        return readings.size();
+        int total = 0;
+        for (List<Double> list : readings.values()) total += list.size();
+        return total;
     }
 }
