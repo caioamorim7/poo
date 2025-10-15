@@ -17,6 +17,7 @@ Nesta página você encontra:
 | 9 | [Programação Orientada a Objetos em Java - herança, extends, override, super, abstract, polimorfismo, encapsulamento, package, import](https://1drv.ms/p/s!Avnn2LcOmn0Y32GgrYpPTFA8lUHl?e=u7L4jb) | Análise de código do programa [payroll](./examples/09-inheritance/payroll/) | 
 | 10 | [Arrays](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) | [Análise de código arrays](../lectures/examples/07-arrays) <br> |
 | 11 | [ArrayList](https://1drv.ms/p/c/187d9a0eb7d8e7f9/Efnn2LcOmn0ggBjZLwAAAAABx1Nmn4wiFopjTu1n-YYpmw?e=YltGd9) | |
+| 12 | [Tratamento de Exceções](https://fabriciosantana.github.io/poo/11-exception/) | |
 
 ### Slides apresentados em sala (em revisão)
 |#|Conteúdo|Atividade em sala|
