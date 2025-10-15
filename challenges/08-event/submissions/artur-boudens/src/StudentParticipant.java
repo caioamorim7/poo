@@ -11,7 +11,7 @@ public class StudentParticipant extends Participant{
 
     @Override
     public String toString(){
-        return "Estudante: [ID: " + super.getId() + ", Nome completo: " + super.getFullName() + ", Email: " + super.getEmail() + ", Curso: " + this.course + ", Semestre atual: " + this.currentSemester + "]";
+        return "Estudante: [ID: " + super.getId() + ", Nome completo: " + super.getFullName() + ", Email: " + super.getEmail() + ", Curso: " + this.course + ", semestre: " + this.currentSemester + "]";
     }
 
     @Override
