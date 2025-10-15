@@ -2,9 +2,12 @@
 
 set separator ::
 
-package "Collections (java.util)" {
+package "Framework Collections (java.util)" {
 
-    interface Collection<E> extends Iterable{
+    interface Iterable<E> {
+    }
+
+    interface Collection<E> extends Iterable<E>{
     }
 
     interface SequencedCollection<E> extends Collection<E>{
@@ -14,6 +17,13 @@ package "Collections (java.util)" {
 
     }
 
+    class Vector<E> implements List<E> { 
+        
+    }
+
+    class Stack<E> extends Vector<E> { 
+
+    }
 
     interface Set<E> extends Collection<E> {
     }
@@ -84,6 +94,11 @@ package "Collections (java.util)" {
     }
 
     class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>{
+
+    }
+    note bottom: syncronized
+
+    class Collections {
 
     }
     
