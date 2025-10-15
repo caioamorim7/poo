@@ -1,8 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public class SensorMonitor {
-    private List<SensorReading> readings = new ArrayList<>();
+    private Map<String, List<Double>> readingsBySensor = new HashMap<>();
 
     public void addReading(String rawInput) throws InvalidReadingException {
         if (rawInput == null || !rawInput.contains(";")) {
@@ -15,9 +15,9 @@ public class SensorMonitor {
             throw new InvalidReadingException("Formato inválido. Forneça exatamente um ID e uma temperatura.");
         }
 
-        String Id = parts[0].trim();
+        String sensorId = parts[0].trim();
 
-        if (Id.isEmpty()) {
+        if (sensorId.isEmpty()) {
             throw new InvalidReadingException("O identificador do sensor não pode ser vazio.");
         }
         try {
@@ -25,12 +25,12 @@ public class SensorMonitor {
             if (temperature < -30 || temperature > 55) {
                 throw new InvalidReadingException("Temperatura fora da faixa permitida (-30°C a 55°C).");
             }
-            this.readings.add(new SensorReading(Id, temperature));
+            this.readings.add(new SensorReading(sensorId, temperature));
         } catch (NumberFormatException e) {
             throw new InvalidReadingException("O valor da temperatura deve ser um número válido.");
         }
     }
-    public double averageFor(String Id) throws SensorNotFoundException {
+    public double averageFor(String sensorId) throws SensorNotFoundException {
         double sum = 0;
         int count = 0;
         
@@ -41,7 +41,7 @@ public class SensorMonitor {
             }
         }
         if (count == 0) {
-            throw new SensorNotFoundException("Nenhuma leitura encontrada para o sensor " + Id + ".");
+            throw new SensorNotFoundException("Nenhuma leitura encontrada para o sensor " + sensorId + ".");
         }
         return sum / count;
     }
