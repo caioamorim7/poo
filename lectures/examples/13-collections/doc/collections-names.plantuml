@@ -1,0 +1,92 @@
+@startuml collections-names
+
+set separator ::
+
+package "Collections (java.util)" {
+
+    interface Collection<E> extends Iterable{
+    }
+
+    interface SequencedCollection<E> extends Collection<E>{
+    }
+
+    interface List<E> extends SequencedCollection<E> {
+
+    }
+
+
+    interface Set<E> extends Collection<E> {
+    }
+    note top: coleção que não permite elementos duplicados
+
+    interface SortedSet<E> extends Set<E> {
+
+    }
+    note top: coleção ordenada
+
+    interface NavigableSet<E> extends SortedSet<E>{
+
+    }
+
+    interface Queue<E> extends Collection<E> {
+
+    }
+    note top: Fila (primeiro a entrar é o primeiro a sair - first-in, first-out)
+
+    interface Deque<E> extends Queue<E> {
+
+    }
+    note top: fila duplamente encadeada, pode funcionar como fila ou pilha
+
+    interface Map<K,V> {
+    }
+
+    interface SequencedMap<K,V> extends Map<K,V> {
+    }
+
+    interface SortedMap<K,V> extends SequencedMap<K,V> {
+    }
+
+    interface NavigableMap<K,V> extends SortedMap<K,V>{
+
+    }
+
+    class ArrayList<E> implements List<E>{
+
+    }
+
+    class LinkedList<E> implements List, Deque<E>{
+
+    }
+
+    class HashSet<E> implements Set<E> {
+
+    }
+
+    class LinkedHashSet<E> extends HashSet<E> {
+        
+    }
+
+    class TreeSet<E> implements NavigableSet<E>{
+    }
+
+    class HashMap<K, V> implements Map<K, V> {
+    }
+
+    class TreeMap<K, V> implements NavigableMap<K, V> {
+    }
+
+    class PriorityQueue<E> implements Queue<E>{
+    }
+
+    class Dictionary<K,V> {
+
+    }
+
+    class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>{
+
+    }
+    
+}
+
+@enduml
