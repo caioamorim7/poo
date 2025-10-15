@@ -1,5 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public class SensorMonitor {
     private Map<String, List<Double>> readingsBySensor = new HashMap<>();
