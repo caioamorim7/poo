@@ -1,6 +1,6 @@
 public class Phone {
-   Private String name;
-   Private serialNumber;
+   private String name;
+   private serialNumber;
 
 public Phone(String name, String serialNumber) throws ValidationException {
     if (name == null || name.trim().isEmpty()) {
@@ -16,7 +16,7 @@ public Phone(String name, String serialNumber) throws ValidationException {
 public String getName() {
     return name;
 }
-publci String getSerialNumber() {
+public String getSerialNumber() {
     return serialNumber;
     }
 }
