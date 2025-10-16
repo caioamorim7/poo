@@ -9,7 +9,7 @@ public class SensorMonitorApp {
             String inputLine;
 
             System.out.println("--- Monitor de Sensores ---");
-            System.out.println("Digite as leituras no formato: SENSOR_ID;TEMPERATURA");
+            System.out.println("Digite aas leituras no formato: SENSOR_ID;TEMPERATURA");
             System.out.println("Digite 'FIM' para encerrar a coleta.");
 
             while (true) {
