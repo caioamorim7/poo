@@ -3,7 +3,6 @@ public class Phone {
     private String serialNumber;
 
     public Phone(String name, String serialNumber) throws ValidationException {
-        // 1. Validação do nome
         if (name == null || name.trim().isEmpty()) {
             throw new ValidationException("O nome do telefone não pode estar vazio.");
         }
@@ -19,5 +18,13 @@ public class Phone {
     @Override
     public String toString() {
         return "Phone [Nome: '" + name + "', Serial: '" + serialNumber + "']";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
     }
 }
