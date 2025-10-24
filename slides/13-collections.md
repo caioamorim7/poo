@@ -3,9 +3,12 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula13
-lesson: Coleções da biblioteca padrão
+lesson: Framework Collections
 goals:
-  - Escolher coleções adequadas para mapas, conjuntos, filas e listas
+  - Conhecer as das principais interfaces do Framework Collections
+    - List, Set, Queue, Dequeue, Map
+  - Conhecer as principais classes do Framework Collections
+    - ArrayList, LinkedList, HashSet, LinkedHashSet, TreeSet, HashMap, LinkedHashMap, TreeMap
   - Explorar algoritmos utilitários em `Collections`
   - Iterar elementos usando `Iterator`, `forEach` e `Spliterator`
 ---
