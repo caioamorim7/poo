@@ -12,7 +12,7 @@ public class SensorMonitorApp {
                 System.out.print(">> ");
                 line = scanner.nextLine();
 
-                if (line.trim().equalsIgnoreCase("FIM")) {
+                if (line.trim().equalsIgnoreCase("FIM")) { 
                     break;
                 }
 
