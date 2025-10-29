@@ -1,6 +1,5 @@
 import java.util.Comparator;
 import java.util.Map;
-import java.util.NavigableMap;
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeMap;
@@ -107,4 +106,5 @@ class TreeMapApp {
 
         // 26. Ceiling Key: (menor chave >= chave informada)
         System.out.println("26. Ceiling Key (key >= 4): " + cores.ceilingKey(4)); 
+    }
 }
