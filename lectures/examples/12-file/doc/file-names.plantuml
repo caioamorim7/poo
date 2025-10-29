@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+package "java.io" {
+
+    class File
+
+    abstract class InputStream
+
+    class FilterInputStream extends InputStream
+    class BufferedInputStream extends FilterInputStream
+    class FileInputStream extends InputStream
+
+    abstract class Reader
+    
+    class InputStreamReader extends Reader
+    class FileReader extends InputStreamReader
+    class BufferedReader extends Reader
+
+    abstract class Writer
+
+    class BufferedWriter extends Writer
+    class OutputStreamWriter extends Writer
+    class FileWriter extends OutputStreamWriter
+
+    abstract class OutputStream
+
+    class FileOutputStream extends OutputStream
+    class FilterOutputStream extends OutputStream
+    class BufferedOutputStream extends FilterOutputStream
+}
+
+package "java.nio.file" {
+    interface Path
+    class Paths
+    class Files
+    interface DirectoryStream
+    interface FileSystem
+    class FileSystems
+}
+
+@enduml

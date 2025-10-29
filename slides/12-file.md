@@ -55,7 +55,7 @@ lesson: Manipulação de arquivos
 
 ---
 
-## Principais classes e interfaces de manipulação de arquivos
+## Principais classes e interfaces de manipulação de arquivos (**java.nio**)
 
 - [java.nio.file.Paths​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Paths.html)
     - oferece métodos estáticos usados para recuperar um objeto do tipo Path representando um arquivo ou diretório​
