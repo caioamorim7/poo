@@ -10,8 +10,11 @@ public class WriteFileFiles {
 
             Path p = Paths.get("hello.txt");
 
-            Files.write(p, "Hello, World".getBytes());
+            String conteudo = Files.readString(p);
+            conteudo += "\nHello, World!";
             
+            Files.write(p, conteudo.getBytes());
+
         } catch(FileNotFoundException fne){
             System.out.print("Arquivo não encontrado");
         } catch(IOException ioe){
