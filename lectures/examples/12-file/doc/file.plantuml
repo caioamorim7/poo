@@ -1,43 +1,137 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-
 package "java.io" {
 
-    class File
+    class File {
+        +boolean exists()
+        +boolean createNewFile()
+        +boolean delete()
+        +String getName()
+        +String getAbsolutePath()
+        +long length()
+    }
 
-    abstract class InputStream
+    abstract class InputStream {
+        +int read()
+        +int read(byte[])
+        +int available()
+        +void close()
+    }
 
     class FilterInputStream extends InputStream
-    class BufferedInputStream extends FilterInputStream
-    class FileInputStream extends InputStream
 
-    abstract class Reader
-    
-    class InputStreamReader extends Reader
-    class FileReader extends InputStreamReader
-    class BufferedReader extends Reader
+    class BufferedInputStream extends FilterInputStream {
+        +int read()
+        +void mark(int)
+        +void reset()
+    }
 
-    abstract class Writer
+    class FileInputStream extends InputStream {
+        +int read()
+        +int read(byte[])
+        +FileDescriptor getFD()
+    }
 
-    class BufferedWriter extends Writer
-    class OutputStreamWriter extends Writer
-    class FileWriter extends OutputStreamWriter
+    abstract class Reader {
+        +int read()
+        +int read(char[])
+        +void close()
+    }
 
-    abstract class OutputStream
+    class InputStreamReader extends Reader {
+        +String getEncoding()
+    }
 
-    class FileOutputStream extends OutputStream
+    class FileReader extends InputStreamReader {
+        // Construtores herdados
+    }
+
+    class BufferedReader extends Reader {
+        +String readLine()
+        +boolean ready()
+        +void mark(int)
+        +void reset()
+    }
+
+    abstract class Writer {
+        +void write(String)
+        +void write(char[])
+        +void flush()
+        +void close()
+    }
+
+    class OutputStreamWriter extends Writer {
+        +String getEncoding()
+    }
+
+    class BufferedWriter extends Writer {
+        +void write(String)
+        +void newLine()
+    }
+
+    class FileWriter extends OutputStreamWriter {
+        // Construtores herdados
+    }
+
+    abstract class OutputStream {
+        +void write(int)
+        +void write(byte[])
+        +void flush()
+        +void close()
+    }
+
+    class FileOutputStream extends OutputStream {
+        +FileDescriptor getFD()
+    }
+
     class FilterOutputStream extends OutputStream
-    class BufferedOutputStream extends FilterOutputStream
+
+    class BufferedOutputStream extends FilterOutputStream {
+        +void write(byte[])
+        +void flush()
+    }
 }
 
 package "java.nio.file" {
-    interface Path
-    class Paths
-    class Files
-    interface DirectoryStream
-    interface FileSystem
-    class FileSystems
+
+    interface Path {
+        +Path getFileName()
+        +Path getParent()
+        +Path resolve(String)
+        +boolean startsWith(Path)
+        +boolean endsWith(Path)
+        +int getNameCount()
+    }
+
+    class Paths {
+        +static Path get(String, String...)
+        +static Path get(URI)
+    }
+
+    class Files {
+        +static boolean exists(Path)
+        +static List<String> readAllLines(Path)
+        +static BufferedReader newBufferedReader(Path)
+        +static void write(Path, byte[])
+        +static Stream<String> lines(Path)
+        +static void copy(Path, Path)
+        +static void delete(Path)
+    }
+
+    interface DirectoryStream {
+        +Iterator<Path> iterator()
+    }
+
+    interface FileSystem {
+        +Path getPath(String, String...)
+        +FileSystemProvider provider()
+    }
+
+    class FileSystems {
+        +static FileSystem getDefault()
+        +static FileSystem newFileSystem(URI, Map<String, ?>)
+    }
 }
 
 @enduml

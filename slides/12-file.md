@@ -72,14 +72,6 @@ lesson: Manipulação de arquivos
 
 ---
 
-## Como ler aquivos?
-
-```java
-Path p = Paths.get("hello.txt");
-```
-
----
-
 ## Tipos de arquivos
 
 - Texto: **_character-based streams_**
