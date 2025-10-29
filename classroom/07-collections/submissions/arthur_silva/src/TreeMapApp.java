@@ -1,3 +1,5 @@
+package submissions.arthur_silva.src;
+
 import java.util.Comparator;
 import java.util.Collections;
 import java.util.Map;
@@ -146,3 +148,4 @@ public class TreeMapApp {
         System.out.println("--------------------");
     }
 }
+

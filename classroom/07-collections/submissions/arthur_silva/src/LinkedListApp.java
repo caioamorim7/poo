@@ -1,3 +1,5 @@
+package submissions.arthur_silva.src;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -191,3 +193,4 @@ public class LinkedListApp {
         System.out.println("--------------------");
     }
 }
+

@@ -1,3 +1,5 @@
+package submissions.arthur_silva.src;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -93,3 +95,4 @@ public class HashMapApp {
         System.out.println("--------------------");
     }
 }
+

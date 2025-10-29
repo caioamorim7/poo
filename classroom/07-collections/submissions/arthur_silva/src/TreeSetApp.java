@@ -1,3 +1,5 @@
+package submissions.arthur_silva.src;
+
 import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -117,3 +119,4 @@ public class TreeSetApp {
         System.out.println("--------------------");
     }
 }
+

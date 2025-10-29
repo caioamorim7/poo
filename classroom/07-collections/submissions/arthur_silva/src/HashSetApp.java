@@ -1,3 +1,5 @@
+package submissions.arthur_silva.src;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -111,3 +113,4 @@ public class HashSetApp {
         System.out.println("--------------------");
     }
 }
+
