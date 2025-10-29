@@ -4,24 +4,31 @@ skinparam classAttributeIconSize 0
 
 package "java.io" {
 
+    class File
+
     abstract class InputStream
-    abstract class OutputStream
-    abstract class Reader
-    abstract class Writer
 
     class FilterInputStream extends InputStream
-    class FilterOutputStream extends OutputStream
-    class InputStreamReader extends Reader
-    class OutputStreamWriter extends Writer
-    class File
-    class FileInputStream extends InputStream
-    class FileOutputStream extends OutputStream
-    class FileReader extends InputStreamReader
-    class FileWriter extends OutputStreamWriter
     class BufferedInputStream extends FilterInputStream
-    class BufferedOutputStream extends FilterOutputStream
+    class FileInputStream extends InputStream
+
+    abstract class Reader
+    
+    class InputStreamReader extends Reader
+    class FileReader extends InputStreamReader
     class BufferedReader extends Reader
+
+    abstract class Writer
+
     class BufferedWriter extends Writer
+    class OutputStreamWriter extends Writer
+    class FileWriter extends OutputStreamWriter
+
+    abstract class OutputStream
+
+    class FileOutputStream extends OutputStream
+    class FilterOutputStream extends OutputStream
+    class BufferedOutputStream extends FilterOutputStream
 }
 
 package "java.nio.file" {
