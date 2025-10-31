@@ -4,13 +4,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class FileAndDirectoryInfo { 
+public class DirectoryStreamFileAndDirectoryInfo { 
     public static void main(String[] args) throws IOException { 
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("Enter file or directory name:"); 
 
             Path path = Path.of(input.nextLine()); //Paths.get(input.nextLine());
-
 
             if (Files.exists(path)){
                 System.out.printf("%n%s exists%n", path.getFileName());
