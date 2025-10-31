@@ -1,17 +1,16 @@
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class WriteFileOutputStreamBufferedOutputStream {
     public static void main(String[] args) {
         try {
 
-            Path p = Paths.get("hello.txt");
+            File file = new File("data/hello.txt");
 
-            try(BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(p.toFile()))){
+            try(BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(file))){
                 output.write("Hello, World".getBytes());
             }
         } catch(FileNotFoundException fne){
