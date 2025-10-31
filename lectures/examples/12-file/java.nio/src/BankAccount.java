@@ -2,8 +2,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.IllegalFormatException;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class BankAccount {
@@ -14,7 +14,7 @@ public class BankAccount {
 
             openNewAccounts();
         } 
-        catch (Exception e) {//(SecurityException | FileNotFoundException | FormatterClosedException e) { 
+        catch (IOException e) {//(SecurityException |  | FormatterClosedException e) { 
             e.printStackTrace(); 
         } 
     }
@@ -53,8 +53,8 @@ public class BankAccount {
                     String account = String.format("%d %s %s %.2f%n", input.nextInt(), input.next(), input.next(), input.nextDouble());
                     Files.write(path, account.getBytes(), StandardOpenOption.APPEND);
                 } 
-                catch (NoSuchElementException | IOException elementException) { 
-                    System.err.println("Invalid input. Please try again."); 
+                catch (IllegalFormatException | IOException e) { 
+                    System.err.println("Entrada inválida."); 
                     input.nextLine(); // discard input so user can try again 
                 } 
                 System.out.print("? "); 
