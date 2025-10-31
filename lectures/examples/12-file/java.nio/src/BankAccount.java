@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.IllegalFormatException;
 import java.util.List;
 import java.util.Scanner;
@@ -42,6 +43,7 @@ public class BankAccount {
    private static void openNewAccounts() throws IOException{
 
         Path path = Path.of("data/clients.txt");
+        List<String> newAccounts = new ArrayList<>();
         
         try (Scanner input = new Scanner(System.in)) {
             System.out.printf("%s%n%s%n? ",
@@ -51,16 +53,19 @@ public class BankAccount {
             while (input.hasNext()) {
                 try { 
                     String account = String.format("%d %s %s %.2f%n", input.nextInt(), input.next(), input.next(), input.nextDouble());
-                    Files.write(path, account.getBytes(), StandardOpenOption.APPEND);
+                    //Files.write(path, account.getBytes(), StandardOpenOption.APPEND);
+                    newAccounts.add(account);
                 } 
-                catch (IllegalFormatException | IOException e) { 
+                catch (IllegalFormatException e) { 
                     System.err.println("Entrada inválida."); 
                     input.nextLine(); // discard input so user can try again 
                 } 
                 System.out.print("? "); 
             }
 
+            Files.write(path, newAccounts, StandardOpenOption.APPEND);
             System.out.printf("%nTotal de contas: %d%n", Files.readAllLines(path).size());
+            System.out.printf("%nTamanho do arquivo: %d%n", Files.size(path));
         } 
    }
 }
