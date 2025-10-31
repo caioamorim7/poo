@@ -1,48 +1,21 @@
-### Manipulação de arquivos e serialização de objetos
+## Manipulação de arquivos e serialização de objetos
 
-#### Manipulação Básica de Arquivos (Create, Read, Write, Update)
+### Manipulação Básica de Arquivos (Create, Read, Write, Update)
 
-##### Criação e Escrita em Arquivos de Texto com `FileWriter`
-
-```
-Explique como realizar a criação e escrita em arquivos de texto com `FileWriter`, apresentando detalhadamente informações para os itens abaixo
-
-1. O que é a classe `FileWriter` e como ela pode ser usada para criar um arquivo de texto em Java?
-2. Escreva um programa Java que crie um arquivo chamado `dados.txt` e grave três linhas de texto.
-3. O que acontece se você executar o programa duas vezes? O conteúdo será sobrescrito?
-```
-
-##### Leitura de Arquivos de Texto com `BufferedReader`
+#### Criação e Escrita em Arquivos de Texto com pacote `java.nio`
 
 ```
-Explique como realizar leitura de arquivos de texto com o `BufferedReader`, detalhando os seguintes itens:
+Explique como realizar a criação e escrita em arquivos de texto com classes e interfaces do pactore `java.nio`, apresentando detalhadamente informações para os itens abaixo
 
-1. Explique o uso das classes `FileReader` e `BufferedReader`.
-2. Escreva um código para ler o conteúdo do arquivo `dados.txt` criado anteriormente.
-3. Como lidar com exceções ao ler arquivos?
+1. O que é o pacote `java.nio` e como ela pode ser usada para criar um arquivo de texto em Java?
+2. O que são as classes `Path` e `Files` no pacote `java.nio.file`? 
+3. Apresente e explique os principais métodos as classes `Path` e `Files` no pacote `java.nio.file`
+4. Escreva um exemplo que obtenha o nome do arquivo, tamanho e se ele é legível/escrevível.
+5. Escreva um programa Java que crie um arquivo chamado `dados.txt` e grave três linhas de texto.
+7. O que acontece se você executar o programa duas vezes? O conteúdo será sobrescrito?
 ```
 
-##### Atualização de Arquivos (read → modify → write):**
-
-```
-Explique como realizar atualização de arquivos
-
-1. Como atualizar o conteúdo de um arquivo em Java se não é possível fazer "edições diretas"?
-2. Implemente um programa que leia o arquivo `dados.txt`, substitua todas as ocorrências da palavra "teste" por "exemplo" e salve o resultado em um novo arquivo.
-```
-
-#### Trabalhando com NIO.2 (Informações de Arquivos e Diretórios)
-
-##### Introdução ao `java.nio.file.Path` e `Files`
-
-```
-Apresente uma síntese do pacote NIO.2
-
-1. O que são as classes `Path` e `Files` no pacote `java.nio.file`?
-2. Escreva um exemplo que obtenha o nome do arquivo, tamanho e se ele é legível/escrevível.
-```
-
-##### Listagem de diretórios com `DirectoryStream`
+#### Listagem de diretórios com `DirectoryStream`
 
 ```
 Explique como realizar a listagem de diretórios com `DirectoryStream`
@@ -51,7 +24,7 @@ Explique como realizar a listagem de diretórios com `DirectoryStream`
 2. Escreva um código que imprima todos os arquivos `.txt` de um diretório especificado.
 ```
 
-##### Criação, cópia, movimentação e exclusão com NIO.2
+#### Criação, cópia, movimentação e exclusão com NIO.2
 
 ```
 Explique como realizar a criação, cópia, movimentação e exclusão com NIO.2
@@ -91,23 +64,6 @@ Explique como realizar a criação, cópia, movimentação e exclusão com NIO.2
 ```
 1. Demonstre como utilizar `Scanner` para ler o conteúdo desse mesmo arquivo e imprimir os dados no console.
 2. Como lidar com erros de leitura e formatação?
-```
-
-#### Processamento Sequencial de Arquivos (Exemplo: Consulta de Créditos)
-
-##### Análise do problema
-
-```
-1. Como um programa de consulta de crédito pode se beneficiar de arquivos sequenciais?
-2. Que tipo de estrutura de dados e organização de arquivo são necessárias?
-```
-
-##### Implementação
-
-```
-1. Implemente um programa que grave dados de clientes com número da conta, nome e saldo.
-2. Implemente uma funcionalidade que permita consultar os saldos por número de conta.
-3. Implemente um filtro para listar apenas contas com saldo negativo.
 ```
 
 #### Serialização de Objetos
