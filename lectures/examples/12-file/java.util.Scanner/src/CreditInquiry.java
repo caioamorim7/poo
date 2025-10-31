@@ -4,13 +4,13 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class CreditInquiry {
-   private final static MenuOption[] choices = MenuOption.values();
+   private final static CreditInquiryMenuOption[] choices = CreditInquiryMenuOption.values();
 
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
-      MenuOption accountType = getRequest(input);
+      CreditInquiryMenuOption accountType = getRequest(input);
 
-      while (accountType != MenuOption.END) {
+      while (accountType != CreditInquiryMenuOption.END) {
          switch (accountType) {
             case ZERO_BALANCE:
                System.out.printf("%nAccounts with zero balances:%n");
@@ -28,7 +28,7 @@ public class CreditInquiry {
       }
    }
 
-   private static MenuOption getRequest(Scanner input) {
+   private static CreditInquiryMenuOption getRequest(Scanner input) {
       int request = 4;
 
       System.out.printf("%nEnter request%n%s%n%s%n%s%n%s%n",
@@ -50,7 +50,7 @@ public class CreditInquiry {
       return choices[request - 1];
    }
 
-   private static void readRecords(MenuOption accountType) {
+   private static void readRecords(CreditInquiryMenuOption accountType) {
       try (Scanner input = new Scanner(Paths.get("clients.txt"))) {
          while (input.hasNext()) {
             int accountNumber = input.nextInt();
@@ -71,12 +71,12 @@ public class CreditInquiry {
       }
    }
 
-   private static boolean shouldDisplay(MenuOption option, double balance) {
-      if ((option == MenuOption.CREDIT_BALANCE) && (balance < 0)) {
+   private static boolean shouldDisplay(CreditInquiryMenuOption option, double balance) {
+      if ((option == CreditInquiryMenuOption.CREDIT_BALANCE) && (balance < 0)) {
          return true;
-      } else if ((option == MenuOption.DEBIT_BALANCE) && (balance > 0)) {
+      } else if ((option == CreditInquiryMenuOption.DEBIT_BALANCE) && (balance > 0)) {
          return true;
-      } else if ((option == MenuOption.ZERO_BALANCE) && (balance == 0)) {
+      } else if ((option == CreditInquiryMenuOption.ZERO_BALANCE) && (balance == 0)) {
          return true;
       }
 

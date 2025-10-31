@@ -6,7 +6,7 @@ import java.nio.file.Path;
 public class ReadFileFiles {
     public static void main(String[] args){
         try {
-            Path p = Path.of("hello.txt");
+            Path p = Path.of("data/hello.txt");
             
             System.out.println(Files.readAllLines(p));
 

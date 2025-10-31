@@ -1,4 +1,4 @@
-public enum MenuOption { 
+public enum CreditInquiryMenuOption { 
     ZERO_BALANCE(1), 
     CREDIT_BALANCE(2), 
     DEBIT_BALANCE(3), 
@@ -6,7 +6,7 @@ public enum MenuOption {
  
     private final int value; 
  
-    private MenuOption(int value) {
+    private CreditInquiryMenuOption(int value) {
        this.value = value;
     }
  }

@@ -4,9 +4,9 @@ import java.util.FormatterClosedException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class CreateTextFile { 
+public class FormatterCreateTextFile { 
     public static void main(String[] args) { 
-        try (Formatter output = new Formatter("clients.txt")) { 
+        try (Formatter output = new Formatter("data/clients.txt")) { 
             try (Scanner input = new Scanner(System.in)) {
                 System.out.printf("%s%n%s%n? ",
             "Enter account number, first name, last name and balance.",

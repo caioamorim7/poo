@@ -1,8 +1,8 @@
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
-class ByteArrayOutputStreamDemo { 
+class FileOutputStreamDemo { 
     public static void main(String[] args) { 
         ByteArrayOutputStream f = new ByteArrayOutputStream(); 
 

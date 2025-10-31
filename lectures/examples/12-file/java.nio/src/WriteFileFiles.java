@@ -8,7 +8,7 @@ public class WriteFileFiles {
     public static void main(String[] args) {
         try {
 
-            Path p = Paths.get("hello.txt");
+            Path p = Paths.get("data/hello.txt");
 
             String conteudo = Files.readString(p);
             conteudo += "\nHello, World!";

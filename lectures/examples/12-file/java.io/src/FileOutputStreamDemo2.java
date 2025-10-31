@@ -2,7 +2,7 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-class FileOutputStreamDemo { 
+class FileOutputStreamDemo2 { 
     public static void main(String[] args) { 
         String source = """
                         Now is the time for all good men

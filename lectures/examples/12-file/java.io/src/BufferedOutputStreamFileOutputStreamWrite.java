@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class WriteFileOutputStreamBufferedOutputStream {
+public class BufferedOutputStreamFileOutputStreamWrite {
     public static void main(String[] args) {
         try {
 

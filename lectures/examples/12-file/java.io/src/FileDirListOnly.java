@@ -1,12 +1,12 @@
 import java.io.File; 
 import java.io.FilenameFilter;
 
-class DirListOnly { 
+class FileDirListOnly { 
     public static void main(String[] args) { 
         String dirname = "./"; 
 
         File f1 = new File(dirname); 
-        FilenameFilter only = new OnlyExt("txt"); 
+        FilenameFilter only = new FileFilenameFilterOnlyExt("txt"); 
 
         String[] s = f1.list(only); 
 

@@ -1,17 +1,17 @@
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public class ReadFileReaderBufferedReader {
+public class BufferedReaderFilesNewBufferedReaderRead {
     public static void main(String[] args){
         try {
-           File file = new File("data/hello.txt");
+            Path p = Path.of("hello.txt");
 
-            try(BufferedReader reader = new BufferedReader(new FileReader(file))){
+            try(BufferedReader reader = Files.newBufferedReader(p)){
                 while(reader.ready())
-                    System.out.println(reader.readLine());
+                    System.out.print(reader.readLine());
             }                        
 
         } catch (FileNotFoundException fne){

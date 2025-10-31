@@ -1,9 +1,9 @@
 import java.io.File;
 import java.io.FilenameFilter;
 
-public class OnlyExt implements FilenameFilter { 
+public class FileFilenameFilterOnlyExt implements FilenameFilter { 
     String ext; 
-    public OnlyExt(String ext) { 
+    public FileFilenameFilterOnlyExt(String ext) { 
         this.ext = "." + ext; 
     } 
     

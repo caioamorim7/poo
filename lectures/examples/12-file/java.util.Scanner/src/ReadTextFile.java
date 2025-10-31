@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ReadTextFile { 
    public static void main(String[] args) { 
     
-      try (Scanner input = new Scanner(Path.of("clients.txt"))) { //Paths.get("clients.txt")
+      try (Scanner input = new Scanner(Path.of("data/clients.txt"))) { //Paths.get("clients.txt")
          System.out.printf("%-10s%-12s%-12s%10s%n", "Account", "First Name", "Last Name", "Balance"); 
 
          while (input.hasNext()) { 

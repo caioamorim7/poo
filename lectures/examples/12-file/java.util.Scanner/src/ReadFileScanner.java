@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ReadFileScanner {
     public static void main(String[] args){
         try {
-           Path p = Path.of("hello.txt");
+           Path p = Path.of("data/hello.txt");
 
             try(Scanner reader = new Scanner(p.toFile())){
                 while(reader.hasNextLine())
