@@ -1,4 +1,4 @@
-@startuml
+@startuml file-names
 skinparam classAttributeIconSize 0
 
 
@@ -14,6 +14,14 @@ package "java.io" {
     class FileInputStream extends InputStream
     class ObjectInputStream extends InputStream
 
+    abstract class OutputStream
+
+    class FileOutputStream extends OutputStream
+    class FilterOutputStream extends OutputStream
+    class BufferedOutputStream extends FilterOutputStream
+    class DataOutputStream extends FilterOutputStream
+    class ObjectOutputStream extends OutputStream
+
     abstract class Reader
     
     class InputStreamReader extends Reader
@@ -26,13 +34,6 @@ package "java.io" {
     class OutputStreamWriter extends Writer
     class FileWriter extends OutputStreamWriter
 
-    abstract class OutputStream
-
-    class FileOutputStream extends OutputStream
-    class FilterOutputStream extends OutputStream
-    class BufferedOutputStream extends FilterOutputStream
-    class DataOutputStream extends FilterOutputStream
-    class ObjectOutputStream extends OutputStream
 }
 
 package "java.nio.file" {
