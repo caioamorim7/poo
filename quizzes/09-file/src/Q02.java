@@ -11,9 +11,11 @@ public class Q02 {
 
             int charRead;
 
-            while ((charRead = bufferedReader.read()) != -1)
+            while ((charRead = bufferedReader.read()) != -1) {
                 System.out.print((char)charRead);
-                
+                break;
+            }
+            
         } catch (Exception e) {
             System.out.println("Erro");
         }
