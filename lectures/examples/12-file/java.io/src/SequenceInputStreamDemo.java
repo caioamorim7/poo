@@ -10,9 +10,9 @@ public class SequenceInputStreamDemo {
         int c; 
         Vector<String> files = new Vector<String>(); 
 
-        files.addElement("file1.txt"); 
-        files.addElement("file2.txt"); 
-        files.addElement("file3.txt"); 
+        files.addElement("data/file1.txt"); 
+        files.addElement("data/file2.txt"); 
+        files.addElement("data/file3.txt"); 
         
         InputStreamEnumerator ise = new InputStreamEnumerator(files); 
         InputStream input = new SequenceInputStream(ise); 
@@ -40,13 +40,15 @@ class InputStreamEnumerator implements Enumeration<FileInputStream> {
         this.files = files.elements(); 
     } 
 
+    @Override
     public boolean hasMoreElements() { 
         return files.hasMoreElements(); 
     } 
 
+    @Override
     public FileInputStream nextElement() { 
         try { 
-            return new FileInputStream(files.nextElement().toString()); 
+            return new FileInputStream(files.nextElement()); 
         } catch (IOException e) { 
             return null; 
         } 
