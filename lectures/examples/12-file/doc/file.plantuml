@@ -96,12 +96,14 @@ package "java.io" {
 package "java.nio.file" {
 
     interface Path {
-        +Path getFileName()
-        +Path getParent()
-        +Path resolve(String)
-        +boolean startsWith(Path)
-        +boolean endsWith(Path)
-        +int getNameCount()
+        +static Path getFileName()
+        +static Path getParent()
+        +static Path resolve(String)
+        +static boolean startsWith(Path)
+        +static boolean endsWith(Path)
+        +static int getNameCount()
+        -static Path of(String, String...)
+        -static File toFile()
     }
 
     class Paths {
@@ -110,13 +112,18 @@ package "java.nio.file" {
     }
 
     class Files {
+        +static long copy(Path, Path)
+        +static Path createDirectory(Path, FIleAttribute)
+        +static Path createFile(Path, FileAttribute)
+        +static Path delete(Path)
         +static boolean exists(Path)
+        +static boolean move(Path, Path)
+        +static List<String> readAllLines(Path)
         +static List<String> readAllLines(Path)
         +static BufferedReader newBufferedReader(Path)
+        +static BufferedWriter newBufferedWriter(Path, OpenOption...)
         +static void write(Path, byte[])
         +static Stream<String> lines(Path)
-        +static void copy(Path, Path)
-        +static void delete(Path)
     }
 
     interface DirectoryStream {
