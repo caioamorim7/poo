@@ -7,7 +7,11 @@ public class Employee implements Serializable {
     private final String lastName;
     private final String socialSecurityNumber;
 
-    protected  Employee(String firstName, String lastName, String socialSecurityNumber) {
+    public Employee(){
+        this("John", "Doe", "123-45-6789");
+    }
+
+    public Employee(String firstName, String lastName, String socialSecurityNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
