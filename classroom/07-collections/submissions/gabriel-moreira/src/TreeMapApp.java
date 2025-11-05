@@ -1,6 +1,5 @@
-package submissions.<nome-sobrenome>.src;
-
-import java.util.*;
+import java.util.Comparator;
+import java.util.TreeMap;
 
 public class TreeMapApp {
     public static void main(String[] args) {
