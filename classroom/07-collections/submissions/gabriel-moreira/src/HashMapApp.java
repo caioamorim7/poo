@@ -1,6 +1,4 @@
-package submissions.<nome-sobrenome>.src;
-
-import java.util.*;
+import java.util.HashMap;
 
 public class HashMapApp {
     public static void main(String[] args) {
