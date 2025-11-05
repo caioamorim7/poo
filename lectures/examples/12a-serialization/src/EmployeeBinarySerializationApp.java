@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class EmployeeSerializationApp {
+public class EmployeeBinarySerializationApp {
     
     public static void main(String[] args) {
         Employee e = new Employee("Fabrico", "Santana", "123456" );
