@@ -6,6 +6,11 @@ RUN apt-get update && \
     git lfs install
 
 # Instala SDKMAN e configura no .bashrc
+
+USER vscode
+
+ENV SDKMAN_DIR="/home/vscode/.sdkman"
+
 RUN curl -s "https://get.sdkman.io" | bash && \
     echo "source $HOME/.sdkman/bin/sdkman-init.sh" >> $HOME/.bashrc
 
