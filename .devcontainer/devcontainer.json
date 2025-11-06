@@ -1,4 +1,15 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-  "name": "Java Development"
+  "name": "Java dev box",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--privileged"],
+  "forwardPorts": [5432, 8080, 8081],
+  "postCreateCommand": "sudo service docker start",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/docker-in-docker:1": {}
+  }
 }
