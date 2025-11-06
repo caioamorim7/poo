@@ -21,7 +21,7 @@ sudo apt install postgresql postgresql-client
 sudo service postgresql start
 ```
 
-- Definir a senha inicial do usuário postgres
+- Se necessário, definir a senha inicial do usuário postgres
 ```bash
 sudo -u postgres psql
 ```
@@ -39,25 +39,30 @@ sudo nano /etc/postgresql/17/main/pg_hba.conf
 - Testar conexão com PostgreSQL
 ```bash
 psql -h localhost -p 5432 -U postgres -d postgres
+```
+
+- Criar banco de dados `dvdrental`
+```bash
+postgres=# CREATE DATABASE dvdrental;
 postgres=# exit
 ```
 
 - Baixar o banco de dados de exemplo
 ```bash
-/14-db> mkdir db
-/14-db> cd db
-/14-db/db> wget https://neon.com/postgresqltutorial/dvdrental.zip
-/14-db/db> unzip dvdrental.zip
+/14-jdbc> mkdir db
+/14-jdbc> cd db
+/14-jdbc/db> wget https://neon.com/postgresqltutorial/dvdrental.zip
+/14-jdbc/db> unzip dvdrental.zip
 ```
 
 - Restaurar o banco de dados
 ```bash
-/14-db/db> pg_restore -U postgres -h localhost -p 5432 -d postgres -v dvdrental.tar --no-owner --clean --if-exists
+/14-db/db> pg_restore -U postgres -h localhost -p 5432 -d dvdrental -v dvdrental.tar --no-owner --clean --if-exists
 ```
 
 - Testar conexão com banco
 ```bash
-psql -h localhost -p 5432 -U postgres -d postgres
+psql -h localhost -p 5432 -U postgres -d dvdrental
 ```
 
 ```bash
@@ -116,7 +121,10 @@ sudo apt install pgadmin4-web
 
 - Configuar o pgAdmin
 ```bash
-sudo /usr/pgadmin4/bin/setup-web.sh
+export PGADMIN_SETUP_EMAIL="admin@admin.com"
+export PGADMIN_SETUP_PASSWORD="admin"
+
+sudo -E /usr/pgadmin4/bin/setup-web.sh
 ```
 
 - Alterar a porta para rodar o pgAdmin para 8888
