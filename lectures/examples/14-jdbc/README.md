@@ -52,6 +52,7 @@ postgres=# exit
 /14-jdbc> mkdir db
 /14-jdbc> cd db
 /14-jdbc/db> wget https://neon.com/postgresqltutorial/dvdrental.zip
+/14-jdbc/db> sudo apt install unzip
 /14-jdbc/db> unzip dvdrental.zip
 ```
 
