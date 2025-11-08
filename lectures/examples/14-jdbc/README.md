@@ -173,4 +173,3 @@ Substituir [PROGRAM] pelo nome do programa que deja rodar.
 /14-db> javac -d bin src/[PROGRAM].java
 /14-db> java -cp bin:lib/* [PROGRAM]
 ```
-
