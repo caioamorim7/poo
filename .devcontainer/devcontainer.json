@@ -3,7 +3,6 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
- "postCreateCommand": "sudo iptables -P FORWARD ACCEPT",
   "runArgs": ["--privileged"],
   "customizations": {
     "vscode": {
