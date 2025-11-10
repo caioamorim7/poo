@@ -6,7 +6,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
-      PGPORT: 5431
     volumes:
       - pgdata:/var/lib/postgresql
     ports:
