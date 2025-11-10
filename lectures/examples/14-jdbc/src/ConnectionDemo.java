@@ -28,9 +28,18 @@ public class ConnectionDemo {
     }
     private static void connectToDatabase(String url, String usuario, String senha) {
         try (Connection conexao = DriverManager.getConnection(url, usuario, senha)) {
+            
             System.out.println("Conexão estabelecida com sucesso!");
-            System.out.println(conexao.getClientInfo());
-            System.out.println(conexao.getSchema());
+                                    
+            System.out.printf("- Servidor: %s%n", conexao.getMetaData().getURL());
+            System.out.printf("- Usuário: %s%n", conexao.getMetaData().getUserName());
+            System.out.printf("- Banco de dados: %s%n", conexao.getCatalog());            
+            System.out.printf("- Schema: %s%n", conexao.getSchema());
+            System.out.printf("- Driver: %s%n", conexao.getMetaData().getDriverName());
+            System.out.printf("- Versão do driver: %s%n", conexao.getMetaData().getDriverVersion());
+            System.out.printf("- Banco: %s%n", conexao.getMetaData().getDatabaseProductName());
+            System.out.printf("- Versão: %s%n", conexao.getMetaData().getDatabaseProductVersion());
+            
         } catch (SQLException e) {
             System.err.println("Erro na conexão: " + e.getMessage());
         }
