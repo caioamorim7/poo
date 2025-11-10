@@ -86,7 +86,12 @@ postgres=#  \password postgres
 Caso o comando `sudo -u postgres psql` solicite senha do root e você não tenha, alterar o tipo de conexão para `trust` executando o comando abaixo
 
 ```bash
-sudo nano /etc/postgresql/17/main/pg_hba.conf
+sudo nano /etc/postgresql/18/main/pg_hba.conf
+```
+
+- Verificar instalação
+```bash
+pg_config --version
 ```
 
 ### Opção 2: Instalar servidor PostgreSQL no Supabase
