@@ -9,7 +9,8 @@ services:
       PGPORT: 5431
     volumes:
       - pgdata:/var/lib/postgresql
-    network_mode: host
+    ports:
+      - "5432:5432"
 
   pgadmin:
     image: dpage/pgadmin4
@@ -17,10 +18,10 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_LISTEN_PORT: 8889
     depends_on:
       - db
-    network_mode: host
+    ports:
+      - "8089:80"
 
 volumes:
   pgdata:
