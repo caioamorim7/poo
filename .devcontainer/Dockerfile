@@ -41,6 +41,7 @@ SHELL ["bash", "-c"]
 
 # Instala Java 21 via SDKMAN
 RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && \
-    sdk install java 21.0.2-open
+    sdk install java 21.0.2-open && \
+    sdk install maven
     
 CMD ["bash"]
