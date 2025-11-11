@@ -10,47 +10,68 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class StatementSelectDemo {
+
+    private static String DATABASE_URL;
+    private static String USER;
+    private static String PASSWORD;
+
     public static void main(String[] args) {
-        Properties props = new Properties();
 
         try {
-            try (var inputStream = Files.newInputStream(Paths.get("db.properties"))) {
-                props.load(inputStream);
-            }
-        } catch (IOException e) {
-            System.err.println("Erro ao carregar arquivo de propriedades: " + e.getMessage());
-            return;
-        }
 
-        final String DATABASE_URL = props.getProperty("url");
-        final String USER = props.getProperty("user");
-        final String PASSWORD = props.getProperty("password");
+            loadDatabaseProperties();
         
-        final String SELECT_QUERY = "SELECT * FROM film";
+            try(
+                Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM ACTOR LIMIT 10")
+            ){
 
-        try (
-            Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SELECT_QUERY)
-        ) {
+                readResultSet(resultSet);
+                
+            } catch(SQLException sqlex) {
+                System.out.printf("Erro: %s%n", sqlex);
+            }
+        } catch (IOException ex) {
+            System.out.printf("Erro: %s%n", ex);
+        } 
+    }
+
+    private static void loadDatabaseProperties() throws IOException {
+
+        Properties props = new Properties();
+
+        var inputStream = Files.newInputStream(Paths.get("db.properties"));
+
+        props.load(inputStream);
+        
+        DATABASE_URL = props.getProperty("url");
+        USER =    props.getProperty("user");
+        PASSWORD =props.getProperty("password");
+       
+    }
+
+    private static void readResultSet(ResultSet resultSet) throws SQLException {
+
             ResultSetMetaData metaData = resultSet.getMetaData();
-            int numberOfColumns = metaData.getColumnCount();
 
-            System.out.printf("Tabela FILM do banco dvdrental:%n%n");
+            System.out.printf("Tabela ACTOR do banco dvdrental:%n%n");
+
+            int numberOfColumns = metaData.getColumnCount();
 
             for (int i = 1; i <= numberOfColumns; i++) {
                 System.out.printf("%-20s\t", metaData.getColumnName(i));
             }
+
             System.out.println();
 
             while (resultSet.next()) {
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    System.out.printf("%-8s\t", resultSet.getObject(i));
+                    System.out.printf("%-20s\t", resultSet.getObject(i));
                 }
                 System.out.println();
             }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
+
+            System.out.println();
     }
 }
