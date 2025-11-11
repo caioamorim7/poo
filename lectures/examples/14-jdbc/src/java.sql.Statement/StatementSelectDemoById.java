@@ -26,6 +26,7 @@ public class StatementSelectDemoById {
 
         loadDatabaseProperties();
 
+        buildSQLCommand();
         try (
             Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
             Statement statement = connection.createStatement();
