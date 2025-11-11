@@ -67,10 +67,10 @@ Descreva o uso de PreparedStatements para aumentar a segurança e eficiência da
 3. Mostre um exemplo de consulta usando `LIKE` com parâmetros.
 ```
 
-### Procedures Armazenadas
+### Stored Procedures
 
 ```
-Mostre como chamar procedures armazenadas no banco usando JDBC.
+Mostre como chamar stored procedures no banco usando JDBC.
 1. O que é CallableStatement?
 2. Mostre um exemplo de chamada de procedure com parâmetros de entrada e saída.
 ```
