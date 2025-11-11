@@ -1,0 +1,64 @@
+@startuml "jdbc-api"
+title JDBC API Overview
+
+package "java.sql" {
+  
+  class DriverManager {
+    +getConnection(url, user, password): Connection
+  }
+
+  interface Connection {
+    +createStatement(): Statement
+    +prepareStatement(sql): PreparedStatement
+    +prepareCall(String sql): CallableStatement
+    +getMetaData(): DatabaseMetaData
+    +close(): void
+    +commit(): void
+    +rollback(): void
+  }
+
+  interface Statement {
+    +close(): void
+    +execute(sql): boolean
+    +executeQuery(sql): ResultSet
+    +executeUpdate(sql): int
+    +excuteBatch(): int[]
+  }
+
+  interface PreparedStatement extends Statement {
+    +executeQuery(): ResultSet
+    +executeUpdate(): int
+    +executeBatch(): int[]
+    +setXXX(index, value)
+  }
+
+  interface CallableStatement extends PreparedStatement {
+
+  }
+
+  interface ResultSet {
+    +close(): void
+    +deleteRow(): void
+    +first(): boolean
+    +last(): boolean
+    +next(): boolean
+    +previous(): boolean
+    +insertRow(): void
+    +getMetaData(): ResultSetMetaData
+    +getXXX(column)
+    +close()
+  }
+
+  interface ResultSetMetaData {
+    +getColumnCount(): int
+    +getColumnType(int column): int
+  }
+
+  class SQLException {
+    +getErrorCode(): int
+    +getSQLState(): String
+    +getMessage(): String
+  }
+}
+
+@enduml
