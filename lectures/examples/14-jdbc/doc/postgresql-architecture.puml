@@ -31,8 +31,8 @@ node "Aplicação Java" as javaApp {
 note bottom: Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);\nStatement statement = connection.createStatement();\nResultSet resultSet = statement.executeQuery("SELECT * FROM ACTOR LIMIT 10")
 
 rectangle "Servidor PostgreSQL\n(opções de conexão)" as pg {
-  database "Localhost" as local
-  database "Docker Container" as docker
+  database "Máquina\nLocal" as local
+  database "Máquina Local\n com docker" as docker
   cloud "Supabase (Cloud)" as supabase
   note bottom of local:  endereço (host):localhost\nporta: 5432\nusuário: postgres\nsenha
 }
