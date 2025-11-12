@@ -15,16 +15,23 @@ public class StatementSelectOrderByDemo {
         try (Connection conn = DriverManager.getConnection(
                 props.getProperty("url"), props.getProperty("user"), props.getProperty("password"))) {
 
-            String sql = "SELECT category_id, name, last_update FROM category ORDER BY category_id";
+            String sql = """
+                            SELECT  actor_id,
+                                    first_name,
+                                    last_name 
+                            FROM    actor
+                            ORDER BY last_update DESC
+                            LIMIT 10;
+                        """;
             
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery(sql)) {
 
                 while (rs.next()) {
-                    System.out.printf("ID: %-3d | Nome: %-20s | Atualizado em: %s%n",
-                            rs.getInt("category_id"),
-                            rs.getString("name"),
-                            rs.getTimestamp("last_update"));
+                    System.out.printf("ID: %-3d | Nome: %-20s | Sobrenome: %s%n",
+                            rs.getInt("actor_id"),
+                            rs.getString("first_name"),
+                            rs.getString("last_name"));
                 }
             }
         }

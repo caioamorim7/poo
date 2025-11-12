@@ -10,7 +10,7 @@ public class EmployeeBinarySerializationApp {
     public static void main(String[] args) {
         Employee e = new Employee("Fabrico", "Santana", "123456" );
 
-        try (OutputStream outputStream = Files.newOutputStream(Path.of("data/employee.txt"))){
+        try (OutputStream outputStream = Files.newOutputStream(Path.of("data/employee.ser"))){
 
             ObjectOutputStream objectStream = new ObjectOutputStream(outputStream);
 

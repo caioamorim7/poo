@@ -11,8 +11,8 @@ public class ConnectionDataSourceDemo {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
 
         dataSource.setServerNames(new String[] {"localhost"});
-        dataSource.setPortNumbers(new int[] {5432});
-        dataSource.setDatabaseName("postgres");
+        dataSource.setPortNumbers(new int[] {5431});
+        dataSource.setDatabaseName("dvdrental");
         dataSource.setUser("postgres");
         dataSource.setPassword("postgres");
 
