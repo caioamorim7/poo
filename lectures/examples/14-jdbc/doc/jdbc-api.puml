@@ -17,6 +17,12 @@ package "java.sql" {
     +rollback(): void
   }
 
+  interface ConnectionBuilder {
+    +user(String username): ConnectionBuilder
+    +password(String password): ConnectionBuilder
+    +build(): Connection
+  }
+
   interface Statement {
     +close(): void
     +execute(sql): boolean
@@ -58,6 +64,26 @@ package "java.sql" {
     +getErrorCode(): int
     +getSQLState(): String
     +getMessage(): String
+  }
+}
+
+package "javax.sql" {
+
+  interface CommonDataSource {
+    +getLoginTimeout(): int
+    +setLoginTimeout(int seconds): void
+  }
+
+  interface DataSource extends CommonDataSource {
+    +getConnection(): Connection
+    +getConnection(String username, String password): Connection
+    +createConnectionBuilder(): ConnectionBuilder
+  }
+
+  interface ConnectionPoolDataSource extends CommonDataSource {
+    +getPooledConnection(): PooledConnection
+    +getPooledConnection(String username, String password): PooledConnection
+    +createPooledConnectionBuilder(): 
   }
 }
 
