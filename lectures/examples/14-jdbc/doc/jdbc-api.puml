@@ -17,6 +17,12 @@ package "java.sql" {
     +rollback(): void
   }
 
+  interface ConnectionBuilder {
+    +user(String username): ConnectionBuilder
+    +password(String password): ConnectionBuilder
+    +build(): Connection
+  }
+
   interface Statement {
     +close(): void
     +execute(sql): boolean
@@ -60,5 +66,38 @@ package "java.sql" {
     +getMessage(): String
   }
 }
+
+package "javax.sql" {
+
+  interface CommonDataSource {
+    +getLoginTimeout(): int
+    +setLoginTimeout(int seconds): void
+  }
+
+  interface DataSource extends CommonDataSource {
+    +getConnection(): Connection
+    +getConnection(String username, String password): Connection
+    +createConnectionBuilder(): ConnectionBuilder
+  }
+
+  interface ConnectionPoolDataSource extends CommonDataSource {
+    +getPooledConnection(): PooledConnection
+    +getPooledConnection(String username, String password): PooledConnection
+    +createPooledConnectionBuilder(): 
+  }
+}
+
+
+package "org.postgresql.ds" {
+
+  package "org.postgresql.ds.common" {
+    abstract class BaseDataSource implements javax.sql.CommonDataSource {
+    }
+  }
+
+  class PGSimpleDataSource extends common.BaseDataSource implements javax.sql.DataSource
+  class PGConnectionPoolDataSource extends common.BaseDataSource implements javax.sql.ConnectionPoolDataSource
+}
+
 
 @enduml

@@ -183,7 +183,7 @@ password=[PASSWORD]
 ```bash
 /14-db> mkdir lib
 /14-db> cd lib/
-/14-db/lib> wget https://jdbc.postgresql.org/download/postgresql-42.7.6.jar
+/14-db/lib> wget https://jdbc.postgresql.org/download/postgresql-42.7.8.jar
 ```
 
 - Compilar e rodar programa
