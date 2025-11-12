@@ -1,6 +1,7 @@
-package submissions.<nome-sobrenome>.src;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.TreeSet;
 
 public class HashSetApp {
     public static void main(String[] args) {
