@@ -1,6 +1,8 @@
-package submissions.<nome-sobrenome>.src;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class LinkedListApp {
     public static void main(String[] args) {
