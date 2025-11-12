@@ -1,4 +1,4 @@
-import org.postgresql.ds.PGPoolingDataSource;
+import org.postgresql.ds.PGConnectionPoolDataSource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ConnectionPoolDataSourceDemo {
     public static void main(String[] args) {
     
-        PGPoolingDataSource dataSource = new PGPoolingDataSource();
+        PGConnectionPoolDataSource dataSource = new PGConnectionPoolDataSource();
 
         dataSource.setServerNames(new String[] {"localhost"});
         dataSource.setPortNumbers(new int[] {5431});

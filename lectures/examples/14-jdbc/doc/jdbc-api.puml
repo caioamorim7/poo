@@ -87,4 +87,17 @@ package "javax.sql" {
   }
 }
 
+
+package "org.postgresql.ds" {
+
+  package "org.postgresql.ds.common" {
+    abstract class BaseDataSource implements javax.sql.CommonDataSource {
+    }
+  }
+
+  class PGSimpleDataSource extends common.BaseDataSource implements javax.sql.DataSource
+  class PGConnectionPoolDataSource extends common.BaseDataSource implements javax.sql.ConnectionPoolDataSource
+}
+
+
 @enduml
