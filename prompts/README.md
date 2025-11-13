@@ -1,13 +1,16 @@
 Neste prompt, considera o valor das seguinte variáveis e substitua em seu local correspondente
 
 {
-	"Tópico Principal": "Introdução à plataforma Java"
+	"Tópico Principal": ""
 	"Tópicos a serem cobertos": 
-						"Histórico e evolução da plataforma Java",
-						"Características da linguagem Java e sua relação com POO",
-						"Principais ferramentas da plataforma Java",
-						"Estrutura básica de um programa em Java."
-						"Relação de linguagem de máquina, linguagem assembly, linguagem de alto nível e Java"
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						""
 }
  
 Prompt Gerador de Guias de Estudo Genérico
