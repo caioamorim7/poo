@@ -1,84 +1,55 @@
-## Acesso a banco de dados com JDBC
+# Acesso a banco de dados em Java com JDBC
 
-### Introdução aos Bancos de Dados Relacionais
+## Introdução aos Bancos de Dados Relacionais
 
-```
-Explique o que é um banco de dados relacional e por que ele é amplamente utilizado em sistemas de informação.
-1. Como os dados são organizados em um banco relacional?
-2. O que são chaves primárias e estrangeiras?
-3. Compare bancos relacionais com bancos orientados a documentos.
-```
+- Defina banco de dados relacional, explique o modelo de tabelas/linhas/colunas e justifique por que ele permanece dominante em sistemas corporativos.
+- Compare entre bancos relacionais e bancos NoSQL (documentos, chave-valor), destacando vantagens e limitações de cada abordagem em cenários distintos.
+- Gere um esquema simples (tabelas Livro, Autor, Editora) com chaves primárias/estrangeiras, incluindo um diagrama textual ou descrição formal.
+- Identifique entidades, relacionamentos e regras de integridade indispensáveis para o desenvolvimento de uma livraria on-line
+- Explique por que integridade referencial evita inconsistências e quais sinais indicam a necessidade de revisar o modelo.
 
-### Banco de dados
+## Introdução ao JDBC
 
-```
-Descreva uma estrutura de banco de dados de exemplo para armazenar dados sobre livros.
-1. Quais são as tabelas e suas colunas principais?
-2. Explique como as tabelas se relacionam?
-3. O que é integridade referencial e como ela se aplica à base?
-```
+- Explique o papel do JDBC na pilha Java, sua arquitetura de drivers e como ele abstrai BDs distintos.
+- Gere um snippet mínimo que carrega o driver e imprime a versão suportada, comentando cada linha.
 
-### Instruções SQL Básicas
+## Principais classes da JDBC API para acesso a banco de dados
+- Descreva os papéis de `DriverManager`, `DataSource`, `Connection`, `Statement`, `PreparedStatement`, `CallableStatement` e `ResultSet`.
+- Compare o uso de `DriverManager` vs `DataSource` em termos de pooling e configuração corporativa.
+- Crie diagrama textual mostrando o ciclo de vida de uma consulta (obter conexão → criar statement → executar → processar resultado → fechar recursos).
+- Implemente uma classe utilitária `JdbcUtils` que centraliza obtenção e fechamento seguro de recursos, detalhando métodos e responsabilidades.
 
-```
-Mostre como usar SQL para consultar e modificar dados em uma base relacional.
-1. Escreva um exemplo de SELECT que retorne colunas específicas de uma tabela do banco de dados.
-2. Use a cláusula WHERE para filtrar registros.
-3. Apresente como ordenar livros usando ORDER BY.
-4. Explique o conceito de JOIN e demonstre como utilizá-lo na prática
-5. Faça um INSERT para criar novos registros.
-6. Atualize registros usando UPDATE.
-7. Remova registros com DELETE.
-```
+## Como conectar a um banco de dados
+- Explique o formato e papel da URL JDBC, propriedades (usuário, senha, timezone) e etapas para abrir conexões.
+- Discuta o uso de `DataSource` com pools e implicações de thread-safety.
+- Gere um código completo que lê credenciais de um arquivo de propriedades estabelece conexão segura.
+- Descreva os passos para configurar conexão local com PostgreSQL, listando comandos e testes de verificação.
+- Como uma aplicação que precisa alternar entre ambientes (dev/stage/prod) pode ser parametrizada.
+- Descrever como garantir e confirmar que todas as conexões são fechadas mesmo após exceções.
 
-### Conexão com o Banco via JDBC
+## Como executar comandos SQL (seleção, inserção, atualização e deleção)
+- Explique as operações DQL e DML e quando preferir `Statement` ou `PreparedStatement`.
+- Compare entre execução síncrona e batch, com impactos em performance e atomicidade.
+- Gere código que execute SELECT/INSERT/UPDATE/DELETE em uma mesma classe, com tratamento de erros.
+- Implemente batch insert com PreparedStatement, medindo ganho de desempenho e relatando resultados.
+- Identifique erros comuns (SQL injection, falta de parâmetros) e explique como evitá-los.
 
-```
-Mostre como conectar uma aplicação Java a um banco de dados relacional usando JDBC.
-1. Escreva um código Java simples que se conecta ao banco.
-2. Como o JDBC descobre automaticamente o driver?
-3. Como criar um Statement e executar uma consulta?
-```
+## Como processar os resultados de uma query
+- Explique o papel e funcionamento do cursor, posicionamento no `ResultSet` e tipos (`TYPE_FORWARD_ONLY`, etc.).
+- Compare entre `ResultSet` conectados e `RowSet` desconectados, com critérios de escolha.
+- Gere código que percorre `ResultSet`, converte em objetos de domínio e trata valores nulos.
+- Construa um mapper genérico (`ResultSet` → DTO) e demostre como usar em diferentes consultas.
+- Que abordagem pode ser adotada para paginação no backend, demonstre uma abordagem com `LIMIT/OFFSET` e `ResultSet` rolável.
+- Como evitar `ResultSet` aberto sem fechamento
+- Elabore um checklist de boas práticas.
 
-### Leitura de Dados com ResultSet
+## O que é controle de transação
+- Definar o que é controle de  de transação, propriedades ACID e diferencie commits automáticos e manuais.
+- Explique sobre níveis de isolamento (READ COMMITTED, REPEATABLE READ, SERIALIZABLE).
+- Explique e demostre efeitos de dirty read alterando o isolamento.
+- Quais propriedades ACID considera mais desafiadoras de manter e por quê.
 
-```
-Descreva como o JDBC processa os resultados de uma consulta.
-1. Como iterar sobre um ResultSet?
-2. Como recuperar os dados por nome de coluna?
-3. O que é ResultSetMetaData e como ele pode ser usado?
-```
-
-### RowSet e Conexões Simplificadas
-
-```
-Apresente o uso da interface RowSet para facilitar o trabalho com bancos.
-1. Qual a diferença entre JdbcRowSet e CachedRowSet?
-2. Mostre como configurar e executar um JdbcRowSet.
-3. Como a serialização de CachedRowSet pode ser útil?
-```
-
-### Uso de PreparedStatements
-
-```
-Descreva o uso de PreparedStatements para aumentar a segurança e eficiência das consultas.
-1. Escreva uma consulta parametrizada que insere um registro em uma tabela.
-2. Como setar os valores dos parâmetros?
-3. Mostre um exemplo de consulta usando `LIKE` com parâmetros.
-```
-
-### Stored Procedures
-
-```
-Mostre como chamar stored procedures no banco usando JDBC.
-1. O que é CallableStatement?
-2. Mostre um exemplo de chamada de procedure com parâmetros de entrada e saída.
-```
-
-### Processamento de Transações
-
-```
-Explique como o processamento de transações garante consistência nos bancos relacionais.
-1. O que são transações e quais suas propriedades (ACID)?
-2. Mostre um exemplo com `setAutoCommit(false)` e uso de `commit` e `rollback`.
-```
+## Como implementar controle de transação em Java
+- Detalhe o fluxo `setAutoCommit(false)`, `commit()` e `rollback()`, além de blocos try-with-resources.
+- Analise quando usar `Savepoint` e como lidar com exceções verificadas/não verificadas dentro da transação.
+- Gere um exemplo completo de transferência bancária com rollback em caso de exceção.
