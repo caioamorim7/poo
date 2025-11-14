@@ -5,6 +5,11 @@ RUN apt-get update && \
     apt-get install -y curl zip unzip git-lfs && \
     git lfs install
 
+# Instala Node.js 24.x fixo e habilita pnpm via Corepack
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && \
+    apt-get install -y nodejs && \
+    corepack enable
+
 # Instala Docker Engine, CLI, Buildx e Compose dentro do container
 RUN apt-get update && \
     apt-get install -y ca-certificates gnupg lsb-release && \
