@@ -1,6 +1,7 @@
-package submissions.<nome-sobrenome>.src;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ArrayListApp {
     public static void main(String[] args) {

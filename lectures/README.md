@@ -18,6 +18,7 @@ Nesta página você encontra:
 | 10 | [Arrays](https://1drv.ms/p/s!Avnn2LcOmn0Y31mEsDxOHyKDT0OE?e=QwcIjL) | [Análise de código arrays](../lectures/examples/07-arrays) <br> |
 | 11 | [ArrayList](https://1drv.ms/p/c/187d9a0eb7d8e7f9/Efnn2LcOmn0ggBjZLwAAAAABx1Nmn4wiFopjTu1n-YYpmw?e=YltGd9) | |
 | 12 | [Tratamento de Exceções](https://fabriciosantana.github.io/poo/11-exception/) | |
+| 16 | [Acesso a banco de dados com JDBC](https://fabriciosantana.github.io/poo/14-jdbc) | |
 
 ### Slides apresentados em sala (em revisão)
 |#|Conteúdo|Atividade em sala|
@@ -28,4 +29,4 @@ Nesta página você encontra:
 | 12 | Continuação aula anterior |  |
 | 14 | [Manipulação de arquivos em Java](https://1drv.ms/p/c/187d9a0eb7d8e7f9/ER83TNCSyDBEu5m2MiR-xDkBBf8nV7BOBS-IKMNyMY0WjQ?e=ZJDNe6) |  |
 | 15 | [Coleçõs genéricas](https://1drv.ms/p/c/187d9a0eb7d8e7f9/EYbQH0A4WUREhFlr7dQgdX8BhAmNnLaPjFtbud52zOkO6A?e=uXVltt) | | |
-| 16 | [Acesso a banco de dados com JDBC](https://1drv.ms/p/c/187d9a0eb7d8e7f9/Ebv94zl9O3JGjhrduoLS7K8BATDf6PXG1u1_53KiJtAiEw?e=szXO1i) | |
+
