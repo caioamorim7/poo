@@ -16,9 +16,12 @@ goals:
 
 ## Conceitos básicos de banco de dados
 
-- **Banco de Dados (_Database_**): repositório estruturado que armazena dados relacionados e versionados
-- **_Database Management System (DBMS)_**: software que controla armazenamento, segurança, concorrência e exposição dos dados
-- Finalidade de bancos relacionais: 
+- **Banco de Dados (_Database_**)
+    - coleção organizada de dados
+    - repositório estruturado que armazena dados relacionados
+- **_Database Management System (DBMS)_**
+    - software que controla armazenamento, segurança, concorrência e exposição dos dados
+- Finalidade de bancos relacionais
     - persistir dados
     - permitir recuperação de dados
     - garantir consistência
@@ -80,7 +83,7 @@ LIMIT 5;
 
 ## Introdução do JDBC
 
-- Java Database Connectivity (JDBC) é uma API para acesso a banco de dados relacionais
+- **_Java Database Connectivity_** (JDBC) é uma API para acesso a banco de dados relacionais
 - Pacote **java.sql** define principais interfaces de acesso a banco de dados
     - [java.sql.DriverManager](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/DriverManager.html)
     - [java.sql.DataSource](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/javax/sql/DataSource.html)
