@@ -2,8 +2,6 @@
 
 Referência: [String](https://en.wikipedia.org/wiki/String_(computer_science))
 
-Neste desafio, você deve encontrar e corrigir bugs no programa que recebe uma string como entrada e retorna a string invertida.
-
 ---
 
 #### Especificação
