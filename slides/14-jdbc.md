@@ -3,7 +3,7 @@ layout: frontcover
 transition: none
 title: IDP - POO
 id: aula14
-lesson: Integração com banco de dados via JDBC
+lesson: Acesso a banco de dados via JDBC
 goals:
   - Revisar fundamentos de tabelas relacionais e comandos SQL
   - Conectar-se via driver JDBC conhecido e gerenciar recursos com segurança
