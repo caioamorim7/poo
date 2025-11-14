@@ -98,6 +98,16 @@ LIMIT 5;
 
 ## Principais interfaces e métodos da JDBC API
 
+<FigureWithCaption 
+  src="images/jdbc-api.png" 
+  alt="Principais interfaces e métodos da JDBC API"
+  link=""
+/>
+
+---
+
+## Principais interfaces e métodos da JDBC API
+
 - **java.sql.DriverManager**
   - getConnection(String url, String user, String password)
 - Formato da URL JDBC
