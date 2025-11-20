@@ -5,54 +5,69 @@ title: IDP - POO
 id: aula14
 lesson: Acesso a banco de dados via JDBC
 goals:
-  - Revisar fundamentos de tabelas relacionais e comandos SQL
-  - Conectar-se via driver JDBC conhecido e gerenciar recursos com segurança
-  - Executar operações SQL (Statement, PreparedStatement, CallableStatement)
+  - Revisar conceitos de banco de dados relacionaos e comandos SQL
+  - Conhecer a API Java Database Connectivity (JDBC)
+  - Compreender as etapas de conexão ao banco de dados via driver JDBC
+  - Executar operações SQL via JDBC
   - Processar resultados, extrair metadados e controlar transações
 ---
 
 ---
-layout: default
-lesson: Roteiro
+
+## Conceitos básicos de banco de dados
+
+- **Banco de Dados (_Database_**)
+    - coleção organizada de dados
+    - repositório estruturado que armazena dados relacionados
+- **_Database Management System (DBMS)_**
+    - software que controla armazenamento, segurança, concorrência e exposição dos dados
+- Finalidade de bancos relacionais
+    - persistir dados
+    - permitir recuperação de dados
+    - garantir consistência
+    - controlar acessos
+
 ---
 
-- Por que bancos relacionais continuam relevantes no backend Java
-- Fluxo JDBC: driver, `DriverManager`/`DataSource`, `Connection`
-- Boas práticas para carregar propriedades e fechar recursos
-- Criação e execução de statements (consulta, escrita, procedures)
-- Customização de `ResultSet`, metadados e capacidades do SGBD
-- Transações e consistência dos dados na prática (commit/rollback)
+## Conceitos básicos de banco de dados
 
----
-layout: default
-lesson: Banco de dados e DBMS
----
-
-- `database`: repositório estruturado que armazena dados relacionados e versionados
-- `database management system (DBMS)`: software que controla armazenamento, segurança, concorrência e exposição dos dados
-- Finalidade de bancos relacionais: controlar acessos, manter os dados íntegros/consistentes e permitir consultas flexíveis
 - Tipos clássicos:
-  - Hierarchical — dados em árvore (parent/child)
-  - Network — registros conectados em grafo
-  - Object — objetos persistidos com atributos e métodos
-  - Relational — tabelas com chaves e restrições declarativas
-- Os relacionais prevalecem por combinarem integridade referencial, linguagem padrão (SQL) e tooling maduro para auditoria e segurança
+  - **_Relational_**: dados em tabelas com chaves e restrições declarativas
+  - **_Hierarchical_**: dados em árvore (parent/child)
+  - **_Network_**: dados em grafo, registros conectados em grafo
+  - **_Object_**: objetos persistidos com atributos e métodos
+  - **_Relational_**: dados em tabelas com chaves e restrições declarativas
+- Os **bancos de dados relacionais** prevalecem por combinarem integridade referencial, linguagem padrão (SQL) e feramentas maduras para auditoria e segurança
 
 ---
-layout: default
-lesson: Introdução ao modelo relacional
+
+## Conceitos básicos de banco de dados relacionais
+
+- Tabelas (**_relations_**/**_entities**): representam entidades; colunas (atributos) são tipadas e linhas (tuplas) guardam valores
+- Restrições (**PRIMARY KEY**, **FOREIGN KEY**, **UNIQUE**, **CHECK**): preservam a integridade e descrevem relações
+- **_Structured Query Language_** (**SQL**): descreve o que precisamos recuperar/modificar
+- Operações CRUD em Java refletem comandos **SQL** executados via **JDBC**
+    - **_Create_**: INSERT
+  	- **_Read_**: SELECT
+  	- **_Update_**: UPDATE
+  	- **_Delete_**: DELETE
+
 ---
 
-- Tabelas (`relations`) representam entidades; colunas (atributos) são tipadas e linhas (tuplas) guardam valores
-- Restrições (`PRIMARY KEY`, `FOREIGN KEY`, `UNIQUE`, `CHECK`) preservam a integridade e descrevem relações
-- Cada atributo possui domínio (tipo SQL) e regras de nulidade; ver diagrama `lectures/examples/14-jdbc/doc/postgresql-architecture.png`
-- Structured Query Language (SQL) descreve o que precisamos recuperar/modificar; o otimizador escolhe o plano
-- Operações CRUD em Java refletem comandos SQL executados via JDBC
+## Conceitos básicos de banco de dados relacionais
+
+- **_Data Manipulation Language (DML)_**: 
+    - SELECT, INSERT, UPDATE, DELETE
+- **_Data Definition Language (DDL)_**: 
+    - CREATE TABLE, ALTER TABLE, DROP
+- **_Transaction Control Language (TCL)_**: 
+    - COMMIT, ROLLBACK, SAVEPOINT
 
 ---
-layout: default
-lesson: SQL em ação
----
+
+## Conceitos básicos de banco de dados relacionais
+
+- ANSI (American National Standards Institute) mantém o SQL standard: maior portabilidade entre fornecedores
 
 ```sql
 SELECT f.film_id, f.title, c.name AS category
@@ -64,78 +79,123 @@ ORDER BY f.release_year DESC
 LIMIT 5;
 ```
 
-- ANSI (American National Standards Institute) mantém o SQL standard → maior portabilidade entre fornecedores
-- Diagramas como `lectures/examples/14-jdbc/doc/postgresql-sequence.png` ajudam a enxergar o relacionamento antes de escrever consultas
-- 👉 Dominar SQL padronizado torna mais simples mapear as operações para a JDBC API (próximo slide)
-
----
-layout: default
-lesson: SQL e categorizações
 ---
 
-- **DML (Data Manipulation Language)**: `SELECT`, `INSERT`, `UPDATE`, `DELETE` — manipula linhas existentes
-- **DDL (Data Definition Language)**: `CREATE TABLE`, `ALTER TABLE`, `DROP` — cria e altera estruturas
-- **TCL (Transaction Control Language)**: `COMMIT`, `ROLLBACK`, `SAVEPOINT` — controla atomicidade
-- Operações CRUD (`Create`, `Read`, `Update`, `Delete`) conectam a camada de serviço Java aos comandos DML correspondentes
-- Scripts DDL versionados (Flyway, Liquibase) combinados com DML controlado permitem reproduzir ambientes de forma consistente
-- Esses blocos se traduzem diretamente em métodos da JDBC API (DML ↔ `PreparedStatement.executeUpdate`, TCL ↔ `Connection.commit/rollback`)
+## Introdução do JDBC
+
+- **_Java Database Connectivity_** (JDBC) é uma API para acesso a banco de dados relacionais
+- Pacote **java.sql** define principais interfaces de acesso a banco de dados
+    - [java.sql.DriverManager](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/DriverManager.html)
+    - [java.sql.DataSource](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/javax/sql/DataSource.html)
+    - [java.sql.Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/Connection.html)
+    - [java.sql.Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/Statement.html): executa SQL estático (sem parâmetros)
+    - [java.sql.PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/PreparedStatement.html): executa comando SQL pré-compilado com placeholders (**?**)
+    - [java.sql.CallableStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/CallableStatement.html): chama **stored procedures** ou **functions** com parâmetros de entrada e saída (**IN**/**OUT**)
+    - [java.sql.ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/ResultSet.html): cursor que permite percorrer dados retornados
+    - [java.sql.SQLException](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/SQLException.html)
 
 ---
-layout: default
-lesson: JDBC API
+
+## Principais interfaces e métodos da JDBC API
+
+<FigureWithCaption 
+  src="images/jdbc-api.png" 
+  alt="Principais interfaces e métodos da JDBC API"
+  link=""
+/>
+
 ---
 
-- JDBC (Java Database Connectivity) viabiliza develop Java applications that use a relational database
-- Pacote `java.sql` define interfaces centrais: `DriverManager`, `Connection`, `Statement`, `PreparedStatement`, `CallableStatement`, `ResultSet`, `SQLException`
-- JDBC drivers (PostgreSQL, Oracle, MySQL) são bibliotecas que traduzem chamadas JDBC para o protocolo nativo do SGBD
+## Principais interfaces e métodos da JDBC API
+
+- **java.sql.DriverManager**
+  - getConnection(String url, String user, String password)
+- Formato da URL JDBC
+```bash
+protocol:provider:driver_type:database_specific_connection_details`
+```
+- Exemplo:
+```
+jdbc:postgresql://localhost:5432/dvdrental
+```
+
+- **java.sql.Connection**
+  - createStatement, prepareStatement, prepareCall, setAutoCommit, commit, rollback, setTransactionIsolation, close
+ 
+- Centralize informações de conexão em arquivo ou variáveis de ambiente
+
+---
+
+## Principais interfaces e métodos da JDBC API
+
+- **java.sql.Statement**
+    - **executeQuery**, **executeUpdate**, **execute**, **setFetchSize**
+- **java.sql.PreparedStatement**
+    - **setString**, **setInt**, **setObject**, **addBatch**, **executeUpdate**
+- **java.sql.CallableStatement**
+    - **registerOutParameter**, **setObject**, **getObject**, **execute**
+- **java.sql.ResultSet**
+    - Navegação **next/previous**
+    - Leitura **getString/getInt**, **close**
+    - Atualização **updateString**, **updateInt**, **updateRow**
+
+---
+
+## Introdução do JDBC
+
+- **JDBC drivers** são bibliotecas que traduzem chamadas JDBC para o protocolo nativo do banco de dados
+    - PostgreSQL, Oracle, MySQL
 - Passos para conectar:
-  1. Ensure that the relevant JDBC driver esteja no *classpath* ou *module path*
-  2. Load the JDBC driver to memory (drivers modernos se registram automaticamente)
-  3. Establish the database connection via `DriverManager.getConnection` ou um `DataSource`
+    - Certifique-se de que o driver JDBC esteja no **classpath**
+    - Estabeleça a conexão com o banco de dados via **DriverManager.getConnection** ou **DataSource**
 - Após a conexão:
-  1. Create SQL statements
-  2. Execute SQL statements
-  3. Process query results
-  4. Close the JDBC resources
-- Entender essa sequência ajuda a diagnosticar gargalos e a compor camadas de acesso a dados (DAO/Repository)
+    - Crie instruções SQL: use **Statements**, **PreparedStatements** ou **CallableStatements**
+    - Execute instruções SQL
+    - Processe os resultados da consulta: **ResultSet**
+    - Feche os recursos JDBC: prefira usar bloco **try-with-resources**
 
 ---
-layout: default
-lesson: Driver e fluxo de conexão
----
 
-![Fluxo JDBC](../lectures/examples/14-jdbc/doc/connection-flow.png)
+## Estrutura básica
 
-1. A aplicação faz load do driver específico (PostgreSQL, MySQL, etc.)
-2. `DriverManager` (ou um `DataSource` de pool) media a criação de `Connection`
-3. A conexão entrega objetos `Statement`/`PreparedStatement` para executar SQL
-4. O SGBD responde com `ResultSet` ou contagem de linhas
+- Estrutura de um programa java que realiza operações em banco de dados
 
-Boas práticas:
-- Dependências JDBC no *classpath* (Maven/Gradle) + `db.properties` ou variáveis de ambiente para credenciais
-- Teste de conectividade isolado antes de habilitar operações de escrita
-- Documente requisitos (driver version, string de conexão) no repositório
-
----
-layout: default
-lesson: Connection, DriverManager e URL
----
-
-- `java.sql.DriverManager`
-  - `getConnection(String url, String user, String password)` e variações com `Properties`
-  - Seleciona o driver registrado que reconhece o prefixo `jdbc:<sgbd>`
-- `java.sql.Connection`
-  - Métodos essenciais: `createStatement`, `prepareStatement`, `prepareCall`, `setAutoCommit`, `commit`, `rollback`, `setTransactionIsolation`, `close`
-  - Pode expor recursos extras via `unwrap` para drivers específicos
-- URL JDBC segue `protocol:provider:driver_type:database_specific_connection_details`
-  - Ex.: `jdbc:postgresql://localhost:5432/dvdrental?currentSchema=public&sslmode=disable`
-  - Configure parâmetros de timezone, schema e SSL conforme o ambiente
-- Centralize a URL em `db.properties` ou variáveis de ambiente para evitar recompilações ao mudar hosts/credenciais
+```java
+try {
+    /* establish database connection     */
+    /* create and execute SQL statements */
+    /* process results                   */
+} catch (SQLException e) {
+    /* handle any errors */
+} finally {
+    /* close result sets */
+    /* close statements  */
+    /* close connection  */
+}
+```
 
 ---
-layout: default
-lesson: Configuração segura
+
+## Estutura com try-with-resources
+
+- Use **try-with-resources** desde a abertura da conexão para garatia de fechamento dos recursos
+    - dispensa uso de **finally** e previne vazamento (_leaks_)
+
+```java
+try (/* establish database connection     */
+     /* create and execute SQL statements */) {
+    /* process results */
+} catch (SQLException e) {
+    /* handle any exceptions */
+} // implicit finally block closes resources
+```
+
 ---
+
+## Exemplo com Properties
+
+- Uso da classe [**java.util.Properties**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html) evita deixar informações sensíveis no código
+
 
 ```java
 // DvdRentalApp.java
@@ -152,40 +212,14 @@ try (Connection conn = DriverManager.getConnection(url, user, password)) {
     System.out.println("Conectado!");
 }
 ```
-
-- `Properties` evita *hardcode* de segredos; versionar somente `db.properties.sample`
-- Use `try-with-resources` desde a abertura da conexão → fechamento garantido
-- Em produção, prefira `DataSource` com pool (HikariCP, DBCP) e segredos em cofre/ENV
-
----
-layout: default
-lesson: Gerenciando recursos
 ---
 
-- JDBC expõe interfaces autocloseable (`Connection`, `Statement`, `ResultSet`)
-- `try-with-resources` encadeado elimina *finally* verboso e previne *leaks*
-- Em APIs com latência/volume, configure `setNetworkTimeout`, `setReadOnly`, `setAutoCommit`
-- Sequência típica:
-  1. Abre conexão
-  2. Prepara statement
-  3. Executa
-  4. Processa `ResultSet`
-  5. *Commit*/*rollback* se necessário
+## Exemplo de tratamento de exceção
 
-```java
-try (Connection conn = dataSource.getConnection();
-     PreparedStatement ps = conn.prepareStatement(SQL)) {
-    // ...
-} catch (SQLException ex) {
-    log.error("Erro JDBC", ex);
-}
-```
-
----
-layout: default
-lesson: Tratamento de exceções
----
-
+- Trate comportamentos inesperados com exceções
+- **SQLException** é a superclasse de todas as exceções do JDBC
+    - oferece getSQLState, getErrorCode e getNextException para identificar a origem do problema
+    
 ```java
 try {
     /* execute JDBC operations */
@@ -195,59 +229,36 @@ try {
 }
 ```
 
+---
+
+## Exemplo com Statement
+
+1. **DriverManager.getConnection()** cria a **Connection**
+2. **connection.createStatement()** fornece o **Statement**
+3. Formule o comando SQL (strings constantes ou construídas dinamicamente)
+4. Execute o comando SQL com **executeQuery**, **executeUpdate** ou **execute**
+
 ```java
-try {
-    /* establish database connection     */
-    /* create and execute SQL statements */
-    /* process results                   */
+try (Connection connection = DriverManager.getConnection(jdbcURL); // (1)
+     Statement statement = connection.createStatement()) {          // (2)
+    String sql = "SELECT * FROM film ORDER BY title";               // (3)
+    statement.executeQuery(sql);                                    // (4)
 } catch (SQLException e) {
-    /* handle any errors */
-} finally {
-    /* close result sets */
-    /* close statements  */
-    /* close connection  */
+    e.printStackTrace();
 }
 ```
 
-```java
-try (/* establish database connection     */
-     /* create and execute SQL statements */) {
-    /* process results */
-} catch (SQLException e) {
-    /* handle any exceptions */
-} // implicit finally block closes resources
-```
-
-- `SQLException` oferece `getSQLState`, `getErrorCode` e `getNextException` para identificar a origem do problema
-- Converta exceções genéricas em erros de domínio e registre o `SQLState` para auditoria
-
----
-layout: default
-lesson: Statements no JDBC
 ---
 
-| API                | Uso principal                                                    | Métodos-chave                                                 |
-|--------------------|------------------------------------------------------------------|---------------------------------------------------------------|
-| `Statement`        | Executar SQL estático (sem parâmetros)                           | `executeQuery`, `executeUpdate`, `execute`, `setFetchSize`    |
-| `PreparedStatement`| SQL pré-compilado com placeholders (`?`), evita SQL injection     | `setString`, `setInt`, `setObject`, `addBatch`, `executeUpdate`|
-| `CallableStatement`| Invocar stored procedures/functions com parâmetros IN/OUT        | `registerOutParameter`, `setObject`, `getObject`, `execute`   |
-| `ResultSet`        | Cursor para percorrer dados retornados                           | Navegação `next/previous`, leitura `getString/getInt`, `close`|
+## Exemplo com PreparedStatament
 
-- Escolha a API conforme o padrão de uso (consulta simples, comando parametrizado, procedure)
-- `CallableStatement` também permite recuperar códigos de saída e status de procedimentos do SGBD
-
----
-layout: default
-lesson: PreparedStatement em ação
----
+- Use **PreparedStatement** sempre que houver parâmetros externos
+- **Statement** deve ser usado apenas com comandos fixos.
+- Parâmetros tipados (setString, setInt, setBigDecimal) protegem contra **_SQL injection_**
+- Reduz custo em consultas repetitivas
 
 ```java
-// Trechos de PreparedStatementSelectDemo.java
-String sql = """
-    SELECT actor_id, first_name, last_name
-    FROM actor
-    WHERE last_name = ?
-""";
+String sql = "SELECT actor_id, first_name, last_name FROM actor WHERE last_name = ?";
 
 try (PreparedStatement ps = conn.prepareStatement(sql)) {
     ps.setString(1, "Chase");
@@ -261,46 +272,40 @@ try (PreparedStatement ps = conn.prepareStatement(sql)) {
 }
 ```
 
-- Parâmetros tipados (`setString`, `setInt`, `setBigDecimal`) protegem contra SQL injection
-- O driver pode reutilizar o plano preparado, reduzindo custo em consultas repetitivas
+--- 
 
----
-layout: default
-lesson: Statement básico passo a passo
----
+## Exemplo com DataSource
 
+- Em produção, prefira **java.sql.DataSource** para uso de _pool_ de conexão
+    - depende de implementação concreta do driver do banco (ex. [PostgreSQL JDBC Driver](https://jdbc.postgresql.org/) )
 ```java
-try (Connection connection = DriverManager.getConnection(jdbcURL); // (1)
-     Statement statement = connection.createStatement()) {          // (2)
-    String sql = "SELECT * FROM film ORDER BY title";               // (3)
-    statement.executeQuery(sql);                                    // (4)
-} catch (SQLException e) {
-    e.printStackTrace();
+
+PGConnectionPoolDataSource dataSource = new PGConnectionPoolDataSource();
+
+try (Connection conn = dataSource.getConnection();
+     PreparedStatement ps = conn.prepareStatement(SQL)) {
+    // ...
+} catch (SQLException ex) {
+    log.error("Erro JDBC", ex);
 }
 ```
 
-1. `DriverManager.getConnection()` cria a `Connection`
-2. `connection.createStatement()` fornece o `Statement`
-3. Formule o SQL (strings constantes ou construídas dinamicamente)
-4. Execute com `executeQuery`, `executeUpdate` ou `execute`
-
-::callout
-Use `PreparedStatement` sempre que houver parâmetros externos; `Statement` é reservado a comandos fixos.
-:::
-
----
-layout: default
-lesson: Processando ResultSet
 ---
 
-- `ResultSet` representa o cursor retornado; métodos principais:
-  - Navegação: `next`, `previous`, `absolute`, `afterLast`, `beforeFirst`
-  - Leitura: `getString`, `getInt`, `getBigDecimal`, `getObject`
-  - Atualização (quando suportado): `updateString`, `updateInt`, `updateRow`
+## Processando ResultSet
+
+- **ResultSet** representa o cursor com os dados retornados. Principais métodos:
+  - Navegação: **next**, **previous**, **absolute**, **afterLast**, **beforeFirst**
+  - Leitura: **getString**, **getInt**, **getBigDecimal**, **getObject**
+  - Atualização: **updateString**, **updateInt**, **updateRow**
 - Customize o cursor ao criar o statement:
-  - `ResultSet.TYPE_SCROLL_INSENSITIVE` para navegar (`previous`, `absolute`)
-  - `ResultSet.CONCUR_UPDATABLE` para atualizar linhas diretamente
-- Paginação eficiente: `stmt.setFetchSize(50)` + `LIMIT/OFFSET` na consulta
+  - **ResultSet.TYPE_SCROLL_INSENSITIVE** para navegar (**previous**, **absolute**)
+  - **ResultSet.CONCUR_UPDATABLE** para atualizar linhas diretamente
+- Paginação eficiente: **stmt.setFetchSize(50)** + **LIMIT/OFFSET** na consulta
+
+---
+
+## Processando ResultSet
 
 ```java
 try (PreparedStatement ps = conn.prepareStatement(
@@ -317,14 +322,18 @@ try (PreparedStatement ps = conn.prepareStatement(
 }
 ```
 
-- `JdbcRowSet` (exemplo `RowSetJdbcRowSetTest.java`) encapsula `ResultSet` desconectado e serializável
+- [**JdbcRowSet**](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql.rowset/javax/sql/rowset/JdbcRowSet.html) encapsula **ResultSet** desconectado e serializável
 
 ---
 layout: default
 lesson: Metadados e capacidades
 ---
 
-![JDBC API](../lectures/examples/14-jdbc/doc/jdbc-api.png)
+## Acesso aos Metadados do banco de dados
+
+- **ResultSetMetaData**: nomes, tipos SQL, nulabilidade. Útil para gerar tabelas dinâmicas ou logs
+- **DatabaseMetaData**: metadados do driver/SGBD (transações suportadas, palavras reservadas, catálogos)
+- **ParameterMetaData**: útil ao construir SQL dinâmico validando tipos antes de setar parâmetros
 
 ```java
 try (Statement stmt = conn.createStatement();
@@ -340,14 +349,15 @@ try (Statement stmt = conn.createStatement();
 }
 ```
 
-- `ResultSetMetaData`: nomes, tipos SQL, nulabilidade → útil para gerar tabelas dinâmicas ou logs
-- `DatabaseMetaData`: capacidades do driver/SGBD (transações suportadas, palavras reservadas, catálogos)
-- `ParameterMetaData`: útil ao construir SQL dinâmico validando tipos antes de setar parâmetros
+---
 
----
-layout: default
-lesson: Transações e atomicidade
----
+## Controle de transações
+
+- Características de transação (AICD):
+  - **_Atomicity_**: garantir consistência
+  - **_Isolation_**: garantir disponibilidade
+  - **_Consistency_**: garantir integridade
+  - **_Durability_**: garantir persistência
 
 ```java
 try (Connection conn = DriverManager.getConnection(url, user, password)) {
@@ -362,38 +372,23 @@ try (Connection conn = DriverManager.getConnection(url, user, password)) {
 }
 ```
 
-- `autoCommit=true` (padrão) executa cada statement como transação isolada → desative quando precisar agrupar
-- Sempre realize `commit` explícito ou `rollback` no `catch`/`finally`
-- Defina nível de isolamento conforme necessidade (`READ COMMITTED`, `SERIALIZABLE`)
-- Log de auditoria (`demo/dvdrentalapp/audit.log`) ajuda a validar se operações múltiplas foram persistidas corretamente
-
----
-layout: default
-lesson: Hands-on sugerido
 ---
 
-1. `cd lectures/examples/14-jdbc/src/demo/dvdrentalapp && docker compose up`
-2. Copie `db.properties.sample` → `db.properties` ajustando URL, usuário e senha
-3. Rode `mvn exec:java -Dexec.mainClass=DvdRentalApp` para percorrer consultas, inserts e rollback
-4. Execute `RowSetJdbcRowSetTest.java` para analisar `JdbcRowSet` desconectado
-5. Mostre os diagramas `jdbc-api.png` e `postgresql-sequence.png` durante a execução para relacionar código e arquitetura
+## Controle de transações
+
+- **autoCommit=true** (padrão) executa cada statement como transação isolada
+    - desative quando precisar agrupar
+- Sempre realize **commit** explícito ou **rollback** no **catch**/**finally**
+- Defina nível de isolamento conforme necessidade (**READ COMMITTED**, **SERIALIZABLE**)
+- Log de auditoria ajuda a validar se operações múltiplas foram persistidas corretamente
 
 ---
-layout: default
-lesson: Checklist e referências
----
 
-**Checklist**
-- [ ] Connection string e driver no classpath
-- [ ] `db.properties` (ou variáveis) carregado via `Properties`
-- [ ] Statements parametrizados e resultados tratados
-- [ ] Recursos fechados e transações controladas
-- [ ] Metadados e capacidades documentados para o time
+## Atividade em Sala
 
-**Referências**
-- Oracle. *JDBC Developer Guide*, 2024.
-- PostgreSQL Global Development Group. *JDBC Driver Manual*, versão 42.
-- Exemplos completos em `lectures/examples/14-jdbc/src` e diagramas em `lectures/examples/14-jdbc/doc`.
+- Configurar banco de dados conforme instruções no README.md
+- Analisar e executar programs em **lectures/examples/14-jdbc/src/**
+- Desenvolver programa especificado em **classroom/09-jdbc**
 
 ---
 layout: backcover
