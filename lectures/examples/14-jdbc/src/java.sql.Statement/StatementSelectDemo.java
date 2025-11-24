@@ -8,6 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class StatementSelectDemo {
 
@@ -20,18 +21,33 @@ public class StatementSelectDemo {
         try {
 
             loadDatabaseProperties();
-        
-            try(
+
+            try(Scanner input = new Scanner(System.in)) {
+
+                System.out.print("Informe o nome do ator: ");
+                String nome = input.nextLine();
+
+                String sql = "SELECT * FROM ACTOR WHERE first_name LIKE '%" + nome + "%'";
+
+                System.out.println(sql);
+
+                try(
                 Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM ACTOR LIMIT 10")
-            ){
+                ResultSet resultSet = statement.executeQuery(sql)
+                ){
 
-                readResultSet(resultSet);
-                
-            } catch(SQLException sqlex) {
-                System.out.printf("Erro: %s%n", sqlex);
+                    readResultSet(resultSet);
+                    
+                } catch(SQLException sqlex) {
+                    System.out.printf("Erro: %s%n", sqlex);
+                }
+
             }
+
+            
+        
+            
         } catch (IOException ex) {
             System.out.printf("Erro: %s%n", ex);
         } 
