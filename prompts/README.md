@@ -1,13 +1,16 @@
 Neste prompt, considera o valor das seguinte variáveis e substitua em seu local correspondente
 
 {
-	"Tópico Principal": "Introdução à plataforma Java"
+	"Tópico Principal": ""
 	"Tópicos a serem cobertos": 
-						"Histórico e evolução da plataforma Java",
-						"Características da linguagem Java e sua relação com POO",
-						"Principais ferramentas da plataforma Java",
-						"Estrutura básica de um programa em Java."
-						"Relação de linguagem de máquina, linguagem assembly, linguagem de alto nível e Java"
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						""
 }
  
 Prompt Gerador de Guias de Estudo Genérico
@@ -64,16 +67,20 @@ Para cada tópico ou subtópico abordado, você deve gerar uma sequência estrut
 
 
 Formato da Saída (Como a IA deve responder):
-A saída deve ser um guia de estudo estruturado em formato Markdown. Organize os prompts de forma lógica, começando pelos conceitos fundamentais e avançando para os mais complexos. Use a seguinte estrutura:
+A saída deve ser um guia de estudo estruturado em formato Markdown. Organize os prompts de forma lógica, começando pelos conceitos fundamentais e avançando para os mais complexos. Mantenha exatamente o seguinte formato:
 
 # [Assunto Principal]
 
 ## [Nome do Tópico]
-### [Subtópico](quando aplicável)
+- [Prompt 1 (voltado a compreensão teórica ou contextualização)]
+- [Prompt 2 (aprofunda o tema ou diferencia conceitos próximos)]
+- [Prompt 3 (solicita exemplos práticos, códigos, diagnósticos de erros)]
+- [Prompt 4 (propõe atividades guiadas, listas de passos, uso de ferramentas)]
+- [Prompt 5 (aplicação em cenários reais ou estudos de caso)]
+- [Prompt 6 (reflexão e avaliação pessoal)]
 
-- [Elabore um prompt claro e direto para compreensão teórica] (quando aplicável)
-- [Continue com prompts que aprofundem o conhecimento teórico] (quando aplicável)
-- [Elabore um prompt para exemplos práticos] (quando aplicável)
-- [Elabore um prompt para atividades guiadas] (quando aplicável)
-- [Elabore um prompt para aplicação em cenários reais] (quando aplicável)
-- [Elabore um prompt para reflexão e avaliação] (quando aplicável)
+Regras adicionais:
+- Cada tópico listado em {"Tópicos a serem cobertos"} deve virar uma seção `##`.
+- Dentro de cada seção, use apenas listas simples com marcadores `-`, sem subtítulos.
+- Garanta que o conjunto de bullets cubra, no mínimo, compreensão teórica, exemplos práticos, atividades guiadas, aplicação em cenários reais e reflexão/avaliação; adapte a quantidade de bullets conforme necessário.
+- Utilize linguagem direta em português, mantendo verbos no imperativo.

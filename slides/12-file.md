@@ -34,17 +34,44 @@ lesson: Manipulação de arquivos
 ## Fluxo de dados (**Stream**)
 
 - Quando um programa Java é iniciado, ele cria 3 objetos de fluxo de dados (**stream**​)
-    - [System.in](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#in): standard input stream (é um [InputStream](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html)​
+    - [System.in](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#in): standard input stream (é um [InputStream](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html)​)
     - [System.out](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#out): standard output stream (é um [PrintStream](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html))​
     - [System.err](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#err): standard error stream (é um [PrintStream](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html))​
-- Esses fluxo de dados podem ser redirecionados​
-    - [setIn​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setIn(java.io.InputStream))
-    - [setOut​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setOut(java.io.PrintStream))
-    - [setErr​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setErr(java.io.PrintStream))
+- Esses fluxos de dados podem ser redirecionados​
+    - [System.setIn​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setIn(java.io.InputStream)): por padrão lê dados do console
+    - [System.setOut​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setOut(java.io.PrintStream)): por padrão escreve dados no console
+    - [System.setErr​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setErr(java.io.PrintStream)): por padrão escreve dados no console
 
 <Reference
   reference="DEITEL, Paul; DEITEL, Harvey. Java: How to Program, Early Objects. 11. ed. Boston: Pearson, 2017. ISBN 978-0-13-474335-6.​"
 />
+
+---
+
+## Alterando o fluxo padrão de entrada e saída
+
+- [System.setIn​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setIn(java.io.InputStream)): altera a origem do fluxo padrão de entrada
+
+```java
+Path path = Path.of("data/input.txt");
+InputStream fileIn = Files.newInputStream(path);
+System.setIn(fileIn); // Redireciona System.in
+Scanner scanner = new Scanner(System.in);
+while (scanner.hasNextLine()) {
+  String linha = scanner.nextLine();
+  System.out.println("Lido do arquivo como entrada padrão: " + linha);
+}
+```
+
+- [System.setOut​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#setOut(java.io.PrintStream)): altera o destio do fluxo padrão de saída
+
+```java
+Path outputPath = Path.of("data/saida.txt");
+PrintStream output = new PrintStream(Files.newOutputStream(outputPath););
+System.setOut(output);
+// Agora tudo que for impresso com System.out vai para o arquivo
+System.out.println("Linha 1: Olá, mundo!");
+```
 
 ---
 
@@ -53,9 +80,15 @@ lesson: Manipulação de arquivos
 - [java.io](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html): oferece classes e interfaces para entrada e saída de dados por fluxos (**_streams_**), serialização de objetos e manipulação de arquivos e diretórios no sistema de arquivos.
 - [java.nio](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/package-summary.html): introduz uma forma mais moderna e eficiente de trabalhar com entrada e saída em Java, usando buffers para armazenar dados, canais para conectar-se a arquivos ou redes e recursos que permitem processar informações de forma mais rápida e sem bloquio.
 
+<FigureWithCaption 
+  src="images/file-names.png" 
+  alt="Principais interfaces e métodos de manipulação de arquivos em java"
+  link="https://docs.oracle.com/en/java/javase/21/"
+/>
+
 ---
 
-## Principais classes e interfaces de manipulação de arquivos (**java.nio**)
+## Principais classes do pacote **java.nio**
 
 - [java.nio.file.Paths​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Paths.html)
     - oferece métodos estáticos usados para recuperar um objeto do tipo Path representando um arquivo ou diretório​
@@ -69,6 +102,29 @@ lesson: Manipulação de arquivos
 <Reference
   reference="DEITEL, Paul; DEITEL, Harvey. Java: How to Program, Early Objects. 11. ed. Boston: Pearson, 2017. ISBN 978-0-13-474335-6.​"
 />
+
+---
+
+## Passo a passo para ler arquivos **java.nio**
+
+1. Obter referência para um arquivo ou diretório usando [java.nio.file.Path](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html)
+
+- of(String): recebe uma String representando um arquivo ou diretório e retorna um objeto do tipo [java.nio.file.Path](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html)
+
+```java
+Path file = Path.of("data/input.txt");
+```
+
+2. Usar métodos da classe [java.nio.file.Files​](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html) para leitura de arquivos
+  - usar um dos métodos estáticos da classe
+    - [readAllLines(Path path)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path)): lê todas as linhas de um arquivo e retorna uma lista de strings
+
+  ```java
+  System.out.println(Files.readAllLines(file));
+  ```
+
+3. Tratar execeções
+  - usar bloco **try-catch-finally** e fechar recursos ou **try-with-resources**
 
 ---
 
