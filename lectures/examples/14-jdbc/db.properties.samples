@@ -9,4 +9,4 @@ password=[PASSWORD]
 # DB2: jdbc:    db2:hostname:portNumber/databaseName 
 # PostgreSQL:   jdbc:postgresql://hostname:portNumber/databaseName 
 # SQL Server:   jdbc:sqlserver://hostname:portNumber;databaseName=dataBaseName 
-# Sybase:       jdbc:sybase:Tds:hostname:portNumber/databaseName
+# Sybase:       jdbc:sybase:Tds:hostname:portNumber/databaseNamelectures/examples/14-jdbc/db.properties.samples
