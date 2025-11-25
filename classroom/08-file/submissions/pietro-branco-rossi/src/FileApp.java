@@ -19,7 +19,7 @@ public class FileApp {
 
         // Definição do arquivo:
 
-        Path basePath = Path.of("/home/pietro/Documentos/terceiro_semestre/programacao_orientada/poo/classroom/08-file");
+        Path basePath = Path.of("classroom/08-file");
 
         Path dirData = basePath.resolve("data");
         Path fileClients = dirData.resolve("clients.txt");

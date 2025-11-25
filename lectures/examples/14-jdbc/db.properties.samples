@@ -1,8 +1,7 @@
 #Incluir valores para os parâmetros abaixo e renomear o aquivo para dp.properties
-url=jdbc:postgresql://db.qiheztsdqpvmpgdhecgy.supabase.co:5432/postgres
-user=postgres
-password=postgres
-
+url=jdbc:postgresql://[HOST]:[PORT]/[DATABASE]
+user=[USER]
+password=[PASSWORD]
 # Exemplos de string de conexão para outros bancos
 # MySQL:        jdbc:mysql://hostname:portNumber/databaseName 
 # ORACLE:       jdbc:oracle:thin:@hostname:portNumber:databaseName
