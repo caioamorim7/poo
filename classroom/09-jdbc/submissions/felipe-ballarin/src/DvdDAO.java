@@ -5,7 +5,7 @@ import java.util.List;
 public class DvdDAO {
 
     public Film insertFilm(Film film) {
-        // MUDANÇA AQUI: public.film
+        // MUDANÇA AQUI
         String sql = "INSERT INTO public.film (title, description, language_id, rental_duration, rental_rate, replacement_cost) VALUES (?, ?, ?, 3, 4.99, 19.99) RETURNING film_id";
 
         try (Connection conn = Database.getConnection();
@@ -28,7 +28,7 @@ public class DvdDAO {
     }
 
     public Film findFilmById(int id) {
-        // MUDANÇA AQUI: public.film
+        // MUDANÇA AQUI
         String sql = "SELECT film_id, title, description, language_id FROM public.film WHERE film_id = ?";
 
         try (Connection conn = Database.getConnection();
@@ -53,7 +53,7 @@ public class DvdDAO {
 
     public List<Actor> getActorsByFilm(int filmId) {
         List<Actor> list = new ArrayList<>();
-        // MUDANÇA AQUI: public.actor e public.film_actor
+        // MUDANÇA AQUI tambem
         String sql = "SELECT a.actor_id, a.first_name, a.last_name FROM public.actor a " +
                      "JOIN public.film_actor fa ON a.actor_id = fa.actor_id WHERE fa.film_id = ?";
 
@@ -77,7 +77,7 @@ public class DvdDAO {
     }
 
     public void deleteActor(int actorId) {
-        // MUDANÇA AQUI: public.actor
+        // MUDANÇA AQUI tambem: public.actor
         String sql = "DELETE FROM public.actor WHERE actor_id = ?";
 
         try (Connection conn = Database.getConnection();

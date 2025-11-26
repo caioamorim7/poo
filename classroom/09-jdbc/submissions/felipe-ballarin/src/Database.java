@@ -11,7 +11,7 @@ public class Database {
     static {
         try (FileInputStream fis = new FileInputStream("db.properties")) {
             props.load(fis);
-            // Opcional em versões novas do Java, mas bom para garantir em JDBC puro raiz:
+            
             Class.forName("org.postgresql.Driver"); 
         } catch (Exception e) {
             e.printStackTrace();

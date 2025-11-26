@@ -17,13 +17,13 @@ public class Main {
             System.out.println("Encontrado: " + found);
         }
 
-        // 3. Listar Atores (Testando com filme ID 1 do banco original)
+        // 3. Listar Atores 
         System.out.println("\n_____ATORES DO FILME ID 1_____");
         List<Actor> actors = dao.getActorsByFilm(1);
         actors.forEach(System.out::println);
 
         // 4. Excluir Ator
         System.out.println("\n_____EXCLUINDO ATOR_____");
-        dao.deleteActor(9999); // ID fictício
+        dao.deleteActor(9999); 
     }
 }
