@@ -5,10 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Utilitário simples para gerenciar conexões JDBC usando um arquivo de properties.
- * O arquivo é carregado de db/db.properties e evita problemas de caminho relativo.
- */
 public class JdbcUtils {
     private static final Properties props = new Properties();
 

@@ -5,9 +5,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 
-/**
- * Logger simples que registra operações em audit.log no diretório raiz do projeto.
- */
 public class AuditLogger {
     private static final Path LOG_PATH = Paths.get("audit.log");
 

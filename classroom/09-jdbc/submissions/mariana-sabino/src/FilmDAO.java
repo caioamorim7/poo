@@ -5,17 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO para a tabela film do dvdrental (PostgreSQL).
- * Implementa operações CRUD usando apenas java.sql (JDBC puro).
- *
- * Campos comuns em dvdrental.film:
- * - film_id (PK, serial)
- * - title (text)
- * - description (text)
- * - release_year (int2 ou smallint em algumas dumps)
- * - language_id (int2)
- */
+
 public class FilmDAO {
 
     public int insertFilm(String title, String description, int releaseYear, int languageId) {
@@ -123,9 +113,6 @@ public class FilmDAO {
         return false;
     }
 
-    /**
-     * Record simples para transportar dados de film.
-     */
     public static class FilmRecord {
         public final int filmId;
         public final String title;

@@ -3,14 +3,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * DAO para operações relacionadas aos atores e sua relação com filmes.
- */
 public class ActorDAO {
 
-    /**
-     * Lista atores de um filme específico usando film_actor -> actor.
-     */
     public void listActorsByFilmId(int filmId) {
         String sql = "SELECT a.actor_id, a.first_name, a.last_name " +
                      "FROM film_actor fa " +
@@ -34,9 +28,6 @@ public class ActorDAO {
         }
     }
 
-    /**
-     * Exclui um ator por ID e registra no audit.log.
-     */
     public void deleteActorById(int actorId) {
         String sql = "DELETE FROM actor WHERE actor_id = ?";
         try (Connection conn = JdbcUtils.getConnection();
