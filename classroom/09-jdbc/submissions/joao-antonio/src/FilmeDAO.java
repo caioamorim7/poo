@@ -17,7 +17,7 @@ public class FilmeDAO {
         "DELETE FROM film WHERE film_id = ?";
 
 
-    public Filme inserir(Filme filme) throws SQLException {
+    public Film inserir(Film filme) throws SQLException {
         try (Connection conn = GerenciadorDeConexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(INSERIR, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, filme.getTitulo());
@@ -37,13 +37,13 @@ public class FilmeDAO {
         }
     }
 
-    public Filme buscarPorId(int id) throws SQLException {
+    public Film buscarPorId(int id) throws SQLException {
         try (Connection conn = GerenciadorDeConexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(BUSCAR_POR_ID)) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return new Filme(rs.getInt("film_id"), rs.getString("title"), rs.getString("description"), rs.getInt("release_year"));
+                    return new Film(rs.getInt("film_id"), rs.getString("title"), rs.getString("description"), rs.getInt("release_year"));
                 }
             }
         }
@@ -64,7 +64,7 @@ public class FilmeDAO {
         return atores;
     }
 
-    public boolean atualizar(Filme filme) throws SQLException {
+    public boolean atualizar(Film filme) throws SQLException {
         try (Connection conn = GerenciadorDeConexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(ATUALIZAR)) {
 

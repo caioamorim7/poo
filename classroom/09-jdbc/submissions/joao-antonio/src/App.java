@@ -8,7 +8,7 @@ public class App {
         System.out.println("--- INICIANDO TESTES ---");
 
         try {
-            Filme novoFilme = new Filme("POO e JDBC - Simples", "Exemplo de código simples.", 2026);
+            Film novoFilme = new Film("POO e JDBC - Simples", "Exemplo de código simples.", 2026);
             novoFilme = filmeDao.inserir(novoFilme);
             System.out.println("\n[1] INSERÇÃO OK: " + novoFilme);
             int novoFilmeId = novoFilme.getId();
@@ -17,7 +17,7 @@ public class App {
             boolean atualizado = filmeDao.atualizar(novoFilme);
             System.out.println("[U] ATUALIZAÇÃO OK: " + atualizado);
 
-            Filme filmeEncontrado = filmeDao.buscarPorId(novoFilmeId);
+            Film filmeEncontrado = filmeDao.buscarPorId(novoFilmeId);
             System.out.println("[2] BUSCA OK: " + filmeEncontrado);
 
             int idFilmeExistente = 1; 

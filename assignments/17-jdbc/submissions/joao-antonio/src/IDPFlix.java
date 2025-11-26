@@ -14,7 +14,7 @@ public class IDPFlix {
     public static void main(String[] args) {
         String filePath = "src/new_films.txt";
 
-        List<Filme> films = FilmeReader.readFilms(filePath);
+        List<Film> films = FilmReader.readFilms(filePath);
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             importFilms(conn, films);
@@ -25,11 +25,11 @@ public class IDPFlix {
         }
     }
 
-    private static void importFilms(Connection conn, List<Filme> films) {
+    private static void importFilms(Connection conn, List<Film> films) {
         String sql = "INSERT INTO film (title, language_id, rental_duration, rental_rate, replacement_cost) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            for (Filme film : films) {
+            for (Film film : films) {
                 ps.setString(1, film.getTitle());
                 ps.setInt(2, film.getLanguageId());
                 ps.setInt(3, film.getRentalDuration());

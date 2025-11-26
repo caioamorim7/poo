@@ -4,10 +4,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmeReader {
+public class FilmReader {
 
-    public static List<Filme> readFilms(String filePath) {
-        ArrayList<Filme> films = new ArrayList<>();
+    public static List<Film> readFilms(String filePath) {
+        ArrayList<Film> films = new ArrayList<>();
 
         try {
             Path path = Paths.get(filePath);
@@ -33,7 +33,7 @@ public class FilmeReader {
                     double rentalRate = Double.parseDouble(fields[3].trim());
                     double replacementCost = Double.parseDouble(fields[4].trim());
 
-                    Filme film = new Filme(title, languageId, rentalDuration, rentalRate, replacementCost);
+                    Film film = new Film(title, languageId, rentalDuration, rentalRate, replacementCost);
                     films.add(film);
                 } catch (NumberFormatException e) {
                     continue;

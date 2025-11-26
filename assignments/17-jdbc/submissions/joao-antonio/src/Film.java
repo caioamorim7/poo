@@ -1,11 +1,11 @@
-public class Filme {
+public class Film {
     private String title;
     private int languageId;
     private int rentalDuration;
     private double rentalRate;
     private double replacementCost;
 
-    public Filme(String title, int languageId, int rentalDuration, double rentalRate, double replacementCost) {
+    public Film(String title, int languageId, int rentalDuration, double rentalRate, double replacementCost) {
         this.title = title;
         this.languageId = languageId;
         this.rentalDuration = rentalDuration;
