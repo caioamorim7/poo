@@ -63,10 +63,30 @@ Implemente o sistema seguindo os seguintes requisitos.
 ## Recomendação para execução local
 
 - Substitua `<seu-diretorio>` pelo diretório criado dentro de `submissions/` e ajuste o valor mínimo passado como argumento conforme necessário.
+
 ```bash
 cd challenges/09-rentals/submissions/<seu-diretorio>
+```
+
+- Se necessário, crie o diretório para armazenar a dependência do driver do postgres
+
+```bash
 mkdir -p lib
+```
+
+- Se necessário, faça download do driver
+```bash
 curl -L -o lib/postgresql-42.7.8.jar https://jdbc.postgresql.org/download/postgresql-42.7.8.jar
+```
+
+- Compile o programa
+
+```bash
 javac -d bin src/*.java
+```
+
+- Execute o programa
+
+```bash
 java -cp "bin:lib/postgresql-42.7.8.jar" RentalReportApp 200
 ```
